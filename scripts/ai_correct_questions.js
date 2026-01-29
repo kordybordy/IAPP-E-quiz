@@ -2,10 +2,9 @@ import fs from "fs/promises";
 
 const DEFAULT_INPUT = "questions.json";
 const DEFAULT_OUTPUT = "questions.corrected.json";
-const DEFAULT_MODEL = "gpt-4.1-mini";
+const DEFAULT_MODEL = "gpt-5-mini";
 const DEFAULT_DELAY_MS = 250;
-const HARDCODED_API_KEY =
-  "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";
+
 
 function parseArgs(argv) {
   const args = { input: DEFAULT_INPUT, output: DEFAULT_OUTPUT, limit: null, startId: null, model: DEFAULT_MODEL, delayMs: DEFAULT_DELAY_MS };
