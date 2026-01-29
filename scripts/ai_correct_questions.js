@@ -49,7 +49,7 @@ async function callOpenAI({ apiKey, model, question }) {
       }
     ],
     response_format: { type: "json_object" },
-    temperature: 0.2
+    temperature: 1
   };
 
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
