@@ -1,0 +1,30 @@
+name: AI clean questions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install openai p-limit
+
+      - run: |
+          node scripts/ai_correct_questions.js \
+            --in questions.json \
+            --out questions.corrected.json
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add questions.corrected.json
+          git commit -m "AI-cleaned questions" || echo "No changes"
+          git push
