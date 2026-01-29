@@ -1,0 +1,136 @@
+/* Minimal, readable styling – no external deps */
+:root{
+  --bg:#0b0c10;
+  --card:#11131a;
+  --text:#e8eaf0;
+  --muted:#a9afc3;
+  --border:#23283a;
+  --primary:#4c7dff;
+  --danger:#ff4c6a;
+  --ok:#3ddc97;
+  --warn:#ffcc66;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #0b0c10 0%, #0a0b0f 100%);
+  color:var(--text);
+}
+a{ color:var(--primary); }
+.topbar{
+  position:sticky; top:0;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 18px;
+  border-bottom:1px solid var(--border);
+  background: rgba(11,12,16,.85);
+  backdrop-filter: blur(8px);
+}
+.brand{ font-weight:700; letter-spacing:.2px; }
+.container{ max-width: 980px; margin: 18px auto; padding: 0 14px; }
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 14px 50px rgba(0,0,0,.35);
+}
+.controls{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+button{
+  border:1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor:pointer;
+}
+button:disabled{ opacity:.5; cursor:not-allowed; }
+button.primary{ background: var(--primary); border-color: transparent; color: #fff; }
+button.secondary{ background: rgba(255,255,255,.04); }
+button.danger{ background: rgba(255,76,106,.14); border-color: rgba(255,76,106,.35); }
+.muted{ color: var(--muted); }
+.small{ font-size: .9rem; }
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+.help{ margin-top: 14px; }
+
+.examHeader{
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+  margin-bottom: 12px;
+}
+.examActions{ display:flex; gap:10px; flex-wrap:wrap; }
+
+.jumpBar{
+  display:flex; flex-wrap:wrap; gap:6px;
+  padding: 10px;
+  border:1px dashed var(--border);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.jumpBtn{
+  width: 34px; height: 34px;
+  border-radius: 10px;
+  font-size: .95rem;
+  padding:0;
+}
+.jumpBtn.answered{ border-color: rgba(61,220,151,.4); background: rgba(61,220,151,.10); }
+.jumpBtn.current{ outline: 2px solid rgba(76,125,255,.7); }
+.jumpBtn.wrong{ border-color: rgba(255,76,106,.4); background: rgba(255,76,106,.10); }
+.jumpBtn.unanswered{ opacity:.7; }
+
+.questionCard{
+  border:1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+.qTitle{ display:flex; gap:10px; align-items:baseline; }
+.qNum{ font-weight: 700; }
+.qMeta{ margin-left:auto; }
+.qText{ margin: 10px 0 12px 0; line-height: 1.35; }
+
+.choices{ display:grid; gap:8px; }
+.choice{
+  display:flex; gap:10px; align-items:flex-start;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255,255,255,.03);
+}
+.choice input{ margin-top: 3px; }
+.choice .lbl{ width: 24px; font-weight:700; }
+.choice.correct{ border-color: rgba(61,220,151,.5); background: rgba(61,220,151,.09); }
+.choice.yoursWrong{ border-color: rgba(255,76,106,.5); background: rgba(255,76,106,.09); }
+
+.navRow{
+  margin-top: 12px;
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+}
+
+.resultsHeader{
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  flex-wrap:wrap;
+}
+.scoreLine{
+  font-size: 1.15rem;
+  margin: 12px 0;
+}
+.filters{ margin: 12px 0; }
+.checkbox{ display:flex; gap:10px; align-items:center; }
+.reviewItem{
+  border:1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+}
+.reviewTop{ display:flex; gap:10px; align-items:center; }
+.badge{
+  font-size: .82rem;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border:1px solid var(--border);
+}
+.badge.ok{ border-color: rgba(61,220,151,.45); background: rgba(61,220,151,.10); }
+.badge.bad{ border-color: rgba(255,76,106,.45); background: rgba(255,76,106,.10); }
+.badge.warn{ border-color: rgba(255,204,102,.45); background: rgba(255,204,102,.10); }
+
+.footer{ text-align:center; padding: 20px 14px; }

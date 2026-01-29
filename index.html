@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exam Simulator (50 random questions)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Exam Simulator</div>
+    <div class="meta">
+      <span id="questionBankInfo" class="muted">Loading question bank…</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="card">
+      <h1>50-question practice exam</h1>
+      <p class="muted">
+        Questions are randomly drawn from both exam files. Your answers stay in this browser only.
+      </p>
+
+      <div class="controls">
+        <button id="startBtn" class="primary" disabled>Start exam</button>
+        <button id="resumeBtn" class="secondary" style="display:none;">Resume last attempt</button>
+        <button id="resetBtn" class="danger" style="display:none;">Reset</button>
+      </div>
+
+      <details class="help">
+        <summary>How it works</summary>
+        <ul>
+          <li>Draws 50 unique questions from the bank.</li>
+          <li>You can navigate via “Previous / Next” or jump by number.</li>
+          <li>Submit to see your score and a full review.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="exam" class="card" style="display:none;">
+      <div class="examHeader">
+        <div>
+          <div class="muted small">Attempt</div>
+          <div id="attemptInfo" class="mono"></div>
+        </div>
+        <div class="examActions">
+          <button id="saveExitBtn" class="secondary">Save & exit</button>
+          <button id="submitBtn" class="primary">Submit</button>
+        </div>
+      </div>
+
+      <div id="jumpBar" class="jumpBar"></div>
+
+      <article id="questionCard" class="questionCard"></article>
+
+      <div class="navRow">
+        <button id="prevBtn" class="secondary">Previous</button>
+        <div class="muted small" id="progressText"></div>
+        <button id="nextBtn" class="secondary">Next</button>
+      </div>
+    </section>
+
+    <section id="results" class="card" style="display:none;">
+      <div class="resultsHeader">
+        <h2>Results</h2>
+        <div class="controls">
+          <button id="newAttemptBtn" class="primary">New 50-question attempt</button>
+          <button id="backHomeBtn" class="secondary">Back to home</button>
+        </div>
+      </div>
+
+      <p id="scoreLine" class="scoreLine"></p>
+      <div class="filters">
+        <label class="checkbox">
+          <input type="checkbox" id="showOnlyWrong" />
+          Show only wrong / unanswered
+        </label>
+      </div>
+
+      <div id="reviewList" class="reviewList"></div>
+    </section>
+  </main>
+
+  <footer class="footer muted small">
+    Tip: you can host this on GitHub Pages (static site). No Python required.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
