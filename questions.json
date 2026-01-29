@@ -3942,8 +3942,8 @@
       "id": 130,
       "exam": "CIPPE",
       "number": 1,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "How does the GDPR define \u2018processing\u2019?",
       "choices": [
         {
@@ -3973,8 +3973,8 @@
       "id": 131,
       "exam": "CIPPE",
       "number": 2,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A breach of security leading to the accidental destruction or loss of personal data triggers  notification obligations. According to Article 33(2) of the GDPR, how soon must the data processor notify the data controller about such breach of security?",
       "choices": [
         {
@@ -4004,8 +4004,8 @@
       "id": 132,
       "exam": "CIPPE",
       "number": 3,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the GDPR, when processing an individual\u2019s personal data in the context of direct marketing  activities, data controllers must do which of the following?",
       "choices": [
         {
@@ -4035,8 +4035,8 @@
       "id": 133,
       "exam": "CIPPE",
       "number": 4,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A full and valid set of binding corporate rules (BCRs) must include specific elements. Which of the  following is NOT one of the required elements?",
       "choices": [
         {
@@ -4066,8 +4066,8 @@
       "id": 134,
       "exam": "CIPPE",
       "number": 5,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What is an important difference between the European Court of Human Rights (ECHR) and the  Court of Justice of the European Union (CJEU) in relation to their roles and functions?",
       "choices": [
         {
@@ -4097,8 +4097,8 @@
       "id": 135,
       "exam": "CIPPE",
       "number": 6,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "According to GDPR Article 56, what is a lead supervisory authority's (LSA) main concern?",
       "choices": [
         {
@@ -4128,8 +4128,8 @@
       "id": 136,
       "exam": "CIPPE",
       "number": 7,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following would most likely trigger the extraterritorial effect of the GDPR, as  specified by Article 3?",
       "choices": [
         {
@@ -4159,8 +4159,8 @@
       "id": 137,
       "exam": "CIPPE",
       "number": 8,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Each of the following is a valid transfer mechanism data controllers may rely upon to legally  transfer EU personal data outside of the EU EXCEPT?",
       "choices": [
         {
@@ -4190,8 +4190,8 @@
       "id": 138,
       "exam": "CIPPE",
       "number": 9,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is NOT amongst the rights and freedoms that must be considered when  balancing privacy rights under the GDPR?",
       "choices": [
         {
@@ -4221,8 +4221,8 @@
       "id": 139,
       "exam": "CIPPE",
       "number": 10,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A high-security bank requires members to use fingerprint identification to access specific vaults.  The bank retains those records to determine who obtained access and when. The bank must determine the lawful basis for processing under the GDPR. Which lawful basis would most likely apply to this type of processing activity?",
       "choices": [
         {
@@ -4252,8 +4252,8 @@
       "id": 140,
       "exam": "CIPPE",
       "number": 11,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Administrative fines imposed under GDPR Article 83 must be?",
       "choices": [
         {
@@ -4283,8 +4283,8 @@
       "id": 141,
       "exam": "CIPPE",
       "number": 12,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Much of the GDPR builds upon the Data Protection Directive. Which of the following data subject  rights is the only right that did NOT exist in some form in the Directive?",
       "choices": [
         {
@@ -4407,8 +4407,8 @@
       "id": 145,
       "exam": "CIPPE",
       "number": 16,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following would most likely NOT be covered by the definition of \u2018personal data\u2019 under  the GDPR?",
       "choices": [
         {
@@ -4438,8 +4438,8 @@
       "id": 146,
       "exam": "CIPPE",
       "number": 17,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under Article 17(1) (right to erasure or \u2018right to be forgotten\u2019), what is a controller required to do  when they receive a proper request for erasure from a data subject?",
       "choices": [
         {
@@ -4469,8 +4469,8 @@
       "id": 147,
       "exam": "CIPPE",
       "number": 18,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What is one major goal that the OECD Guidelines, Convention 108 and the Data Protection  Directive (Directive 95/46/EC) had in common but largely failed to achieve in Europe?",
       "choices": [
         {
@@ -4500,8 +4500,8 @@
       "id": 148,
       "exam": "CIPPE",
       "number": 19,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "An organisation wants to use a digital identity verification app to authenticate the identities of new  customers. Customers will be asked to upload a photo ID document such as passport, driving licence or national ID and then asked to upload a picture of their face in the app. The ID document\u2019s authenticity is checked, and biometrics are used to ensure the ID document belongs to the customer. What step should the organisation take to ensure the data minimisation principle is implemented when collecting the personal data?",
       "choices": [
         {
@@ -4531,8 +4531,8 @@
       "id": 149,
       "exam": "CIPPE",
       "number": 20,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is NOT one of the seven EU-U.S. and Swiss-U.S. Privacy Shield Principles?",
       "choices": [
         {
@@ -4562,8 +4562,8 @@
       "id": 150,
       "exam": "CIPPE",
       "number": 21,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "When determining whether to impose an administrative fine and its amount, a supervisory  authority takes into account the intentional or negligent character of the infringement. Which of the following is another criterion that would have a bearing on the amount of the fine?",
       "choices": [
         {
@@ -4593,8 +4593,8 @@
       "id": 151,
       "exam": "CIPPE",
       "number": 22,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the GDPR, which of the following statements is TRUE regarding a data subject\u2019s right to opt  out of direct marketing?",
       "choices": [
         {
@@ -4624,8 +4624,8 @@
       "id": 152,
       "exam": "CIPPE",
       "number": 23,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Pursuant to Article 32(1) of the GDPR, which is a technical and organisational measure to ensure a  level of security appropriate to the assessed risks?",
       "choices": [
         {
@@ -4655,8 +4655,8 @@
       "id": 153,
       "exam": "CIPPE",
       "number": 24,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "According to the GDPR, how is pseudonymous personal data defined?",
       "choices": [
         {
@@ -4686,8 +4686,8 @@
       "id": 154,
       "exam": "CIPPE",
       "number": 25,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Each of the following should be considered when assessing which security measures would be  most appropriate for an organisation EXCEPT?",
       "choices": [
         {
@@ -4841,8 +4841,8 @@
       "id": 159,
       "exam": "CIPPE",
       "number": 30,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "How has the GDPR's position on consent most likely affected app design and implementation?",
       "choices": [
         {
@@ -4872,8 +4872,8 @@
       "id": 160,
       "exam": "CIPPE",
       "number": 31,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A convenience store in Brussels is having trouble with individuals spray painting graffiti on the  front windows and entrance when the store is closed. As a security measure, they have installed video surveillance outside of their entrance. The camera records activity near the door and along the sidewalks in front of the store. Video footage is stored for one month and then deleted if not needed. Footage of a passer-by was captured while he was on the sidewalk and did not show evidence of vandalism by him. He asks to have his personal data erased immediately. What must the store do to comply with the GDPR?",
       "choices": [
         {
@@ -4903,8 +4903,8 @@
       "id": 161,
       "exam": "CIPPE",
       "number": 32,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Before deciding to encrypt personal data, an organisation is required to assess the risks of the  processing activity. What should an organisation take into consideration during the assessment?",
       "choices": [
         {
@@ -4934,8 +4934,8 @@
       "id": 162,
       "exam": "CIPPE",
       "number": 33,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the GDPR, who would be least likely to be allowed to engage in the collection, use and  disclosure of a data subject's sensitive medical information without the data subject's knowledge or consent?",
       "choices": [
         {
@@ -4965,8 +4965,8 @@
       "id": 163,
       "exam": "CIPPE",
       "number": 34,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A shopping mall uses video surveillance cameras, which include facial recognition technology, at  the entrance. This technology allows the mall to detect and remove individuals who were previously banned from the property. Which GDPR condition for processing would the shopping mall need to rely on for the processing of the video footage and facial recognition data?",
       "choices": [
         {
@@ -4996,8 +4996,8 @@
       "id": 164,
       "exam": "CIPPE",
       "number": 35,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Each of the following are means controllers must use to meet fair processing information  guidelines EXCEPT?",
       "choices": [
         {
@@ -5027,8 +5027,8 @@
       "id": 165,
       "exam": "CIPPE",
       "number": 36,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A key component of the OECD Guidelines is the \u2018individual participation principle\u2019. What parts of  the GDPR provide the closest equivalent to that principle?",
       "choices": [
         {
@@ -5058,8 +5058,8 @@
       "id": 166,
       "exam": "CIPPE",
       "number": 37,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A data controller must notify a data subject about a personal data breach likely to result in a high  risk to the data subject\u2019s fundamental rights and freedoms in each of the following situations EXCEPT?",
       "choices": [
         {
@@ -5089,8 +5089,8 @@
       "id": 167,
       "exam": "CIPPE",
       "number": 38,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A restaurant has a website through which customers order food to be delivered to their home. The  restaurant sends the consumer\u2019s personal data and order information to a third-party delivery company for the purpose of delivering the food and accepting payment. After the order is complete, the delivery company pseudonymises the customer information to be used to improve the delivery company\u2019s estimated delivery time algorithm. The delivery company is not using the pseudonymised customer data for their algorithm on the restaurant\u2019s behalf. Under the GDPR, what role best describes the delivery company with respect to the processing of data used for the algorithm?",
       "choices": [
         {
@@ -5182,8 +5182,8 @@
       "id": 170,
       "exam": "CIPPE",
       "number": 41,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the ePrivacy Directive, when obtaining consent from individuals to process their location  data, controllers must present individuals with each of the following EXCEPT:",
       "choices": [
         {
@@ -5213,8 +5213,8 @@
       "id": 171,
       "exam": "CIPPE",
       "number": 42,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A United States-based online company uses software to track the browsing behaviour and predict  future purchases of its European customers. It also shares this information with third parties. Under the GDPR, what is the online company\u2019s primary obligation before engaging in this kind of profiling?",
       "choices": [
         {
@@ -5244,8 +5244,8 @@
       "id": 172,
       "exam": "CIPPE",
       "number": 43,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which EU entity has the authority to invalidate adequacy determinations made by the European  Commission?",
       "choices": [
         {
@@ -5275,8 +5275,8 @@
       "id": 173,
       "exam": "CIPPE",
       "number": 44,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A company based in Spain is expanding its business to serve customers in other EU member  states. The company increases its advertising budget and serves advertisements to market its product to consumers in France, Germany and the Netherlands. Consumers from all three countries use the company website to purchase products and have the products shipped to their homes. The privacy notice of the Spanish company provides data subjects with all the required information; however, the policy is only available in Spanish. Which GDPR principle is the company most likely to be in breach of?",
       "choices": [
         {
@@ -5306,8 +5306,8 @@
       "id": 174,
       "exam": "CIPPE",
       "number": 45,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What is the main reason GDPR Article 4(22) establishes the concept of the \u2018supervisory authority  concerned\u2019?",
       "choices": [
         {
@@ -5337,8 +5337,8 @@
       "id": 175,
       "exam": "CIPPE",
       "number": 46,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Your company\u2019s chief information security officer is performing an annual review of its \u2018bring your  own device\u2019 (BYOD) program for its European subsidiary. She has asked you to validate that the technical team\u2019s process document is compliant with GDPR. Which step would result in non-compliance with the GDPR?",
       "choices": [
         {
@@ -5368,8 +5368,8 @@
       "id": 176,
       "exam": "CIPPE",
       "number": 47,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is TRUE with regard to the provisions of the ePrivacy Directive?",
       "choices": [
         {
@@ -5399,8 +5399,8 @@
       "id": 177,
       "exam": "CIPPE",
       "number": 48,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A Brazilian citizen is visiting Paris, France on a one-year work visa. During their time in France,  they join a local health and fitness club. The registration form for the health club requests their full name, permanent home address, bank account information for withdrawal of membership fees, and their race or ethnic origin for statistical purposes. Which information requested is considered a special category of personal data under Article 9 of the GDPR?",
       "choices": [
         {
@@ -5430,8 +5430,8 @@
       "id": 178,
       "exam": "CIPPE",
       "number": 49,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A bakery placed a video surveillance camera in the employee break room. The camera is pointed  in a manner so that it only records the portion of the wall that holds the employee timeclock. The employer setup the camera after some employees were caught clocking in for other employees who were running late to work. The employer reviews the footage weekly and then deletes the footage. A sign is posted next to the timeclock informing employees about the recording. If the employees exercise their right to object, what will the employer need to do to continue the video monitoring?",
       "choices": [
         {
@@ -5461,8 +5461,8 @@
       "id": 179,
       "exam": "CIPPE",
       "number": 50,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under Article 21 of the GDPR, a controller must stop profiling when requested by a data subject  unless the controller can demonstrate compelling legitimate grounds that override the interests of the individual. In the \u2018Guidelines on Automated individual decision-making and Profiling\u2019, the European Data Protection Board (EDPB) says the controller needs to do all of the following to demonstrate it has such legitimate grounds EXCEPT?",
       "choices": [
         {
@@ -5492,8 +5492,8 @@
       "id": 180,
       "exam": "CIPPE",
       "number": 51,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under which of the following conditions is a controller in the EU likely to be exempt from having to  inform data subjects of the processing of their personal data under Articles 13 and 14 of the GDPR?",
       "choices": [
         {
@@ -5616,8 +5616,8 @@
       "id": 184,
       "exam": "CIPPE",
       "number": 55,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A company is hesitating between binding corporate rules and standard contractual clauses as a  global data transfer solution. Which of the following statements would help the company make an effective decision?",
       "choices": [
         {
@@ -5647,8 +5647,8 @@
       "id": 185,
       "exam": "CIPPE",
       "number": 56,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is NOT a common service model of cloud computing?",
       "choices": [
         {
@@ -5678,8 +5678,8 @@
       "id": 186,
       "exam": "CIPPE",
       "number": 57,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "You accidently send an email that contains a small amount of personal data, and no sensitive data,  concerning 25 individuals from the EU to the wrong email address. You immediately request the recipient delete the email and the recipient confirms they have done so. After reporting what has happened to your DPO, you take some refresher privacy training for good measure. Under the GDPR, why is it unlikely that your company would be fined as a result of this data breach?",
       "choices": [
         {
@@ -5709,8 +5709,8 @@
       "id": 187,
       "exam": "CIPPE",
       "number": 58,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What is the core concept underpinning the GDPR accountability requirement?",
       "choices": [
         {
@@ -5740,8 +5740,8 @@
       "id": 188,
       "exam": "CIPPE",
       "number": 59,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What should an organisation consider when determining appropriate periods for retaining personal  data?",
       "choices": [
         {
@@ -5771,8 +5771,8 @@
       "id": 189,
       "exam": "CIPPE",
       "number": 60,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "When is a data sharing agreement most likely to be needed?",
       "choices": [
         {
@@ -5802,8 +5802,8 @@
       "id": 190,
       "exam": "CIPPE",
       "number": 61,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which treaty created the European Union?",
       "choices": [
         {
@@ -5833,8 +5833,8 @@
       "id": 191,
       "exam": "CIPPE",
       "number": 62,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "If a multi-national company wanted to conduct background checks on all current and potential  European-based employees, what key provision would the company have to follow?",
       "choices": [
         {
@@ -5864,8 +5864,8 @@
       "id": 192,
       "exam": "CIPPE",
       "number": 63,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "What is a \u2018layered fair processing notice\u2019?",
       "choices": [
         {
@@ -5988,8 +5988,8 @@
       "id": 196,
       "exam": "CIPPE",
       "number": 67,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "An unforeseen power outage results in Company Z's lack of access to customer data for six hours,  which is considered a breach under Article 32 of the GDPR. Based on the WP29's February 2018 \u2018Guidelines on Personal data breach notification\u2019 (later adopted by the EDPB), Company Z should do which of the following?",
       "choices": [
         {
@@ -6019,8 +6019,8 @@
       "id": 197,
       "exam": "CIPPE",
       "number": 68,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which instrument could be used, or which treaty could be joined, by a non-European country that  wanted to demonstrate an international commitment to implement data protection legislation and to provide protection of individuals with regard to automatic processing of personal data?",
       "choices": [
         {
@@ -6050,8 +6050,8 @@
       "id": 198,
       "exam": "CIPPE",
       "number": 69,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "In what stages of the project life cycle should data protection by design (also known as privacy by  design) be applied?",
       "choices": [
         {
@@ -6081,8 +6081,8 @@
       "id": 199,
       "exam": "CIPPE",
       "number": 70,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A data subject makes a subject access request (SAR) to an online retail company for their  personal data. The data subject states that they are making a SAR in accordance with the GDPR; however, if the company credits the data subject\u2019s online account with a specified sum of money, the data subject will withdraw their request. The company has not had any previous access requests by other individuals. Which of the following would be legitimate grounds for the company to refuse to comply with the access request?",
       "choices": [
         {
@@ -6112,8 +6112,8 @@
       "id": 200,
       "exam": "CIPPE",
       "number": 71,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the GDPR, which of the following is TRUE about data subjects\u2019 options to exercise their  rights in cases of noncompliance?",
       "choices": [
         {
@@ -6143,8 +6143,8 @@
       "id": 201,
       "exam": "CIPPE",
       "number": 72,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which statement about automated decision-making under Article 22 of the GDPR is TRUE?",
       "choices": [
         {
@@ -6174,8 +6174,8 @@
       "id": 202,
       "exam": "CIPPE",
       "number": 73,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under the ePrivacy Directive, when a company decides to send direct email marketing, which of  the following legal bases may it generally rely on?",
       "choices": [
         {
@@ -6205,8 +6205,8 @@
       "id": 203,
       "exam": "CIPPE",
       "number": 74,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A data subject wants to lodge a complaint against a controller about the processing of their data.  Which of the following is NOT a true statement?",
       "choices": [
         {
@@ -6236,8 +6236,8 @@
       "id": 204,
       "exam": "CIPPE",
       "number": 75,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A company is under investigation by multiple regulators in different countries\u2019 jurisdictions for not  complying with GDPR fair notice requirements. Which is TRUE of the fines that may be assessed against the company?",
       "choices": [
         {
@@ -6267,8 +6267,8 @@
       "id": 205,
       "exam": "CIPPE",
       "number": 76,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "An employee of company XYZ has just noticed a memory stick containing records of client data,  including their names, addresses and full contact details, has disappeared. The data on the stick is unencrypted and in clear text. It is uncertain what has happened to the stick at this stage, but it likely was lost during the travel of an employee. What should the company do?",
       "choices": [
         {
@@ -6360,8 +6360,8 @@
       "id": 208,
       "exam": "CIPPE",
       "number": 79,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is a legally binding instrument?",
       "choices": [
         {
@@ -6391,8 +6391,8 @@
       "id": 209,
       "exam": "CIPPE",
       "number": 80,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A U.S.-based pharmaceutical company, Pharma, receives pseudonymised patient information from  clinical sites all over the world, including the EU, as part of a clinical trial. How must Pharma process the data?",
       "choices": [
         {
@@ -6422,8 +6422,8 @@
       "id": 210,
       "exam": "CIPPE",
       "number": 81,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which treaty was issued as a result of the enlargement of the European Community and the  corresponding need to improve the efficiency and speed of decision-making processes?",
       "choices": [
         {
@@ -6453,8 +6453,8 @@
       "id": 211,
       "exam": "CIPPE",
       "number": 82,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "When a situation arises in which neither an adequacy decision nor appropriate safeguards are in  place, the GDPR sets forth specific derogations to allow data transfers. Which of the following is a requirement to transfer data under the derogations?",
       "choices": [
         {
@@ -6484,8 +6484,8 @@
       "id": 212,
       "exam": "CIPPE",
       "number": 83,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "In which of the following situations must a data protection impact assessment (DPIA) be used?",
       "choices": [
         {
@@ -6515,8 +6515,8 @@
       "id": 213,
       "exam": "CIPPE",
       "number": 84,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following processing conditions would prohibit an organisation from retaining  personal data collected for conducting a webinar once the webinar has concluded and the processing purpose has expired?",
       "choices": [
         {
@@ -6546,8 +6546,8 @@
       "id": 214,
       "exam": "CIPPE",
       "number": 85,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "A grocery store opened on a street that has had regular problems with thefts. Since the grocery  store is new, they do not yet have the budget for a real surveillance system. Instead, they install fake video surveillance cameras to stop potential thieves until they can afford a real surveillance system. The cameras are pointed only inside the store and there are no cameras facing the street. Which GDPR lawful basis is the grocery store most likely to have relied on for the placing of the cameras?",
       "choices": [
         {
@@ -6577,8 +6577,8 @@
       "id": 215,
       "exam": "CIPPE",
       "number": 86,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Under what circumstances would the GDPR apply to personal data that exists in physical form,  such as information contained in notebooks or hard copy files?",
       "choices": [
         {
@@ -6608,8 +6608,8 @@
       "id": 216,
       "exam": "CIPPE",
       "number": 87,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "The European Commission has the power to determine whether a country outside of the EU  provides an adequate level of data protection in accordance with the GDPR. Which one of the following countries has been deemed \u2018adequate\u2019?",
       "choices": [
         {
@@ -6639,8 +6639,8 @@
       "id": 217,
       "exam": "CIPPE",
       "number": 88,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Failure to provide fair information to data subjects with regards to the processing of their personal  data is likely to?",
       "choices": [
         {
@@ -6670,8 +6670,8 @@
       "id": 218,
       "exam": "CIPPE",
       "number": 89,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "The GDPR requires parent/guardian consent to process personal data of data subjects younger  than what minimum age?",
       "choices": [
         {
@@ -6701,8 +6701,8 @@
       "id": 219,
       "exam": "CIPPE",
       "number": 90,
-      "scenario_id": NaN,
-      "scenario_text": NaN,
+      "scenario_id": null,
+      "scenario_text": null,
       "text": "Which of the following is the best approach for an organisation to take to be able to demonstrate  fairness when processing personal data?",
       "choices": [
         {
