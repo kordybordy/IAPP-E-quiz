@@ -34,7 +34,7 @@ script below. **Do not hard-code API keys in source files**—set it as an envir
 variable instead.
 
 ```bash
-export OPENAI_API_KEY="your-key-here"
+export OPENAI_API_KEY="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"
 node scripts/ai_correct_questions.js --in questions.json --out questions.corrected.json
 ```
 
