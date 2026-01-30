@@ -600,22 +600,22 @@
       "choices": [
         {
           "label": "A",
-          "text": "A processor is a natural or legal person that processes personal data on behalf of a controllerFor any data disclosure to the HR Department, Mr. Smith must seek advice from the Data Protection Officer (DPO) of Company X prior to data disclosure",
+          "text": "A processor is a natural or legal person that processes personal data on behalf of a controller",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "A processor becomes a controller if it determines the means and purposes of data processingHR Department is the recipient of personal data of employees",
+          "text": "A processor becomes a controller if it determines the means and purposes of data processing",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "A processor may only engage a sub-processor in data processing activities subject to specific or general written authorisation of the controllerCompany Y is a public company, and thus, a data protection impact assessment should be borne in mind by Mr. Smith",
+          "text": "A processor may only engage a sub-processor in data processing activities subject to specific or general written authorisation of the controller",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "If the sub-processor fails to fulfil its data protection obligations, it is fully liable to the controller . Mr. Smith works at Company X (data controller) and uses personal data as part of his duties assigned to him at Company X. These duties comprise two main tasks. In Task 1, Mr. Smith discloses personal data of employees working at Company X to the HR Department in relation to the upcoming employee satisfaction survey. In Task 2, Mr. Smith 7 provides personal data of employees of Company X to a public training company (Company Y) where this data is used by Company Y to design a training programme for the employees of Company X. Which one is correct?Company Y is a third party and has received the data of Company X's employees in the course of its employment with Company X",
+          "text": "If the sub-processor fails to fulfil its data protection obligations, it is fully liable to the controller .",
           "is_correct": true
         }
       ],
@@ -689,7 +689,7 @@
       "number": 25,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Jewellery Best is planning to promote its new wedding rings collection. F this, it intends to target women between age 25 and 40 who have indicated that they are single in their profile on Social Media ABC. Jewellery Best uses the corresponding targeting criteria offered by Social Media ABC to identify the target group to whom its advertisement should be displayed. Moreover, it indicates that the advertisement should be displayed to Social Media ABC's users while they are using the social media service between 6-9 pm. To target users, Social Media ABC has previously determined which types of personal data should be used in order to develop the targeting criteria and which targeting criteria should be offered. Social Media ABC also communicates certain statistical information to Jewellery Best once the advertisements have been displayed. What are the roles of Jewellery Best and Social Media ABC?",
+      "text": "Jewellery Best is planning to promote its new wedding rings collection. For this, it intends to target women between age 25 and 40 who have indicated that they are single in their profile on Social Media ABC. Jewellery Best uses the corresponding targeting criteria offered by Social Media ABC to identify the target group to whom its advertisement should be displayed. Moreover, it indicates that the advertisement should be displayed to Social Media ABC's users while they are using the social media service between 6–9 pm. To target users, Social Media ABC has previously determined which types of personal data should be used in order to develop the targeting criteria and which targeting criteria should be offered. Social Media ABC also communicates certain statistical information to Jewellery Best once the advertisements have been displayed. What are the roles of Jewellery Best and Social Media ABC?",
       "choices": [
         {
           "label": "A",
@@ -834,6 +834,29 @@
           "label": "D",
           "text": "The railway operator needs a new and separate legal basis for the transmission of passengers' data to border and immigration authorities of destination countries",
           "is_correct": true
+        }
+      ],
+      "correct_label": "D"
+    },
+    {
+      "id": 28,
+      "text": "Mr. Smith works at Company X (data controller) and uses personal data as part of his duties assigned to him at Company X. These duties comprise two main tasks. In Task 1, Mr. Smith discloses personal data of employees working at Company X to the HR Department in relation to the upcoming employee satisfaction survey. In Task 2, Mr. Smith provides personal data of employees of Company X to a public training company (Company Y) where this data is used by Company Y to design a training programme for the employees of Company X. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "For any data disclosure to the HR Department, Mr. Smith must seek advice from the Data Protection Officer (DPO) of Company X prior to data disclosure"
+        },
+        {
+          "label": "B",
+          "text": "HR Department is the recipient of personal data of employees"
+        },
+        {
+          "label": "C",
+          "text": "Company Y is a public company, and thus, a data protection impact assessment should be borne in mind by Mr. Smith"
+        },
+        {
+          "label": "D",
+          "text": "Company Y is a third party and has received the data of Company X's employees in the course of its employment with Company X"
         }
       ],
       "correct_label": "D"
@@ -1375,12 +1398,12 @@
       "choices": [
         {
           "label": "A",
-          "text": "When the DPO is located in the same location as the main estab- lishmentPublic authorities cannot designate a staff member as the DPO",
+          "text": "When the DPO is located in the same location as the main estab- lishment",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "When the DPO is located in the same country as the main estab- lishmentA group of undertakings may appoint a single data protection officer 18 (r) A single data protection officer may be designated for several authorities",
+          "text": "When the DPO is located in the same country as the main estab- lishment",
           "is_correct": false
         },
         {
@@ -1390,7 +1413,7 @@
         },
         {
           "label": "D",
-          "text": "When the primary residency of the DPO is in the Union [9. Which one is incorrect about the designation of a DPO under the GDPR?Designation of a DPO is obligatory if the controller carries 014 regular and systematic large scale monitoring of data subjects",
+          "text": "When the primary residency of the DPO is in the Union",
           "is_correct": false
         }
       ],
@@ -2013,6 +2036,29 @@
       "correct_label": "B"
     },
     {
+      "id": 67,
+      "text": "Which one is incorrect about the designation of a DPO under the GDPR?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Public authorities cannot designate a staff member as the DPO"
+        },
+        {
+          "label": "B",
+          "text": "A group of undertakings may appoint a single data protection officer"
+        },
+        {
+          "label": "C",
+          "text": "A single data protection officer may be designated for several authorities"
+        },
+        {
+          "label": "D",
+          "text": "Designation of a DPO is obligatory if the controller carries out regular and systematic large‑scale monitoring of data subjects"
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
       "id": 68,
       "exam": "I",
       "number": 78,
@@ -2323,7 +2369,7 @@
         },
         {
           "label": "D",
-          "text": "Once compensation has been paid to the affected data subject(s), joint controllers may recover damages from one another 8 . Company ABC stores a database of personal data of its employees and customers in a server room (in a digital format). To ensure that it complies with legal obligations concerning unauthorised access to the server room, the company has set up an access control mechanism that registers and maintains the entrance and exit of employees who have Priv ilege to access the server room. For this, the employees have been 42 adequately informed about the p rocessing operation as well. The access control mechanism is also used to evaluate the performance of enr, PtYee, through the monitoring of the frequency and exact entrance and exit times of the employees. Which one is correct? (a) Access control and its consequent processing is excessive in relation to securing the database against unauthorised access, loss or theft (b) Access control and its consequent processing is proportionate in relation to evaluating the performance of employees (c) Access control and its consequent processing is excessive in relation to evaluating the performance of employees (d) Access control and its consequent processing is proportionate in relation to securing the database against unauthorised access, loss or theft and evaluating the performance of employees as employees have been adequately informed",
+          "text": "Once compensation has been paid to the affected data subject(s), joint controllers may recover damages from one another 8 .",
           "is_correct": false
         }
       ],
@@ -2339,23 +2385,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "A fake camera installed in a supermarket in a highly-populated area",
-          "is_correct": false
+          "text": "A fake camera installed in a supermarket in a highly-populated area"
         },
         {
           "label": "B",
-          "text": "Video recordings from a high altitude where individuals cannot be identified",
-          "is_correct": false
+          "text": "Video recordings from a high altitude where individuals cannot be identified"
         },
         {
           "label": "C",
-          "text": "A service provider based outside the EU which provides services to customers outside the EU. Customers can also use its services when they travel to other countries, including within the EU",
-          "is_correct": false
+          "text": "A service provider based outside the EU which provides services to customers outside the EU. Customers can also use its services when they travel to other countries, including within the EU"
         },
         {
           "label": "D",
-          "text": "A tourist recording videos to document their holidays. They SD the footage to friends and family and make them available on the Internet 43 via Fl? ha s customised its advertisement based on age character- A superma rket of customers captured by a video surveillance system installed on istics it s premi$es. Which one is correct? This would not fall under Article 9 of the GDPR for the sole purpose (a) (b) (c) of detecting physical characteristics to classify customers This would fall under Article 9 of the GDPR as biometric data is being collected from customers The supermarket needs to consult with a competent supervisory authority of such a data processing The supermarket needs to obtain explicit consent of all data subjects before implementing this advertising system (d)",
-          "is_correct": true
+          "text": "A tourist recording videos to document their holidays. They share the footage to friends and family and make them available on the Internet"
         }
       ],
       "correct_label": "D"
@@ -2370,23 +2412,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Company X is the controller and Fun Housing is the processor",
-          "is_correct": false
+          "text": "Company X is the controller and Fun Housing is the processor"
         },
         {
           "label": "B",
-          "text": "Company X is the processor and Fun Housing is the controller",
-          "is_correct": false
+          "text": "Company X is the processor and Fun Housing is the controller"
         },
         {
           "label": "C",
-          "text": "Pun Housing and Company X are joint controllers",
-          "is_correct": true
+          "text": "Fun Housing and Company X are joint controllers"
         },
         {
           "label": "D",
-          "text": "in Housing and Company X are joint processors Which one falls into the special categories of personal data under the GDPR which was NOT the case for the Data Protection Directive? (a) Racial or ethnic origin (b) Trade-union membership 44 (c) Genetic and biometric data (d) Philosophical beliefs",
-          "is_correct": false
+          "text": "Fun Housing and Company X are joint processors"
         }
       ],
       "correct_label": "C"
@@ -2463,23 +2501,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "The greater of 10 million or two percent of an undertaking's worldwide turnover for the preceding financial year",
-          "is_correct": false
+          "text": "The greater of 10 million or two percent of an undertaking's worldwide turnover for the preceding financial year"
         },
         {
           "label": "B",
-          "text": "The greater of 20 million or four percent of an undertaldnes worldwide turnover for the preceding financial year aldnes",
-          "is_correct": true
+          "text": "The greater of 20 million or four percent of an undertaking's worldwide turnover for the preceding financial year"
         },
         {
           "label": "C",
-          "text": "The greater of 10 million or two percent of an undert worldwide turnover for the ongoing financial year oldie",
-          "is_correct": false
+          "text": "The greater of 10 million or two percent of an undertaking's worldwide turnover for the ongoing financial year"
         },
         {
           "label": "D",
-          "text": "The greater of 20 million or four percent of an undert worldwide turnover for the ongoing financial year Protection Directive which is now recognised by the GDPR? 45 supermarket provides a premium delivery service that can be An online 16 time. The supermarket relies on performance o f a contract cancelled at any basis for processing invoices. In addition, the supermarket as a legal customers that it has a legal obligation (in accordance to national info informscust certain personal data for accounting purposes for several law) to retain and for this pur pose, it relies on compliance with a legal obligation years, a s a legal basis. Which one is correct? (a) Relying on performance of a contract as a legal basis for invoicing purposes is justifiable, but relying on compliance with a legal obliga- tion to retain certain personal data for accounting purposes is not justifiable (b) Relying on performance of a contract as a legal basis for invoicing purposes is not justifiable, but relying on compliance with a legal obligation to retain certain personal data for accounting purposes is justifiable (c) Relying on performance of a contract and compliance with a legal obligation for the aforementioned purposes is justifiable (d) Relying on performance of a contract and compliance with a legal obligation for the aforementioned purposes is not justifiable and the supermarket needs to seek other legal grounds 46 17 . M r. Anderson provides his family doctor with information about his genetic condition. He also informs the doctor that some of his close relatives have the same genetic condition, and thus, he further shares some personal data concerning those relatives with the doctor. Which one is correct? (a) Pur suant to Article 14 of the GDPR (information to be provided where personal data is obtained from the data subject) doctor has to provide Mr. Anderson's relatives with the; the denti ti a , rtniy the contact details of the controller because the doctor i and s acting es the controller (b) The family doctor is not required to provide those relatives With At_ ticle 14 information as this is violating the obligation of professional secrecy (c) Mr. Anderson is not allowed to share such sensitive health data with the family doctor without his relatives' explicit consent (d) Since the family doctor is acting as the controller, he has to conduct a DPIA to ensure if such data processing is not likely to negatively affect the fundamental rights and freedoms of Mr. Anderson's relatives",
-          "is_correct": false
+          "text": "The greater of 20 million or four percent of an undertaking's worldwide turnover for the ongoing financial year"
         }
       ],
       "correct_label": "B"
@@ -2614,7 +2648,7 @@
       "number": 24,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct in relation to Statement A and Statement B? Statement A: The magazine has obtained Ms. Wilson's consent (opt zn) in a invalid manner. Statement B: The direct marketing carried out by the magazine is carefully handled because the magazine has obtained consent (opt in) and provided easy-to-use opt out mechanisms.",
+      "text": "Which one is correct in relation to Statement A and Statement B? Statement A: The magazine has obtained Ms. Wilson's consent (opt‑in) in an invalid manner. Statement B: The direct marketing carried out by the magazine is carefully handled because the magazine has obtained consent (opt‑in) and provided easy‑to‑use opt‑out mechanisms.",
       "choices": [
         {
           "label": "A",
@@ -2649,23 +2683,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Telemarketing carried out by the property management companY is lawful as data subjects have already consented to telemarket in g activities",
-          "is_correct": false
+          "text": "Telemarketing carried out by the property management company is lawful as data subjects have already consented to telemarketing activities."
         },
         {
           "label": "B",
-          "text": "Telemarketing carried out by the construction company is lawful as data subjects have already consented to telemarketing activities 51 I c) The property management company should rely on another lawful as legitimate interests that better fits its purpose ground such @I The property management company can only use this data for telemarketing purposes if a DPIA is conducted local transport company in a large city plans to equip ticket inspectors with body-worn cameras, which are designed to prevent threatening situations, document incidents, and ensure that the right person is fined for travelling without a valid ticket. Ticket inspectors are required to keep the camera on for their entire shift and are therefore able to film all passengers who passed the inspectors. These recordings are stored for a period of one week. The DPO of the company warns them that since several hundred thousand people use public transportation every day, a large number of people are thus at risk of being monitored by video and audio recordings. The DPO suggests reducing the storage to one day, as a longer time is not necessary to achieve the aforementioned purposes. The DPO also believes that audio recordings do not contribute to the identification of individuals without a valid ticket, and thus, recommends not to collect audio data. Which of the following data protection principles are more likely to be respected by addressing the DPO's recommendations? (a) Storage limitation, data minimisation, purpose limitation (b) Purpose limitation, data minimisation, lawfulness and fairness",
-          "is_correct": true
+          "text": "Telemarketing carried out by the construction company is lawful as data subjects have already consented to telemarketing activities."
         },
         {
           "label": "C",
-          "text": "Storage limitation, data minimisation, lawfulness and fairness",
-          "is_correct": false
+          "text": "The property management company should rely on another lawful ground, such as legitimate interests, that better fits its purpose."
         },
         {
           "label": "D",
-          "text": "Storage limitation, purpose limitation, lawfulness and fairness Read the following scenario and answer the two follow-up questions: A Police officer, using his official user ID queried the data concerning the license plate of a person without reference to of ficial duties via a 52 centralised traffic management system who he did not kn 1 1 7 officer collected the personal data of the injured Parties 'he Polk address and mobile phone numbers. He then contacted th 9 11( 41, he data 8 e Ace? h Provid answer. uo 2\" udin (injured party) by telephone. The data subject asks the polic v bae f this data is collected. However, the police officer refuses to",
-          "is_correct": false
+          "text": "The property management company can only use this data for telemarketing purposes if a DPIA is conducted."
         }
       ],
       "correct_label": "B"
@@ -2676,7 +2706,7 @@
       "number": 27,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct in relation to Statement A and Statem ent B7 Statement A: GDPR does not apply to data processing activities ofle4i enforcement agencies. The officer did not have to explain how he obtained the data. Statement B: The police officer should have only collected necessary personal data and nothing excessive such as phone number and home address.",
+      "text": "Read the following scenario and answer the two follow‑up questions: A police officer, using his official user ID, queried the data concerning the licence plate of a person via a centralised traffic management system without reference to official duties. The officer collected personal data of the injured parties, including home address and mobile phone numbers. He then contacted the injured party by telephone. The data subject asked the police how this data was collected. However, the police officer refused to answer. Which one is correct in relation to Statement A and Statement B? Statement A: GDPR does not apply to data processing activities of law‑enforcement agencies. The officer did not have to explain how he obtained the data. Statement B: The police officer should have only collected necessary personal data and nothing excessive such as phone number and home address.",
       "choices": [
         {
           "label": "A",
@@ -2707,27 +2737,23 @@
       "number": 28,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct in relation to Statement A and Statement B? Statement A: The police officer has processed personal data lawfully. Statement B: The police officer should have first asked for the data subject': consent for processing such personal data.",
+      "text": "Which one is correct in relation to Statement A and Statement B? Statement A: The police officer has processed personal data lawfully. Statement B: The police officer should have first asked for the data subject's consent for processing such personal data.",
       "choices": [
         {
           "label": "A",
-          "text": "Statement A is correct and Statement B is incorrect",
-          "is_correct": false
+          "text": "Statement A is correct and Statement B is incorrect"
         },
         {
           "label": "B",
-          "text": "Statement A is incorrect and Statement B is correct",
-          "is_correct": false
+          "text": "Statement A is incorrect and Statement B is correct"
         },
         {
           "label": "C",
-          "text": "Both statements are correct d) Both statements are incorrect 53 rig ht to the protection of personal data: 30. relfel :4!10111 9.1,,.., ., _____ 9 l'he (a) Is an absolute right (I)) Must be balanced against other fundamental rights prioritised over security (c) Must be",
-          "is_correct": false
+          "text": "Both statements are correct"
         },
         {
           "label": "D",
-          "text": "Is a secondary right to the GDPR, the protection of n atural persons should be: ccording (a) Technologically dependent and should depend on the techniques used (b) Technologically neutral and should not depend on the techniques used (c) Dependent on the type of processing of personal data, e.g., by automated or manual means (d) Dependent on the scope of processing of personal data, e.g., large or small data processing activities",
-          "is_correct": true
+          "text": "Both statements are incorrect"
         }
       ],
       "correct_label": "D"
@@ -2742,23 +2768,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Accessibility of a Canadian furniture retailer's website in the Union",
-          "is_correct": false
+          "text": "Accessibility of a Canadian furniture retailer's website in the Union"
         },
         {
           "label": "B",
-          "text": "A Colombian coffee seller that enables placing orders in German",
-          "is_correct": true
+          "text": "A Colombian coffee seller that enables placing orders in German"
         },
         {
           "label": "C",
-          "text": "Accessibility of a medical practitioner's contact details in the Union",
-          "is_correct": false
+          "text": "Accessibility of a medical practitioner's contact details in the Union"
         },
         {
           "label": "D",
-          "text": "A Brazilian online video gaming website that uses Portuguese as the default language of the website The GDPR does not apply to: (a) Personal data which is pseudonymised augMlitl (b) Personal data which is encrypted (c) Personal data which is securely stored (d) Personal data which is anonymised",
-          "is_correct": false
+          "text": "A Brazilian online video gaming website that uses Portuguese as the default language of the website"
         }
       ],
       "correct_label": "B"
@@ -2835,23 +2857,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Before the personal data is first disclosed to the recipient",
-          "is_correct": false
+          "text": "Before the personal data is first disclosed to the recipient"
         },
         {
           "label": "B",
-          "text": "When the personal data is first disclosed to the recipient in order to provide a visible and meaningful overview of the intended processing operation in an electronic manner if the standardised i cons are: I it mew personal data is first disclosed to the recipient",
-          "is_correct": true
+          "text": "When the personal data is first disclosed to the recipient"
         },
         {
           "label": "C",
-          "text": "After the _within a reasonable period, de pendin g on the c ircumstances of the",
-          "is_correct": false
+          "text": "After the personal data is first disclosed to the recipient"
         },
         {
           "label": "D",
-          "text": "case NOT influential in those circumstances where the provision of 6 Which is information to the data subject proves to be impossible or would involve a disproportionate effort? (a) The age of the data (b) Appropriate safeguards adopted (c) The type of the data (d) The number of data subjects",
-          "is_correct": false
+          "text": "Within a reasonable period, depending on the circumstances of the case"
         }
       ],
       "correct_label": "B"
@@ -2866,23 +2884,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "When it is necessary for exercising the right of freedom of expression and information",
-          "is_correct": false
+          "text": "When it is necessary for exercising the right of freedom of expression and information"
         },
         {
           "label": "B",
-          "text": "When it is necessary for the compliance with a legal obligation",
-          "is_correct": false
+          "text": "When it is necessary for the compliance with a legal obligation"
         },
         {
           "label": "C",
-          "text": "When it is necessary for the performance of a task carried out in the public interest",
-          "is_correct": false
+          "text": "When it is necessary for the performance of a task carried out in the public interest"
         },
         {
           "label": "D",
-          "text": "When it is necessary for the delivery of information society services Which one is NOT an appropriate method to restrict the processing of personal data by a controller? (a) Temporarily moving the selected data to another processing system (b) Making the selected personal data unavailable to users (c) Permanently removing published data from a website (4) Temporarily removing published data from a website 56 '7 if 01 71 c mtr'1111\"iirv() s",
-          "is_correct": true
+          "text": "When it is necessary for the delivery of information society services"
         }
       ],
       "correct_label": "D"
@@ -3052,23 +3066,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Personal data to be pseudonymised",
-          "is_correct": false
+          "text": "Personal data to be pseudonymised"
         },
         {
           "label": "B",
-          "text": "Data processing to be stopped",
-          "is_correct": false
+          "text": "Data processing to be stopped"
         },
         {
           "label": "C",
-          "text": "Personal data to be anonymised",
-          "is_correct": true
+          "text": "Personal data to be anonymised"
         },
         {
           "label": "D",
-          "text": "Data processing to be restricted 59 .U. M u1 ,.VIII PH I\\.1111 I A controller has recently experienced a data breach. Which one is correct in relation to Statement A and Statement B? Statement A: If data breach is unlikely to result in a risk to the rights an d freedoms of natural persons, only the competent supervisory authority must be notified. Statement B: Regardless of the risk of the breach, if the controller has i mplemented appropriate technical and organisational measures such as encryption to mitigate the breach, it does not need to notify data subjects. ) Statement A is correct and Statement B is incorrect (b) Statement A is incorrect and Statement B is correct (c) Both statements are correct (d) Both statements are incorrect The virtual voice assistant of an electric car requires a user to issue the same voice command two times due to the virtual voice assistant not understanding the command. The two voice commands and the associ- ated transcriptions are passed to human reviewers to review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant training dataset to improve its erformance, and accordingly, its accuracy. Which one is correct? ) The processing activities carried out by the human reviewers are aligned with the legitimate interests of the virtual voice assistant provider to improve its services (b) The processing activities carried out by the human reviewers are not necessary for the performance, however, since this is a sensitive application (car) and is linked to the health and safety of data 60 subjects, the provider of the virtual voice assistant should rely of (c) The processing activities carried out by the human review ers are necessary for the performance of a contract as if the human review does not take place, the virtual voice assistant may fail to function properly (d) The processing activities carried out by the human reviewers are not necessary for the performance of a contract as the virtual voice assistant is already functional",
-          "is_correct": false
+          "text": "Data processing to be restricted"
         }
       ],
       "correct_label": "C"
@@ -3098,7 +3108,7 @@
         },
         {
           "label": "D",
-          "text": "Both statements are incorrect whether a fine should be imposed and the amount of the fine?",
+          "text": "Both statements are incorrect",
           "is_correct": false
         }
       ],
@@ -3141,27 +3151,23 @@
       "number": 52,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An online ha s been recently the victim of a cyber attack, that placed a malware o n the retailer's website. The malware captured personal data placed by customers through the online order application forms. During the investigation carried out by the incident response team of retailer, it was revealed that no special categories of personal data was affected in the breach. It was also revealed that malware had capabilities to remove exfiltration logs. The malware was detected 25 days after its installation and is now successfully removed and the web server is sanitised. Which one is correct?",
+      "text": "An online retailer has recently been the victim of a cyber‑attack that placed malware on the retailer's website. The malware captured personal data entered by customers through the online order application forms. During the investigation carried out by the incident‑response team of the retailer, it was revealed that no special categories of personal data were affected in the breach. It was also revealed that the malware had capabilities to remove exfiltration logs. The malware was detected 25 days after its installation and is now successfully removed and the web server is sanitised. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The retailer shall document the attack and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects The retailer shall document the attack and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data was affected he retailer shall document the attack and only notify the affected data subjects as this is considered as as this incident is deemed to result in high risks to the rights and freedoms of data subjects (d) The retailer shall document the attack. No notification to the competent supervisory or affected data subject is required as the malware was successfully removed and the web server was sanitised 53 . An employee during their notice period makes a copy of some of Company X's customer contact data. Two months later (when the employee moves to Company Y), they make use of the copied data to contact Company X's Customers to attract them to Company Y. Which one is correct? 62 (a) Company X has to document the breach and notify th e co_ i nPotent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms I data",
-          "is_correct": true
+          "text": "The retailer shall document the attack and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
         },
         {
           "label": "B",
-          "text": "Company X has to document the breach and notify the competent supervisory authority. No notification to affected data subj ects is needed as no special categories of personal data was affected",
-          "is_correct": false
+          "text": "The retailer shall document the attack and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected."
         },
         {
           "label": "C",
-          "text": "Company X has to document the breach and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects",
-          "is_correct": false
+          "text": "The retailer shall document the attack and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
         },
         {
           "label": "D",
-          "text": "Company X has to document the breach. No notification to the competent supervisory or affected data subject is required",
-          "is_correct": false
+          "text": "The retailer shall document the attack. No notification to the competent supervisory authority or affected data subjects is required."
         }
       ],
       "correct_label": "A"
@@ -3176,23 +3182,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "The medical clinic has to document the breach and notify the comPe tent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects",
-          "is_correct": false
+          "text": "The medical clinic has to document the breach and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
         },
         {
           "label": "B",
-          "text": "The medical clinic has to document the breach and notify the cag e \" ects tent supervisory authority. No notification to affected data subi is needed as no special categories of personal data was affect ed subjects 63 c) medical clinic has to document the breach and onl y n otify the ( data subjects as this incident is deemed to result in high il iff The Tau ected risks to the rights and freedoms of data subjects medical clinic has to document the breach. No notification to (d) The netent supervisory or affected data subject is required the Om' A s et of enterprises involved in similar cloud computing activities have con e together via their relevant associations to jointly design and develop in relation to their data collection and processing activities a mechanism rather than attempting to carry out such a comprehensive data protection an alysis on an individual basis. This helps them to detail and facilitate the implementation of the GDPR. Which of the following instruments is more likely to be the one that these enterprises are trying to develop? (a) Ad-hoc contractual clauses (b) Standard contractual clauses",
-          "is_correct": false
+          "text": "The medical clinic has to document the breach and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected."
         },
         {
           "label": "C",
-          "text": "Codes of conduct",
-          "is_correct": false
+          "text": "The medical clinic has to document the breach and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
         },
         {
           "label": "D",
-          "text": "Certification Read the following scenario and answer the two follow-up questions: Company X transfers personal data from Spain to a third country based on standard contractual clauses supplemented with appropriate measures including encryption. The law of the third country has recently prohibited the supplementary measure, i.e., the encryption. 56 . Which one is correct? (a) Com pany X can continue the transfer, but it must monitor the ongoing situation in the third country to ensure the transferred Personal data is not decrypted by unauthorised authorities in the third country 64 OPINEPP\" (b) Company X must stop ongoing data transfers to the third coun try (c) Company X must stop ongoing data transfers to the third c unless the third country makes an exception for C ompany x 114t rY (d) Company X can continue data transfers if a clearance is obtailled from the competent supervisory authority in Spain",
-          "is_correct": true
+          "text": "The medical clinic has to document the breach. No notification to the competent supervisory authority or affected data subjects is required."
         }
       ],
       "correct_label": "D"
@@ -3331,23 +3333,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "1 month",
-          "is_correct": false
+          "text": "1 month"
         },
         {
           "label": "B",
-          "text": "2 months (",
-          "is_correct": false
+          "text": "2 months"
         },
         {
           "label": "C",
-          "text": "3 months d) 6 months 63. Which of the following instruments enforces a data breach notification to the competent supervisory authority, but does NOT enforce such a dip notification to affected data subjects? (a) General Data Protection Regulation (b) eIDAS (c) ePrivacy Directive",
-          "is_correct": true
+          "text": "3 months"
         },
         {
           "label": "D",
-          "text": "Modernised Convention 108 un der the GDPR, in a controller-processor relationship: 64 Means and purposes of data processing are always determined by (a) the controller and purposes of data processin g can be decid ed jointly by (b) Means the controller and the processor (c) Means of processing may be decided jointly by the controller and the processor, but purposes must be decided by the controller Means of processing must be decided by the controller, but purposes may be decided jointly by the controller and the processor",
-          "is_correct": false
+          "text": "6 months"
         }
       ],
       "correct_label": "C"
@@ -3610,23 +3608,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Any structured set of personal data which is accessible according to specific criteria",
-          "is_correct": true
+          "text": "Any structured set of personal data which is accessible according to specific criteria"
         },
         {
           "label": "B",
-          "text": "Any unstructured set of personal data which is accessible according to specific criteria",
-          "is_correct": false
+          "text": "Any unstructured set of personal data which is accessible according to specific criteria"
         },
         {
           "label": "C",
-          "text": "Any fully centralised structured set of personal data which is acces- sible according to specific criteria Any fully decentralised structured set of personal data which is accessible according to specific criteria 77 . Under the GDPR, which one is correct in relation to Statement A and Statement B? 72 I( [1 'fi t\"",
-          "is_correct": false
+          "text": "Any fully centralised structured set of personal data which is accessible according to specific criteria"
         },
         {
           "label": "D",
-          "text": "73 sr Statement A: When carrying out profiling, the data contro appropriate mathematical or statistical procedures. Statement B: The GDPR only applies to profiling done means. (a) Statement A is correct and Statement B is incorrect (b) Statement A is incorrect and Statement B is correct (c) Both statements are correct (d) Both statements are incorrect",
-          "is_correct": false
+          "text": "Any fully decentralised structured set of personal data which is accessible according to specific criteria"
         }
       ],
       "correct_label": "A"
@@ -3668,27 +3662,23 @@
       "number": 9,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct in relation to Statement A and State the GDPR? Statement A: The right to be forgotten is an absolute right. Statement B: A data controller may reject a data subject a right.",
+      "text": "Which one is correct in relation to Statement A and Statement B? Statement A: The right to be forgotten is an absolute right. Statement B: A data controller may reject a data subject's request for erasure.",
       "choices": [
         {
           "label": "A",
-          "text": "Statement A is correct and Statement B is incorrect",
-          "is_correct": false
+          "text": "Statement A is correct and Statement B is incorrect"
         },
         {
           "label": "B",
-          "text": "Statement A is incorrect and Statement B is correct",
-          "is_correct": false
+          "text": "Statement A is incorrect and Statement B is correct"
         },
         {
           "label": "C",
-          "text": "Both statements are correct d) Both statements are incorrect 11211,111111Rii ntlEa II L L 80 Which one is correct in relation to privacy policy notices targeted at children? (a) Privacy policy notices should include a legal glossary (b) Privacy policy notices should use clear and plain language (c) Privacy policy notices should possibly replace texts with ticked boxes",
-          "is_correct": false
+          "text": "Both statements are correct"
         },
         {
           "label": "D",
-          "text": "Privacy policy notices should use shiny fonts and colours",
-          "is_correct": true
+          "text": "Both statements are incorrect"
         }
       ],
       "correct_label": "D"
@@ -3703,23 +3693,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "A DPO should follow the instructions received from the controller regarding the exercise of their tasks",
-          "is_correct": false
+          "text": "A DPO should follow the instructions received from the controller regarding the exercise of their tasks"
         },
         {
           "label": "B",
-          "text": "The controller is not allowed to assign other tasks and duties to a DPO ) A DPO should hold an accredited data protection qualification (d) A DPO should report to the highest management level of the con- troller When is a DPIA required under the GDPR? (a) When data processing results in high risks to rights of data subjects (b) When data processing is carried out by a public authority",
-          "is_correct": false
+          "text": "The controller is not allowed to assign other tasks and duties to a DPO"
         },
         {
           "label": "C",
-          "text": "When personal data is being transferred outside the Union",
-          "is_correct": false
+          "text": "A DPO should hold an accredited data protection qualification"
         },
         {
           "label": "D",
-          "text": "When profiling is carried out 8",
-          "is_correct": true
+          "text": "A DPO should report to the highest management level of the controller"
         }
       ],
       "correct_label": "D"
@@ -3765,23 +3751,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Statement A is correct and Statement B is incorrect",
-          "is_correct": false
+          "text": "Statement A is correct and Statement B is incorrect"
         },
         {
           "label": "B",
-          "text": "Statement A is incorrect and Statement B is correct",
-          "is_correct": false
+          "text": "Statement A is incorrect and Statement B is correct"
         },
         {
           "label": "C",
-          "text": "Both statements are correct",
-          "is_correct": false
+          "text": "Both statements are correct"
         },
         {
           "label": "D",
-          "text": "Both statements are incorrect According to the GDPR, which of the following entities will monitor the adherence of a controller or processor to a codes of conduct? (a) The competent supervisory authority (b) The accredited body (c) The trade association (d) The Commission",
-          "is_correct": true
+          "text": "Both statements are incorrect"
         }
       ],
       "correct_label": "D"
@@ -6699,6 +6681,512 @@
         }
       ],
       "correct_label": "A"
+    },
+    {
+      "id": 220,
+      "text": "Company ABC stores a database of personal data of its employees and customers in a server room (in a digital format). To ensure that it complies with legal obligations concerning unauthorised access to the server room, the company has set up an access‑control mechanism that registers and maintains the entrance and exit of employees who have privilege to access the server room. For this, the employees have been adequately informed about the processing operation as well. The access‑control mechanism is also used to evaluate the performance of employees through the monitoring of the frequency and exact entrance and exit times of the employees. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Access control and its consequent processing is excessive in relation to securing the database against unauthorised access, loss or theft"
+        },
+        {
+          "label": "B",
+          "text": "Access control and its consequent processing is proportionate in relation to evaluating the performance of employees"
+        },
+        {
+          "label": "C",
+          "text": "Access control and its consequent processing is excessive in relation to evaluating the performance of employees"
+        },
+        {
+          "label": "D",
+          "text": "Access control and its consequent processing is proportionate in relation to securing the database against unauthorised access, loss or theft and evaluating the performance of employees as employees have been adequately informed"
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 221,
+      "text": "A supermarket has customised its advertisement based on age characteristics of customers captured by a video surveillance system installed on its premises. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "This would not fall under Article 9 of the GDPR for the sole purpose of detecting physical characteristics to classify customers."
+        },
+        {
+          "label": "B",
+          "text": "This would fall under Article 9 of the GDPR as biometric data is being collected from customers."
+        },
+        {
+          "label": "C",
+          "text": "The supermarket needs to consult with a competent supervisory authority regarding such a data processing."
+        },
+        {
+          "label": "D",
+          "text": "The supermarket needs to obtain explicit consent of all data subjects before implementing this advertising system."
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 222,
+      "text": "Which one falls into the special categories of personal data under the GDPR which was NOT the case for the Data Protection Directive?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Racial or ethnic origin"
+        },
+        {
+          "label": "B",
+          "text": "Trade-union membership"
+        },
+        {
+          "label": "C",
+          "text": "Genetic and biometric data"
+        },
+        {
+          "label": "D",
+          "text": "Philosophical beliefs"
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 223,
+      "text": "A supermarket provides a premium delivery service that can be cancelled at any time. The supermarket relies on performance of a contract as a legal basis for processing invoices. In addition, the supermarket has a legal obligation, in accordance with national law, to retain certain personal data for accounting purposes for several years and relies on compliance with a legal obligation as a legal basis. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Relying on performance of a contract as a legal basis for invoicing purposes is justifiable, but relying on compliance with a legal obligation to retain certain personal data for accounting purposes is not justifiable."
+        },
+        {
+          "label": "B",
+          "text": "Relying on performance of a contract as a legal basis for invoicing purposes is not justifiable, but relying on compliance with a legal obligation to retain certain personal data for accounting purposes is justifiable."
+        },
+        {
+          "label": "C",
+          "text": "Relying on performance of a contract and compliance with a legal obligation for the aforementioned purposes is justifiable."
+        },
+        {
+          "label": "D",
+          "text": "Relying on performance of a contract and compliance with a legal obligation for the aforementioned purposes is not justifiable and the supermarket needs to seek other legal grounds."
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 224,
+      "text": "Mr. Anderson provides his family doctor with information about his genetic condition. He also informs the doctor that some of his close relatives have the same genetic condition, and thus, he further shares some personal data concerning those relatives with the doctor. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Pursuant to Article 14 of the GDPR (information to be provided where personal data is obtained from the data subject), the doctor has to provide Mr. Anderson's relatives with the identity and contact details of the controller because the doctor is acting as the controller."
+        },
+        {
+          "label": "B",
+          "text": "The family doctor is not required to provide those relatives with Article 14 information as this is violating the obligation of professional secrecy."
+        },
+        {
+          "label": "C",
+          "text": "Mr. Anderson is not allowed to share such sensitive health data with the family doctor without his relatives' explicit consent."
+        },
+        {
+          "label": "D",
+          "text": "Since the family doctor is acting as the controller, he has to conduct a DPIA to ensure if such data processing is not likely to negatively affect the fundamental rights and freedoms of Mr. Anderson's relatives."
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 225,
+      "text": "local transport company in a large city plans to equip ticket inspectors with body-worn cameras, which are designed to prevent threatening situations, document incidents, and ensure that the right person is fined for travelling without a valid ticket. Ticket inspectors are required to keep the camera on for their entire shift and are therefore able to film all passengers who passed the inspectors. These recordings are stored for a period of one week. The DPO of the company warns them that since several hundred thousand people use public transportation every day, a large number of people are thus at risk of being monitored by video and audio recordings. The DPO suggests reducing the storage to one day, as a longer time is not necessary to achieve the aforementioned purposes. The DPO also believes that audio recordings do not contribute to the identification of individuals without a valid ticket, and thus, recommends not to collect audio data. Which of the following data protection principles are more likely to be respected by addressing the DPO's recommendations?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Storage limitation, data minimisation, purpose limitation"
+        },
+        {
+          "label": "B",
+          "text": "Purpose limitation, data minimisation, lawfulness and fairness"
+        },
+        {
+          "label": "C",
+          "text": "Storage limitation, data minimisation, lawfulness and fairness"
+        },
+        {
+          "label": "D",
+          "text": "Storage limitation, purpose limitation, lawfulness and fairness"
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
+      "id": 226,
+      "text": "The right to the protection of personal data: Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "It is an absolute right"
+        },
+        {
+          "label": "B",
+          "text": "It must be balanced against other fundamental rights"
+        },
+        {
+          "label": "C",
+          "text": "It must be prioritised over security"
+        },
+        {
+          "label": "D",
+          "text": "It is a secondary right"
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 227,
+      "text": "Under the GDPR, the protection of natural persons should be: Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Technologically dependent and should depend on the techniques used"
+        },
+        {
+          "label": "B",
+          "text": "Technologically neutral and should not depend on the techniques used"
+        },
+        {
+          "label": "C",
+          "text": "Dependent on the type of processing of personal data, e.g., by automated or manual means"
+        },
+        {
+          "label": "D",
+          "text": "Dependent on the scope of processing of personal data, e.g., large or small data processing activities"
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 228,
+      "text": "The GDPR does not apply to: Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Personal data which is pseudonymised"
+        },
+        {
+          "label": "B",
+          "text": "Personal data which is encrypted"
+        },
+        {
+          "label": "C",
+          "text": "Personal data which is securely stored"
+        },
+        {
+          "label": "D",
+          "text": "Personal data which is anonymised"
+        }
+      ],
+      "correct_label": "D"
+    },
+    {
+      "id": 229,
+      "text": "Which is NOT influential in those circumstances where the provision of information to the data subject proves to be impossible or would involve a disproportionate effort? Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The age of the data"
+        },
+        {
+          "label": "B",
+          "text": "Appropriate safeguards adopted"
+        },
+        {
+          "label": "C",
+          "text": "The type of the data"
+        },
+        {
+          "label": "D",
+          "text": "The number of data subjects"
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 230,
+      "text": "Which one is NOT an appropriate method to restrict the processing of personal data by a controller? Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Temporarily moving the selected data to another processing system"
+        },
+        {
+          "label": "B",
+          "text": "Making the selected personal data unavailable to users"
+        },
+        {
+          "label": "C",
+          "text": "Permanently removing published data from a website"
+        },
+        {
+          "label": "D",
+          "text": "Temporarily removing published data from a website"
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 231,
+      "text": "A controller has recently experienced a data breach. Which one is correct in relation to Statement A and Statement B? Statement A: If a data breach is unlikely to result in a risk to the rights and freedoms of natural persons, only the competent supervisory authority must be notified. Statement B: Regardless of the risk of the breach, if the controller has implemented appropriate technical and organisational measures such as encryption to mitigate the breach, it does not need to notify data subjects. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Statement A is correct and Statement B is incorrect"
+        },
+        {
+          "label": "B",
+          "text": "Statement A is incorrect and Statement B is correct"
+        },
+        {
+          "label": "C",
+          "text": "Both statements are correct"
+        },
+        {
+          "label": "D",
+          "text": "Both statements are incorrect"
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
+      "id": 232,
+      "text": "The virtual voice assistant of an electric car requires a user to issue the same voice command two times due to the virtual voice assistant not understanding the command. The two voice commands and the associated transcriptions are passed to human reviewers to review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant training dataset to improve its performance and accuracy. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The processing activities carried out by the human reviewers are aligned with the legitimate interests of the virtual voice assistant provider to improve its services."
+        },
+        {
+          "label": "B",
+          "text": "The processing activities carried out by the human reviewers are not necessary for the performance, however, since this is a sensitive application and is linked to the health and safety of data subjects, the provider of the virtual voice assistant should rely on another lawful basis."
+        },
+        {
+          "label": "C",
+          "text": "The processing activities carried out by the human reviewers are necessary for the performance of a contract as if the human review does not take place, the virtual voice assistant may fail to function properly."
+        },
+        {
+          "label": "D",
+          "text": "The processing activities carried out by the human reviewers are not necessary for the performance of a contract as the virtual voice assistant is already functional."
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 233,
+      "text": "An employee during their notice period makes a copy of some of Company X's customer contact data. Two months later, when the employee moves to Company Y, they make use of the copied data to contact Company X's customers to attract them to Company Y. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Company X has to document the breach and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+        },
+        {
+          "label": "B",
+          "text": "Company X has to document the breach and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected."
+        },
+        {
+          "label": "C",
+          "text": "Company X has to document the breach and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+        },
+        {
+          "label": "D",
+          "text": "Company X has to document the breach. No notification to the competent supervisory authority or affected data subjects is required."
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
+      "id": 234,
+      "text": "A set of enterprises involved in similar cloud computing activities have come together via their relevant associations to jointly design and develop, in relation to their data collection and processing activities, a mechanism rather than attempting to carry out such a comprehensive data protection analysis on an individual basis. This helps them to detail and facilitate the implementation of the GDPR. Which of the following instruments is more likely to be the one that these enterprises are trying to develop?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Ad-hoc contractual clauses"
+        },
+        {
+          "label": "B",
+          "text": "Standard contractual clauses"
+        },
+        {
+          "label": "C",
+          "text": "Codes of conduct"
+        },
+        {
+          "label": "D",
+          "text": "Certification"
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 235,
+      "text": "Company X transfers personal data from Spain to a third country based on standard contractual clauses supplemented with appropriate measures including encryption. The law of the third country has recently prohibited the supplementary measure, i.e., the encryption. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Company X can continue the transfer, but it must monitor the ongoing situation in the third country to ensure the transferred personal data is not decrypted by unauthorised authorities in the third country."
+        },
+        {
+          "label": "B",
+          "text": "Company X must stop ongoing data transfers to the third country."
+        },
+        {
+          "label": "C",
+          "text": "Company X must stop ongoing data transfers to the third country unless the third country makes an exception for Company X."
+        },
+        {
+          "label": "D",
+          "text": "Company X can continue data transfers if a clearance is obtained from the competent supervisory authority in Spain."
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 236,
+      "text": "Which of the following instruments enforces a data breach notification to the competent supervisory authority, but does NOT enforce such a notification to affected data subjects? Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "General Data Protection Regulation"
+        },
+        {
+          "label": "B",
+          "text": "eIDAS"
+        },
+        {
+          "label": "C",
+          "text": "ePrivacy Directive"
+        },
+        {
+          "label": "D",
+          "text": "Modernised Convention 108"
+        }
+      ],
+      "correct_label": "D"
+    },
+    {
+      "id": 237,
+      "text": "Under the GDPR, in a controller-processor relationship: Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Means and purposes of data processing are always determined by the controller."
+        },
+        {
+          "label": "B",
+          "text": "Means and purposes of data processing can be decided jointly by the controller and the processor."
+        },
+        {
+          "label": "C",
+          "text": "Means of processing may be decided jointly by the controller and the processor, but purposes must be decided by the controller."
+        },
+        {
+          "label": "D",
+          "text": "Means of processing must be decided by the controller, but purposes may be decided jointly by the controller and the processor."
+        }
+      ],
+      "correct_label": "C"
+    },
+    {
+      "id": 238,
+      "text": "Under the GDPR, which one is correct in relation to Statement A and Statement B? Statement A: When carrying out profiling, the data controller must use appropriate mathematical or statistical procedures. Statement B: The GDPR only applies to profiling done by automated means. Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Statement A is correct and Statement B is incorrect"
+        },
+        {
+          "label": "B",
+          "text": "Statement A is incorrect and Statement B is correct"
+        },
+        {
+          "label": "C",
+          "text": "Both statements are correct"
+        },
+        {
+          "label": "D",
+          "text": "Both statements are incorrect"
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
+      "id": 239,
+      "text": "Which one is correct in relation to privacy policy notices targeted at children?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "Privacy policy notices should include a legal glossary"
+        },
+        {
+          "label": "B",
+          "text": "Privacy policy notices should use clear and plain language"
+        },
+        {
+          "label": "C",
+          "text": "Privacy policy notices should possibly replace texts with ticked boxes"
+        },
+        {
+          "label": "D",
+          "text": "Privacy policy notices should use shiny fonts and colours"
+        }
+      ],
+      "correct_label": "B"
+    },
+    {
+      "id": 240,
+      "text": "When is a DPIA required under the GDPR?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "When data processing results in high risks to rights of data subjects"
+        },
+        {
+          "label": "B",
+          "text": "When data processing is carried out by a public authority"
+        },
+        {
+          "label": "C",
+          "text": "When personal data is being transferred outside the Union"
+        },
+        {
+          "label": "D",
+          "text": "When profiling is carried out"
+        }
+      ],
+      "correct_label": "A"
+    },
+    {
+      "id": 241,
+      "text": "According to the GDPR, which of the following entities will monitor the adherence of a controller or processor to a code of conduct? Which one is correct?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The competent supervisory authority"
+        },
+        {
+          "label": "B",
+          "text": "The accredited body"
+        },
+        {
+          "label": "C",
+          "text": "The trade association"
+        },
+        {
+          "label": "D",
+          "text": "The Commission"
+        }
+      ],
+      "correct_label": "B"
     }
   ]
 }
