@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Exam Simulator (50 random questions)</title>
+  <title>Exam Simulator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,10 +16,18 @@
 
   <main class="container">
     <section id="home" class="card">
-      <h1>50-question practice exam</h1>
+      <h1>Practice exam</h1>
       <p class="muted">
         Questions are randomly drawn from both exam files. Your answers stay in this browser only.
       </p>
+
+      <div class="fieldRow">
+        <label class="fieldLabel" for="questionCount">Number of questions</label>
+        <div class="fieldControl">
+          <input id="questionCount" type="number" min="1" step="1" value="50" />
+          <span class="muted small" id="questionCountHelp"></span>
+        </div>
+      </div>
 
       <div class="controls">
         <button id="startBtn" class="primary" disabled>Start exam</button>
@@ -30,7 +38,7 @@
       <details class="help">
         <summary>How it works</summary>
         <ul>
-          <li>Draws 50 unique questions from the bank.</li>
+          <li>Draws <span id="questionCountText">50</span> unique questions from the bank.</li>
           <li>You can navigate via “Previous / Next” or jump by number.</li>
           <li>Submit to see your score and a full review.</li>
         </ul>
@@ -64,7 +72,7 @@
       <div class="resultsHeader">
         <h2>Results</h2>
         <div class="controls">
-          <button id="newAttemptBtn" class="primary">New 50-question attempt</button>
+          <button id="newAttemptBtn" class="primary">New attempt</button>
           <button id="backHomeBtn" class="secondary">Back to home</button>
         </div>
       </div>

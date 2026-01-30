@@ -1,7 +1,8 @@
 // Exam Simulator – static (no server)
-// Loads questions.json, draws 50 random questions, scores in-browser.
+// Loads questions.json, draws random questions, scores in-browser.
 
 const STORAGE_KEY = "exam_simulator_static_v1";
+const DEFAULT_QUESTION_COUNT = 50;
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -55,22 +56,53 @@ function setBankInfo() {
   const info = $("questionBankInfo");
   if (!bank) { info.textContent = "Loading question bank…"; return; }
   info.textContent = `${bank.question_count} questions loaded`;
+  const maxCount = Math.max(1, bank.question_count);
+  const input = $("questionCount");
+  input.max = String(maxCount);
+  if (!input.value) {
+    input.value = String(Math.min(DEFAULT_QUESTION_COUNT, maxCount));
+  } else {
+    const current = parseInt(input.value, 10);
+    if (!Number.isFinite(current) || current < 1) {
+      input.value = "1";
+    } else if (current > maxCount) {
+      input.value = String(maxCount);
+    }
+  }
+  $("questionCountHelp").textContent = `Max ${maxCount}`;
+  updateQuestionCountText();
 }
 
-function pick50() {
+function getSelectedQuestionCount() {
+  const input = $("questionCount");
+  const raw = parseInt(input.value, 10);
+  const max = bank ? bank.question_count : DEFAULT_QUESTION_COUNT;
+  const safeMax = Math.max(1, max);
+  if (!Number.isFinite(raw)) return Math.min(DEFAULT_QUESTION_COUNT, safeMax);
+  return Math.min(Math.max(raw, 1), safeMax);
+}
+
+function updateQuestionCountText() {
+  const count = getSelectedQuestionCount();
+  $("questionCountText").textContent = String(count);
+}
+
+function pickQuestions(count) {
   const all = bank.questions.map(q => q.id);
   shuffle(all);
-  return all.slice(0, 50);
+  return all.slice(0, count);
 }
 
 function startNewAttempt() {
+  const count = getSelectedQuestionCount();
   attempt = {
     id: uid(),
     createdAt: new Date().toISOString(),
-    questionIds: pick50(),
+    questionIds: pickQuestions(count),
     answers: {},         // { [qid]: 'A'|'B'|'C'|'D' }
     submitted: false,
-    results: null
+    results: null,
+    questionCount: count
   };
   currentIndex = 0;
   saveAttempt();
@@ -110,8 +142,9 @@ function renderJumpBar() {
 }
 
 function renderExam() {
-  $("attemptInfo").textContent = `${attempt.id.slice(0,8)} • ${answeredCount()}/50 answered`;
-  $("progressText").textContent = `Question ${currentIndex + 1} of 50`;
+  const total = attempt.questionIds.length;
+  $("attemptInfo").textContent = `${attempt.id.slice(0,8)} • ${answeredCount()}/${total} answered`;
+  $("progressText").textContent = `Question ${currentIndex + 1} of ${total}`;
 
   renderJumpBar();
 
@@ -206,6 +239,7 @@ function scoreAttempt() {
 function renderResults() {
   const s = attempt.summary;
   $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered})`;
+  $("newAttemptBtn").textContent = `New ${s.total}-question attempt`;
 
   const list = $("reviewList");
   list.innerHTML = "";
@@ -274,6 +308,7 @@ async function init() {
   $("backHomeBtn").onclick = () => { show("home"); };
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
+  $("questionCount").oninput = () => updateQuestionCountText();
 
   $("prevBtn").onclick = () => { currentIndex--; renderExam(); };
   $("nextBtn").onclick = () => { currentIndex++; renderExam(); };
@@ -299,6 +334,8 @@ async function init() {
   const saved = loadSavedAttempt();
   if (saved && saved.questionIds && saved.answers) {
     attempt = saved;
+    $("questionCount").value = String(attempt.questionIds.length);
+    updateQuestionCountText();
     $("resumeBtn").style.display = "";
     $("resetBtn").style.display = "";
     if (attempt.submitted) {
