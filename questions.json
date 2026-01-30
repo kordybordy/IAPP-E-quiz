@@ -57,7 +57,7 @@
         },
         {
           "label": "D",
-          "text": "The Council of Europe Convention (Convention 108) 1",
+          "text": "The Council of Europe Convention (Convention 108)",
           "is_correct": true
         }
       ],
@@ -150,7 +150,7 @@
         },
         {
           "label": "D",
-          "text": "Regulations have binding legal force throughout every Member State and enter into force in. all the Member States immediately after ratified by the European Parliament and the Council of the EU 2",
+          "text": "Regulations have binding legal force throughout every Member State and enter into force in all the Member States immediately after ratified by the European Parliament and the Council of the EU",
           "is_correct": false
         }
       ],
@@ -224,7 +224,7 @@
       "number": 8,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which entity monitors the execution of judgements of the European of Human Rights (ECHR)? European Parliament European Commission The Council of Europe",
+      "text": "Which entity monitors the execution of judgments of the European Court of Human Rights (ECHR)?",
       "choices": [
         {
           "label": "A",
@@ -243,7 +243,7 @@
         },
         {
           "label": "D",
-          "text": "European Council Which entity has competence to declare an EU instrument invalid?The Council of the European Union",
+          "text": "European Council",
           "is_correct": false
         }
       ],
@@ -255,7 +255,7 @@
       "number": 10,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one has the power to enforce EU laws? 3",
+      "text": "Which one has the power to enforce EU laws?",
       "choices": [
         {
           "label": "A",
@@ -336,7 +336,7 @@
         },
         {
           "label": "D",
-          "text": "As part of the information to be given to the data subject, the Regulation requires data controllers to provide data subjects from whom data relating to themselves are collected with the identity of the data controller whereas this was optional in the Directive 4",
+          "text": "As part of the information to be given to the data subject, the Regulation requires data controllers to provide data subjects from whom data relating to themselves are collected with the identity of the data controller whereas this was optional in the Directive",
           "is_correct": false
         }
       ],
@@ -362,12 +362,12 @@
         },
         {
           "label": "C",
-          "text": "The processing of special categories of personal data in connect' with the provision of private electronic communication services",
+          "text": "The processing of special categories of personal data in connection with the provision of private electronic communication services",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "The processing of personal data in connection with the provision private electronic communication services",
+          "text": "The processing of personal data in connection with the provision of private electronic communication services",
           "is_correct": false
         }
       ],
@@ -379,7 +379,7 @@
       "number": 14,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which data protection instrument deals with the rights of actions agai unsolicited communications?",
+      "text": "Which data protection instrument deals with the rights of action against unsolicited communications?",
       "choices": [
         {
           "label": "A",
@@ -410,7 +410,7 @@
       "number": 15,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the ePrivacy Directive, storing information in the terminal equip- ment of a user is only allowed under consent. Except where:",
+      "text": "Under the ePrivacy Directive, storing information in the terminal equipment of a user is only allowed under consent. Except where:",
       "choices": [
         {
           "label": "A",
@@ -424,12 +424,12 @@
         },
         {
           "label": "C",
-          "text": "Storing or access is necessary to fulfil legitimate interests of the controller 5",
+          "text": "Storing or access is necessary to fulfil legitimate interests of the controller",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Storing or access is carried out under a transparent and fully acces- sible privacy policy notice and an opt-out option to the user",
+          "text": "Storing or access is carried out under a transparent and fully accessible privacy policy notice and an opt-out option to the user",
           "is_correct": false
         }
       ],
@@ -538,7 +538,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "Treaty of Lisbon 6",
+          "text": "Treaty of Lisbon",
           "is_correct": false
         },
         {
@@ -677,7 +677,7 @@
         },
         {
           "label": "D",
-          "text": "Annual turnover 8",
+          "text": "Annual turnover",
           "is_correct": true
         }
       ],
@@ -708,7 +708,7 @@
         },
         {
           "label": "D",
-          "text": "Both of them are processors Read the following scenario and answer the two follow-up questions: r.\tWeiss intends to buy a new house. For this purpose, he contacts Bank ABC via email to set up an appointment to further inquire about potential financial supports and packages. Right after the appointment, r. Weiss decides not to become a customer of Bank ABC, and therefore, of to take the offer made by Bank ABC. Relying on legitimate interests s a lawful processing principle, Bank ABC has automatically added Mr. Weiss's email address to a database which is used to allow a social media provider to match the list of email addresses that Bank ABC holds with those held by the social media provider. This way, Bank ABC will be able to target a broader range of potential customers by offering them financial offers on the social media platform.",
+          "text": "Both of them are processors",
           "is_correct": false
         }
       ],
@@ -720,7 +720,7 @@
       "number": 26,
       "scenario_id": "EXAM_I_SCENARIO_1",
       "scenario_text": "Mr. Weiss intends to buy a new house. For this purpose, he contacts Bank ABC via email to set up an appointment to inquire about potential financial supports and packages. After the appointment, Mr. Weiss decides not to become a customer of Bank ABC. Relying on legitimate interests as a lawful processing principle, Bank ABC automatically adds Mr. Weiss's email address to a database used to allow a social media provider to match Bank ABC's email list with those held by the provider so Bank ABC can target potential customers with financial offers via the social media platform.",
-      "text": "Which one is correct?",
+      "text": "Read the following scenario and answer the two follow-up questions: Mr. Weiss intends to buy a new house. For this purpose, he contacts Bank ABC via email to set up an appointment to further inquire about potential financial supports and packages. Right after the appointment, Mr. Weiss decides not to become a customer of Bank ABC, and therefore, to not take the offer made by Bank ABC. Relying on legitimate interests as a lawful processing principle, Bank ABC has automatically added Mr. Weiss's email address to a database which is used to allow a social media provider to match the list of email addresses that Bank ABC holds with those held by the social media provider. This way, Bank ABC will be able to target a broader range of potential customers by offering them financial offers on the social media platform. Which one is correct?",
       "choices": [
         {
           "label": "A",
@@ -765,7 +765,7 @@
         },
         {
           "label": "C",
-          "text": "Justifiable because Mr. Weiss's email address is only used for generic advertising purposes and not a targeted advertising",
+          "text": "Justifiable because Mr. Weiss's email address is only used for generic advertising purposes and not targeted advertising",
           "is_correct": false
         },
         {
@@ -786,12 +786,12 @@
       "choices": [
         {
           "label": "A",
-          "text": "Publishing photos of beloved ones on a personal Facebook page",
+          "text": "Publishing photos of loved ones on a personal Facebook page",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Processing pseudonymised personal data by a GPS-tracking system 10",
+          "text": "Processing pseudonymised personal data by a GPS-tracking system",
           "is_correct": false
         },
         {
@@ -801,7 +801,7 @@
         },
         {
           "label": "D",
-          "text": "Unstructured manual data which is intended to go into a fili system ng",
+          "text": "Unstructured manual data which is intended to go into a filing system",
           "is_correct": false
         }
       ],
@@ -875,11 +875,11 @@
       "number": 32,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An employer collects and holds details of the blood groups of some of its employees who do hazardous work in case of serious accidents at works. The employer has safety procedures in place to help prevent accidents so it may be that this data is never needed, but the employer still needs to collect this data in case of emergency and compliance with labour law. Which of the following privacy principles this company is trying to meet? 12 ; i. (a) Purpose limitation",
+      "text": "An employer collects and holds details of the blood groups of some of its employees who do hazardous work in case of serious accidents at work. The employer has safety procedures in place to help prevent accidents, so it may be that this data is never needed, but the employer still needs to collect this data in case of an emergency and to comply with labour law. Which of the following privacy principles is this company trying to meet?",
       "choices": [
         {
           "label": "A",
-          "text": "",
+          "text": "Purpose limitation",
           "is_correct": false
         },
         {
@@ -1137,7 +1137,7 @@
         },
         {
           "label": "C",
-          "text": "Data transfers to third countries in the presence of adequate safe guards 15",
+          "text": "Data transfers to third countries when adequate safeguards are in place",
           "is_correct": true
         },
         {
@@ -1278,7 +1278,7 @@
       "number": 45,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is NOT a good approach towards fair data processing not",
+      "text": "Which one is NOT a good approach towards fair data processing?",
       "choices": [
         {
           "label": "A",
@@ -1402,21 +1402,21 @@
       "number": 50,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, where the personal data has data subject directly, the controller is obliged about the processing to the data subject: not been obtained from the to provide the information",
+      "text": "Under the GDPR, where personal data has not been obtained directly from the data subject, the controller is obliged to provide the data subject with information about the processing:",
       "choices": [
         {
           "label": "A",
-          "text": "Within a reasonable period after obtaining the personal data, b ut at the latest within two weeks 4,",
+          "text": "Within a reasonable period after obtaining the personal data, but at the latest within two weeks",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Within a reasonable period before obtaining the personal data, but at the latest within two weeks ) Within a reasonable period after obtaining the personal data, but at the latest within one month",
+          "text": "Within a reasonable period before obtaining the personal data, but at the latest within two weeks",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "",
+          "text": "Within a reasonable period after obtaining the personal data, but at the latest within one month",
           "is_correct": true
         },
         {
@@ -1437,12 +1437,12 @@
       "choices": [
         {
           "label": "A",
-          "text": "Be in a machine-readable formPersonal data is no longer necessary for the purposes for which it was collected or otherwise processed",
+          "text": "Be in a machine-readable form",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Be in a human-readable formA data subject withdraws consent on which the processing is based and there is no other legal ground for the processing cc) A data subject objects to the processing and there are overriding legitimate grounds for the processing",
+          "text": "Be in a human-readable form",
           "is_correct": true
         },
         {
@@ -1452,7 +1452,7 @@
         },
         {
           "label": "D",
-          "text": "Be always provided to data subjects in a commonly used electronic form The right to have a data subject's personal data erased without undue delay does NOT apply where: 19Personal data is collected in relation to the information society services provided to children pursuant to Article 8 of the GDPR",
+          "text": "Always be provided to data subjects in a commonly used electronic form",
           "is_correct": false
         }
       ],
@@ -1535,12 +1535,12 @@
         },
         {
           "label": "B",
-          "text": "Data subjects have the right to transfer personal data from controller to another controller without hindrance if this is techni feasible",
+          "text": "Data subjects have the right to transfer personal data from one controller to another without hindrance if this is technically feasible",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "The exercise of the right to data portability is without prejudice any other right as this is the case with any other rights in the GDP 21",
+          "text": "The exercise of the right to data portability is without prejudice to any other rights as is the case with any other rights in the GDPR",
           "is_correct": false
         },
         {
@@ -1561,7 +1561,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "Where the controller is able to demonstrate that the data breach is unlikely to result in a risk to the rights and freedom of the individuals concerned",
+          "text": "Where the controller is able to demonstrate that the data breach is unlikely to result in a risk to the rights and freedoms of the individuals concerned",
           "is_correct": false
         },
         {
@@ -1571,7 +1571,7 @@
         },
         {
           "label": "C",
-          "text": "Without undue delay and, where feasible, within 24 hours, and latest up to 72 hours. If the controller exceeds the 24-hour time frame, the notification needs to be accompanied by an explanation for the delay",
+          "text": "Without undue delay and, where feasible, within 24 hours, and at the latest up to 72 hours. If the controller exceeds the 24-hour timeframe, the notification needs to be accompanied by an explanation for the delay",
           "is_correct": false
         },
         {
@@ -1619,26 +1619,26 @@
       "number": 9,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct about data breach notifications under the GDPR? 22 '",
+      "text": "Which one is correct about data breach notifications under the GDPR?",
       "choices": [
         {
           "label": "A",
-          "text": "Controllers must first notify the competent supervisory authority and second the affected data subjects without undue delayThe obligation to notify data breaches concerns controllers",
+          "text": "Controllers must first notify the competent supervisory authority and then the affected data subjects without undue delay. The obligation to notify data breaches concerns controllers",
           "is_correct": true
         },
         {
           "label": "B",
-          "text": "If a data breach is likely to cause high risks to the rights and freed out of data subjects, controllers must inform them without undue delaThe obligation to notify data breaches concerns both controllers and processors",
+          "text": "If a data breach is likely to cause high risks to the rights and freedoms of data subjects, controllers must inform them without undue delay. The obligation to notify data breaches concerns both controllers and processors",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Controllers must notify the competent supervisory authority without undue delay, and if appropriate technical and organisational risk mitigation measures are in place, notification to data subjects is n of requiredThe obligation to notify data breaches concerns processors only if the breach has occurred on the processor's side",
+          "text": "Controllers must notify the competent supervisory authority without undue delay, and if appropriate technical and organisational risk mitigation measures are in place, notification to data subjects is not required. The obligation to notify data breaches concerns processors only if the breach has occurred on the processor's side",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "If the data breach is unlikely to result in a risk to the rights and freedom of data subjects, controllers must notify the competent supervisory authority, but not the affected data subjects b0. Under the GDPR, which one is correct in relation to data breach notifications to the competent supervisory authority in a data processing activity carried out in a controller-processor relationship?Depending on the nature of the breach and time-criticality of notifying the supervisory authority, either of processor or controller can take the liberty to notify the supervisory authority",
+          "text": "If the data breach is unlikely to result in a risk to the rights and freedoms of data subjects, controllers must notify the competent supervisory authority, but not the affected data subjects",
           "is_correct": false
         }
       ],
@@ -1654,7 +1654,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "A local family doctor that processes personal data of their patients 23",
+          "text": "A local family doctor that processes personal data of their patients",
           "is_correct": true
         },
         {
@@ -1716,22 +1716,22 @@
       "choices": [
         {
           "label": "A",
-          "text": "Only data controllers 24An insurance company has 100 staff. Among other things, it regularly processes personal data in the context of processing claims, sales and HR",
+          "text": "Only data controllers",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Data controllers and processorsAn insurance company has 220 staff. The company occasionally does profiling on its customer database for insurance risk classification",
+          "text": "Data controllers and processors",
           "is_correct": true
         },
         {
           "label": "C",
-          "text": "Data controllers and in some cases, processors as well, d ep en . the nature of data processingAn insurance company has 10 staff. The company does recruitment campaigns. For this, it collects information on applicants' health and ethnic origin for equal opportunities observation",
+          "text": "Data controllers and, in some cases, processors as well, depending on the nature of data processing",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Only companies with more than 250 employees I Which one is exempt from keeping a record of data processing activities under the GDPR?An insurance company has 240 staff. The company occasionally carries out an internal staff engagement survey",
+          "text": "Only companies with more than 250 employees",
           "is_correct": false
         }
       ],
@@ -1757,7 +1757,7 @@
         },
         {
           "label": "C",
-          "text": "The use of a camera system by a Driver and Vehicle Agency to monitor driving behaviour on motorways 25",
+          "text": "The use of a camera system by a Driver and Vehicle Agency to monitor driving behaviour on motorways",
           "is_correct": false
         },
         {
@@ -1836,16 +1836,16 @@
       "number": 68,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An affiliate of an international group of companies established in Spain and France transfers personal data from Spain to France. Which one is correct about this data transfer? 26",
+      "text": "An affiliate of an international group of companies established in Spain and France transfers personal data from Spain to France. Which one is correct about this data transfer?",
       "choices": [
         {
           "label": "A",
-          "text": "The data transfer must not be restricted by the Spanish national law for reasons connected to personal data protection, only i n eases where special categories of personal data is transferred",
+          "text": "The data transfer must not be restricted by the Spanish national law for reasons connected to personal data protection, only in cases where special categories of personal data are transferred",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The data transfer must be restricted by the Spanish national law for reasons connected to personal data protection and cooperation mechanism needs to be triggered between the Spanish and French supervisory authorities to validate the data transfer",
+          "text": "The data transfer must be restricted by the Spanish national law for reasons connected to personal data protection and a cooperation mechanism needs to be triggered between the Spanish and French supervisory authorities to validate the data transfer",
           "is_correct": false
         },
         {
@@ -1867,16 +1867,16 @@
       "number": 69,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An affiliate of an international group of companies established in Sweden and Italy transfers personal data from Sweden to Italy. It also occasionally transfers the same personal data to the parent company in India. Which one is correct about this data transfer?\t(0,",
+      "text": "An affiliate of an international group of companies established in Sweden and Italy transfers personal data from Sweden to Italy. It also occasionally transfers the same personal data to the parent company in India. Which one is correct about this data transfer?",
       "choices": [
         {
           "label": "A",
-          "text": "The data transfer must be restricted neither by the Swedish nor the Italian national law for reasons connected to personal data protection, only in cases where special categories of personal data is transferred",
+          "text": "The data transfer must not be restricted by either the Swedish or the Italian national law for reasons connected to personal data protection, except in cases where special categories of personal data are transferred",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The Swedish data exporter must take into account the rules in Chapter V of the GDPR for the data transfer to Italy and India",
+          "text": "The Swedish data exporter must take into account the rules in Chapter V of the GDPR for the data transfers to both Italy and India",
           "is_correct": false
         },
         {
@@ -1886,7 +1886,7 @@
         },
         {
           "label": "D",
-          "text": "The data transfer must be restricted by the Swedish national law for reasons connected to personal data protection concerning the",
+          "text": "The data transfer must be restricted by the Swedish national law for reasons connected to personal data protection concerning the transfer to India",
           "is_correct": true
         }
       ],
@@ -1898,26 +1898,26 @@
       "number": 70,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Wh\tabout M Schrems I led to a new data transfer framework between the EU and the us ensuring an adequate level of protection for personal data transferred from the EU to the US for non-commercial purposes",
+      "text": "Which statement about the Schrems I case led to a new data transfer framework between the EU and the US, ensuring an adequate level of protection for personal data transferred from the EU to the US for non-commercial purposes?",
       "choices": [
         {
           "label": "A",
-          "text": "",
+          "text": "The Court invalidated the Safe Harbor Decision, prompting the establishment of a new framework for non-commercial personal data transfers",
           "is_correct": true
         },
         {
           "label": "B",
-          "text": "",
+          "text": "The Court upheld the adequacy of the Safe Harbor Decision and no new framework was needed",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "The CJEU argued that the US legislation permitted the public authorities to access on a generalised basis to the content of electronic communications",
+          "text": "The CJEU argued that US legislation permitted public authorities to access the content of electronic communications on a generalised basis",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Mr. Schrems took the view that, in light of the revelations that Ed- ward Snowden made concerning the US intelligence services' surveil- lance activities, the US law does not provide sufficient data protection level",
+          "text": "Mr. Schrems took the view that, in light of Edward Snowden's revelations about US intelligence services' surveillance activities, US law does not provide a sufficient level of data protection",
           "is_correct": false
         }
       ],
@@ -1995,23 +1995,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Google v. SpainStatement A is correct and Statement B is incorrect",
-          "is_correct": false
+          "text": "Google v. Spain"
         },
         {
           "label": "B",
-          "text": "Maximilian Schrems v. Data Protection CommissionerStatement A is incorrect and Statement B is correctTo approve ad hoc clauses, the supervisory authority needs to apply the consistency mechanism by submitting its draft decision on the clauses to the Commission. If the supervisory authority does not intend to follow the Commission's opinion, the dispute resolution mechanism within the Commission will be triggered and the Commission will adopt a binding decision",
-          "is_correct": true
+          "text": "Maximilian Schrems v. Data Protection Commissioner"
         },
         {
           "label": "C",
-          "text": "Weltimmo s.r.o. v Nemzeti Adatvedelmi es Informacioszabadsag HatosagBoth statements are correctTo approve ad hoc clauses, the supervisory authority needs to submit the draft of clauses to the Commission for final approval",
-          "is_correct": false
+          "text": "Weltimmo s.r.o. v. Nemzeti Adatvedelmi es Informacioszabadsag Hatosag"
         },
         {
           "label": "D",
-          "text": "Data Protection Commission v. Facebook and Maximillian Schrems 75 Read the following two statements and choose the most appropriate answer: Statement A: Data controllers can formulate ad hoc contractual clauses, but this needs approval from a supervisory authority. 30 --1 Statement B: When approving ad hoc contractual clauses, superv4 S ohd authorities are required to apply the dispute resolution mechanism.Both statements are incorrect How does the process of approval for ad hoc contractual clauses look like under the GDPR? ) To approve ad hoc clauses, the supervisory authority needs to apply the consistency mechanism by submitting its draft decision on the clauses to the EDPB. If the supervisory authority does not intend to follow the EDPB's opinion, the dispute resolution mechanism within the EDPB will be triggered and the Board will adopt a binding decisionTo approve ad hoc clauses, the supervisory authority needs to applY the consistency mechanism by submitting its draft decision on the clauses to the EDPB. If the supervisory authority does not intend to 31 follow the EDPB opinion, the dispute resolution mechanism within the Commission will be triggered and the Commission will adopt a binding decision Binding corporate rules allow international data transfers that take place:",
-          "is_correct": false
+          "text": "Data Protection Commission v. Facebook and Maximillian Schrems"
         }
       ],
       "correct_label": "B"
@@ -2026,23 +2022,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "The Commission needs to approve them, in accordance with binding corporate rules, making use of the consistency mechanism",
-          "is_correct": false
+          "text": "The Commission needs to approve them, in accordance with binding corporate rules, using the consistency mechanism"
         },
         {
           "label": "B",
-          "text": "The Commission needs to approve them, in accordance with binding corporate rules, making use of the cooperation mechanism",
-          "is_correct": false
+          "text": "The Commission needs to approve them, in accordance with binding corporate rules, using the cooperation mechanism"
         },
         {
           "label": "C",
-          "text": "The competent supervisory authority needs to approve them, in accordance with binding corporate rules, making use of the cooperation mechanism ( )\tThe competent supervisory authority needs to approve them, in accordance with binding corporate rules, making use of the consistency mechanism 32 I",
-          "is_correct": false
+          "text": "The competent supervisory authority needs to approve them, in accordance with binding corporate rules, making use of the cooperation mechanism."
         },
         {
           "label": "D",
-          "text": "",
-          "is_correct": true
+          "text": "The competent supervisory authority needs to approve them, in accordance with binding corporate rules, making use of the consistency mechanism."
         }
       ],
       "correct_label": "D"
@@ -2053,27 +2045,23 @@
       "number": 79,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "In the absence of an adequate decision or safeguards, such &s standard contractual clauses or binding corporate rules, the internationa data transfer can be carried out based on:",
+      "text": "In the absence of an adequacy decision or safeguards, such as standard contractual clauses or binding corporate rules, the international data transfer can be carried out based on:",
       "choices": [
         {
           "label": "A",
-          "text": "The Commission's binding decisionConcluding a contract between a data controller and a third party in the interests of the data subject The data subject enters into a contractual relationship where the transfer of data abroad is necessary",
-          "is_correct": false
+          "text": "The Commission's binding decision; concluding a contract between a data controller and a third party in the interests of the data subject; or the data subject enters into a contractual relationship where the transfer of data abroad is necessary."
         },
         {
           "label": "B",
-          "text": "The data subject's explicit consent",
-          "is_correct": true
+          "text": "The data subject's explicit consent."
         },
         {
           "label": "C",
-          "text": "The European Data Protection Board's binding decisionFor the transfer of data from public registers",
-          "is_correct": false
+          "text": "The European Data Protection Board's binding decision for the transfer of data from public registers."
         },
         {
           "label": "D",
-          "text": "The competent supervisory authority's approval and the Comm sion's binding decision Which one is NOT a derogation for specific situations under which in e absence of an adequacy decision, or of appropriate safeguards (e.g., inding corporate rules), a transfer or a set of transfers of personal data to a third country or an international organisation can take place?For archiving purposes in the public interest, scientific or historical research purposes or statistical purposes",
-          "is_correct": false
+          "text": "The competent supervisory authority's approval and the Commission's binding decision."
         }
       ],
       "correct_label": "B"
@@ -2088,23 +2076,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "The Commission's adequacy decision for Privacy Shield and the use of current standard contractual clauses were invalidated by the 33Complies with the GDPR, because the company collects and pro- cesses EU data subjects' data with their consentThe UK supervisory authority",
-          "is_correct": true
+          "text": "The Commission's adequacy decision for Privacy Shield and the use of current standard contractual clauses were invalidated."
         },
         {
           "label": "B",
-          "text": "The sion CJEUfound that US surveillance programs, which the Commis- CJEU assessed in its Privacy Shield decision, are not limited to what is strictly necessary and proportional CJEU found that EU data subjects do not have a right to anDoes not comply with the GDPR, because derogations are a last resort for lawful international data transfersThe UK supervisory authority jointly with the German oneOne of the Greek or Austria authorities which has more affected customers in their member state jointly with the Italian supervisory authority",
-          "is_correct": false
+          "text": "The CJEU found that US surveillance programs, which the Commission assessed in its Privacy Shield decision, are not limited to what is strictly necessary and proportional, and that EU data subjects do not have a right to an effective remedy."
         },
         {
           "label": "C",
-          "text": "T he effective remedy in the USComplies with the GDPR, because it has an establishment in the EU which ensures data transfers are compliant with EU privacy lawsThe German supervisory authorityOne of the Greek or Austria authorities which has more affected customers in their member state",
-          "is_correct": false
+          "text": "There is no effective remedy in the US for EU data subjects."
         },
         {
           "label": "D",
-          "text": "Companies relying on standard contractual clauses need to begin the case- by-case assessments of their transfers to determine whether the protection in any third country without an adequacy decision meets the EU standards An online consulting service company, with headquarters in the US and an establishment in the EU, provides employment-related consulting services globally. It also processes data of millions of EU data subjects. For data transfers from the EU to the US, the company relies on explicit consent as a derogation as a lawful basis (necessity to enter a contract). The company:Does not comply with the GDPR, because the company needs to first conduct a DPIA ' A food retailer has a head office in London, which handles all its customer data. it recently been a privacy breach of the retailer's customer database tiff German, Italian and Spanish customers. Who is the lead supervise ty authority for the cross-border processing of the food retailer?One of the German, Italian or Spanish authorities which has more affected customers in their member state An Internet Service Provider's main establishment is in Italy that makes decisions on the processing of personal data for marketing purposes. e company provides services in neighbouring countries (Greece and trik ) where it has set up databases to process customers' personal r marketing purposes. Who is the lead supervisory authority for pany? Either of Greek or Austria authorities as the databases which process customers' personal data for marketing purposes belong to customers located in these two countriesThe Italian supervisory authority",
-          "is_correct": false
+          "text": "Companies relying on standard contractual clauses need to conduct case-by-case assessments of their transfers to determine whether the protection in any third country without an adequacy decision meets EU standards."
         }
       ],
       "correct_label": "A"
@@ -2119,23 +2103,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "The European Data Protection Supervisor 35 The European Court of AuditorsConsistency, enforcement, and guidanceStatement A is correct and Statement B is incorrectThe controller is established in a non-EU country",
-          "is_correct": false
+          "text": "The European Data Protection Supervisor"
         },
         {
           "label": "B",
-          "text": "Consistency, consultation, and enforcementStatement A is incorrect and Statement B is correctThe controller is established in a non-EU country, but has a repre, sentative on the territory of the Member State of that supervisory authority",
-          "is_correct": false
+          "text": "Consistency, consultation, and enforcement"
         },
         {
           "label": "C",
-          "text": "Tile European Data Protection Board (Consistency, consultation, and guidanceBoth statements are correctData subjects residing in the Member State of that supervisory authority are unlikely to be substantially affected by the processing",
-          "is_correct": true
+          "text": "The European Data Protection Board"
         },
         {
           "label": "D",
-          "text": "The European Committee of the Regions What are the three main activities of the European Data Protection Board?Enforcement, consultation, and guidance Choose the best option in relation to the consistency mechanism under the GDPR: Statement A: The consistency mechanism should apply where a supervisory authority intends to adopt a measure intended to produce legal effects as regards processing operations that substantially affect a significant number of data subjects in several Member States. Statement B: That consistency mechanism should apply where any super- visory authority concerned or the Commission requests that such matter should be handled in the consistency mechanism.Both statements are incorrect Under the GDPR, the supervisory authority concerned means a super- visory authority which is concerned by the processing of personal data because: 36 iiA complaint has been lodged with that supervisory authority",
-          "is_correct": false
+          "text": "The European Committee of the Regions"
         }
       ],
       "correct_label": "C"
@@ -2181,22 +2161,22 @@
       "choices": [
         {
           "label": "A",
-          "text": "Legitimate interests is an appropriate lawful processing ground as Company ABC needs to protect the network, and the personal t data of employees and customers held within that network agains unauthorised access or data leakage allriP DW ,!:\tWillOKIvIIINIFIFIrMINI...,.....A WOM MIVVW WET timate",
+          "text": "Legitimate interests is an appropriate lawful processing ground as Company ABC needs to protect the network and the personal data of employees and customers held within that network against unauthorised access or data leakage",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Leg' as nitoring online activities of the employees is a disproportionate MO response and an interference with the right to secrecy of communi- cations",
+          "text": "Legitimate interests is not appropriate as monitoring online activities of employees is a disproportionate response and an interference with the right to secrecy of communications",
           "is_correct": true
         },
         {
           "label": "C",
-          "text": "Company ABC should rely on consent as a lawful processing ground s it is likely to collect and process employees' personal data a",
+          "text": "Company ABC should rely on consent as a lawful processing ground as it is likely to collect and process employees' personal data",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Legitimate interests is an appropriate lawful processing ground, however, Company ABC must carefully inform employees of such monitoring activity in a transparent manner 38",
+          "text": "Legitimate interests is an appropriate lawful processing ground; however, Company ABC must carefully inform employees of such monitoring activity in a transparent manner",
           "is_correct": false
         }
       ],
@@ -2208,27 +2188,23 @@
       "number": 2,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct about the notification obligation under the Data Protection Directive (Directive) and the GDPR (Regulation)?",
+      "text": "In which data protection instrument is data protection by design and by default addressed as a legal obligation?",
       "choices": [
         {
           "label": "A",
-          "text": "Under the Directive, controllers were required to notify a competent supervisory authority before processing any personal data. However, under the Regulation this needs to be done after data processing",
-          "is_correct": false
+          "text": "Data Protection Directive"
         },
         {
           "label": "B",
-          "text": "Under the Directive, controllers were required to notify a competent supervisory authority before processing any special categories of 39 . However, under the Regulation there is no obligation al data person the competent supervisory authority to notify under the Directive, controllers were required to notify a competent supervisory authority before processing any personal data. However, under the Regulation there is no obligation to notify the competent supervisory authority Under the Directive, controllers were required to notify a competent supervisory authority before processing any personal data. However, under the Regulation there is no obligation to notify the compe- tent supervisory authority. Nevertheless, notification obligation is triggered if special categories of personal data is processed 3. In which data protection instrument data protection by design and by default was addressed as a legal obligation? (a) Data Protection Directive (b) General Data Protection Regulation",
-          "is_correct": false
+          "text": "Under the Directive, controllers were required to notify a competent supervisory authority before processing any personal data. However, under the Regulation there is no obligation to notify the competent supervisory authority."
         },
         {
           "label": "C",
-          "text": "Modernised Convention 108",
-          "is_correct": true
+          "text": "Modernised Convention 108"
         },
         {
           "label": "D",
-          "text": "ePrivacy Directive",
-          "is_correct": false
+          "text": "ePrivacy Directive"
         }
       ],
       "correct_label": "C"
@@ -2243,23 +2219,19 @@
       "choices": [
         {
           "label": "A",
-          "text": "Main establishment may not be the central administration in the Union but it has the power to decide on the purposes and means of the processing of personal data",
-          "is_correct": true
+          "text": "Main establishment may not be the central administration in the Union but it has the power to decide on the purposes and means of the processing of personal data"
         },
         {
           "label": "B",
-          "text": "Main establishment must be the central administration in the Union which has the power to decide on the purposes and means of the processing",
-          "is_correct": false
+          "text": "Main establishment must be the central administration in the Union which has the power to decide on the purposes and means of the processing"
         },
         {
           "label": "C",
-          "text": "",
-          "is_correct": false
+          "text": "Main establishment is designated by the controller in the Union to represent the controller in relation to its obligations under the GDPR."
         },
         {
           "label": "D",
-          "text": "40 Ir (c) Main establishment is designated by the controller in the Union to represent the controller in relation to its obligations under the GDPR (d) Main establishment is designated by the controller in the Union which may or may not have the power to decide on the purposes and means of the processing of personal data and it represents the controller with regard to its respective obligations under the GDPR",
-          "is_correct": false
+          "text": "Main establishment is designated by the controller in the Union which may or may not have the power to decide on the purposes and means of the processing of personal data and it represents the controller with regard to its respective obligations under the GDPR."
         }
       ],
       "correct_label": "A"
@@ -2301,11 +2273,11 @@
       "number": 6,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR (Regulation) and the Data Protection Directive (Direc- tive), which one is correct about the obligation to notify a data breach 41 thrill. I ii72e i- .4i it. WEI di. d data subjects when it is likely that the breach results in hi gh to afecte the rights and freedoms of data subjects? risks to",
+      "text": "Under the GDPR (Regulation) and the Data Protection Directive (Directive), which statement is correct about the obligation to notify affected data subjects when it is likely that the breach results in high risks to their rights and freedoms?",
       "choices": [
         {
           "label": "A",
-          "text": "T he Directive does not specifically oblige controllers to report data breaches to affected data subjects, but the Regulation does so",
+          "text": "The Directive does not specifically oblige controllers to report data breaches to affected data subjects, but the Regulation does",
           "is_correct": true
         },
         {
@@ -2320,7 +2292,7 @@
         },
         {
           "label": "D",
-          "text": "Neither of them obliges controllers to report data breaches to affected data subjects, but is strongly advised",
+          "text": "Neither of them obliges controllers to report data breaches to affected data subjects, but it is strongly advised",
           "is_correct": false
         }
       ],
@@ -2425,7 +2397,7 @@
       "number": 13,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which of the following rights was NOT previously recognised by the Data",
+      "text": "Which of the following rights was NOT previously recognised under the Data Protection Directive?",
       "choices": [
         {
           "label": "A",
@@ -2549,7 +2521,7 @@
       "number": 19,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "which one",
+      "text": "Which of the following is an example of a dark pattern that manipulates user consent?",
       "choices": [
         {
           "label": "A",
@@ -2558,17 +2530,17 @@
         },
         {
           "label": "B",
-          "text": "A pre-checked cookie opt-in settings upon visiting a website",
+          "text": "A pre-checked cookie opt-in setting upon visiting a website",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "A hotel booking website that commands a data subject to decide on the booking within the next five minutes by displaying a countdown timer",
+          "text": "A hotel booking website that requires the data subject to decide on the booking within the next five minutes by displaying a countdown timer",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "A big pop-up window informing a data subject to read the privacy notice of a website upon the first visit, while the `Close This Window' button is much smaller",
+          "text": "A big pop-up window informing a data subject to read the privacy notice of a website upon the first visit, while the “Close This Window” button is much smaller",
           "is_correct": true
         }
       ],
@@ -2611,11 +2583,11 @@
       "number": 21,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A suPermarket requires customers to consent to their personal data being 48",
+      "text": "A supermarket requires customers to consent to their personal data being used. Which statement is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The supermarket relying on consent is not justifiable as th ere ma\\ be some customers who are not aware of such data processing, e. g. visually impaired customers who are not able to see the transpareec i. notices throughout the supermarket premises out process. This has been already clearly communicated throughout the supermarket using big signs and attractive en , tourer` -tours make sure that all customers are fully aware of suc h data proe ng t essi Which one is correct?",
+          "text": "The supermarket relying on consent is not justifiable because some customers may not be aware of the data processing, for example visually impaired customers who cannot read the notices displayed",
           "is_correct": false
         },
         {
@@ -2625,12 +2597,12 @@
         },
         {
           "label": "C",
-          "text": "The supermarket relying on consent is not justifiable as a free choice to opt in or out is not provided to customers",
+          "text": "The supermarket relying on consent is not justifiable because customers are not given a free choice to opt in or out",
           "is_correct": true
         },
         {
           "label": "D",
-          "text": "The supermarket relying on consent is justifiable as their intention to collect and share customers' data with food suppliers is clearly ommunicated to individuals A clam subject is suffering from toothache. They approach the nearest dentist clinic to further investigate the matter. Since the data subject has never visited this dentist clinic before, they are asked to fill out a medical history form to better plan the medical treatment. The form contains questions about previous, existing, or suspected infectious diseases (e.g.. hepatitis and HIV). The data subject fills out the form and indicates that they have HIV. Based on the information provided by the data subjec t in the medical history form, the dentist decides to refuse the treatment Which one is correct? file (a) The dentist must not ask for such sensitive data as this may cow' with fundamental rights and freedoms of the data subject 49 (b)It was legitimate to ask for such sensiti ve data to better plan the medical treatment, however, it was not permissible to collect such information and then refuse treatment to the patient (c) It was legitimate to ask for such sensiti ve data to better plan the medical treatment, and the dentist's decision to refuse the treatment is justifiable as the treatment may lead to the infection of other patients, and thus, endangering their life (d) The dentist must not ask for such sensitive data because this is easily linkable to the identity of the data subject. Instead, the dentist should have anonymised the identity of the data subject and make them a referral to another dentist Read the following scenario and answer the two follow-up questions: Ms. Wilson has recently subscribed to an online magazine. During the subscription process, she was required to accept the terms of the subscription and contract, which included consent to direct marketing. At a later point, Ms. Wilson receives direct telephone marketing calls that are carried out by the magazine using an automated calling system. Ms. Wilson finds this frustrating and decides to unsubscribe from the magazine. Luckily, the unsubscription process is very easy and she manages to unsubscribe quickly. Which one is correct in relation to Statement A and Statement B? Statement A: The magazine's direct telephone marketing calls using an automated calling system is an example of unsolicited telephone advertis- ing. Statement B: For direct telephone marketing calls using an automated calling system consent is not needed, however, a clear opt out mechanism must be provided to Ms. Wilson. 50 (a) Statement A is correct and Statement B is incorrect (b) Statement A is incorrect and Statement B is correct (c) Both statements are correct (d) Both statements are incorrect",
+          "text": "The supermarket relying on consent is justifiable because their intention to collect and share customer data with food suppliers is clearly communicated to individuals",
           "is_correct": false
         }
       ],
@@ -2797,7 +2769,7 @@
       "number": 33,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR and its information obligation in relation to pri , nciple of fair and transparent processing, a controller can use standardised ico ns",
+      "text": "Under the GDPR, to meet the information obligation and the principle of fair and transparent processing, a controller may use standardised icons if they are:",
       "choices": [
         {
           "label": "A",
@@ -2983,7 +2955,7 @@
       "number": 41,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "What does amicable settlement mean under the GDPR?",
+      "text": "What does 'amicable settlement' mean under the GDPR?",
       "choices": [
         {
           "label": "A",
@@ -2992,7 +2964,7 @@
         },
         {
           "label": "B",
-          "text": "It means a supervisory authority receiving a complaint should seek a settlement with the supervisory authority concerned It means a controller or processor receiving a complaint should seek settlement with the data subject concerned It means a controller or processor receiving a complaint should seek a settlement with the supervisory authority concerned 57 entities should participate in the EDPB's act ivities, which of the following but it does NOT have voting rights? (a) European Council (b) European Data Protection Supervisor",
+          "text": "It means a supervisory authority receiving a complaint should seek a settlement with the supervisory authority concerned, or a controller or processor receiving a complaint should seek settlement with the data subject or supervisory authority concerned",
           "is_correct": false
         },
         {
@@ -3002,7 +2974,7 @@
         },
         {
           "label": "D",
-          "text": "European Commission The legal system of which two EU Member States does NOT allow for a dministrative fines as set out in the GDPR? (a) Hungary and Greece (b) Cyprus and Croatia (c) Estonia and Denmark (d) Finland and Ireland In which of the following scenarios updating the data stored is legally necessary to comply with the data accuracy principle? A medical practitioner's database of a patient that stores wrong information about a patient's underlying condition A database used by banks to check the creditworthiness of prospective customers containing outdated data about an individual An individual is dismissed for alleged misconduct. It is later found that the dismissal was unfair and the individual is reinstated. The individual demands that the employer deletes all references to mis- conduct An individual that moves house from Rome to Milan where a record S aying that the individual once lived in Rome (d) 58",
+          "text": "European Commission",
           "is_correct": false
         }
       ],
@@ -3138,7 +3110,7 @@
       "number": 51,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which one is NOT a decisive factor in assessing",
+      "text": "Under the GDPR, which one is NOT a decisive factor in assessing the level of administrative fines?",
       "choices": [
         {
           "label": "A",
@@ -3157,7 +3129,7 @@
         },
         {
           "label": "D",
-          "text": "The degree of cooperation of the controller or processor 61 vital interests of the data subject as a lawful basis I 3 lit MAW 3.133 food retailer with thousands of employees and customers which",
+          "text": "The degree of cooperation of the controller or processor",
           "is_correct": false
         }
       ],
@@ -3293,16 +3265,16 @@
       "number": 59,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "As part of a cross border data transfer among multiple EU countries, a lead supervisory authority has drafted a decision in relation to a controller' L ot supervisory authority disagrees on whether there is an infringement 65 rn d e infringement of Articles 5 and 6 of the GDPR. However, the conce {N. , kr Article 6, and therefore, ob jects to this decision. The lead supervisory rejects the ob jection of the concerned su pervisory authority nthorit Y it finds it irrelevant and not reasoned. How should the supervisory proceed with this case? authorities",
+      "text": "As part of a cross-border data transfer among multiple EU countries, a lead supervisory authority has drafted a decision regarding a controller. A concerned supervisory authority disagrees on whether there is an infringement of Articles 5 and 6 of the GDPR. The concerned authority objects, but the lead authority rejects the objection as irrelevant and unreasoned. How should the supervisory authorities proceed with this case?",
       "choices": [
         {
           "label": "A",
-          "text": "The lead supervisory authority is in charge, and thus, if it finds an objection irrelevant and not reasoned appropriately, it can reject it and proceed with a binding decision",
+          "text": "The lead supervisory authority is in charge and, if it finds an objection irrelevant and not appropriately reasoned, it can reject it and proceed with a binding decision",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The concerned supervisory authority has the right to escalate the case and asks for a binding decision from the EDPB",
+          "text": "The concerned supervisory authority has the right to escalate the case and ask for a binding decision from the EDPB",
           "is_correct": false
         },
         {
@@ -3312,7 +3284,7 @@
         },
         {
           "label": "D",
-          "text": "Lead and concerned supervisory authorities must follow a consistency mechanism which means they have to resolve the matter internally Company X has conducted a DPIA and the outcome indicates that processing would result in high risks in the absence of measures taken to mitigate the risk. Hence, it has submitted a consultation request to the competent supervisory authority. What is the time-frame by which the supervisory authority has to provide advice to Company X? (a) Up to 8 weeks of receipt of the request. This may be extended by 6 weeks depending on the complexity of the intended processing (b) Up to 6 weeks of receipt of the request. This may be extended by 8 weeks depending on the complexity of the intended processing (c) Up to 1 month of receipt of the request. This may be extended by 2 m onths depending on the complexity of the intended processing (d) U p to 2 months of receipt of the request. This may be extended by 1 month depending on the complexity of the intended processing 66 lV!lt1III",
+          "text": "Lead and concerned supervisory authorities must follow a consistency mechanism, which means they have to resolve the matter internally",
           "is_correct": false
         }
       ],
@@ -3324,7 +3296,7 @@
       "number": 61,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Ms. Robinson wants to have an effective judicial remedy against lodged her complaint in Germany, but soon after she moved to Sweden to live there. Where is she required to bring the proceedings a gainst the legally binding decision made concerning her complaint? a legally binding decision of a supervisory authority concerning her complaint She 67",
+      "text": "Ms. Robinson wants to have an effective judicial remedy against a legally binding decision of a supervisory authority concerning her complaint. She lodged her complaint in Germany, but soon after she moved to Sweden to live there. Where is she required to bring the proceedings against the legally binding decision concerning her complaint?",
       "choices": [
         {
           "label": "A",
@@ -3386,7 +3358,7 @@
       "number": 65,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is NOT an exception to fully automated individual decision- making including profiling? ) Bank X relies on an automatically-generated interest score based on a customer's lifestyle to adjust its mortgage interest rate ) Bank X relies on an automatically-generated credit score carried out by a credit reference agency to decide whether or not to give loan to a data subject (c) Bank X uses automated decision-making including profiling to iden- tify fraud to comply with its legal obligations (d) Bank X has introduced a new service called `Save Money Scheme' in which it obtains the explicit consent of its customers to profile their purchasing behaviour and decide on their monthly expenditure using a fully automated decision-making algorithm (d) 66. Wh ich one is correct in relation to Statement A and Statement B? Staterae_4_ ' 4 A: The transfer of a video footage to third parties for the Pihr P 8 other than that for which the data has been collected is always 68 unlawful. Statement B: The processing of a video footage by the law n agencies always falls under both the GDPR and the Law E e forceinent f orcer, Directive (EU2016/680). 'ent",
+      "text": "Which one is correct in relation to Statement A and Statement B?\nStatement A: The transfer of a video footage to third parties for purposes other than that for which the data has been collected is always unlawful.\nStatement B: The processing of video footage by law enforcement agencies always falls under both the GDPR and the Law Enforcement Directive (EU 2016/680).",
       "choices": [
         {
           "label": "A",
@@ -3479,7 +3451,7 @@
       "number": 69,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "a result, the owner has installed a video surveillance system with an appropriate DPIA in mind. A data subject who had passed by the supermarket has recently requested the owner to delete their personal data from the moment they were passing by. What should the owner do?",
+      "text": "A supermarket owner has installed a video surveillance system with an appropriate DPIA in mind. A data subject who passed by the supermarket recently requested the owner to delete their personal data from the moment they were passing by. What should the owner do?",
       "choices": [
         {
           "label": "A",
@@ -3488,17 +3460,17 @@
         },
         {
           "label": "B",
-          "text": "The owner should refuse this request as the footage is necessary to protect the property from a vandalism The owner should only accept this request and delete the data after a retention period to make sure no legal obligation arises (d) The owner should refuse this request as appropriate DPIA has been conducted 70. The GDPR does NOT have a chapter covering: (a) International data transfers (b) Data transfer exemptions",
+          "text": "The owner should refuse this request as the footage is necessary to protect the property from vandalism",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Rights of the data subject",
+          "text": "The owner should only accept this request and delete the data after a retention period to make sure no legal obligation arises",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Liabilities and penalties 7",
+          "text": "The owner should refuse this request because an appropriate DPIA has been conducted",
           "is_correct": false
         }
       ],
@@ -3510,7 +3482,7 @@
       "number": 1,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "In which of the following places the data subject has no right to lodge a complaint with a supervisory authority if the data subject considers that the processing of personal data relating to them infringes the GDPR? (c) 70",
+      "text": "In which of the following places does the data subject have no right to lodge a complaint with a supervisory authority if the data subject considers that the processing of personal data relating to them infringes the GDPR?",
       "choices": [
         {
           "label": "A",
@@ -3560,7 +3532,7 @@
         },
         {
           "label": "D",
-          "text": "Bring proceedings against a decision made by a national court Under the GDPR, when a data subject exercises the right to restriction of processing, then the data controller: (a) May continue to retain the data but cannot process it further (b) Can process the data partially (c) Must delete the data immediately (d) Can process the data for another purpose only if the data subject is informed",
+          "text": "Bring proceedings against a decision made by a national court",
           "is_correct": false
         }
       ],
@@ -3603,26 +3575,26 @@
       "number": 75,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "are in the Union by a controller or processor not established in the Union, where the processing activities are related to:",
+      "text": "Under Article 3(2) of the GDPR, the regulation applies to the processing of personal data of data subjects who are in the Union by a controller or processor not established in the Union, where the processing activities are related to:",
       "choices": [
         {
           "label": "A",
-          "text": "Offering goods or services only if a payment of the data subject is required",
+          "text": "Offering goods or services only if payment by the data subject is required",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Monitoring their behaviour as far as their behaviour takes place outside the Union",
+          "text": "Monitoring their behaviour insofar as their behaviour takes place outside the Union",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Offering goods or services only if a payment of the data subject is required regardless of where the data subject is located",
+          "text": "Offering goods or services only if payment by the data subject is required regardless of where the data subject is located",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Offering goods or services to such a data subject in the Union regardless of whether a payment of the data subject is required",
+          "text": "Offering goods or services to such a data subject in the Union regardless of whether payment by the data subject is required",
           "is_correct": true
         }
       ],
@@ -3665,7 +3637,7 @@
       "number": 78,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, the right to data portability does NOT",
+      "text": "Under the GDPR, the right to data portability does NOT apply where:",
       "choices": [
         {
           "label": "A",
@@ -3674,7 +3646,7 @@
         },
         {
           "label": "B",
-          "text": "It is exercised against a processing necessary for the pe contract",
+          "text": "It is exercised against a processing necessary for the performance of a contract",
           "is_correct": false
         },
         {
@@ -3758,7 +3730,7 @@
       "number": 3,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which one is NOT influential when deciding on the risk level of a processing activity to figure out if the processing is likely to result in high risks to the rights and freedoms of individuals as to whether carry out a DPIA? 74",
+      "text": "Under the GDPR, which factor is NOT influential when deciding the risk level of a processing activity to determine whether a Data Protection Impact Assessment (DPIA) is required?",
       "choices": [
         {
           "label": "A",
@@ -3820,16 +3792,16 @@
       "number": 86,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, who controller or processor? S",
+      "text": "Under the GDPR, who can issue or withdraw certification for a controller or processor?",
       "choices": [
         {
           "label": "A",
-          "text": "C ertification can only be issued/wit hdrawn by a supervisory auth1. ity can issue/withdraw a certification wigwam si i 1 if tification can be issued b y a com petent supervisory authority or",
+          "text": "Certification can only be issued or withdrawn by a supervisory authority",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "certification a cert ification body, but it can only be withdrawn by the competent supervisory authority",
+          "text": "Certification can only be issued by a certification body, but it can be withdrawn by the competent supervisory authority",
           "is_correct": false
         },
         {
@@ -3901,7 +3873,7 @@
         },
         {
           "label": "D",
-          "text": "The data controller and the competent supervisory authority 89 . Which one is correct in relation to Statement A and Statement B under the GDPR? Statement A: Data controllers must report every personal data breach to the competent supervisory authority. Statement B: Data controllers must report every personal data breach to the affected data subjects. 76 (a) Statement A is correct and Statement B is incorrect (b) Statement A is incorrect and Statement B is correct (c) Both statements are correct (d) Both statements are incorrect",
+          "text": "The data controller and the competent supervisory authority",
           "is_correct": false
         }
       ],
@@ -3913,26 +3885,26 @@
       "number": 90,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which one is NOT correct in relation to the n data processors?",
+      "text": "Under the GDPR, which statement is NOT correct in relation to data processors?",
       "choices": [
         {
           "label": "A",
-          "text": "Data processors are liable for enforcement actions and penalti",
+          "text": "Data processors are liable for enforcement actions and penalties",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Data processors are exempt from designating a DPO if the control has already designated someone for this purpose",
+          "text": "Data processors are exempt from designating a DPO if the controller has already designated someone for this purpose",
           "is_correct": true
         },
         {
           "label": "C",
-          "text": "Data processors shall not engage another processor without written authorisation of the data controller",
+          "text": "Data processors shall not engage another processor without the written authorisation of the data controller",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Data processors shall provide sufficient guarantees to imp appropriate technical and organisational measures 77",
+          "text": "Data processors shall provide sufficient guarantees to implement appropriate technical and organisational measures",
           "is_correct": false
         }
       ],
@@ -3944,7 +3916,7 @@
       "number": 1,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "How does the GDPR define \u2018processing\u2019?",
+      "text": "How does the GDPR define ‘processing’?",
       "choices": [
         {
           "label": "A",
@@ -4006,7 +3978,7 @@
       "number": 3,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, when processing an individual\u2019s personal data in the context of direct marketing  activities, data controllers must do which of the following?",
+      "text": "Under the GDPR, when processing an individual’s personal data in the context of direct marketing  activities, data controllers must do which of the following?",
       "choices": [
         {
           "label": "A",
@@ -4409,7 +4381,7 @@
       "number": 16,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which of the following would most likely NOT be covered by the definition of \u2018personal data\u2019 under  the GDPR?",
+      "text": "Which of the following would most likely NOT be covered by the definition of ‘personal data’ under  the GDPR?",
       "choices": [
         {
           "label": "A",
@@ -4440,7 +4412,7 @@
       "number": 17,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under Article 17(1) (right to erasure or \u2018right to be forgotten\u2019), what is a controller required to do  when they receive a proper request for erasure from a data subject?",
+      "text": "Under Article 17(1) (right to erasure or ‘right to be forgotten’), what is a controller required to do  when they receive a proper request for erasure from a data subject?",
       "choices": [
         {
           "label": "A",
@@ -4454,7 +4426,7 @@
         },
         {
           "label": "C",
-          "text": "Immediately erase all the requesting data subject\u2019s personal data from backup files.",
+          "text": "Immediately erase all the requesting data subject’s personal data from backup files.",
           "is_correct": false
         },
         {
@@ -4502,7 +4474,7 @@
       "number": 19,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An organisation wants to use a digital identity verification app to authenticate the identities of new  customers. Customers will be asked to upload a photo ID document such as passport, driving licence or national ID and then asked to upload a picture of their face in the app. The ID document\u2019s authenticity is checked, and biometrics are used to ensure the ID document belongs to the customer. What step should the organisation take to ensure the data minimisation principle is implemented when collecting the personal data?",
+      "text": "An organisation wants to use a digital identity verification app to authenticate the identities of new  customers. Customers will be asked to upload a photo ID document such as passport, driving licence or national ID and then asked to upload a picture of their face in the app. The ID document’s authenticity is checked, and biometrics are used to ensure the ID document belongs to the customer. What step should the organisation take to ensure the data minimisation principle is implemented when collecting the personal data?",
       "choices": [
         {
           "label": "A",
@@ -4578,7 +4550,7 @@
         },
         {
           "label": "C",
-          "text": "The data controller\u2019s insurance policy for security breaches and relevant coverage thresholds.",
+          "text": "The data controller’s insurance policy for security breaches and relevant coverage thresholds.",
           "is_correct": false
         },
         {
@@ -4595,7 +4567,7 @@
       "number": 22,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which of the following statements is TRUE regarding a data subject\u2019s right to opt  out of direct marketing?",
+      "text": "Under the GDPR, which of the following statements is TRUE regarding a data subject’s right to opt  out of direct marketing?",
       "choices": [
         {
           "label": "A",
@@ -4661,17 +4633,17 @@
       "choices": [
         {
           "label": "A",
-          "text": "Data that has been rendered unreadable to cast doubt on a data subject\u2019s identity.",
+          "text": "Data that has been rendered unreadable to cast doubt on a data subject’s identity.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Data that has been stripped of personal identifiers to prevent a data subject\u2019s personal identity  from being revealed.",
+          "text": "Data that has been stripped of personal identifiers to prevent a data subject’s personal identity  from being revealed.",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Data that has been replaced with random values to make it uniquely difficult to be tied back to  a data subject\u2019s identity.",
+          "text": "Data that has been replaced with random values to make it uniquely difficult to be tied back to  a data subject’s identity.",
           "is_correct": false
         },
         {
@@ -4759,7 +4731,7 @@
         },
         {
           "label": "B",
-          "text": "Consent for collecting the child\u2019s personal data is implied through the parent's purchase of the  action figure for the child.",
+          "text": "Consent for collecting the child’s personal data is implied through the parent's purchase of the  action figure for the child.",
           "is_correct": false
         },
         {
@@ -4893,7 +4865,7 @@
         },
         {
           "label": "D",
-          "text": "Accept the data subject\u2019s oral request and respond within 90 days.",
+          "text": "Accept the data subject’s oral request and respond within 90 days.",
           "is_correct": false
         }
       ],
@@ -4909,12 +4881,12 @@
       "choices": [
         {
           "label": "A",
-          "text": "The sensitivity of the personal data to be processed, together with the data processor\u2019s ability  to maintain confidentiality and integrity of such data.",
+          "text": "The sensitivity of the personal data to be processed, together with the data processor’s ability  to maintain confidentiality and integrity of such data.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The state of the art, the cost of implementation, and the nature, scope, context and purposes  of processing, together with the impact on the data subject\u2019s rights.",
+          "text": "The state of the art, the cost of implementation, and the nature, scope, context and purposes  of processing, together with the impact on the data subject’s rights.",
           "is_correct": true
         },
         {
@@ -5029,7 +5001,7 @@
       "number": 36,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A key component of the OECD Guidelines is the \u2018individual participation principle\u2019. What parts of  the GDPR provide the closest equivalent to that principle?",
+      "text": "A key component of the OECD Guidelines is the ‘individual participation principle’. What parts of  the GDPR provide the closest equivalent to that principle?",
       "choices": [
         {
           "label": "A",
@@ -5060,7 +5032,7 @@
       "number": 37,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A data controller must notify a data subject about a personal data breach likely to result in a high  risk to the data subject\u2019s fundamental rights and freedoms in each of the following situations EXCEPT?",
+      "text": "A data controller must notify a data subject about a personal data breach likely to result in a high  risk to the data subject’s fundamental rights and freedoms in each of the following situations EXCEPT?",
       "choices": [
         {
           "label": "A",
@@ -5091,7 +5063,7 @@
       "number": 38,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A restaurant has a website through which customers order food to be delivered to their home. The  restaurant sends the consumer\u2019s personal data and order information to a third-party delivery company for the purpose of delivering the food and accepting payment. After the order is complete, the delivery company pseudonymises the customer information to be used to improve the delivery company\u2019s estimated delivery time algorithm. The delivery company is not using the pseudonymised customer data for their algorithm on the restaurant\u2019s behalf. Under the GDPR, what role best describes the delivery company with respect to the processing of data used for the algorithm?",
+      "text": "A restaurant has a website through which customers order food to be delivered to their home. The  restaurant sends the consumer’s personal data and order information to a third-party delivery company for the purpose of delivering the food and accepting payment. After the order is complete, the delivery company pseudonymises the customer information to be used to improve the delivery company’s estimated delivery time algorithm. The delivery company is not using the pseudonymised customer data for their algorithm on the restaurant’s behalf. Under the GDPR, what role best describes the delivery company with respect to the processing of data used for the algorithm?",
       "choices": [
         {
           "label": "A",
@@ -5121,7 +5093,7 @@
       "exam": "CIPPE",
       "number": 39,
       "scenario_id": "III",
-      "scenario_text": "Please use the following scenario to answer the next TWO questions. \nThe U.S.-based ABC Company is setting up a processing facility in Ireland. The company is a back-office \ndata processor for EU health insurance companies. ABC Company\u2019s first client is Ireland HealthU \nInsurance, which provides health insurance for all college students in Ireland. The student health \ninsurance applications include name, date of birth, and previous and existing medical treatments and \nconditions. The volume of data processing is unknown, but it is expected to be between 50,000\u2013 \n100,000 applications per month. Even though there are large volumes of applications, the number of \nemployees of ABC Company remains fewer than 100. ",
+      "scenario_text": "Please use the following scenario to answer the next TWO questions. \nThe U.S.-based ABC Company is setting up a processing facility in Ireland. The company is a back-office \ndata processor for EU health insurance companies. ABC Company’s first client is Ireland HealthU \nInsurance, which provides health insurance for all college students in Ireland. The student health \ninsurance applications include name, date of birth, and previous and existing medical treatments and \nconditions. The volume of data processing is unknown, but it is expected to be between 50,000– \n100,000 applications per month. Even though there are large volumes of applications, the number of \nemployees of ABC Company remains fewer than 100. ",
       "text": "Does the record-keeping requirement of the GDPR apply to this company?",
       "choices": [
         {
@@ -5152,7 +5124,7 @@
       "exam": "CIPPE",
       "number": 40,
       "scenario_id": "III",
-      "scenario_text": "Please use the following scenario to answer the next TWO questions. \nThe U.S.-based ABC Company is setting up a processing facility in Ireland. The company is a back-office \ndata processor for EU health insurance companies. ABC Company\u2019s first client is Ireland HealthU \nInsurance, which provides health insurance for all college students in Ireland. The student health \ninsurance applications include name, date of birth, and previous and existing medical treatments and \nconditions. The volume of data processing is unknown, but it is expected to be between 50,000\u2013 \n100,000 applications per month. Even though there are large volumes of applications, the number of \nemployees of ABC Company remains fewer than 100. ",
+      "scenario_text": "Please use the following scenario to answer the next TWO questions. \nThe U.S.-based ABC Company is setting up a processing facility in Ireland. The company is a back-office \ndata processor for EU health insurance companies. ABC Company’s first client is Ireland HealthU \nInsurance, which provides health insurance for all college students in Ireland. The student health \ninsurance applications include name, date of birth, and previous and existing medical treatments and \nconditions. The volume of data processing is unknown, but it is expected to be between 50,000– \n100,000 applications per month. Even though there are large volumes of applications, the number of \nemployees of ABC Company remains fewer than 100. ",
       "text": "In the above scenario, ABC Company appointed a DPO to comply with the GDPR. Why is ABC  Company required to do so?",
       "choices": [
         {
@@ -5184,7 +5156,7 @@
       "number": 41,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the ePrivacy Directive, when obtaining consent from individuals to process their location  data, controllers must present individuals with each of the following EXCEPT:",
+      "text": "Under the ePrivacy Directive, when obtaining consent from individuals to process their location data, controllers must present individuals with each of the following EXCEPT:",
       "choices": [
         {
           "label": "A",
@@ -5193,7 +5165,7 @@
         },
         {
           "label": "B",
-          "text": "Information about their right to withdraw consent of the processing at any time.",
+          "text": "Information about their right to withdraw consent for the processing at any time",
           "is_correct": false
         },
         {
@@ -5215,7 +5187,7 @@
       "number": 42,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A United States-based online company uses software to track the browsing behaviour and predict  future purchases of its European customers. It also shares this information with third parties. Under the GDPR, what is the online company\u2019s primary obligation before engaging in this kind of profiling?",
+      "text": "A United States-based online company uses software to track the browsing behaviour and predict  future purchases of its European customers. It also shares this information with third parties. Under the GDPR, what is the online company’s primary obligation before engaging in this kind of profiling?",
       "choices": [
         {
           "label": "A",
@@ -5308,7 +5280,7 @@
       "number": 45,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "What is the main reason GDPR Article 4(22) establishes the concept of the \u2018supervisory authority  concerned\u2019?",
+      "text": "What is the main reason GDPR Article 4(22) establishes the concept of the ‘supervisory authority  concerned’?",
       "choices": [
         {
           "label": "A",
@@ -5339,7 +5311,7 @@
       "number": 46,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Your company\u2019s chief information security officer is performing an annual review of its \u2018bring your  own device\u2019 (BYOD) program for its European subsidiary. She has asked you to validate that the technical team\u2019s process document is compliant with GDPR. Which step would result in non-compliance with the GDPR?",
+      "text": "Your company’s chief information security officer is performing an annual review of its ‘bring your  own device’ (BYOD) program for its European subsidiary. She has asked you to validate that the technical team’s process document is compliant with GDPR. Which step would result in non-compliance with the GDPR?",
       "choices": [
         {
           "label": "A",
@@ -5463,11 +5435,11 @@
       "number": 50,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under Article 21 of the GDPR, a controller must stop profiling when requested by a data subject  unless the controller can demonstrate compelling legitimate grounds that override the interests of the individual. In the \u2018Guidelines on Automated individual decision-making and Profiling\u2019, the European Data Protection Board (EDPB) says the controller needs to do all of the following to demonstrate it has such legitimate grounds EXCEPT?",
+      "text": "Under Article 21 of the GDPR, a controller must stop profiling when requested by a data subject  unless the controller can demonstrate compelling legitimate grounds that override the interests of the individual. In the ‘Guidelines on Automated individual decision-making and Profiling’, the European Data Protection Board (EDPB) says the controller needs to do all of the following to demonstrate it has such legitimate grounds EXCEPT?",
       "choices": [
         {
           "label": "A",
-          "text": "Consider the importance of the profiling to the controller\u2019s particular objectives.",
+          "text": "Consider the importance of the profiling to the controller’s particular objectives.",
           "is_correct": false
         },
         {
@@ -5477,12 +5449,12 @@
         },
         {
           "label": "C",
-          "text": "Demonstrate that the profiling is for the purposes of direct marketing and in the controller\u2019s  best interest.",
+          "text": "Demonstrate that the profiling is for the purposes of direct marketing and in the controller’s  best interest.",
           "is_correct": true
         },
         {
           "label": "D",
-          "text": "Carry out an exercise that balances the controller\u2019s interest and the basis for the data subject's  objection.",
+          "text": "Carry out an exercise that balances the controller’s interest and the basis for the data subject's  objection.",
           "is_correct": false
         }
       ],
@@ -5524,7 +5496,7 @@
       "exam": "CIPPE",
       "number": 52,
       "scenario_id": "IV",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum\u2019s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum\u2019s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors\u2019 introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum\u2019s reuse. ",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum’s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum’s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors’ introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum’s reuse. ",
       "text": "After visiting the Museum4yourSenses, what would visitors be entitled to request regarding their  personal data?",
       "choices": [
         {
@@ -5555,17 +5527,17 @@
       "exam": "CIPPE",
       "number": 53,
       "scenario_id": "IV",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum\u2019s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum\u2019s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors\u2019 introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum\u2019s reuse. ",
-      "text": "Bubbaloo Clown Company downloaded the PluckPlack videos promoting the museum and used the  expressions to make new clown masks. It named the masks according to the visitor\u2019s introductions. When former visitors became aware of these masks, they lodged a series of complaints with the supervisory authorities. Museum4yourSenses deflected any responsibility, stating it was their audio-visual vendor handling the audio recordings of the visitors. Which statement about responsibility for the misuse of the visitors\u2019 personal data is correct?",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum’s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum’s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors’ introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum’s reuse. ",
+      "text": "Bubbaloo Clown Company downloaded the PluckPlack videos promoting the museum and used the  expressions to make new clown masks. It named the masks according to the visitor’s introductions. When former visitors became aware of these masks, they lodged a series of complaints with the supervisory authorities. Museum4yourSenses deflected any responsibility, stating it was their audio-visual vendor handling the audio recordings of the visitors. Which statement about responsibility for the misuse of the visitors’ personal data is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The audio-video vendor is responsible because they used the data in a way that wasn\u2019t  consistent with their contract with Museum4yourSenses.",
+          "text": "The audio-video vendor is responsible because they used the data in a way that wasn’t  consistent with their contract with Museum4yourSenses.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "As the controller, Museum4yourSenses is responsible for the audio-visual vendor\u2019s processing  of personal data as provided in the contract between the museum and the vendor.",
+          "text": "As the controller, Museum4yourSenses is responsible for the audio-visual vendor’s processing  of personal data as provided in the contract between the museum and the vendor.",
           "is_correct": true
         },
         {
@@ -5586,8 +5558,8 @@
       "exam": "CIPPE",
       "number": 54,
       "scenario_id": "IV",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum\u2019s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum\u2019s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors\u2019 introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum\u2019s reuse. ",
-      "text": "A local elementary school teacher was one of the first visitors to Museum4yourSenses and was  inspired to launch some educational materials after the visit. However, the teacher was alarmed to learn that a number of children with special needs had their introductory videos selected to promote a diversity and inclusion angle in the promotional materials. What would be her best option to protect children\u2019s rights?",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nMuseum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of \ntraction on PluckPlack, a popular social media app. To promote their multi-location launch, founders \naim to go viral with captivating avatar-enhanced videos on PluckPlack. \nThe museum’s unique pitch is a chance for the first 100 visitors of the day to test out new virtual \nreality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive \ninstructions to speak their name and introduce the character they wish to become for the day. When \nvisitors get their photo taken for their badge, they are instructed to look directly at the camera and \nmake a funny face. \nA month before the museum opened in Brussels, a private reception was held. The organisers gave \nvisitors forms that included a box to acknowledge having read the museum’s privacy notice and a \nconsent form to sign about the images and voice recordings that would be required for entry. The \nconsent form stated the personal data would be deleted 24 hours after the initial visit. After the \nBrussels launch, some of the visitors noticed the museum had posted promotional videos on \nPluckPlack that used the visitors’ introductory voice recordings. The consent forms did not mention \nthat the audio recordings would be combined with new avatars for the museum’s reuse. ",
+      "text": "A local elementary school teacher was one of the first visitors to Museum4yourSenses and was  inspired to launch some educational materials after the visit. However, the teacher was alarmed to learn that a number of children with special needs had their introductory videos selected to promote a diversity and inclusion angle in the promotional materials. What would be her best option to protect children’s rights?",
       "choices": [
         {
           "label": "A",
@@ -5596,7 +5568,7 @@
         },
         {
           "label": "B",
-          "text": "Send a registered letter to the Museum4yourSenses board members, which includes a member  of the EU Directorate General for Education, instructing them to immediately cease processing a vulnerable population\u2019s personal data.",
+          "text": "Send a registered letter to the Museum4yourSenses board members, which includes a member  of the EU Directorate General for Education, instructing them to immediately cease processing a vulnerable population’s personal data.",
           "is_correct": false
         },
         {
@@ -5606,7 +5578,7 @@
         },
         {
           "label": "D",
-          "text": "Email the Museum4yourSenses administration alerting them to her concerns, citing the fact  that children\u2019s personal data was being used without proper consent (of parents or authorised guardians) and therefore, the museum was relying on invalid consent to use this information and should immediately cease processing.",
+          "text": "Email the Museum4yourSenses administration alerting them to her concerns, citing the fact  that children’s personal data was being used without proper consent (of parents or authorised guardians) and therefore, the museum was relying on invalid consent to use this information and should immediately cease processing.",
           "is_correct": false
         }
       ],
@@ -5866,7 +5838,7 @@
       "number": 63,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "What is a \u2018layered fair processing notice\u2019?",
+      "text": "What is a ‘layered fair processing notice’?",
       "choices": [
         {
           "label": "A",
@@ -5875,7 +5847,7 @@
         },
         {
           "label": "B",
-          "text": "A notice that contains the controller\u2019s and processor\u2019s contact information and links to different  topics within the notice.",
+          "text": "A notice that contains the controller’s and processor’s contact information and links to different  topics within the notice.",
           "is_correct": false
         },
         {
@@ -5896,7 +5868,7 @@
       "exam": "CIPPE",
       "number": 64,
       "scenario_id": "V",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the \u2018no-reply\u2019 general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the ‘no-reply’ general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
       "text": "Isabelle wants to update her address and limit the sharing of her personal data. What should she  do?",
       "choices": [
         {
@@ -5916,7 +5888,7 @@
         },
         {
           "label": "D",
-          "text": "File an official complaint with her local community\u2019s civil population division for protection of  her private information and reference the file number in a demand letter to Novatours to restrict processing.",
+          "text": "File an official complaint with her local community’s civil population division for protection of  her private information and reference the file number in a demand letter to Novatours to restrict processing.",
           "is_correct": false
         }
       ],
@@ -5927,27 +5899,27 @@
       "exam": "CIPPE",
       "number": 65,
       "scenario_id": "V",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the \u2018no-reply\u2019 general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the ‘no-reply’ general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
       "text": "Finally, Isabelle received a response from Novatours about how she can delete her personal data  from their records. She authenticated her identity via email and followed the instructions provided by Novatours to delete her data. But a few weeks later, she received text messages about new offers encouraging her to respond quickly before discounts expire. Isabelle suspects Novatours is still processing her personal data and wonders if this is allowed. Which of the following is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "Novatours must stop processing Isabelle\u2019s personal data once a supervisory authority compels  them to do so, without further authentication.",
+          "text": "Novatours must stop processing Isabelle’s personal data once a supervisory authority compels  them to do so, without further authentication.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Novatours can continue to process Isabelle\u2019s personal data if she fails the multi-factor  authentication process.",
+          "text": "Novatours can continue to process Isabelle’s personal data if she fails the multi-factor  authentication process.",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Novatours can continue to process Isabelle\u2019s personal data if she does not respond to identify  verification requests within 30 days.",
+          "text": "Novatours can continue to process Isabelle’s personal data if she does not respond to identify  verification requests within 30 days.",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Novatours must stop processing Isabelle\u2019s personal data once she has verified her identity and  exercised her right to restrict processing.",
+          "text": "Novatours must stop processing Isabelle’s personal data once she has verified her identity and  exercised her right to restrict processing.",
           "is_correct": true
         }
       ],
@@ -5958,8 +5930,8 @@
       "exam": "CIPPE",
       "number": 66,
       "scenario_id": "V",
-      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the \u2018no-reply\u2019 general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
-      "text": "Novatours received several similar complaints resulting in the suspension of their licence to  operate. When Novatours\u2019 lawyer filed a complaint against the supervisory authorities, they were informed that Novatours, as a controller, was legally required to do which of the following?",
+      "scenario_text": "Please use the following scenario to answer the next THREE questions. \nExcited to go on holiday, Isabelle took a trip to Amsterdam and went on a series of canal tours \npromoted by Novatours, a new Amsterdam-based company. She downloaded the Novatours app on \nher smartphone, accepted the privacy conditions, and connected her credit card for ease of payment. \nUpon return to her residence in France, she received frequent flyers from Novatours and third-party \nvendors. The number of flyers and vendors involved increased over time, including not only tourist \nactivities, but also hotels, restaurants, car rentals, museum events, etc. All flyers mentioned a \npartnership with Novatours. \nA few weeks later, she moved to a new apartment. She tried to contact Novatours but she could not \nget past the automated telephone system or the ‘no-reply’ general email on their website. Isabelle \nconcluded there was no way to contact them other than through an affiliated tourist office where she \nfirst learned about the company. ",
+      "text": "Novatours received several similar complaints resulting in the suspension of their licence to  operate. When Novatours’ lawyer filed a complaint against the supervisory authorities, they were informed that Novatours, as a controller, was legally required to do which of the following?",
       "choices": [
         {
           "label": "A",
@@ -5990,7 +5962,7 @@
       "number": 67,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "An unforeseen power outage results in Company Z's lack of access to customer data for six hours,  which is considered a breach under Article 32 of the GDPR. Based on the WP29's February 2018 \u2018Guidelines on Personal data breach notification\u2019 (later adopted by the EDPB), Company Z should do which of the following?",
+      "text": "An unforeseen power outage results in Company Z's lack of access to customer data for six hours,  which is considered a breach under Article 32 of the GDPR. Based on the WP29's February 2018 ‘Guidelines on Personal data breach notification’ (later adopted by the EDPB), Company Z should do which of the following?",
       "choices": [
         {
           "label": "A",
@@ -6035,7 +6007,7 @@
         },
         {
           "label": "C",
-          "text": "The Council of Europe\u2019s Convention 108.",
+          "text": "The Council of Europe’s Convention 108.",
           "is_correct": true
         },
         {
@@ -6083,7 +6055,7 @@
       "number": 70,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A data subject makes a subject access request (SAR) to an online retail company for their  personal data. The data subject states that they are making a SAR in accordance with the GDPR; however, if the company credits the data subject\u2019s online account with a specified sum of money, the data subject will withdraw their request. The company has not had any previous access requests by other individuals. Which of the following would be legitimate grounds for the company to refuse to comply with the access request?",
+      "text": "A data subject makes a subject access request (SAR) to an online retail company for their  personal data. The data subject states that they are making a SAR in accordance with the GDPR; however, if the company credits the data subject’s online account with a specified sum of money, the data subject will withdraw their request. The company has not had any previous access requests by other individuals. Which of the following would be legitimate grounds for the company to refuse to comply with the access request?",
       "choices": [
         {
           "label": "A",
@@ -6114,7 +6086,7 @@
       "number": 71,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which of the following is TRUE about data subjects\u2019 options to exercise their  rights in cases of noncompliance?",
+      "text": "Under the GDPR, which of the following is TRUE about data subjects’ options to exercise their  rights in cases of noncompliance?",
       "choices": [
         {
           "label": "A",
@@ -6238,7 +6210,7 @@
       "number": 75,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A company is under investigation by multiple regulators in different countries\u2019 jurisdictions for not  complying with GDPR fair notice requirements. Which is TRUE of the fines that may be assessed against the company?",
+      "text": "A company is under investigation by multiple regulators in different countries’ jurisdictions for not  complying with GDPR fair notice requirements. Which is TRUE of the fines that may be assessed against the company?",
       "choices": [
         {
           "label": "A",
@@ -6252,7 +6224,7 @@
         },
         {
           "label": "C",
-          "text": "The combined fines for all violations cannot exceed \u20ac10 million or 2% of the total worldwide  annual turnover of the preceding fiscal year.",
+          "text": "The combined fines for all violations cannot exceed €10 million or 2% of the total worldwide  annual turnover of the preceding fiscal year.",
           "is_correct": false
         },
         {
@@ -6288,7 +6260,7 @@
         },
         {
           "label": "D",
-          "text": "Invoke the \u2018disproportionate effort\u2019 exception to postpone notifying data subjects until more  information can be gathered.",
+          "text": "Invoke the ‘disproportionate effort’ exception to postpone notifying data subjects until more  information can be gathered.",
           "is_correct": false
         }
       ],
@@ -6376,12 +6348,12 @@
         },
         {
           "label": "C",
-          "text": "The OECD Guidelines on the Protection of Privacy and Transborder Flows of Personal Data  (\u2018OECD Guidelines\u2019).",
+          "text": "The OECD Guidelines on the Protection of Privacy and Transborder Flows of Personal Data  (‘OECD Guidelines’).",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "The Council of Europe Convention for the Protection of Individuals with regard to Automatic  Processing of Personal Data (\u2018Convention 108\u2019).",
+          "text": "The Council of Europe Convention for the Protection of Individuals with regard to Automatic  Processing of Personal Data (‘Convention 108’).",
           "is_correct": true
         }
       ],
@@ -6610,7 +6582,7 @@
       "number": 87,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "The European Commission has the power to determine whether a country outside of the EU  provides an adequate level of data protection in accordance with the GDPR. Which one of the following countries has been deemed \u2018adequate\u2019?",
+      "text": "The European Commission has the power to determine whether a country outside of the EU  provides an adequate level of data protection in accordance with the GDPR. Which one of the following countries has been deemed ‘adequate’?",
       "choices": [
         {
           "label": "A",
@@ -6645,7 +6617,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "Require the processor to obtain a new authorisation to process the data subject\u2019s data.",
+          "text": "Require the processor to obtain a new authorisation to process the data subject’s data.",
           "is_correct": false
         },
         {
@@ -6660,7 +6632,7 @@
         },
         {
           "label": "D",
-          "text": "Render the processing unfair, as well as constitute a violation of the Regulation\u2019s information  provision obligations.",
+          "text": "Render the processing unfair, as well as constitute a violation of the Regulation’s information  provision obligations.",
           "is_correct": true
         }
       ],
