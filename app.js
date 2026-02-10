@@ -457,6 +457,11 @@ async function init() {
   // UI bindings
   $("startBtn").onclick = startNewAttempt;
   $("newAttemptBtn").onclick = () => { clearAttempt(); startNewAttempt(); };
+  const openLeaderboardTab = () => { renderLeaderboard(); show("leaderboardTab"); };
+  window.openLeaderboardTab = openLeaderboardTab;
+
+  $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
+  $("leaderboardTabBtn").addEventListener("click", openLeaderboardTab);
   $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
   $("leaderboardTabBtn").onclick = () => { renderLeaderboard(); show("leaderboardTab"); };
   $("leaderboardBackBtn").onclick = () => { show("home"); };
