@@ -197,7 +197,6 @@ async function callResponsesAPI({ apiKey, model, question, prev, next }) {
     },
     body: JSON.stringify({
       model,
-      temperature: 0,
       input: [
         { role: "developer", content: buildPrompt() },
         { role: "user", content: JSON.stringify(payload) }
