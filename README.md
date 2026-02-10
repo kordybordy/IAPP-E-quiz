@@ -80,6 +80,26 @@ The endpoint returns a structured object containing:
 - GitHub Pages is static hosting, so browser code and Pages itself cannot read repository secrets at runtime.
 - Use GitHub Secrets for offline/background jobs (e.g. `.github/workflows/ai-clean.yml`) and run runtime AI generation via an external backend (Cloudflare Worker / Vercel / Netlify / server).
 
+
+### Export questions to CSV/XLSX
+A helper script exports `questions.corrected.json` into a flattened table (1 row = 1 MCQ or scenario subquestion), preserving fields for review workflows:
+- `kind`, `scenario_id`, `subq_index`, `confidence`, `needs_human_review`, `review_reasons`
+- choice columns `A`/`B`/`C`/`D` and `correct_label`
+
+Run:
+```bash
+python3 scripts/export_questions.py
+```
+
+Output files:
+- `questions.export.csv` encoded as `utf-8-sig` (Excel-friendly for Polish diacritics)
+- `questions.export.xlsx` with sheets: `questions` and `needs_review`
+
+Optional paths:
+```bash
+python3 scripts/export_questions.py --input questions.corrected.json --out-csv out.csv --out-xlsx out.xlsx
+```
+
 ### Run tests
 ```bash
 npm test
