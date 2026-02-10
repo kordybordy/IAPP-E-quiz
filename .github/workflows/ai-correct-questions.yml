@@ -1,0 +1,42 @@
+name: OCR – AI correct questions
+
+on:
+  workflow_dispatch:   # ręczne odpalenie z GH UI
+  push:
+    paths:
+      - questions.json
+      - scripts/ai_correct_questions.js
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+
+      - name: Run OCR repair script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          node scripts/ai_correct_questions.js \
+            --in questions.json \
+            --out questions.corrected.json \
+            --scenario-mode group \
+            --concurrency 3 \
+            --cache .cache/ai_correct.cache.json
+
+      - name: Upload corrected questions
+        uses: actions/upload-artifact@v4
+        with:
+          name: questions-corrected
+          path: questions.corrected.json
