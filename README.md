@@ -23,7 +23,7 @@ Just open `index.html` in a browser.
    - `questions.json`
    - `.nojekyll`
 3. In GitHub:
-   - Settings → Pages → “Deploy from a branch”
+   - Settings -> Pages -> “Deploy from a branch”
    - Branch: `main` / folder: `/ (root)`
 4. Your site appears at:
    `https://<username>.github.io/<repo>/`
@@ -32,7 +32,7 @@ Just open `index.html` in a browser.
 ## Privacy
 All answers are stored only in your browser (LocalStorage). Nothing is sent anywhere.
 
-## AI mode: "paragraph → question" with quality gates
+## AI mode: "paragraph -> question" with quality gates
 
 This repository now includes a **backend-only AI pipeline** suitable for a static frontend hosted on GitHub Pages.
 
@@ -40,27 +40,43 @@ This repository now includes a **backend-only AI pipeline** suitable for a stati
 The frontend remains static, but the OpenAI API key is kept server-side in a function/worker endpoint.
 
 ### Implemented architecture
-- `api/generate-question.js` – HTTP endpoint (`POST`) for paragraph-based generation.
-- `backend/aiQuestionService.js` – core pipeline with:
+- `api/generate-question.js` - HTTP endpoint (`POST`) for paragraph-based generation.
+- `backend/aiQuestionService.js` - core pipeline with:
   - generator model call,
   - deterministic post-validation,
   - verifier model call,
   - in-memory cache by hashed input,
   - retries with exponential backoff + jitter for 429/503.
 
+### AI pipeline flow (paragraph -> bank-style MCQ)
+1. **Normalization + language detection** (`pl`/`en`).
+2. **Topic tagging** (`rights`, `obligations`, `definitions`, `transfers`, etc.).
+3. **Structured generation** with strict JSON schema.
+4. **Verifier pass** (separate model, `temperature=0`) for correctness and form.
+5. **Similarity gate** versus existing bank questions using embeddings + cosine.
+6. **Decision**: accept / revise / reject.
+
+### Similarity thresholds (starting defaults)
+- `max_cosine_to_any_existing > 0.92` -> reject as probable duplicate
+- `max_cosine_to_any_existing < 0.55` -> revise (too far from bank style)
+- target window: `0.65-0.85` -> accept
+
+You can pass existing bank texts to the API in `existing_questions` (array of strings or objects with `question`/`text`).
+
 ### Request payload (example)
 ```json
 {
   "paragraph": "...",
   "language": "pl",
-  "article_ref": "art. 6 ust. 1 lit. f"
+  "article_ref": "art. 6 ust. 1 lit. f",
+  "existing_questions": ["...existing bank question text..."]
 }
 ```
 
 ### Output shape
 The endpoint returns a structured object containing:
-- `language`, `article_ref`, `question`, `choices[4]`, `correct_label`, `rationale`, `difficulty`
-- plus verification metadata (`verification`, `overlap_score`).
+- `language`, `article_ref`, `question`, `choices[4]`, `correct_label`, `rationale_short`, `difficulty`, `tags`, `needs_human_review`
+- plus metadata (`verification`, `overlap_score`, `similarity`).
 
 ### Quality controls included
 1. **Schema-driven generation** (Structured Output JSON schema).

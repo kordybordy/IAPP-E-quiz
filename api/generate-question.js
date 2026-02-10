@@ -48,7 +48,8 @@ export default async function handler(req) {
     const result = await service.generateFromParagraph({
       paragraph: body.paragraph,
       language: body.language || "pl",
-      articleRef: body.article_ref || ""
+      articleRef: body.article_ref || "",
+      existingQuestions: Array.isArray(body.existing_questions) ? body.existing_questions : []
     });
     return jsonResponse(200, result);
   } catch (error) {
