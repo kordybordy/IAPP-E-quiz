@@ -462,6 +462,8 @@ async function init() {
 
   $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
   $("leaderboardTabBtn").addEventListener("click", openLeaderboardTab);
+  $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
+  $("leaderboardTabBtn").onclick = () => { renderLeaderboard(); show("leaderboardTab"); };
   $("leaderboardBackBtn").onclick = () => { show("home"); };
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };

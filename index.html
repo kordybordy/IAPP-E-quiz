@@ -13,6 +13,7 @@
       <nav class="topNav">
         <button id="leaderboardTabBtn" class="secondary smallBtn" type="button" aria-label="Open leaderboard tab">Leaderboard</button>
       </nav>
+      <button id="leaderboardTabBtn" class="secondary smallBtn" type="button">Leaderboard</button>
     </div>
     <div class="meta">
       <span id="questionBankInfo" class="muted">Loading question bank…</span>
@@ -45,6 +46,12 @@
             <input id="timerMinutes" type="number" min="1" step="1" value="225" />
             <span class="muted small">minutes</span>
           </div>
+      <section class="settingsGrid">
+      <div class="fieldRow">
+        <label class="fieldLabel" for="questionCount">Number of questions</label>
+        <div class="fieldControl">
+          <input id="questionCount" type="number" min="1" step="1" value="90" />
+          <span class="muted small" id="questionCountHelp"></span>
         </div>
 
         <div class="settingRow">
@@ -54,6 +61,26 @@
             <span class="muted small" id="nicknameHelp">Only used for default mode (90 questions + 225-minute timer).</span>
           </div>
         </div>
+      <div class="fieldRow">
+        <label class="fieldLabel" for="timerEnabled">Timer</label>
+        <div class="fieldControl">
+          <label class="checkbox">
+            <input id="timerEnabled" type="checkbox" checked />
+            Enable timer
+          </label>
+          <input id="timerMinutes" type="number" min="1" step="1" value="225" />
+          <span class="muted small">minutes</span>
+        </div>
+      </div>
+
+      <div class="fieldRow">
+        <label class="fieldLabel" for="nickname">Nickname</label>
+        <div class="fieldControl">
+          <input id="nickname" type="text" maxlength="24" placeholder="Leaderboard nickname" />
+          <span class="muted small" id="nicknameHelp">Only used for default mode (90 questions + 225-minute timer).</span>
+        </div>
+      </div>
+
       </section>
 
       <div class="controls startRow">

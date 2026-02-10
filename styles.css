@@ -30,6 +30,7 @@ a{ color:var(--primary); }
 .brand{ font-weight:700; letter-spacing:.2px; }
 .topLeft{ display:flex; align-items:center; gap:14px; }
 .topNav{ display:flex; align-items:center; gap:8px; }
+.topLeft{ display:flex; align-items:center; gap:10px; }
 .smallBtn{ padding: 7px 10px; font-size: .85rem; }
 .container{ max-width: 980px; margin: 18px auto; padding: 0 14px; }
 .card{
@@ -65,6 +66,16 @@ a{ color:var(--primary); }
 }
 
 .settingsGrid .settingRow:last-child{
+.settingsGrid .fieldRow{
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 1fr;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.settingsGrid .fieldRow:last-child{
   border-bottom: none;
 }
 
@@ -75,6 +86,9 @@ a{ color:var(--primary); }
   background: rgba(255,255,255,.03);
   display: flex;
   align-items: center;
+  padding: 12px 14px;
+  border-right: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
 }
 
 .settingsGrid .fieldControl{
@@ -96,6 +110,7 @@ a{ color:var(--primary); }
 
 @media (max-width: 760px){
   .settingsGrid .settingRow{
+  .settingsGrid .fieldRow{
     grid-template-columns: 1fr;
   }
 
