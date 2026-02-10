@@ -3,8 +3,11 @@
 
 const STORAGE_KEY = "exam_simulator_static_v2";
 const LEADERBOARD_KEY = "exam_simulator_leaderboard_v1";
+const QUIZ_SOURCE_KEY = "quiz_source";
 const DEFAULT_QUESTION_COUNT = 90;
 const DEFAULT_TIMER_MINUTES = 225;
+const LEGACY_SOURCE = "legacy";
+const AI_SOURCE = "ai";
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -17,6 +20,96 @@ function uid() {
   return Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
 }
 
+
+function loadQuizSource() {
+  const raw = localStorage.getItem(QUIZ_SOURCE_KEY);
+  return raw === AI_SOURCE ? AI_SOURCE : LEGACY_SOURCE;
+}
+
+function saveQuizSource(source) {
+  localStorage.setItem(QUIZ_SOURCE_KEY, source);
+}
+
+function getSelectedQuizSource() {
+  const ai = $("quizSourceAi");
+  return ai && ai.checked ? AI_SOURCE : LEGACY_SOURCE;
+}
+
+function setSelectedQuizSource(source) {
+  $("quizSourceLegacy").checked = source !== AI_SOURCE;
+  $("quizSourceAi").checked = source === AI_SOURCE;
+  const label = source === AI_SOURCE ? "AI" : "Legacy";
+  $("quizSourceHelp").textContent = `Using ${label} question bank.`;
+}
+
+function toLegacyQuestion(aiItem, index) {
+  const labels = ["A", "B", "C", "D"];
+  const choices = Array.isArray(aiItem.choices) ? aiItem.choices.slice(0, 4) : [];
+  return {
+    id: aiItem.id || `ai_${String(index + 1).padStart(6, "0")}`,
+    exam: "AI",
+    number: index + 1,
+    scenario_id: null,
+    scenario_text: null,
+    text: aiItem.question || "",
+    choices: choices.map((choiceText, choiceIndex) => ({
+      label: labels[choiceIndex],
+      text: choiceText,
+      is_correct: choiceIndex === aiItem.correct_index
+    })),
+    correct_label: labels[aiItem.correct_index] || null,
+    source: aiItem.source || {}
+  };
+}
+
+function normalizeBank(raw, sourceType) {
+  if (sourceType === AI_SOURCE) {
+    const items = Array.isArray(raw?.items) ? raw.items : [];
+    const questions = items
+      .filter(item => Array.isArray(item.choices) && item.choices.length === 4 && Number.isInteger(item.correct_index) && item.correct_index >= 0 && item.correct_index <= 3 && item.question)
+      .map((item, idx) => toLegacyQuestion(item, idx));
+
+    return {
+      question_count: questions.length,
+      questions
+    };
+  }
+
+  if (raw && Array.isArray(raw.questions)) {
+    return raw;
+  }
+
+  return { question_count: 0, questions: [] };
+}
+
+async function loadQuestionBank(sourceType) {
+  const targetFile = sourceType === AI_SOURCE ? "ai_questions.json" : "questions.json";
+  let response;
+  try {
+    response = await fetch(targetFile, { cache: "no-store" });
+  } catch (error) {
+    if (sourceType === AI_SOURCE) {
+      throw new Error("Brak puli AI. Spróbuj później.");
+    }
+    throw error;
+  }
+
+  if (!response.ok) {
+    if (sourceType === AI_SOURCE) {
+      throw new Error("Brak puli AI. Spróbuj później.");
+    }
+    throw new Error(`Failed to load ${targetFile}`);
+  }
+
+  const json = await response.json();
+  const normalized = normalizeBank(json, sourceType);
+
+  if (sourceType === AI_SOURCE && normalized.question_count === 0) {
+    throw new Error("Brak puli AI. Spróbuj później.");
+  }
+
+  return normalized;
+}
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -186,10 +279,11 @@ function show(sectionId) {
   });
 }
 
-function setBankInfo() {
+function setBankInfo(sourceType = LEGACY_SOURCE) {
   const info = $("questionBankInfo");
   if (!bank) { info.textContent = "Loading question bank…"; return; }
-  info.textContent = `${bank.question_count} questions loaded`;
+  const sourceLabel = sourceType === AI_SOURCE ? "AI" : "Legacy";
+  info.textContent = `${bank.question_count} questions loaded (${sourceLabel})`;
   const maxCount = Math.max(1, bank.question_count);
   const input = $("questionCount");
   input.max = String(maxCount);
@@ -228,6 +322,9 @@ function pickQuestions(count) {
 }
 
 function startNewAttempt() {
+  if (!bank || !Array.isArray(bank.questions) || bank.questions.length === 0) {
+    return;
+  }
   const count = getSelectedQuestionCount();
   const timer = getTimerSettings();
   const nickname = $("nickname").value.trim();
@@ -482,10 +579,41 @@ async function init() {
 
   $("showOnlyWrong").onchange = () => renderResults();
 
-  // Load bank
-  const res = await fetch("questions.json", { cache: "no-store" });
-  bank = await res.json();
-  setBankInfo();
+  // Source selection + question bank
+  const savedSource = loadQuizSource();
+  setSelectedQuizSource(savedSource);
+
+  const sourceInputs = document.querySelectorAll("input[name=quizSource]");
+  sourceInputs.forEach((input) => {
+    input.onchange = async () => {
+      const nextSource = getSelectedQuizSource();
+      saveQuizSource(nextSource);
+      setSelectedQuizSource(nextSource);
+      clearAttempt();
+      try {
+        bank = await loadQuestionBank(nextSource);
+        setBankInfo(nextSource);
+        updateQuestionCountText();
+        updateNicknameHelp();
+        $("startBtn").disabled = false;
+      } catch (error) {
+        $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
+        $("startBtn").disabled = true;
+      }
+    };
+  });
+
+  try {
+    bank = await loadQuestionBank(savedSource);
+    setBankInfo(savedSource);
+  } catch (error) {
+    $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
+    $("startBtn").disabled = true;
+    updateTimerSummary();
+    updateNicknameHelp();
+    renderLeaderboard();
+    return;
+  }
   updateTimerSummary();
   updateNicknameHelp();
   renderLeaderboard();
