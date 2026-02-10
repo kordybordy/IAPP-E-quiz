@@ -159,7 +159,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "As opposed to regulations, directives are not binding and EEA na- tional authorities can choose forms and methods for implementation",
+          "text": "As opposed to regulations, directives are not binding and EEA national authorities can choose forms and methods for implementation",
           "is_correct": false
         },
         {
@@ -174,17 +174,19 @@
         },
         {
           "label": "D",
-          "text": "Regulations have binding legal force throughout every Member State and enter into force in all the Member States immediately after ratified by the European Parliament and the Council of the EU",
+          "text": "Regulations have binding legal force throughout every Member State and enter into force in all the Member States immediately after being ratified by the European Parliament and the Council of the EU",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation and spacing in choice A (\"EEA na- tional\" → \"EEA national\").",
+          "Corrected grammar in choice D (\"after ratified\" → \"after being ratified\").",
+          "General punctuation/spacing cleanup; no substantive changes made."
         ]
       }
     },
@@ -379,7 +381,7 @@
       "number": 12,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "What is the difference between the EU Data Protection Directive (Direc- tive) and the EU General Data Protection Regulation (Regulation)?",
+      "text": "What is the difference between the EU Data Protection Directive (Directive) and the EU General Data Protection Regulation (Regulation)?",
       "choices": [
         {
           "label": "A",
@@ -404,11 +406,12 @@
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation in 'Directive' in the question text.",
+          "Preserved original meaning and answer labels; corrected spacing and minor OCR artifacts only."
         ]
       }
     },
@@ -640,7 +643,7 @@
       "number": 19,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is the foundation treaty of the European Economic Commu- nity?",
+      "text": "Which one is the foundation treaty of the European Economic Community?",
       "choices": [
         {
           "label": "A",
@@ -665,11 +668,11 @@
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.95,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected hyphenation: 'Commu- nity' -> 'Community'. Kept correct_label unchanged."
         ]
       }
     },
@@ -852,11 +855,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.95,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor punctuation and spacing inconsistencies; preserved original meaning and answer labels."
         ]
       }
     },
@@ -866,7 +869,7 @@
       "number": 26,
       "scenario_id": "EXAM_I_SCENARIO_1",
       "scenario_text": "Mr. Weiss intends to buy a new house. For this purpose, he contacts Bank ABC via email to set up an appointment to inquire about potential financial supports and packages. After the appointment, Mr. Weiss decides not to become a customer of Bank ABC. Relying on legitimate interests as a lawful processing principle, Bank ABC automatically adds Mr. Weiss's email address to a database used to allow a social media provider to match Bank ABC's email list with those held by the provider so Bank ABC can target potential customers with financial offers via the social media platform.",
-      "text": "Read the following scenario and answer the two follow-up questions: Mr. Weiss intends to buy a new house. For this purpose, he contacts Bank ABC via email to set up an appointment to further inquire about potential financial supports and packages. Right after the appointment, Mr. Weiss decides not to become a customer of Bank ABC, and therefore, to not take the offer made by Bank ABC. Relying on legitimate interests as a lawful processing principle, Bank ABC has automatically added Mr. Weiss's email address to a database which is used to allow a social media provider to match the list of email addresses that Bank ABC holds with those held by the social media provider. This way, Bank ABC will be able to target a broader range of potential customers by offering them financial offers on the social media platform. Which one is correct?",
+      "text": "Which one is correct?",
       "choices": [
         {
           "label": "A",
@@ -891,11 +894,13 @@
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Separated and cleaned up the scenario text from the question.",
+          "Corrected typos and spacing; removed duplicated content and OCR artifacts.",
+          "Standardized choice formatting without changing substantive meaning."
         ]
       }
     },
@@ -979,11 +984,11 @@
       "number": 29,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A railway operator collects data on physical limitations such as wheel air needs and special food requirements such as halal food from passengers for domestic travels during the booking phase to fulfil services duri ng the trip. The railway operator is now planning to expand its operation and establish new non-domestic routes. To comply with border control and immigration laws, the railway operator has to provide border and migration authorities of the destination countries with the data collected m its passengers including the aforementioned data to be used for migration control purposes. Which one is correct?",
+      "text": "A railway operator collects data on physical limitations such as wheelchair needs and special food requirements such as halal food from passengers for domestic travel during the booking phase to fulfil services during the trip. The railway operator is now planning to expand its operation and establish new non-domestic routes. To comply with border control and immigration laws, the railway operator has to provide border and migration authorities of the destination countries with the data collected from its passengers including the aforementioned data to be used for migration control purposes. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The railway operator shall not collect passengers' preferences, such as halal food as this may reveal sensitive information from passengers",
+          "text": "The railway operator shall not collect passengers' preferences, such as halal food, as this may reveal sensitive information from passengers",
           "is_correct": false
         },
         {
@@ -1004,43 +1009,49 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected OCR/artifact errors: 'wheel air needs' -> 'wheelchair needs', 'duri ng' -> 'during', 'm its' -> 'from its'.",
+          "Normalized 'domestic travels' to 'domestic travel' for grammatical clarity.",
+          "Fixed minor punctuation (added missing commas). No substantive changes to meaning or answer labels."
         ]
       }
     },
     {
       "id": 28,
-      "text": "Mr. Smith works at Company X (data controller) and uses personal data as part of his duties assigned to him at Company X. These duties comprise two main tasks. In Task 1, Mr. Smith discloses personal data of employees working at Company X to the HR Department in relation to the upcoming employee satisfaction survey. In Task 2, Mr. Smith provides personal data of employees of Company X to a public training company (Company Y) where this data is used by Company Y to design a training programme for the employees of Company X. Which one is correct?",
+      "text": "Mr. Smith works at Company X (data controller) and uses personal data as part of his duties assigned to him at Company X. These duties comprise two main tasks. In Task 1, Mr. Smith discloses personal data of employees working at Company X to the HR Department in relation to the upcoming employee satisfaction survey. In Task 2, Mr. Smith provides personal data of employees of Company X to a public training company (Company Y), where this data is used by Company Y to design a training programme for the employees of Company X. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "For any data disclosure to the HR Department, Mr. Smith must seek advice from the Data Protection Officer (DPO) of Company X prior to data disclosure"
+          "text": "For any data disclosure to the HR Department, Mr. Smith must seek advice from the Data Protection Officer (DPO) of Company X prior to data disclosure",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "HR Department is the recipient of personal data of employees"
+          "text": "HR Department is the recipient of personal data of employees",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Company Y is a public company, and thus, a data protection impact assessment should be borne in mind by Mr. Smith"
+          "text": "Company Y is a public company, and thus, a data protection impact assessment should be borne in mind by Mr. Smith",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "Company Y is a third party and has received the data of Company X's employees in the course of its employment with Company X"
+          "text": "Company Y is a third party and has received the data of Company X's employees in the course of its employment with Company X",
+          "is_correct": true
         }
       ],
       "correct_label": "D",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed spacing and punctuation, added a comma before the clause starting with 'where' in Task 2, and corrected minor typographical issues."
         ]
       }
     },
@@ -1059,7 +1070,7 @@
         },
         {
           "label": "B",
-          "text": "A recruitment agency places job applicants in a variety of job direc- tories and sends them a general questionnaire which includes specific questions about health conditions relevant to particular manual occupations",
+          "text": "A recruitment agency places job applicants in a variety of job directories and sends them a general questionnaire which includes specific questions about health conditions relevant to particular manual occupations",
           "is_correct": false
         },
         {
@@ -1075,11 +1086,12 @@
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation in choice B: 'direc- tories' -> 'directories'",
+          "Checked spacing and punctuation; no substantive changes made."
         ]
       }
     },
@@ -1163,7 +1175,7 @@
       "number": 4,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A city council offers a chip card to users of the public transport system for a certain fee. The name of the users is printed on the card's surface which is also stored electronically in the chip. When an individual uses the public transport system, e. g. , the tram, the card must touch the readi terminal already installed in the tram. The data read by the termin is electronically checked against a database containing the names of th users who have bought the travel card. Which of the following priva principles is NOT respected in this scenario?",
+      "text": "A city council offers a chip card to users of the public transport system for a certain fee. The name of the users is printed on the card's surface and is also stored electronically in the chip. When an individual uses the public transport system, e. g. , the tram, the card must touch the reader terminal already installed in the tram. The data read by the terminal is electronically checked against a database containing the names of the users who have bought the travel card. Which of the following privacy principles is NOT respected in this scenario?",
       "choices": [
         {
           "label": "A",
@@ -1188,11 +1200,11 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected OCR typos and spacing: 'readi terminal' -> 'reader terminal', 'termin' -> 'terminal', 'th users' -> 'the users', 'priva' -> 'privacy'. Fixed punctuation/spacing and rephrased small grammatical issues without changing meaning."
         ]
       }
     },
@@ -1350,11 +1362,11 @@
       "number": 39,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "In which of the following scenarios consent can be relied on?",
+      "text": "In which of the following scenarios can consent be relied on?",
       "choices": [
         {
           "label": "A",
-          "text": "An employer relying on consent to record applicants' online inter- views",
+          "text": "An employer relying on consent to record applicants' online interviews",
           "is_correct": false
         },
         {
@@ -1364,22 +1376,25 @@
         },
         {
           "label": "C",
-          "text": "An airline relying on consent to transmit passengers' records su as data on their identities or health to immigration authorities",
+          "text": "An airline relying on consent to transmit passengers' records such as data on their identities or health to immigration authorities",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "A counselling service provider relying on consent to offer services a 12-year old child",
+          "text": "A counselling service provider relying on consent to offer services to a 12-year-old child",
           "is_correct": true
         }
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected question grammar: moved 'can' before 'consent' for readability.",
+          "Fixed OCR hyphenation and spacing: 'inter- views' -> 'interviews', 'su as' -> 'such as'.",
+          "Inserted missing word 'to' in option D ('offer services to a 12-year-old child').",
+          "Normalized age formatting: '12-year old' -> '12-year-old'."
         ]
       }
     },
@@ -1685,16 +1700,16 @@
       "number": 8,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, when does a group of undertakings may appoint a single DPO?",
+      "text": "Under the GDPR, when may a group of undertakings appoint a single DPO?",
       "choices": [
         {
           "label": "A",
-          "text": "When the DPO is located in the same location as the main estab- lishment",
+          "text": "When the DPO is located in the same location as the main establishment",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "When the DPO is located in the same country as the main estab- lishment",
+          "text": "When the DPO is located in the same country as the main establishment",
           "is_correct": false
         },
         {
@@ -1704,17 +1719,19 @@
         },
         {
           "label": "D",
-          "text": "When the primary residency of the DPO is in the Union",
+          "text": "When the primary residence of the DPO is in the Union",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation and spacing in 'establishment'.",
+          "Adjusted question wording for grammar ('when does a group... may' -> 'when may a group...').",
+          "Replaced 'residency' with 'residence' for grammatical correctness."
         ]
       }
     },
@@ -1835,36 +1852,38 @@
       "number": 54,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A newspaper had reported on Mr. Miller's bankruptcy on its website a long time ago. This information has been indexed in a search engine and accessible on the Internet. Mr. Miller requested the search engine to delete this information. Which one is the best course of action by the search engine?",
+      "text": "A newspaper had reported on Mr. Miller's bankruptcy on its website a long time ago. This information has been indexed in a search engine and is accessible on the Internet. Mr. Miller requested the search engine to delete this information. Which one is the best course of action by the search engine?",
       "choices": [
         {
           "label": "A",
-          "text": "The search engine shall refuse Mr. Miller's request as it is the newspaper's responsibility to erase the informationConsent or performance of a contract and data processing is carried out by automated means",
+          "text": "The search engine shall refuse Mr. Miller's request as it is the newspaper's responsibility to erase the information.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The search engine is not legally obliged to accept Mr. Miller's request, however, it can handle Mr. Miller's request only if a written consent from the newspaper is obtained 20 (e) The search engine is a data controller, and therefore, it needs to handle Mr. Miller's request with utmost caution (f) The search engine is a data controller, however, it cannot handle M rs Miller's request as this is against the right to freedom of expression and information, including processing for journalistic purposes Under the GDPR, data subjects enjoy the right to data portability i n situations where the personal data that they have provided to a data controller is processed based on: Consent or performance of a task carried out in the public interest and data processing is carried out by automated means",
+          "text": "The search engine is not legally obliged to accept Mr. Miller's request; however, it can handle Mr. Miller's request only if written consent from the newspaper is obtained.",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "Consent or performance of a contract and data processing is carried out by either manual or automated means",
+          "text": "Consent or performance of a contract and data processing is carried out by either manual or automated means.",
           "is_correct": true
         },
         {
           "label": "D",
-          "text": "Consent or performance of a task carried out in the public interest and data processing is carried out by manual or automated means",
+          "text": "Consent or performance of a task carried out in the public interest and data processing is carried out by manual or automated means.",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
+        "origin": "ai_repair",
+        "confidence": 0.5,
         "needs_human_review": true,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Cleaned OCR artifacts, merged split words, fixed spacing and punctuation.",
+          "Option B contained multiple fragmented clauses; reconstructed into a single coherent sentence preserving original elements about legal obligation and required consent from the newspaper.",
+          "Did not alter substantive meaning of options; preserved original correct_label as provided."
         ]
       }
     },
@@ -1878,7 +1897,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "Data subjects have the right to receive their own personal data processed by the controller in a structured, commonly used, machine- readable and interoperable format",
+          "text": "Data subjects have the right to receive their own personal data processed by the controller in a structured, commonly used, machine-readable and interoperable format",
           "is_correct": false
         },
         {
@@ -1888,7 +1907,7 @@
         },
         {
           "label": "C",
-          "text": "The exercise of the right to data portability is without prejudice to any other rights as is the case with any other rights in the GDPR",
+          "text": "The exercise of the right to data portability is without prejudice to any other rights, as is the case with any other rights in the GDPR",
           "is_correct": false
         },
         {
@@ -1899,11 +1918,13 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation: 'machine- readable' -> 'machine-readable'",
+          "Removed extra spaces and corrected punctuation (added comma in option C)",
+          "Retained original meaning and correct_label"
         ]
       }
     },
@@ -2061,11 +2082,11 @@
       "number": 62,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A company's head of marketing (HoM) plans an advertising campaign, including which of the company's customers to target, what methods of communication to use and what personal to use. For this, the HoM seeks to ensure a maximum level of compliance with the GDPR to protect customers' privacy. Which one is correct?",
+      "text": "A company's head of marketing (HoM) plans an advertising campaign, including which of the company's customers to target, what methods of communication to use and what personnel to use. For this, the HoM seeks to ensure a maximum level of compliance with the GDPR to protect customers' privacy. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The HoM cannot also be the company's DPO, as the decision- making is likely to result in a conflict of interests between the campaign's aims and the company's data protection obligations",
+          "text": "The HoM cannot also be the company's DPO, as the decision-making is likely to result in a conflict of interests between the campaign's aims and the company's data protection obligations",
           "is_correct": true
         },
         {
@@ -2075,7 +2096,7 @@
         },
         {
           "label": "C",
-          "text": "Appointing the HoM as the DPO is acceptable as there is no con- flict of interests as the HoM aims at ensuring information rights compliance",
+          "text": "Appointing the HoM as the DPO is acceptable as there is no conflict of interests as the HoM aims at ensuring information rights compliance",
           "is_correct": false
         },
         {
@@ -2086,11 +2107,11 @@
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed OCR/typo errors: 'personal' -> 'personnel', removed erroneous hyphenation in 'decision-making' and 'conflicts', corrected spacing and line-break artifacts. No substantive changes made to meaning."
         ]
       }
     },
@@ -2359,36 +2380,36 @@
       "number": 71,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which one is correct about the (invalidated) EU-US Privacy Shield Ramework?",
+      "text": "Which one is correct about the (invalidated) EU-US Privacy Shield Framework?",
       "choices": [
         {
           "label": "A",
-          "text": "US companies can voluntarily self-certify their adherence to the Privacy Shield list by committing to meet the framework's data protection standards. The competent US authorities monitor and enforce the compliance of the certified companies with these stan- dardsA legally binding and enforceable instrument between public authorities or bodies",
+          "text": "US companies can voluntarily self-certify their adherence to the Privacy Shield list by committing to meet the framework's data protection standards. The competent US authorities monitor and enforce the compliance of the certified companies with these standards. A legally binding and enforceable instrument between public authorities or bodies",
           "is_correct": true
         },
         {
           "label": "B",
-          "text": "US companies can voluntarily self-certify their adherence to the Privacy Shield list by committing to meet the framework's data protection standards. The competent US and EU authorities monitor and enforce the compliance of the certified companies with these standardsBinding corporate rules",
+          "text": "US companies can voluntarily self-certify their adherence to the Privacy Shield list by committing to meet the framework's data protection standards. The competent US and EU authorities monitor and enforce the compliance of the certified companies with these standards. Binding corporate rules",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "US companies must compulsorily self-certify their adherence to the Privacy Shield list by committing to meet the framework's 28 data protection standards. The competent US authorities monitor and enforce the compliance of the certified companies with these standardsStandard data protection clauses adopted by public authorities",
+          "text": "US companies must compulsorily self-certify their adherence to the Privacy Shield list by committing to meet the framework's 28 data protection standards. The competent US authorities monitor and enforce the compliance of the certified companies with these standards. Standard data protection clauses adopted by public authorities",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "US companies must compulsorily self-certify their adheren ce to the Privacy Shield list by committing to meet the framework's d ata protection standards. The competent US and EU authorities monitor and enforce the compliance of the certified companies with these standards Which one is NOT an appropriate safeguard for international data trans under the GDPR? Codes of conduct",
+          "text": "US companies must compulsorily self-certify their adherence to the Privacy Shield list by committing to meet the framework's data protection standards. The competent US and EU authorities monitor and enforce the compliance of the certified companies with these standards. Which one is NOT an appropriate safeguard for international data transfers under the GDPR? Codes of conduct",
           "is_correct": false
         }
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed OCR typos, hyphenation, spacing and punctuation. Preserved original fragments and ordering of content; did not alter substantive meaning."
         ]
       }
     },
@@ -2402,32 +2423,34 @@
       "choices": [
         {
           "label": "A",
-          "text": "Customised contractual clauses are not appropriate safeguards for data transfer between the controller or processor in the EU and the data recipient in a third country. This is because according to Article 46 standard data protection clauses must be used for this purpose",
+          "text": "Customised contractual clauses are not appropriate safeguards for data transfer between the controller or processor in the EU and the data recipient in a third country. This is because, according to Article 46, standard data protection clauses must be used for this purpose.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Customised contractual clauses are appropriate safeguards for data transfer between the controller or processor in the EU and the data recipient in a third country if approved by the Commission? Customised contractual clauses between the controller or processor",
+          "text": "Customised contractual clauses are appropriate safeguards for data transfer between the controller or processor in the EU and the data recipient in a third country if approved by the Commission.",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "in the EU and the data recipient in a third country are only ac- ptable as appropriate safeguards if authorised by the European ce Data Protection Board before they can be relied upon as a tool for personal data transfers",
+          "text": "Customised contractual clauses between the controller or processor in the EU and the data recipient in a third country are only acceptable as appropriate safeguards if authorised by the European Data Protection Board before they can be relied upon as a tool for personal data transfers.",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "Customised contractual clauses between the controller or processor in the EU and the data recipient in a third country are only acceptable as appropriate safeguards if authorised by the competent supervisory authority through the consistency mechanism before they can be relied upon as a tool for personal data transfers",
+          "text": "Customised contractual clauses between the controller or processor in the EU and the data recipient in a third country are only acceptable as appropriate safeguards if authorised by the competent supervisory authority through the consistency mechanism before they can be relied upon as a tool for personal data transfers.",
           "is_correct": true
         }
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed OCR artifacts and spacing issues (e.g., removed stray question mark and duplicated fragment in choice B).",
+          "Reconstructed fragmented sentence in choice C (corrected hyphenation 'ac- ptable' to 'acceptable' and removed stray 'ce').",
+          "Added/normalized punctuation for clarity without changing content or meaning."
         ]
       }
     },
@@ -2437,32 +2460,38 @@
       "number": 74,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "To which famous data protection case does the following statement refer to? \"The CJEU held that the European Commission does not have the com- petence to restrict the powers of the national supervisory authorities to oversee the transfer of personal data to a third country which has been the subject of a Commission adequacy decision\".",
+      "text": "To which famous data protection case does the following statement refer? \"The CJEU held that the European Commission does not have the competence to restrict the powers of the national supervisory authorities to oversee the transfer of personal data to a third country which has been the subject of a Commission adequacy decision. \"",
       "choices": [
         {
           "label": "A",
-          "text": "Google v. Spain"
+          "text": "Google v. Spain",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Maximilian Schrems v. Data Protection Commissioner"
+          "text": "Maximilian Schrems v. Data Protection Commissioner",
+          "is_correct": true
         },
         {
           "label": "C",
-          "text": "Weltimmo s. r. o. v. Nemzeti Adatvedelmi es Informacioszabadsag Hatosag"
+          "text": "Weltimmo s. r. o. v. Nemzeti Adatvedelmi es Informacioszabadsag Hatosag",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "Data Protection Commission v. Facebook and Maximillian Schrems"
+          "text": "Data Protection Commission v. Facebook and Maximilian Schrems",
+          "is_correct": false
         }
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation: 'com- petence' -> 'competence'",
+          "Corrected typo: 'Maximillian' -> 'Maximilian' in option D",
+          "Normalized spacing and removed OCR artifacts"
         ]
       }
     },
@@ -2774,7 +2803,7 @@
       "number": 5,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR (Regulation) and the Data Protection Directive (Direc- tive), which one is correct about the obligation to notify a data breach to a competent supervisory authority when it is likely that the breach results in high risks to the rights and freedoms of affected data subjects?",
+      "text": "Under the GDPR (Regulation) and the Data Protection Directive (Directive), which one is correct about the obligation to notify a data breach to a competent supervisory authority when it is likely that the breach results in high risks to the rights and freedoms of affected data subjects?",
       "choices": [
         {
           "label": "A",
@@ -2799,11 +2828,11 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation in 'Directive' and corrected spacing/artifacts from OCR."
         ]
       }
     },
@@ -2850,11 +2879,11 @@
       "number": 7,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, which one is incorrect about a joint controller relation- ship?",
+      "text": "Under the GDPR, which one is incorrect about a joint controller relationship?",
       "choices": [
         {
           "label": "A",
-          "text": "Each joint controller is fully liable to competent supervisory author- ities",
+          "text": "Each joint controller is fully liable to competent supervisory authorities",
           "is_correct": false
         },
         {
@@ -2869,17 +2898,18 @@
         },
         {
           "label": "D",
-          "text": "Once compensation has been paid to the affected data subject(s), joint controllers may recover damages from one another 8.",
+          "text": "Once compensation has been paid to the affected data subject(s), joint controllers may recover damages from one another",
           "is_correct": false
         }
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation in 'relationship' and 'authorities'.",
+          "Removed stray '8.' artifact at end of option D."
         ]
       }
     },
@@ -2922,32 +2952,37 @@
       "number": 1,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Fun Housing is a housing management organisation that maintains em- ployee accommodations for Company X. Fun Housing enters tenancy agreements with the employees on Company X's behalf and chases any rental-related matters and issues. It collects the rent and takes a commis- sion before passing the rent to Company X. Which one is correct?",
+      "text": "Fun Housing is a housing management organisation that maintains employee accommodations for Company X. Fun Housing enters tenancy agreements with the employees on Company X's behalf and chases any rental-related matters and issues. It collects the rent and takes a commission before passing the rent to Company X. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "Company X is the controller and Fun Housing is the processor"
+          "text": "Company X is the controller and Fun Housing is the processor",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Company X is the processor and Fun Housing is the controller"
+          "text": "Company X is the processor and Fun Housing is the controller",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Fun Housing and Company X are joint controllers"
+          "text": "Fun Housing and Company X are joint controllers",
+          "is_correct": true
         },
         {
           "label": "D",
-          "text": "Fun Housing and Company X are joint processors"
+          "text": "Fun Housing and Company X are joint processors",
+          "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation and split words: 'em- ployee' -> 'employee', 'commis- sion' -> 'commission'.",
+          "Removed unnecessary line breaks and extra spaces; preserved original meaning and answer labels."
         ]
       }
     },
@@ -3068,32 +3103,33 @@
       "choices": [
         {
           "label": "A",
-          "text": "The fitness app obtained Jasmine's consent validly, however, degrada- tion of the app's functionality (to a limited extent) is not justifiable",
+          "text": "The fitness app obtained Jasmine's consent validly; however, degradation of the app's functionality (to a limited extent) is not justifiable.",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "The fitness app obtained Jasmine's consent validly and degradation of the app's functionality (to a limited extent) is justifiable 47 mesa app did not obtain Jasmine's consent v alidly, however,",
+          "text": "The fitness app obtained Jasmine's consent validly, and degradation of the app's functionality (to a limited extent) is justifiable.",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "The radation of the a pp's functionality (to a limited extent) is justifi- able fitness app did not obtain Jasmine's c onsent validly, and thus,",
+          "text": "The fitness app did not obtain Jasmine's consent validly, and thus degradation of the app's functionality (to a limited extent) is justifiable.",
           "is_correct": false
         },
         {
           "label": "D",
-          "text": "The an y processing of Jasmine's data is completely unlawful is NOT an example of privac y dark patterns?",
+          "text": "Any processing of Jasmine's data is completely unlawful.",
           "is_correct": true
         }
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
+        "origin": "ai_repair",
+        "confidence": 0.5,
         "needs_human_review": true,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Original OCR had merged and garbled fragments across options B, C and D (extraneous characters and misplaced phrases).",
+          "I normalised spelling, spacing, punctuation and split the combined fragments into plausible option statements, but the exact intended wording of B, C and D is uncertain and should be reviewed."
         ]
       }
     },
@@ -3284,7 +3320,7 @@
       "number": 27,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Read the following scenario and answer the two follow-up questions: A police officer, using his official user ID, queried the data concerning the licence plate of a person via a centralised traffic management system without reference to official duties. The officer collected personal data of the injured parties, including home address and mobile phone numbers. He then contacted the injured party by telephone. The data subject asked the police how this data was collected. However, the police officer refused to answer. Which one is correct in relation to Statement A and Statement B? Statement A: GDPR does not apply to data processing activities of law-enforcement agencies. The officer did not have to explain how he obtained the data. Statement B: The police officer should have only collected necessary personal data and nothing excessive such as phone number and home address.",
+      "text": "Read the following scenario and answer the two follow-up questions: A police officer, using his official user ID, queried the data concerning the licence plate of a person via a centralised traffic management system without reference to official duties. The officer collected personal data of the injured parties, including home addresses and mobile phone numbers. He then contacted the injured party by telephone. The data subject asked the police how this data was collected. However, the police officer refused to answer. Which one is correct in relation to Statement A and Statement B? Statement A: GDPR does not apply to data processing activities of law-enforcement agencies. The officer did not have to explain how he obtained the data. Statement B: The police officer should have only collected necessary personal data and nothing excessive such as phone number and home address.",
       "choices": [
         {
           "label": "A",
@@ -3309,11 +3345,13 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor punctuation and spacing issues.",
+          "Corrected 'home address' to plural 'home addresses' for consistency with 'parties'.",
+          "Preserved original meaning and correct_label as provided."
         ]
       }
     },
@@ -3426,7 +3464,7 @@
       "number": 34,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Under the GDPR, when should the information in relation to the process- ing of personal data relating to a data subject be given to them where the personal data is obtained directly from the data subject?",
+      "text": "Under the GDPR, when should the information in relation to the processing of personal data relating to a data subject be given to them where the personal data is obtained directly from the data subject?",
       "choices": [
         {
           "label": "A",
@@ -3445,17 +3483,19 @@
         },
         {
           "label": "D",
-          "text": "Within a reasonable period, depending on the circumstance of th case",
+          "text": "Within a reasonable period, depending on the circumstances of the case",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation/line break: 'process- ing' -> 'processing'",
+          "Corrected punctuation and spacing",
+          "Corrected typo 'th' -> 'the' and normalized 'circumstance of the case' -> 'circumstances of the case'"
         ]
       }
     },
@@ -3827,28 +3867,32 @@
       "choices": [
         {
           "label": "A",
-          "text": "The retailer shall document the attack and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+          "text": "The retailer shall document the attack and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects.",
+          "is_correct": true
         },
         {
           "label": "B",
-          "text": "The retailer shall document the attack and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected."
+          "text": "The retailer shall document the attack and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected.",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "The retailer shall document the attack and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+          "text": "The retailer shall document the attack and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects.",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "The retailer shall document the attack. No notification to the competent supervisory authority or affected data subjects is required."
+          "text": "The retailer shall document the attack. No notification to the competent supervisory authority or affected data subjects is required.",
+          "is_correct": false
         }
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Minor formatting corrections only (spacing/punctuation)."
         ]
       }
     },
@@ -3862,28 +3906,32 @@
       "choices": [
         {
           "label": "A",
-          "text": "The medical clinic has to document the breach and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+          "text": "The medical clinic has to document the breach and notify the competent supervisory authority and affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects.",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "The medical clinic has to document the breach and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected."
+          "text": "The medical clinic has to document the breach and notify the competent supervisory authority. No notification to affected data subjects is needed as no special categories of personal data were affected.",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "The medical clinic has to document the breach and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects."
+          "text": "The medical clinic has to document the breach and only notify the affected data subjects as this incident is deemed to result in high risks to the rights and freedoms of data subjects.",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "The medical clinic has to document the breach. No notification to the competent supervisory authority or affected data subjects is required."
+          "text": "The medical clinic has to document the breach. No notification to the competent supervisory authority or affected data subjects is required.",
+          "is_correct": true
         }
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor punctuation and spacing; corrected phrasing for clarity without altering substantive meaning."
         ]
       }
     },
@@ -3930,7 +3978,7 @@
       "number": 58,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Which of the following instruments does not respect the minimum safe- guards in accordance with the principle of proportionality under the EU law and was specifically referred to by the CJEU in Schrems H?",
+      "text": "Which of the following instruments does not respect the minimum safeguards in accordance with the principle of proportionality under the EU law and was specifically referred to by the CJEU in Schrems H?",
       "choices": [
         {
           "label": "A",
@@ -3955,11 +4003,11 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Repaired OCR artifacts: changed 'safe- guards' to 'safeguards' and corrected spacing. No substantive changes to meaning or answer labels."
         ]
       }
     },
@@ -4117,7 +4165,7 @@
       "choices": [
         {
           "label": "A",
-          "text": "Statistics in relation to the high rate of vandalism in the city com- pared to other cities in the same country",
+          "text": "Statistics in relation to the high rate of vandalism in the city compared to other cities in the same country",
           "is_correct": true
         },
         {
@@ -4132,17 +4180,19 @@
         },
         {
           "label": "D",
-          "text": "A report of a real damage to the shop occurred recently",
+          "text": "A report of real damage to the shop that occurred recently",
           "is_correct": false
         }
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed hyphenation and line-break artifacts in choice A ('com- pared' -> 'compared').",
+          "Corrected grammar in choice D ('A report of a real damage to the shop occurred recently' -> 'A report of real damage to the shop that occurred recently').",
+          "Removed stray line breaks and ensured clear separation of question and four choices."
         ]
       }
     },
@@ -4156,32 +4206,35 @@
       "choices": [
         {
           "label": "A",
-          "text": "The parking is an open-space place and can be accessed by ruenY people, and therefore, installing a video surveillance system is not lawful",
+          "text": "The parking is an open-space place and can be accessed by many people, and therefore, installing a video surveillance system is not lawful",
           "is_correct": false
         },
         {
           "label": "B",
-          "text": "Although the parking company has a legitimate interest to use a video surveillance system, it is an open-space place, and therefore, it hould seek less invasive monitoring systems company has a legitimate interest to use a video surveil-",
+          "text": "Although the parking company has a legitimate interest to use a video surveillance system, it is an open-space place, and therefore, it should seek less invasive monitoring systems",
           "is_correct": false
         },
         {
           "label": "C",
-          "text": "The parking system during the time of da y that it is ex periencin g iss ues lance",
+          "text": "The parking company may use the video surveillance system during the time of day that it is experiencing issues",
           "is_correct": true
         },
         {
           "label": "D",
-          "text": "The parking company has a legitimate interest to use a video surveil- lance system the whole day as long as data subjects are appropriately informed A supermarket has recently fallen victim to a series of vandalism. As",
+          "text": "The parking company has a legitimate interest to use a video surveillance system the whole day as long as data subjects are appropriately informed",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
+        "origin": "ai_repair",
+        "confidence": 0.45,
         "needs_human_review": true,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected OCR typos and spacing: 'ruenY' -> 'many'; 'hould' -> 'should'.",
+          "Fixed fragmented and duplicated text in choice B (removed repetition).",
+          "Reconstructed heavily garbled choice C from fragments; meaning inferred as allowing use during times of issues (verification recommended).",
+          "Removed extraneous trailing text from choice D that belonged to the next question."
         ]
       }
     },
@@ -5421,11 +5474,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Reformatted question and choices; no substantive changes to meaning."
         ]
       }
     },
@@ -5867,11 +5920,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor punctuation/spacing; no substantive changes to meaning."
         ]
       }
     },
@@ -6103,7 +6156,7 @@
       "number": 38,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A restaurant has a website through which customers order food to be delivered to their home. The restaurant sends the consumer’s personal data and order information to a third-party delivery company for the purpose of delivering the food and accepting payment. After the order is complete, the delivery company pseudonymises the customer information to be used to improve the delivery company’s estimated delivery time algorithm. The delivery company is not using the pseudonymised customer data for their algorithm on the restaurant’s behalf. Under the GDPR, what role best describes the delivery company with respect to the processing of data used for the algorithm?",
+      "text": "A restaurant has a website through which customers order food to be delivered to their home. The restaurant sends the consumer's personal data and order information to a third-party delivery company for the purpose of delivering the food and accepting payment. After the order is complete, the delivery company pseudonymises the customer information to be used to improve the delivery company's estimated delivery time algorithm. The delivery company is not using the pseudonymised customer data for their algorithm on the restaurant's behalf. Under the GDPR, what role best describes the delivery company with respect to the processing of data used for the algorithm?",
       "choices": [
         {
           "label": "A",
@@ -6128,11 +6181,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Normalized typographic apostrophes to ASCII. No substantive changes made."
         ]
       }
     },
@@ -6352,11 +6405,11 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.93,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Question text cleaned for spacing and punctuation; no substantive changes made."
         ]
       }
     },
@@ -6502,12 +6555,10 @@
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
-        "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-        ]
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
+        "notes": []
       }
     },
     {
@@ -6516,7 +6567,7 @@
       "number": 49,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A bakery placed a video surveillance camera in the employee break room. The camera is pointed in a manner so that it only records the portion of the wall that holds the employee timeclock. The employer setup the camera after some employees were caught clocking in for other employees who were running late to work. The employer reviews the footage weekly and then deletes the footage. A sign is posted next to the timeclock informing employees about the recording. If the employees exercise their right to object, what will the employer need to do to continue the video monitoring?",
+      "text": "A bakery placed a video surveillance camera in the employee break room. The camera is pointed in a manner so that it only records the portion of the wall that holds the employee timeclock. The employer set up the camera after some employees were caught clocking in for other employees who were running late to work. The employer reviews the footage weekly and then deletes the footage. A sign is posted next to the timeclock informing employees about the recording. If the employees exercise their right to object, what will the employer need to do to continue the video monitoring?",
       "choices": [
         {
           "label": "A",
@@ -6541,11 +6592,11 @@
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor typos and spacing; no substantive changes made."
         ]
       }
     },
@@ -6666,7 +6717,7 @@
       "number": 53,
       "scenario_id": "IV",
       "scenario_text": "Please use the following scenario to answer the next THREE questions. Museum4yourSenses is a new museum with an exceptionally modern feel and is gaining a lot of traction on PluckPlack, a popular social media app. To promote their multi-location launch, founders aim to go viral with captivating avatar-enhanced videos on PluckPlack. The museum’s unique pitch is a chance for the first 100 visitors of the day to test out new virtual reality headsets for free. Visitors first step into a rainbow-colored waiting room where they receive instructions to speak their name and introduce the character they wish to become for the day. When visitors get their photo taken for their badge, they are instructed to look directly at the camera and make a funny face. A month before the museum opened in Brussels, a private reception was held. The organisers gave visitors forms that included a box to acknowledge having read the museum’s privacy notice and a consent form to sign about the images and voice recordings that would be required for entry. The consent form stated the personal data would be deleted 24 hours after the initial visit. After the Brussels launch, some of the visitors noticed the museum had posted promotional videos on PluckPlack that used the visitors’ introductory voice recordings. The consent forms did not mention that the audio recordings would be combined with new avatars for the museum’s reuse.",
-      "text": "Bubbaloo Clown Company downloaded the PluckPlack videos promoting the museum and used the expressions to make new clown masks. It named the masks according to the visitor’s introductions. When former visitors became aware of these masks, they lodged a series of complaints with the supervisory authorities. Museum4yourSenses deflected any responsibility, stating it was their audio-visual vendor handling the audio recordings of the visitors. Which statement about responsibility for the misuse of the visitors’ personal data is correct?",
+      "text": "Bubbaloo Clown Company downloaded the PluckPlack videos promoting the museum and used the expressions to make new clown masks. It named the masks according to the visitors’ introductions. When former visitors became aware of these masks, they lodged a series of complaints with the supervisory authorities. Museum4yourSenses deflected any responsibility, stating it was their audio-visual vendor handling the audio recordings of the visitors. Which statement about responsibility for the misuse of the visitors’ personal data is correct?",
       "choices": [
         {
           "label": "A",
@@ -6691,12 +6742,10 @@
       ],
       "correct_label": "B",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
-        "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-        ]
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "notes": []
       }
     },
     {
@@ -6816,7 +6865,7 @@
       "number": 57,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "You accidently send an email that contains a small amount of personal data, and no sensitive data, concerning 25 individuals from the EU to the wrong email address. You immediately request the recipient delete the email and the recipient confirms they have done so. After reporting what has happened to your DPO, you take some refresher privacy training for good measure. Under the GDPR, why is it unlikely that your company would be fined as a result of this data breach?",
+      "text": "You accidentally send an email that contains a small amount of personal data, and no sensitive data, concerning 25 individuals from the EU to the wrong email address. You immediately request the recipient delete the email and the recipient confirms they have done so. After reporting what has happened to your DPO, you take some refresher privacy training for good measure. Under the GDPR, why is it unlikely that your company would be fined as a result of this data breach?",
       "choices": [
         {
           "label": "A",
@@ -6841,11 +6890,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected spelling: 'accidently' -> 'accidentally'. Fixed minor punctuation/spacing issues."
         ]
       }
     },
@@ -7128,7 +7177,7 @@
         },
         {
           "label": "C",
-          "text": "Novatours can continue to process Isabelle’s personal data if she does not respond to identify verification requests within 30 days.",
+          "text": "Novatours can continue to process Isabelle’s personal data if she does not respond to identity verification requests within 30 days.",
           "is_correct": false
         },
         {
@@ -7139,11 +7188,12 @@
       ],
       "correct_label": "D",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.95,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Corrected 'identify verification' to 'identity verification' in option C for grammatical accuracy.",
+          "Normalized punctuation and spacing; no substantive changes to meaning or content."
         ]
       }
     },
@@ -7301,7 +7351,7 @@
       "number": 70,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A data subject makes a subject access request (SAR) to an online retail company for their personal data. The data subject states that they are making a SAR in accordance with the GDPR; however, if the company credits the data subject’s online account with a specified sum of money, the data subject will withdraw their request. The company has not had any previous access requests by other individuals. Which of the following would be legitimate grounds for the company to refuse to comply with the access request?",
+      "text": "A data subject makes a subject access request (SAR) to an online retail company for their personal data. The data subject states that they are making a SAR in accordance with the GDPR; however, if the company credits the data subject's online account with a specified sum of money, the data subject will withdraw their request. The company has not had any previous access requests by other individuals. Which of the following would be legitimate grounds for the company to refuse to comply with the access request?",
       "choices": [
         {
           "label": "A",
@@ -7326,11 +7376,11 @@
       ],
       "correct_label": "A",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Normalized apostrophe characters; otherwise no substantive changes made."
         ]
       }
     },
@@ -7883,11 +7933,11 @@
       ],
       "correct_label": "C",
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Minor formatting normalization applied; no substantive changes made."
         ]
       }
     },
@@ -8082,29 +8132,33 @@
       "choices": [
         {
           "label": "A",
-          "text": "Access control and its consequent processing is excessive in relation to securing the database against unauthorised access, loss or theft"
+          "text": "Access control and its consequent processing is excessive in relation to securing the database against unauthorised access, loss or theft",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Access control and its consequent processing is proportionate in relation to evaluating the performance of employees"
+          "text": "Access control and its consequent processing is proportionate in relation to evaluating the performance of employees",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Access control and its consequent processing is excessive in relation to evaluating the performance of employees"
+          "text": "Access control and its consequent processing is excessive in relation to evaluating the performance of employees",
+          "is_correct": true
         },
         {
           "label": "D",
-          "text": "Access control and its consequent processing is proportionate in relation to securing the database against unauthorised access, loss or theft and evaluating the performance of employees as employees have been adequately informed"
+          "text": "Access control and its consequent processing is proportionate in relation to securing the database against unauthorised access, loss or theft and evaluating the performance of employees as employees have been adequately informed",
+          "is_correct": false
         }
       ],
       "correct_label": "C",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed spacing and punctuation; removed potential OCR artifacts; preserved original meaning and correct_label."
         ]
       }
     },
@@ -8230,33 +8284,40 @@
     },
     {
       "id": 225,
-      "text": "local transport company in a large city plans to equip ticket inspectors with body-worn cameras, which are designed to prevent threatening situations, document incidents, and ensure that the right person is fined for travelling without a valid ticket. Ticket inspectors are required to keep the camera on for their entire shift and are therefore able to film all passengers who passed the inspectors. These recordings are stored for a period of one week. The DPO of the company warns them that since several hundred thousand people use public transportation every day, a large number of people are thus at risk of being monitored by video and audio recordings. The DPO suggests reducing the storage to one day, as a longer time is not necessary to achieve the aforementioned purposes. The DPO also believes that audio recordings do not contribute to the identification of individuals without a valid ticket, and thus, recommends not to collect audio data. Which of the following data protection principles are more likely to be respected by addressing the DPO's recommendations?",
+      "text": "A local transport company in a large city plans to equip ticket inspectors with body-worn cameras, which are designed to prevent threatening situations, document incidents, and ensure that the right person is fined for travelling without a valid ticket. Ticket inspectors are required to keep the camera on for their entire shift and are therefore able to film all passengers who passed the inspectors. These recordings are stored for a period of one week. The DPO of the company warns them that since several hundred thousand people use public transportation every day, a large number of people are thus at risk of being monitored by video and audio recordings. The DPO suggests reducing the storage to one day, as a longer time is not necessary to achieve the aforementioned purposes. The DPO also believes that audio recordings do not contribute to the identification of individuals without a valid ticket, and thus recommends not to collect audio data. Which of the following data protection principles are more likely to be respected by addressing the DPO's recommendations?",
       "choices": [
         {
           "label": "A",
-          "text": "Storage limitation, data minimisation, purpose limitation"
+          "text": "Storage limitation, data minimisation, purpose limitation",
+          "is_correct": true
         },
         {
           "label": "B",
-          "text": "Purpose limitation, data minimisation, lawfulness and fairness"
+          "text": "Purpose limitation, data minimisation, lawfulness and fairness",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Storage limitation, data minimisation, lawfulness and fairness"
+          "text": "Storage limitation, data minimisation, lawfulness and fairness",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "Storage limitation, purpose limitation, lawfulness and fairness"
+          "text": "Storage limitation, purpose limitation, lawfulness and fairness",
+          "is_correct": false
         }
       ],
       "correct_label": "A",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.92,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Capitalized first word of the question.",
+          "Added hyphen in 'body-worn'.",
+          "Removed an extra comma before 'recommends' and normalized punctuation and spacing.",
+          "No substantive changes to meaning or answer options."
         ]
       }
     },
@@ -8416,61 +8477,69 @@
       "choices": [
         {
           "label": "A",
-          "text": "Statement A is correct and Statement B is incorrect"
+          "text": "Statement A is correct and Statement B is incorrect",
+          "is_correct": true
         },
         {
           "label": "B",
-          "text": "Statement A is incorrect and Statement B is correct"
+          "text": "Statement A is incorrect and Statement B is correct",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Both statements are correct"
+          "text": "Both statements are correct",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "Both statements are incorrect"
+          "text": "Both statements are incorrect",
+          "is_correct": false
         }
       ],
       "correct_label": "A",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Minor formatting and spacing corrections only; no changes to substantive content."
         ]
       }
     },
     {
       "id": 232,
-      "text": "The virtual voice assistant of an electric car requires a user to issue the same voice command two times due to the virtual voice assistant not understanding the command. The two voice commands and the associated transcriptions are passed to human reviewers to review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant training dataset to improve its performance and accuracy. Which one is correct?",
+      "text": "The virtual voice assistant of an electric car requires a user to issue the same voice command two times because the assistant did not understand the command. The two voice commands and their associated transcriptions are passed to human reviewers to review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant's training dataset to improve its performance and accuracy. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "The processing activities carried out by the human reviewers are aligned with the legitimate interests of the virtual voice assistant provider to improve its services."
+          "text": "The processing activities carried out by the human reviewers are aligned with the legitimate interests of the virtual voice assistant provider to improve its services.",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "The processing activities carried out by the human reviewers are not necessary for the performance, however, since this is a sensitive application and is linked to the health and safety of data subjects, the provider of the virtual voice assistant should rely on another lawful basis."
+          "text": "The processing activities carried out by the human reviewers are not necessary for the performance, however, since this is a sensitive application and is linked to the health and safety of data subjects, the provider of the virtual voice assistant should rely on another lawful basis.",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "The processing activities carried out by the human reviewers are necessary for the performance of a contract as if the human review does not take place, the virtual voice assistant may fail to function properly."
+          "text": "The processing activities carried out by the human reviewers are necessary for the performance of a contract as if the human review does not take place, the virtual voice assistant may fail to function properly.",
+          "is_correct": true
         },
         {
           "label": "D",
-          "text": "The processing activities carried out by the human reviewers are not necessary for the performance of a contract as the virtual voice assistant is already functional."
+          "text": "The processing activities carried out by the human reviewers are not necessary for the performance of a contract as the virtual voice assistant is already functional.",
+          "is_correct": false
         }
       ],
       "correct_label": "C",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
+          "Fixed minor punctuation and wording for clarity (e.g., 'two times' -> 'two times/twice' kept meaning; added possessive in 'assistant\\'s training dataset'). No substantive changes to meaning."
         ]
       }
     },
@@ -8510,30 +8579,32 @@
       "choices": [
         {
           "label": "A",
-          "text": "Ad-hoc contractual clauses"
+          "text": "Ad-hoc contractual clauses",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Standard contractual clauses"
+          "text": "Standard contractual clauses",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "Codes of conduct"
+          "text": "Codes of conduct",
+          "is_correct": true
         },
         {
           "label": "D",
-          "text": "Certification"
+          "text": "Certification",
+          "is_correct": false
         }
       ],
       "correct_label": "C",
       "scenario_text": null,
       "source": {
-        "origin": "failed",
-        "confidence": 0,
-        "needs_human_review": true,
-        "notes": [
-          "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-        ]
+        "origin": "ai_repair",
+        "confidence": 0.9,
+        "needs_human_review": false,
+        "notes": []
       }
     },
     {
@@ -8747,187 +8818,10 @@
       }
     }
   ],
-  "errors": [
-    {
-      "id": 5,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 11,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 18,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 23,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 27,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 28,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 32,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 37,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 24,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 50,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 29,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 51,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 56,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 65,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 64,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 66,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 76,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 78,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 80,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 90,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 84,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 94,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 105,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 106,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 108,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 46,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 148,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 114,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 113,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 160,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 167,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 173,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 177,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 178,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 182,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 186,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 194,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 199,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 214,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 220,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 225,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 231,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 232,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    },
-    {
-      "id": 234,
-      "error": "OpenAI API error 400: {\n  \"error\": {\n    \"message\": \"Unsupported parameter: 'temperature' is not supported with this model.\",\n    \"type\": \"invalid_request_error\",\n    \"param\": \"temperature\",\n    \"code\": null\n  }\n}"
-    }
-  ],
+  "errors": [],
   "metadata": {
     "scenario_mode": "keep",
     "repaired_subset_count": 241,
-    "errors_count": 44
+    "errors_count": 0
   }
 }
