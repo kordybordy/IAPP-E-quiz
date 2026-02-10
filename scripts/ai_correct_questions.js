@@ -75,7 +75,7 @@ async function callOpenAI({ apiKey, model, question }) {
 }
 
 async function main() {
-  const apiKey = process.env.OPENAI_API_KEY || HARDCODED_API_KEY;
+  const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     throw new Error("Missing OPENAI_API_KEY. Set it in your environment before running.");
   }
