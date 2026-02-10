@@ -8,7 +8,12 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">Exam Simulator</div>
+    <div class="topLeft">
+      <div class="brand">Exam Simulator</div>
+      <nav class="topNav">
+        <button id="leaderboardTabBtn" class="secondary smallBtn" type="button" aria-label="Open leaderboard tab">Leaderboard</button>
+      </nav>
+    </div>
     <div class="meta">
       <span id="questionBankInfo" class="muted">Loading question bank…</span>
     </div>
@@ -16,33 +21,46 @@
 
   <main class="container">
     <section id="home" class="card">
-      <h1>Practice exam</h1>
+      <h1>Practice exam - CIPP/E</h1>
       <p class="muted">
         Questions are randomly drawn from both exam files. Your answers stay in this browser only.
       </p>
 
-      <div class="fieldRow">
-        <label class="fieldLabel" for="questionCount">Number of questions</label>
-        <div class="fieldControl">
-          <input id="questionCount" type="number" min="1" step="1" value="50" />
-          <span class="muted small" id="questionCountHelp"></span>
+      <section class="settingsGrid" aria-label="Customization options">
+        <div class="settingRow">
+          <label class="fieldLabel" for="questionCount">Number of questions</label>
+          <div class="fieldControl">
+            <input id="questionCount" type="number" min="1" step="1" value="90" />
+            <span class="muted small" id="questionCountHelp"></span>
+          </div>
         </div>
-      </div>
 
-      <div class="controls">
+        <div class="settingRow">
+          <label class="fieldLabel" for="timerEnabled">Timer</label>
+          <div class="fieldControl">
+            <label class="checkbox">
+              <input id="timerEnabled" type="checkbox" checked />
+              Enable timer
+            </label>
+            <input id="timerMinutes" type="number" min="1" step="1" value="225" />
+            <span class="muted small">minutes</span>
+          </div>
+        </div>
+
+        <div class="settingRow">
+          <label class="fieldLabel" for="nickname">Nickname</label>
+          <div class="fieldControl">
+            <input id="nickname" type="text" maxlength="24" placeholder="Leaderboard nickname" />
+            <span class="muted small" id="nicknameHelp">Only used for default mode (90 questions + 225-minute timer).</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="controls startRow">
         <button id="startBtn" class="primary" disabled>Start exam</button>
         <button id="resumeBtn" class="secondary" style="display:none;">Resume last attempt</button>
         <button id="resetBtn" class="danger" style="display:none;">Reset</button>
       </div>
-
-      <details class="help">
-        <summary>How it works</summary>
-        <ul>
-          <li>Draws <span id="questionCountText">50</span> unique questions from the bank.</li>
-          <li>You can navigate via “Previous / Next” or jump by number.</li>
-          <li>Submit to see your score and a full review.</li>
-        </ul>
-      </details>
     </section>
 
     <section id="exam" class="card" style="display:none;">
@@ -50,6 +68,7 @@
         <div>
           <div class="muted small">Attempt</div>
           <div id="attemptInfo" class="mono"></div>
+          <div id="timerInfo" class="muted small mono"></div>
         </div>
         <div class="examActions">
           <button id="saveExitBtn" class="secondary">Save & exit</button>
@@ -66,6 +85,16 @@
         <div class="muted small" id="progressText"></div>
         <button id="nextBtn" class="secondary">Next</button>
       </div>
+    </section>
+
+    <section id="leaderboardTab" class="card" style="display:none;">
+      <div class="resultsHeader">
+        <h2>Leaderboard (default mode only)</h2>
+        <div class="controls">
+          <button id="leaderboardBackBtn" class="secondary">Back to home</button>
+        </div>
+      </div>
+      <div id="leaderboardList" class="leaderboardList muted small">No entries yet.</div>
     </section>
 
     <section id="results" class="card" style="display:none;">

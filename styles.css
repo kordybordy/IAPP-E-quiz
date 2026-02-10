@@ -28,6 +28,9 @@ a{ color:var(--primary); }
   backdrop-filter: blur(8px);
 }
 .brand{ font-weight:700; letter-spacing:.2px; }
+.topLeft{ display:flex; align-items:center; gap:14px; }
+.topNav{ display:flex; align-items:center; gap:8px; }
+.smallBtn{ padding: 7px 10px; font-size: .85rem; }
 .container{ max-width: 980px; margin: 18px auto; padding: 0 14px; }
 .card{
   background: var(--card);
@@ -46,7 +49,68 @@ a{ color:var(--primary); }
 }
 .fieldLabel{ font-weight:600; }
 .fieldControl{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-input[type="number"]{
+
+.settingsGrid{
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.settingsGrid .settingRow{
+  display: grid;
+  grid-template-columns: minmax(190px, 250px) 1fr;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+
+.settingsGrid .settingRow:last-child{
+  border-bottom: none;
+}
+
+.settingsGrid .fieldLabel{
+  margin: 0;
+  padding: 12px 14px;
+  border-right: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  display: flex;
+  align-items: center;
+}
+
+.settingsGrid .fieldControl{
+  padding: 12px 14px;
+  min-height: 56px;
+}
+
+.startRow{
+  justify-content: center;
+  align-items: center;
+}
+
+#startBtn{
+  min-width: 260px;
+  font-size: 1.08rem;
+  padding: 14px 22px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px){
+  .settingsGrid .settingRow{
+    grid-template-columns: 1fr;
+  }
+
+  .settingsGrid .fieldLabel{
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #startBtn{
+    width: 100%;
+    min-width: 0;
+  }
+}
+input[type="number"],
+input[type="text"]{
   width: 120px;
   padding: 8px 10px;
   border-radius: 10px;
@@ -69,7 +133,6 @@ button.danger{ background: rgba(255,76,106,.14); border-color: rgba(255,76,106,.
 .muted{ color: var(--muted); }
 .small{ font-size: .9rem; }
 .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-.help{ margin-top: 14px; }
 
 .examHeader{
   display:flex; justify-content:space-between; gap:10px; align-items:center;
@@ -151,3 +214,10 @@ button.danger{ background: rgba(255,76,106,.14); border-color: rgba(255,76,106,.
 .badge.warn{ border-color: rgba(255,204,102,.45); background: rgba(255,204,102,.10); }
 
 .footer{ text-align:center; padding: 20px 14px; }
+
+.leaderboardList > div{
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
