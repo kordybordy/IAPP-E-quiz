@@ -213,11 +213,30 @@ async function callResponsesAPI({ apiKey, model, question, prev, next }) {
   }
 
   const data = await response.json();
-  if (!data.output_text) {
-    throw new Error("OpenAI API response missing output_text.");
+  const jsonText = extractResponseText(data);
+  return JSON.parse(jsonText);
+}
+
+function extractResponseText(data) {
+  if (typeof data?.output_text === "string" && data.output_text.trim()) {
+    return data.output_text;
   }
 
-  return JSON.parse(data.output_text);
+  const output = Array.isArray(data?.output) ? data.output : [];
+  for (const item of output) {
+    const content = Array.isArray(item?.content) ? item.content : [];
+    for (const part of content) {
+      if (part?.type === "output_text" && typeof part?.text === "string" && part.text.trim()) {
+        return part.text;
+      }
+
+      if (part?.type === "text" && typeof part?.text === "string" && part.text.trim()) {
+        return part.text;
+      }
+    }
+  }
+
+  throw new Error("OpenAI API response missing text output.");
 }
 
 async function withRetry(task, attempts = 5) {
