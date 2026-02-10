@@ -31,3 +31,22 @@ Just open `index.html` in a browser.
 
 ## Privacy
 All answers are stored only in your browser (LocalStorage). Nothing is sent anywhere.
+
+## OCR repair script (OpenAI Responses API)
+Use `scripts/ai_correct_questions.js` to normalize OCR artifacts and optionally reconstruct suspicious records with structured JSON output.
+
+Example:
+
+```bash
+OPENAI_API_KEY=... node scripts/ai_correct_questions.js \
+  --in questions.json \
+  --out questions.corrected.json \
+  --scenario-mode group \
+  --concurrency 3
+```
+
+Key flags:
+- `--scenario-mode keep|drop|group` (default: `keep`)
+- `--start-id <id>` and `--limit <n>` for partial runs
+- `--cache <path>` to reuse prior model outputs
+- `--delay-ms <ms>` to throttle requests if needed
