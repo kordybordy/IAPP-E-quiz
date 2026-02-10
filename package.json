@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "generate:ai": "node scripts/generate_ai_questions.js --out ai_questions.json --count 200 --topics gdpr_rights,controller_obligations,lawful_bases,international_transfers,data_breach --difficulty medium"
   }
 }
