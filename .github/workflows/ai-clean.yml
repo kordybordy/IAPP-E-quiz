@@ -13,12 +13,11 @@ jobs:
         with:
           node-version: 20
 
-      - run: npm install openai p-limit
-
       - run: |
           node scripts/ai_correct_questions.js \
             --in questions.json \
-            --out questions.corrected.json
+            --out questions.corrected.json \
+            --scenario-mode keep
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
