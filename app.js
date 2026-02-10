@@ -1,12 +1,15 @@
 // Exam Simulator – static (no server)
 // Loads questions.json, draws random questions, scores in-browser.
 
-const STORAGE_KEY = "exam_simulator_static_v1";
-const DEFAULT_QUESTION_COUNT = 50;
+const STORAGE_KEY = "exam_simulator_static_v2";
+const LEADERBOARD_KEY = "exam_simulator_leaderboard_v1";
+const DEFAULT_QUESTION_COUNT = 90;
+const DEFAULT_TIMER_MINUTES = 225;
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
 let currentIndex = 0;
+let timerIntervalId = null;
 
 const $ = (id) => document.getElementById(id);
 
@@ -43,11 +46,142 @@ function saveAttempt() {
 
 function clearAttempt() {
   localStorage.removeItem(STORAGE_KEY);
+  stopTimer();
   attempt = null;
 }
 
+
+function loadLeaderboard() {
+  try {
+    const raw = localStorage.getItem(LEADERBOARD_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveLeaderboard(entries) {
+  try {
+    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(entries));
+  } catch (e) {
+    // ignore
+  }
+}
+
+function formatDuration(totalSeconds) {
+  const safe = Math.max(0, Math.floor(totalSeconds));
+  const h = Math.floor(safe / 3600);
+  const m = Math.floor((safe % 3600) / 60);
+  const s = safe % 60;
+  const hh = String(h).padStart(2, "0");
+  const mm = String(m).padStart(2, "0");
+  const ss = String(s).padStart(2, "0");
+  return `${hh}:${mm}:${ss}`;
+}
+
+function isDefaultMode(questionCount, timerEnabled, timerMinutes) {
+  return questionCount === DEFAULT_QUESTION_COUNT && timerEnabled && timerMinutes === DEFAULT_TIMER_MINUTES;
+}
+
+function getTimerSettings() {
+  const enabled = $("timerEnabled").checked;
+  const raw = parseInt($("timerMinutes").value, 10);
+  const minutes = Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_TIMER_MINUTES;
+  return { enabled, minutes };
+}
+
+function updateTimerSummary() {
+  const { enabled, minutes } = getTimerSettings();
+  $("timerSummary").textContent = enabled ? `${minutes} min` : "off";
+}
+
+function updateNicknameHelp() {
+  const count = getSelectedQuestionCount();
+  const { enabled, minutes } = getTimerSettings();
+  const eligible = isDefaultMode(count, enabled, minutes);
+  $("nicknameHelp").textContent = eligible
+    ? "Eligible for leaderboard (default mode)."
+    : "Only used for default mode (90 questions + 225-minute timer).";
+}
+
+function renderLeaderboard() {
+  const entries = loadLeaderboard();
+  const list = $("leaderboardList");
+  if (!entries.length) {
+    list.textContent = "No entries yet.";
+    return;
+  }
+
+  const rows = entries
+    .sort((a, b) => {
+      if (b.correct !== a.correct) return b.correct - a.correct;
+      if (a.elapsedSeconds !== b.elapsedSeconds) return a.elapsedSeconds - b.elapsedSeconds;
+      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    })
+    .slice(0, 10)
+    .map((e, idx) => `${idx + 1}. ${e.nickname} — ${e.correct}/${e.total} in ${formatDuration(e.elapsedSeconds)}`);
+
+  list.innerHTML = rows.map(r => `<div>${r}</div>`).join("");
+}
+
+function stopTimer() {
+  if (timerIntervalId) {
+    clearInterval(timerIntervalId);
+    timerIntervalId = null;
+  }
+}
+
+function updateTimerInfo() {
+  if (!attempt || !attempt.timerEnabled) {
+    $("timerInfo").textContent = "Timer: off";
+    return;
+  }
+  const remaining = Math.max(0, (attempt.timerEndsAt || 0) - Date.now());
+  const remainingSeconds = Math.ceil(remaining / 1000);
+  $("timerInfo").textContent = `Timer left: ${formatDuration(remainingSeconds)}`;
+}
+
+function startTimerIfNeeded() {
+  stopTimer();
+  if (!attempt || !attempt.timerEnabled || attempt.submitted) return;
+
+  updateTimerInfo();
+  timerIntervalId = setInterval(() => {
+    const remaining = (attempt.timerEndsAt || 0) - Date.now();
+    if (remaining <= 0) {
+      stopTimer();
+      updateTimerInfo();
+      scoreAttempt();
+      renderExam();
+      renderResults();
+      show("results");
+      return;
+    }
+    updateTimerInfo();
+  }, 1000);
+}
+
+function maybeAddLeaderboardEntry() {
+  if (!attempt || !attempt.summary) return;
+  if (!attempt.isDefaultMode) return;
+  if (!attempt.nickname) return;
+
+  const entries = loadLeaderboard();
+  entries.push({
+    nickname: attempt.nickname,
+    correct: attempt.summary.correct,
+    total: attempt.summary.total,
+    elapsedSeconds: attempt.summary.elapsedSeconds || 0,
+    createdAt: new Date().toISOString()
+  });
+  saveLeaderboard(entries);
+  renderLeaderboard();
+}
+
 function show(sectionId) {
-  ["home","exam","results"].forEach(id => {
+  ["home","exam","leaderboardTab","results"].forEach(id => {
     $(id).style.display = (id === sectionId) ? "" : "none";
   });
 }
@@ -95,6 +229,11 @@ function pickQuestions(count) {
 
 function startNewAttempt() {
   const count = getSelectedQuestionCount();
+  const timer = getTimerSettings();
+  const nickname = $("nickname").value.trim();
+  const eligibleForLeaderboard = isDefaultMode(count, timer.enabled, timer.minutes);
+  const now = Date.now();
+
   attempt = {
     id: uid(),
     createdAt: new Date().toISOString(),
@@ -102,11 +241,18 @@ function startNewAttempt() {
     answers: {},         // { [qid]: 'A'|'B'|'C'|'D' }
     submitted: false,
     results: null,
-    questionCount: count
+    questionCount: count,
+    startedAt: now,
+    timerEnabled: timer.enabled,
+    timerMinutes: timer.minutes,
+    timerEndsAt: timer.enabled ? now + timer.minutes * 60 * 1000 : null,
+    nickname: eligibleForLeaderboard ? nickname : "",
+    isDefaultMode: eligibleForLeaderboard
   };
   currentIndex = 0;
   saveAttempt();
   renderExam();
+  startTimerIfNeeded();
   show("exam");
 }
 
@@ -144,6 +290,7 @@ function renderJumpBar() {
 function renderExam() {
   const total = attempt.questionIds.length;
   $("attemptInfo").textContent = `${attempt.id.slice(0,8)} • ${answeredCount()}/${total} answered`;
+  updateTimerInfo();
   $("progressText").textContent = `Question ${currentIndex + 1} of ${total}`;
 
   renderJumpBar();
@@ -232,13 +379,18 @@ function scoreAttempt() {
 
   attempt.submitted = true;
   attempt.results = results;
-  attempt.summary = { correct, wrong, unanswered, total: attempt.questionIds.length };
+  const now = Date.now();
+  const elapsedSeconds = Math.max(0, Math.floor((now - (attempt.startedAt || now)) / 1000));
+  attempt.summary = { correct, wrong, unanswered, total: attempt.questionIds.length, elapsedSeconds };
+  stopTimer();
   saveAttempt();
+  maybeAddLeaderboardEntry();
 }
 
 function renderResults() {
   const s = attempt.summary;
-  $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered})`;
+  const elapsedText = s.elapsedSeconds != null ? `, time: ${formatDuration(s.elapsedSeconds)}` : "";
+  $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered}${elapsedText})`;
   $("newAttemptBtn").textContent = `New ${s.total}-question attempt`;
 
   const list = $("reviewList");
@@ -305,15 +457,20 @@ async function init() {
   // UI bindings
   $("startBtn").onclick = startNewAttempt;
   $("newAttemptBtn").onclick = () => { clearAttempt(); startNewAttempt(); };
-  $("backHomeBtn").onclick = () => { show("home"); };
-  $("resumeBtn").onclick = () => { show("exam"); renderExam(); };
+  $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
+  $("leaderboardTabBtn").onclick = () => { renderLeaderboard(); show("leaderboardTab"); };
+  $("leaderboardBackBtn").onclick = () => { show("home"); };
+  $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
-  $("questionCount").oninput = () => updateQuestionCountText();
+  $("questionCount").oninput = () => { updateQuestionCountText(); updateNicknameHelp(); };
+  $("timerEnabled").onchange = () => { updateTimerSummary(); updateNicknameHelp(); };
+  $("timerMinutes").oninput = () => { updateTimerSummary(); updateNicknameHelp(); };
+  $("nickname").oninput = () => updateNicknameHelp();
 
   $("prevBtn").onclick = () => { currentIndex--; renderExam(); };
   $("nextBtn").onclick = () => { currentIndex++; renderExam(); };
 
-  $("saveExitBtn").onclick = () => { saveAttempt(); show("home"); };
+  $("saveExitBtn").onclick = () => { saveAttempt(); stopTimer(); show("home"); };
 
   $("submitBtn").onclick = () => {
     // Simple guard: allow submit anytime
@@ -329,13 +486,21 @@ async function init() {
   const res = await fetch("questions.json", { cache: "no-store" });
   bank = await res.json();
   setBankInfo();
+  updateTimerSummary();
+  updateNicknameHelp();
+  renderLeaderboard();
 
   // Attempt state
   const saved = loadSavedAttempt();
   if (saved && saved.questionIds && saved.answers) {
     attempt = saved;
     $("questionCount").value = String(attempt.questionIds.length);
+    $("timerEnabled").checked = !!attempt.timerEnabled;
+    $("timerMinutes").value = String(attempt.timerMinutes || DEFAULT_TIMER_MINUTES);
+    $("nickname").value = attempt.nickname || "";
     updateQuestionCountText();
+    updateTimerSummary();
+    updateNicknameHelp();
     $("resumeBtn").style.display = "";
     $("resetBtn").style.display = "";
     if (attempt.submitted) {

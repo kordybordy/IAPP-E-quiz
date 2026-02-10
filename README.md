@@ -1,9 +1,11 @@
 # Exam Simulator (Static)
 
 This is a **pure static** exam simulator (HTML + JS) that:
-- randomly draws **50 questions** from the question bank
+- by default draws **90 questions** from the question bank
+- uses a default **225-minute timer** (optional, can be turned off/changed)
 - lets you answer
 - scores you and shows a full review
+- supports a local-browser leaderboard with nickname in default mode only
 
 No Python, no server.
 
@@ -120,3 +122,11 @@ python3 scripts/export_questions.py --input questions.corrected.json --out-csv o
 ```bash
 npm test
 ```
+
+
+## Default mode and options
+- Default mode is **90 questions + 225-minute timer**.
+- Timer is optional and configurable before starting an attempt.
+- You can enter a nickname before starting.
+- Nickname/leaderboard entries are only saved when using default mode exactly (90 + 225 with timer enabled).
+- Leaderboard is stored in LocalStorage in your browser.
