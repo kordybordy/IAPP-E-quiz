@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-02-11T02:06:58.391Z",
+  "generated_at": "2026-02-11T02:51:17.882Z",
   "items": [
     {
       "id": "ai_000001",
@@ -2178,6 +2178,342 @@
       "source": {
         "gdpr_ref": "gdpr_72",
         "seed": "2026-02-11|data_breach|0084"
+      }
+    },
+    {
+      "id": "ai_000085",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following accurately reflects an obligation under the GDPR regarding the designation of a data protection officer?",
+      "choices": [
+        "A single data protection officer may be appointed to serve a group of companies provided the officer is easily accessible from each establishment.",
+        "A data protection officer must always be an external consultant and cannot be an employee of the controller or processor.",
+        "Controllers and processors are required to designate a data protection officer whenever they process any personal data at all.",
+        "When a controller or processor appoints a data protection officer, they are not required to publish the officer's contact details."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is correct (correct_index = 0). Choice A is consistent with GDPR rules allowing a single DPO to serve a group of undertakings and be accessible from each establishment; the other choices are incorrect (B is false — a DPO may be internal or external; C is false — designation is not required for any processing at all, only in specified cases such as core activities involving large-scale monitoring or special categories; D is false — contact details must be made available).",
+        "Question text contains no citation of article numbers or statute references.",
+        "Question difficulty matches medium: requires knowledge beyond a basic statement and elimination of common misconceptions.",
+        "Not a near-copy of reference texts based on provided similarity metrics and phrasing appears original."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_37",
+        "seed": "2026-02-11|gdpr_rights|0085"
+      }
+    },
+    {
+      "id": "ai_000086",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "A controller relies on an international agreement concluded by an EU Member State prior to 24 May 2016 for transfers of personal data to a third country. Under the GDPR, what should the controller understand about the continued validity of that transfer arrangement?",
+      "choices": [
+        "The transfer mechanism is automatically invalid under the GDPR and transfers must stop until a new transfer basis (e.g., SCCs or adequacy) is put in place.",
+        "Such pre-2016 international agreements that complied with Union law at the time remain in force until they are amended, replaced, or revoked, so transfers may continue while monitoring for changes.",
+        "The controller must obtain fresh, explicit consent from each data subject to continue transfers under the old agreement.",
+        "The controller must seek prior written approval from its supervisory authority before relying on any international agreement concluded before 24 May 2016."
+      ],
+      "correct_index": 1,
+      "confidence": 0.87,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is correct (index 1). Choice 1 correctly reflects the practical position that international agreements valid under Union law before the GDPR’s entry into force generally remain applicable until amended, replaced or revoked, so transfers may continue subject to ongoing compliance checks and any later incompatibility findings.",
+        "The other options are incorrect: option 0 (automatic invalidity) is false; option 2 (must obtain fresh, explicit consent from each data subject) is not required as a general rule; option 3 (must seek prior written supervisory-authority approval) is not a blanket requirement.",
+        "The question text contains a date but no citation of any article number or legal provision.",
+        "The question tests application/transition of transfer mechanisms rather than rote citation, making its difficulty appropriate for a medium-level GDPR quiz item.",
+        "The phrasing is original and not a near-copy of common reference texts or guidance, and it does not reproduce legal-source wording verbatim."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_96",
+        "seed": "2026-02-11|controller_obligations|0086"
+      }
+    },
+    {
+      "id": "ai_000087",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "Under employment-specific national rules, what requirement applies to transfers of employees' personal data within a group of undertakings?",
+      "choices": [
+        "They are banned unless the receiving entity is located within the same Member State.",
+        "They must be subject to suitable and specific measures that safeguard employees' dignity, transparency and legitimate interests.",
+        "They can be carried out freely if the employer documents a legitimate business need, without further safeguards.",
+        "They require a data transfer agreement approved in advance by the European Commission."
+      ],
+      "correct_index": 1,
+      "confidence": 0.86,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "Exactly one choice is marked as correct (index 1), and that choice correctly reflects GDPR/EDPB guidance that employment-related intra-group transfers must be subject to suitable and specific measures safeguarding employees' dignity, transparency and legitimate interests.",
+        "The question text contains no citation of an article number.",
+        "The other options are incorrect under GDPR: transfers are not banned merely because the receiving entity is in another Member State; transfers cannot lawfully rely solely on an internal documented business need without appropriate safeguards; and the European Commission does not pre-approve a special 'data transfer agreement' for intra-group employment transfers in the way described.",
+        "Difficulty is medium: it requires specific knowledge of employment-related national rules and guidance rather than basic GDPR concepts.",
+        "Provided similarity metrics are low, suggesting the item is not a near-copy of reference materials."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_88",
+        "seed": "2026-02-11|international_transfers|0087"
+      }
+    },
+    {
+      "id": "ai_000088",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "A data subject files a complaint with a supervisory authority alleging a personal data breach. Which obligation does the supervisory authority have toward the complainant?",
+      "choices": [
+        "Keep the complainant informed about the progress and the outcome of the complaint, including the possibility of pursuing a judicial remedy.",
+        "Immediately impose corrective sanctions on the controller and notify the complainant of the exact fine to be levied.",
+        "Guarantee that the complaint will be handled through a judicial procedure rather than administrative channels.",
+        "Automatically reject the complaint if the controller is not established in the same Member State as the supervisory authority where the complaint was lodged."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly one answer marked correct (index 0) and there are exactly 4 choices.",
+        "Question text contains no article or legal provision citation.",
+        "Correct choice (0) accurately reflects the supervisory authority’s duty to inform a complainant about the progress and outcome of their complaint and to indicate avenues for judicial remedy.",
+        "Other choices are incorrect: immediate imposition of sanctions and announcing exact fines is not a mandatory immediate duty of the authority; guaranteeing a judicial rather than administrative procedure is false; automatic rejection based on the controller’s establishment location is incorrect (cross-border and competence rules apply).",
+        "Similarity metrics provided are low, indicating this is not a near-copy of reference materials or existing AI outputs.",
+        "Item difficulty is appropriately medium: it requires knowledge of supervisory authority procedural obligations rather than only very basic or highly technical provisions."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_77",
+        "seed": "2026-02-11|data_breach|0088"
+      }
+    },
+    {
+      "id": "ai_000089",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following correctly describes when the regulation took effect and its legal status across Member States?",
+      "choices": [
+        "It entered into force 20 days after publication and began to apply from 25 May 2018; it is binding in its entirety and directly applicable in all Member States.",
+        "It entered into force and applied immediately upon publication, without any waiting period, across all Member States.",
+        "It entered into force on 25 May 2018 but required each Member State to transpose it into national law before it could apply.",
+        "It only became binding for EU institutions and left Member States to adopt similar rules independently."
+      ],
+      "correct_index": 0,
+      "confidence": 0.95,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one correct answer is marked (index 0) and that choice is factually accurate: the GDPR entered into force 20 days after publication, became applicable on 25 May 2018, and as a Regulation is binding in its entirety and directly applicable in all Member States.",
+        "The other three choices are clearly incorrect (they confuse entry into force vs. application, transpose requirements, or scope), so there is a single unambiguous correct option.",
+        "The question text contains no citation of an article number.",
+        "Not a near-copy of source references (similarity metrics are low).",
+        "Difficulty is medium: it requires understanding the distinction between entry into force, application date, and the legal nature of EU regulations."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_99",
+        "seed": "2026-02-11|gdpr_rights|0089"
+      }
+    },
+    {
+      "id": "ai_000090",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "When a controller uses automated decision‑making (including profiling) based on personal data collected directly from a data subject, what additional information must the controller provide at the time the data are obtained?",
+      "choices": [
+        "A complete copy of the algorithm or source code used to make the decisions",
+        "Meaningful information about the logic involved, and the significance and envisaged consequences of the processing for the data subject",
+        "A guarantee that the automated decisions will never have legal effects or similarly significant consequences",
+        "Only the legal basis for the processing needs to be provided; no further details on automated decision-making are required"
+      ],
+      "correct_index": 1,
+      "confidence": 0.87,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "Exactly one answer is marked correct (index 1), and that choice correctly reflects the GDPR requirement to provide meaningful information about the logic, and the significance and envisaged consequences, when automated decision-making/profiling is used.",
+        "The question text does not cite any article number.",
+        "Difficulty is appropriate (medium) — it requires specific knowledge of GDPR obligations regarding automated decision-making rather than only general principles.",
+        "The phrasing of the correct choice closely mirrors GDPR wording but the question itself does not reproduce article text or cite an article number; similarity to source wording is noted but not disqualifying."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_13",
+        "seed": "2026-02-11|controller_obligations|0090"
+      }
+    },
+    {
+      "id": "ai_000091",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "After a controller rectifies, erases, or restricts processing of a data subject's personal data following the data subject's request, what is the controller required to do regarding third parties who previously received those data?",
+      "choices": [
+        "Notify each recipient to whom the personal data were disclosed about the rectification/erasure/restriction unless notifying them is impossible or would involve disproportionate effort; and, on request, tell the data subject who those recipients were.",
+        "Obtain the recipients’ consent before notifying them of the rectification/erasure/restriction and take no further action until that consent is given.",
+        "Take no steps to inform any recipients because the obligation ends once the controller corrects or deletes its own copies of the data.",
+        "Always publish the rectification/erasure/restriction in a public register and cannot disclose the identities of recipients to the data subject under any circumstances."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one choice is correct: choice 0 accurately reflects the controller's obligation under GDPR (communicate rectification/erasure/restriction to recipients unless impossible or disproportionate effort, and inform the data subject on request).",
+        "Question text contains no article numbers or legal citations.",
+        "Wording is a paraphrase of the underlying obligation (not a near-verbatim copy of source text).",
+        "Difficulty is medium: it requires specific knowledge of controller obligations to notify third-party recipients and to balance feasibility/disproportionality.",
+        "The other choices are implausible distractors (consent requirement, no notification, or mandatory public register) and therefore appropriate for a multiple-choice quiz)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_19",
+        "seed": "2026-02-11|lawful_bases|0091"
+      }
+    },
+    {
+      "id": "ai_000092",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "Regarding the use of a data protection certification to support transfers of personal data to a third country or international organisation, which statement is correct?",
+      "choices": [
+        "A certification issued by any organisation, even if not accredited, automatically counts as an appropriate safeguard for transfers.",
+        "A certification issued by an accredited certification body can help demonstrate appropriate safeguards for transfers if it includes binding, enforceable commitments and is subject to oversight by competent authorities.",
+        "Only certifications issued directly by the European Commission can be relied on to permit transfers to third countries.",
+        "After a certification is issued, the controller or processor is no longer responsible for ensuring compliance when transferring personal data abroad."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one choice is marked correct (index 1) and the choice is unambiguous.",
+        "There are exactly four answer options as required.",
+        "The question text does not cite any article numbers or legal provisions.",
+        "The marked correct answer accurately reflects the GDPR/EDPB position: certifications issued by accredited certification bodies can support transfers when they include binding, enforceable commitments and are subject to appropriate oversight.",
+        "The other three choices are incorrect: a certification from any organisation does not automatically qualify as an appropriate safeguard; the European Commission does not directly issue all such certifications; and obtaining a certification does not absolve the controller or processor of ongoing compliance responsibilities.",
+        "The item requires specific knowledge about transfer safeguards and certification mechanisms, matching a medium difficulty level.",
+        "No indication that the question is a near-copy of reference text; phrasing appears original."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_43",
+        "seed": "2026-02-11|international_transfers|0092"
+      }
+    },
+    {
+      "id": "ai_000093",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "A major cross-border personal data breach affects users across several EU countries. The European Data Protection Board is asked by a national government to delay issuing coordinated guidance about the breach. Which statement best reflects the Board's obligation?",
+      "choices": [
+        "The Board must comply with the government's request to delay guidance because member state governments can direct EU bodies in matters of national interest.",
+        "The Board should first seek formal instructions from the European Commission and wait for its direction before acting on the breach.",
+        "The Board is required to act independently when performing its tasks or exercising its powers and should not seek or take instructions from anybody; it may proceed with issuing coordinated guidance despite the government's request.",
+        "The Board may follow a national government's request if that request is accompanied by a legislative act from that Member State."
+      ],
+      "correct_index": 2,
+      "confidence": 0.9,
+      "review_reasons": [
+        "There are exactly 4 choices.",
+        "Exactly one correct answer is indicated (correct_index = 2) and it is within the valid range for the choices array.",
+        "The question text contains no article-number citations.",
+        "The stated correct answer correctly reflects the EDPB's independent status and obligation not to seek or take instructions from any government or other body; the other options are inconsistent with that principle.",
+        "Provided similarity metrics are low, indicating the item is not a near-copy of referenced sources or typical AI outputs.",
+        "The content requires specific knowledge of EU data-protection institutional independence and its application to cross-border breaches, which is consistent with medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_69",
+        "seed": "2026-02-11|data_breach|0093"
+      }
+    },
+    {
+      "id": "ai_000094",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "When a controller collects personal data directly from a data subject, which of the following is NOT required to be provided to the data subject at the time of collection?",
+      "choices": [
+        "The identity and contact details of the controller (and representative, if applicable)",
+        "The period for which the personal data will be stored or the criteria used to determine that period",
+        "The source from which the personal data originate",
+        "Information about the right to withdraw consent when processing is based on consent"
+      ],
+      "correct_index": 2,
+      "confidence": 0.93,
+      "review_reasons": [
+        "Exactly four choices are provided and exactly one choice is marked correct (index 2).",
+        "The marked correct answer is correct: when personal data are collected directly from the data subject, the controller need not provide the source of the data (source information is required only when data are not obtained from the data subject).",
+        "The other choices are items that must be provided at the time of collection (identity/contact details; storage period or criteria; information on right to withdraw consent for consent‑based processing).",
+        "The question text does not cite any article numbers.",
+        "Similarity to reference materials is low, and the question tests a nuanced distinction between information obligations when data are obtained directly vs. indirectly, which corresponds to medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_13",
+        "seed": "2026-02-11|gdpr_rights|0094"
+      }
+    },
+    {
+      "id": "ai_000095",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which of the following is an obligation of a controller relating to a data subject's right to lodge a complaint with a supervisory authority?",
+      "choices": [
+        "Include in privacy information that data subjects have the right to lodge a complaint with a supervisory authority and explain how to exercise that right",
+        "Automatically notify the supervisory authority whenever any data subject expresses dissatisfaction about processing",
+        "Act on behalf of the data subject by filing and pursuing complaints with the supervisory authority",
+        "Require the data subject to use the controller's internal complaint procedures before contacting a supervisory authority"
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one correct answer is indicated (correct_index = 0) and the other three choices are clearly incorrect or implausible.",
+        "Question text does not cite any article numbers or legal provisions.",
+        "The question tests a specific controller obligation (transparency about the right to lodge a complaint), which is medium difficulty for GDPR knowledge — it requires familiarity with transparency/rights obligations rather than basic definitions.",
+        "The distractors are plausible but unambiguously wrong, so the item should function well as a multiple-choice question.",
+        "Similarity indicators supplied are low, so the item does not appear to be a near-copy of reference materials or existing AI content."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_77",
+        "seed": "2026-02-11|controller_obligations|0095"
+      }
+    },
+    {
+      "id": "ai_000096",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "Which of the following statements correctly describes a requirement for the Board's annual report on the protection of natural persons with regard to processing?",
+      "choices": [
+        "The report must be made public, transmitted to the European Parliament, the Council and the Commission, and include a review of the practical application of the Board’s guidelines, recommendations, best practices and binding decisions.",
+        "The report is strictly confidential, intended only for internal Board use and national supervisory authorities, and must not be published.",
+        "The report must include detailed, identifiable case files and personal data examples to illustrate enforcement outcomes.",
+        "The report is limited to processing activities inside the Union and must exclude any assessment of guidance or binding decisions applied in third countries or by international organisations."
+      ],
+      "correct_index": 0,
+      "confidence": 0.88,
+      "review_reasons": [
+        "There are exactly four choices.",
+        "Exactly one correct answer is specified (correct_index = 0) and the other options are clearly incorrect or implausible under the GDPR.",
+        "The question text contains no article number citation.",
+        "Wording is a paraphrase of the Board/EDPB reporting obligations but not a near-copy of the legal text (similarity metrics provided are low).",
+        "Difficulty is medium: it requires specific knowledge of the Board's annual report obligations rather than basic or highly technical detail.",
+        "Choice 0 correctly reflects the Board/EDPB reporting requirements (public availability, transmission to the European Parliament, Council and Commission, and reviewing practical application of guidelines/recommendations/best practices and binding decisions)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_71",
+        "seed": "2026-02-11|lawful_bases|0096"
+      }
+    },
+    {
+      "id": "ai_000097",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "If multiple controllers and processors are involved in the same processing and one controller has paid full compensation to a data subject for damage caused, what recourse does that controller have against the other parties?",
+      "choices": [
+        "No recourse; each party remains independently responsible but cannot be required to contribute.",
+        "It can claim from the other controllers and processors the part of the compensation corresponding to their share of responsibility.",
+        "It can only seek reimbursement from processors, not from other controllers.",
+        "It must ask the supervisory authority to apportion the compensation and cannot pursue the others directly."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one answer is marked correct (choice index 1).",
+        "Question text contains no citation of an article number.",
+        "The stated correct answer matches GDPR liability rules allowing a controller who paid full compensation to claim from other controllers/processors the part corresponding to their share of responsibility.",
+        "Distractors are plausible and the question requires specific knowledge of liability rules—appropriate for medium difficulty.",
+        "Similarity metrics provided are low, so the item is not a near-copy of reference materials."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_82",
+        "seed": "2026-02-11|data_breach|0097"
       }
     }
   ]
