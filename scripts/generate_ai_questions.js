@@ -196,19 +196,54 @@ async function callOpenAiJson(messages) {
     body: JSON.stringify({
       model: "gpt-5-mini",
       input: messages,
-      // Force JSON object output
       text: { format: { type: "json_object" } }
     })
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    const txt = await response.text().catch(() => "");
-    throw new Error(`OpenAI API error: ${response.status} ${txt}`.slice(0, 300));
+    // Responses API often includes error details in JSON
+    throw new Error(`OpenAI API error: ${response.status} ${JSON.stringify(data).slice(0, 300)}`);
   }
 
-  const data = await response.json();
-  const output = data.output_text;
-  return JSON.parse(output);
+  // Try common places where JSON text may appear
+  let text =
+    data.output_text ??
+    data.text ??
+    null;
+
+  // If not present, search in output array (Responses API structure)
+  if (!text && Array.isArray(data.output)) {
+    for (const item of data.output) {
+      // Common structure: { content: [{ type: "output_text", text: "..." }, ...] }
+      if (Array.isArray(item.content)) {
+        for (const c of item.content) {
+          if (c?.type === "output_text" && typeof c.text === "string") {
+            text = c.text;
+            break;
+          }
+          // Some variants use c?.text directly
+          if (!text && typeof c?.text === "string") {
+            text = c.text;
+          }
+        }
+      }
+      if (text) break;
+    }
+  }
+
+  if (!text || typeof text !== "string") {
+    throw new Error(`OpenAI API: no text output found. Keys: ${Object.keys(data).join(",")}`);
+  }
+
+  // The model should return JSON only, but sometimes wraps it; extract first {...} if needed
+  const trimmed = text.trim();
+  const jsonText = trimmed.startsWith("{")
+    ? trimmed
+    : (trimmed.match(/\{[\s\S]*\}/)?.[0] ?? trimmed);
+
+  return JSON.parse(jsonText);
 }
 
 /** ---------- Generation + validation ---------- **/
