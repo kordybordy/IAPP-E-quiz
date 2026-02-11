@@ -405,7 +405,8 @@ async function main() {
           existingAiQuestions
         });
       } catch (e) {
-        // If OpenAI fails, do NOT copy from DB questions; just retry/skip
+        console.log("DEBUG OpenAI error:", e?.message || e);
+        
         result = {
           generated: null,
           validated: { ok: false, confidence: 0.0, reasons: ["openai_call_failed", String(e.message || e)] }
