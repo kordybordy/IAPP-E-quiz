@@ -195,10 +195,16 @@ async function callOpenAiJson(messages) {
     },
     body: JSON.stringify({
       model: "gpt-5-mini",
-      input: messages,
-      text: { format: { type: "json_object" } }
+      instructions: messages.find(m => m.role === "system")?.content || "",
+      input: [
+        {
+          role: "user",
+          content: [
+            { type: "input_text", text: messages.find(m => m.role === "user")?.content || "" }
+          ]
+        }
+      ]
     })
-  });
 
   const data = await response.json();
   
