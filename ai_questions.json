@@ -1,5 +1,57 @@
 {
   "version": 1,
-  "generated_at": "2026-02-11T00:44:36.670Z",
-  "items": []
+  "generated_at": "2026-02-11T01:04:55.433Z",
+  "items": [
+    {
+      "id": "ai_000001",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "In which circumstance is a controller NOT required, prior to processing, to carry out a data protection impact assessment?",
+      "choices": [
+        "When the processing involves automated profiling that produces legal effects or similarly significantly affects individuals",
+        "When the processing has a legal basis in Union or Member State law and an impact assessment was already carried out as part of the general assessment accompanying the adoption of that law",
+        "When the processing is performed on a large scale of special categories of personal data",
+        "When the controller has sought the advice of the designated data protection officer before starting the processing"
+      ],
+      "correct_index": 1,
+      "confidence": 0.86,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one correct answer is indicated (index 1).",
+        "The stated correct option (choice 2) correctly reflects the GDPR exception that a DPIA is not required where processing is based on Union or Member State law and an assessment was already carried out as part of the legislative/adoption process, so other choices are appropriately DPIA triggers or misconceptions (automated profiling with legal/similar significant effects, large-scale processing of special categories, and merely consulting the DPO do not remove the DPIA requirement).",
+        "The question text contains no article numbers or citations.",
+        "The content is not a near-copy of reference texts (similarity metric provided is low), and the question requires specific regulatory knowledge without being trivial, consistent with medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_35",
+        "seed": "2026-02-11|gdpr_rights|0001"
+      }
+    },
+    {
+      "id": "ai_000002",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which of the following items is NOT required to be included in the record of processing activities that a controller must maintain?",
+      "choices": [
+        "The purposes of the processing and the categories of data subjects and personal data involved",
+        "The legal basis for each processing activity carried out by the controller",
+        "Details of transfers of personal data to third countries or international organisations, including any safeguards",
+        "Where possible, envisaged time limits for erasure of the different categories of data and a general description of technical and organisational security measures"
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "The indicated correct answer (index 1: \"The legal basis for each processing activity carried out by the controller\") is correct — GDPR records of processing activities list purposes, categories of data subjects and personal data, recipients/transfers and retention and security measures, but do not require listing the legal basis in the controller’s record of processing activities.",
+        "Choices 0, 2 and 3 correspond to items explicitly required to be maintained in the controller’s record of processing activities (purposes and categories; transfer details and safeguards; envisaged erasure time limits and security description).",
+        "There is exactly one correct answer and exactly four choices, as required.",
+        "The question text contains no citation of an article number.",
+        "Similarity metrics provided are low, supporting that this is not a near-copy of reference material.",
+        "Difficulty is appropriate for medium level: it requires specific knowledge of what the GDPR’s record-keeping obligations include and exclude."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_30",
+        "seed": "2026-02-11|controller_obligations|0002"
+      }
+    }
+  ]
 }
