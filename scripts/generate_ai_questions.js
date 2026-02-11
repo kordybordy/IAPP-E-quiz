@@ -200,43 +200,41 @@ async function callOpenAiJson(messages) {
         {
           role: "user",
           content: [
-            { type: "input_text", text: messages.find(m => m.role === "user")?.content || "" }
+            {
+              type: "input_text",
+              text: messages.find(m => m.role === "user")?.content || ""
+            }
           ]
         }
       ]
     })
+  });
 
   const data = await response.json();
-  
+
   if (process.env.DEBUG_OPENAI === "1") {
-    console.log("DEBUG OpenAI data.output:", JSON.stringify(data.output, null, 2).slice(0, 4000));
+    console.log(
+      "DEBUG OpenAI data.output:",
+      JSON.stringify(data.output, null, 2).slice(0, 4000)
+    );
     console.log("DEBUG OpenAI data.error:", JSON.stringify(data.error, null, 2));
   }
 
   if (!response.ok) {
-    // Responses API often includes error details in JSON
-    throw new Error(`OpenAI API error: ${response.status} ${JSON.stringify(data).slice(0, 300)}`);
+    throw new Error(
+      `OpenAI API error: ${response.status} ${JSON.stringify(data).slice(0, 300)}`
+    );
   }
 
-  // Try common places where JSON text may appear
-  let text =
-    data.output_text ??
-    data.text ??
-    null;
-
-  // If not present, search in output array (Responses API structure)
-  if (!text && Array.isArray(data.output)) {
+  // Extract text from Responses API output
+  let text = null;
+  if (Array.isArray(data.output)) {
     for (const item of data.output) {
-      // Common structure: { content: [{ type: "output_text", text: "..." }, ...] }
       if (Array.isArray(item.content)) {
         for (const c of item.content) {
-          if (c?.type === "output_text" && typeof c.text === "string") {
+          if (typeof c?.text === "string" && c.text.trim()) {
             text = c.text;
             break;
-          }
-          // Some variants use c?.text directly
-          if (!text && typeof c?.text === "string") {
-            text = c.text;
           }
         }
       }
@@ -244,11 +242,11 @@ async function callOpenAiJson(messages) {
     }
   }
 
-  if (!text || typeof text !== "string") {
-    throw new Error(`OpenAI API: no text output found. Keys: ${Object.keys(data).join(",")}`);
+  if (!text) {
+    throw new Error("OpenAI API: no text output found in response.output");
   }
 
-  // The model should return JSON only, but sometimes wraps it; extract first {...} if needed
+  // Parse JSON (model should output JSON only, but be resilient)
   const trimmed = text.trim();
   const jsonText = trimmed.startsWith("{")
     ? trimmed
