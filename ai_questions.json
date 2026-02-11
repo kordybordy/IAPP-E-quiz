@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-02-11T01:24:07.005Z",
+  "generated_at": "2026-02-11T02:06:58.391Z",
   "items": [
     {
       "id": "ai_000001",
@@ -750,6 +750,1434 @@
       "source": {
         "gdpr_ref": "gdpr_27",
         "seed": "2026-02-11|data_breach|0029"
+      }
+    },
+    {
+      "id": "ai_000030",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "When an organisation relies on an automated decision because it is necessary for a contract with the person or because the person gave explicit consent, which safeguard must the organisation provide to the person?",
+      "choices": [
+        "The right to obtain human intervention in the decision-making, to express the person’s point of view, and to contest the decision.",
+        "Automatic suspension of the decision until an independent public authority has reviewed the automated system.",
+        "Use of only anonymised data so the person cannot be identified before making the decision.",
+        "A mandatory five-year retention period for records of the decision, after which all related personal data must be deleted."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "There are exactly four choices.",
+        "Exactly one correct answer is indicated (correct_index = 0) and that choice matches the GDPR safeguard for automated decisions (human intervention, opportunity to express point of view, and to contest the decision).",
+        "The question text contains no article number citation.",
+        "The phrasing is a concise paraphrase of the regulation rather than a near-verbatim copy; similarity metrics provided are low, supporting that it is not a near-copy of references.",
+        "Distractors are incorrect and sufficiently plausible, making the item medium difficulty (requires specific knowledge of the safeguards for automated decision-making)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_22",
+        "seed": "2026-02-11|gdpr_rights|0030"
+      }
+    },
+    {
+      "id": "ai_000031",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "When a controller engages an external processor to carry out personal data processing, which of the following must be specified in the written contract between them?",
+      "choices": [
+        "The processor is permitted to determine the purposes and means of the processing independently of the controller.",
+        "The processor will process the personal data only on documented instructions from the controller.",
+        "The processor is automatically absolved of liability if a subcontractor it engages breaches data protection obligations.",
+        "The processor is required to register as a separate controller with the supervisory authority."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one correct answer: choice at index 1 is correct (processors must act only on documented instructions from the controller); the other three choices are incorrect.",
+        "Question text contains no article number citation.",
+        "Question tests medium difficulty knowledge (familiarity with contract obligations when a controller engages a processor) — not trivial but not highly specialized.",
+        "Not a near-copy of references: supplied similarity metrics are low (similarity_to_style_refs 0.15, similarity_to_existing_ai 0.28).",
+        "Distractors are plausible and reflect common misconceptions, so the item is suitable for a quiz."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_28",
+        "seed": "2026-02-11|controller_obligations|0031"
+      }
+    },
+    {
+      "id": "ai_000032",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "A company collected and processed personal data before the Regulation came into force relying on a lawful basis under the previous data protection directive. After the Regulation took effect, which statement best describes the legal status of that lawful basis?",
+      "choices": [
+        "The prior lawful basis is to be treated as the corresponding lawful basis under the Regulation, so the company may continue processing provided it complies with the Regulation’s requirements (for example, demonstrating the lawful basis and respecting data subject rights).",
+        "All previously relied-upon lawful bases automatically expired when the directive was repealed; the company must obtain a new lawful basis (such as fresh consent) for ongoing processing.",
+        "Guidance and decisions from the former Article 29 Working Party remain fully binding and controllers must follow them unchanged, so no alignment with the new Regulation is necessary.",
+        "Processing that began under the old directive is entirely exempt from the Regulation (grandfathered), so the company does not need to adapt its processes to the Regulation’s rules."
+      ],
+      "correct_index": 0,
+      "confidence": 0.95,
+      "review_reasons": [
+        "Exactly one correct answer is indicated (correct_index = 0).",
+        "There are exactly four choices provided.",
+        "The question text contains no article or paragraph number citations.",
+        "Choice 0 correctly reflects the practical effect of the transition from the Directive to the Regulation: processing that was lawful under the previous framework does not automatically become unlawful on transition, but controllers must meet the Regulation’s requirements going forward (so they must be able to demonstrate the lawful basis and respect GDPR rights/obligations).",
+        "The other choices are incorrect: option 2 wrongly asserts automatic expiry of prior lawful bases; option 3 incorrectly treats prior guidance as fully binding without alignment to the new rules; option 4 incorrectly claims a blanket grandfathering exemption.",
+        "Similarity metrics provided (similarity_to_style_refs: 0.0833, similarity_to_existing_ai: 0.1951) are low, supporting that the item is not a near-copy of reference texts or common AI outputs.",
+        "The question requires specific legal-interpretation knowledge of the Directive-to-Regulation transition and is appropriately pitched at medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_94",
+        "seed": "2026-02-11|lawful_bases|0032"
+      }
+    },
+    {
+      "id": "ai_000033",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "Two companies jointly determine the purposes and means of processing personal data. Which of the following correctly describes their obligations toward data subjects?",
+      "choices": [
+        "They must have a transparent arrangement allocating their respective compliance responsibilities, make the essence of that arrangement available to data subjects, and data subjects may exercise their rights against each controller.",
+        "They may appoint a single contact point who alone must handle and be liable for all data subject requests, thereby relieving the other controller of responsibility.",
+        "They are required to obtain prior written approval from the supervisory authority for their joint arrangement before any processing may take place.",
+        "They must publish the full text of their internal arrangement in a public register maintained by the supervisory authority."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four answer choices are present.",
+        "Exactly one choice is correct: choice 0 correctly states joint controllers must have a transparent arrangement allocating responsibilities, make the essence of that arrangement available to data subjects, and that data subjects may exercise their rights against each controller.",
+        "The other three choices are incorrect: the idea that a single contact point can alone assume liability for all requests is false; prior approval from the supervisory authority is not required for such an arrangement; and there is no requirement to publish the full text of the arrangement in a public register.",
+        "The question text does not cite any article numbers or reproduce statutory numbering.",
+        "Wording is a concise paraphrase of the relevant GDPR requirement rather than a near-verbatim copy of a legal provision, and the item requires specific regulatory knowledge — an appropriate medium difficulty level."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_26",
+        "seed": "2026-02-11|international_transfers|0033"
+      }
+    },
+    {
+      "id": "ai_000034",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "A data subject repeatedly submits numerous identical access requests for their personal data. Which of the following correctly describes the controller's options under the rules on handling such requests?",
+      "choices": [
+        "The controller must always provide the requested information free of charge, even if the requests are repetitive and burdensome.",
+        "If the requests are manifestly unfounded or excessive, the controller may either charge a reasonable fee reflecting administrative costs or refuse to act, and the controller must demonstrate that the requests are manifestly unfounded or excessive.",
+        "The controller may refuse repetitive requests only after obtaining prior approval from the supervisory authority.",
+        "The controller may unilaterally close the data subject's account to avoid further requests without informing the data subject."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "Exactly one choice (index 1) is clearly correct and consistent with GDPR guidance: controllers may charge a reasonable fee reflecting administrative costs or refuse to act where requests are manifestly unfounded or excessive, and should be able to demonstrate that.",
+        "The three incorrect options are plainly false or misleading (mandatory free provision despite repetition; requirement to obtain prior supervisory approval; unilateral account closure without informing the data subject).",
+        "The question text contains no citation of an article number.",
+        "The wording and content do not appear to be a near-copy of standard reference text (similarity score provided is low).",
+        "Difficulty is appropriate for medium level: it requires specific knowledge of how controllers may handle repetitive/access requests beyond basic rights."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_12",
+        "seed": "2026-02-11|gdpr_rights|0034"
+      }
+    },
+    {
+      "id": "ai_000035",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "If a properly constituted not-for-profit organisation lodges a complaint or exercises rights on behalf of a data subject under a mandate, what must the controller do?",
+      "choices": [
+        "Respond to and process the complaint or rights request as coming from the data subject, while it may verify the organisation's mandate if needed.",
+        "Refuse the complaint unless the data subject submits a separate, signed confirmation directly to the controller.",
+        "Automatically suspend all processing of the data subject's personal data until the supervisory authority issues a ruling.",
+        "Charge the organisation for administrative handling and only proceed after payment is received."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly 4 choices are provided.",
+        "Exactly one choice is marked as correct (index 0).",
+        "Question text contains no article number citation or legal-article reference.",
+        "Correct answer aligns with GDPR practice (representatives/mandates may act on behalf of a data subject and controllers may request verification of the mandate).",
+        "Distractors are plausible but clearly incorrect, making the item medium difficulty.",
+        "Wording is clear and not a near-copy of legal sources; it tests application rather than verbatim recall."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_80",
+        "seed": "2026-02-11|controller_obligations|0035"
+      }
+    },
+    {
+      "id": "ai_000036",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "A data subject requests erasure of their personal data. In which of the following situations is the controller NOT required to erase the data?",
+      "choices": [
+        "The data subject withdraws consent for processing that was based on consent and there is no other legal ground for processing.",
+        "The processing is necessary for exercising the right to freedom of expression and information.",
+        "The personal data were collected in relation to offering an online information society service to a child.",
+        "The personal data have been unlawfully processed and therefore must be removed."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is correct (choice index 1 — \"The processing is necessary for exercising the right to freedom of expression and information\"), which correctly reflects an established exception to the right to erasure under GDPR.",
+        "The other three choices describe situations where erasure would be required (withdrawn consent with no other legal ground; data collected in relation to offering an online information society service to a child; unlawfully processed data), so there is a single unambiguous correct answer.",
+        "The question text contains no article or recital numbers and does not cite specific legal provision numbers.",
+        "The content is not a near-copy of legal references; similarity metadata is low and the formulation is an original, concise quiz-style item.",
+        "Difficulty appears medium: it requires knowledge of both the general right to erasure and its notable exception for freedom of expression, without being trivially easy or overly specialized."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_17",
+        "seed": "2026-02-11|lawful_bases|0036"
+      }
+    },
+    {
+      "id": "ai_000037",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "A data subject suffers harm after their personal data were transferred and processed by several parties across borders. Under the GDPR fragment on compensation and liability, which statement correctly describes who can be held responsible and how compensation works?",
+      "choices": [
+        "Only the controller established in the Member State where the data subject lives can be held liable; other controllers or processors are not responsible for compensation.",
+        "Where more than one controller or processor is involved, each controller or processor may be held liable for the entire damage to ensure effective compensation; a processor is liable only if it failed to comply with obligations specific to processors or acted outside/against the controller's lawful instructions, and any party who pays full compensation can seek contribution from the others.",
+        "Processors are never liable for damage caused by processing; only controllers can be required to pay compensation regardless of the processor's conduct.",
+        "A controller or processor is automatically exempt from liability if any other controller or processor was involved in the same processing, so only the one who initiated the transfer can be sued."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Question text contains no article numbers or legal citations.",
+        "There are exactly four answer choices.",
+        "Exactly one answer is marked correct (index 1) and that choice accurately paraphrases GDPR liability principles: controllers and processors can be held liable for damage; processors are liable where they fail to comply with processor-specific obligations or act outside/against lawful instructions; multiple parties can be held liable for full damage and a party who pays may seek contribution from others.",
+        "Other choices are clearly incorrect or misleading (they assert exclusivity of liability to one controller, claim processors are never liable, or claim automatic exemption when multiple parties are involved), so there is a single correct option.",
+        "Wording is a paraphrase rather than a near-verbatim copy of legal text (similarity metrics provided are low), and the item tests a nuanced point of GDPR liability, making difficulty appropriate as medium."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_82",
+        "seed": "2026-02-11|international_transfers|0037"
+      }
+    },
+    {
+      "id": "ai_000038",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "If a controller collected personal data for one purpose but later intends to process or disclose those data for a different purpose (for example, sharing them with a third party during a security incident), what must the controller do before that further processing occurs?",
+      "choices": [
+        "Notify the supervisory authority and obtain express prior consent in all cases before any further processing.",
+        "Provide the data subject with notice of the new purpose and the relevant additional information that should have been given at collection (for example, identity/contact, recipients or categories of recipients, storage period or criteria, legal basis and the data subject’s rights), prior to the further processing.",
+        "No additional information is required so long as the controller originally collected the data lawfully.",
+        "Only offer an opt-out mechanism; detailed information about recipients, retention or rights may be supplied later upon request."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "There are exactly four choices provided.",
+        "Exactly one correct answer is specified (correct_index = 1).",
+        "The indicated correct choice (provide the data subject with notice of the new purpose and the additional information that should have been given at collection, prior to further processing) correctly reflects GDPR obligations on further processing for incompatible purposes (the obligation to notify the data subject with the information required by data collection rules).",
+        "The other three choices are incorrect under the GDPR: prior supervisory-authority notification and express prior consent in all cases is not required; lawful original collection does not remove notification obligations for new purposes; an opt-out-only approach is not sufficient.",
+        "The question text contains no article or clause number citations.",
+        "The question is not a near-copy of standard references (similarity metrics provided: similarity_to_style_refs=0.02127659574468085, similarity_to_existing_ai=0.16666666666666666), and the wording is original enough.",
+        "Difficulty is appropriate for medium level: it requires understanding of the GDPR concept of further processing and the information duty under data collection rules rather than mere recall of an article number."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_13",
+        "seed": "2026-02-11|data_breach|0038"
+      }
+    },
+    {
+      "id": "ai_000039",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Under the right to rectification, what is the controller required to do when a data subject requests it?",
+      "choices": [
+        "Permanently erase the data subject’s personal data across all systems.",
+        "Correct inaccurate personal data and complete incomplete data, including by adding a supplementary statement where appropriate, taking into account the purposes of processing.",
+        "Provide a full audit log of all accesses to the data subject’s personal data and disclose it to the requester.",
+        "Suspend all processing of the data subject’s personal data until a supervisory authority approves the request."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly one correct answer indicated (index 1) and the other three choices are incorrect or plausible distractors (erasure, disclosure of audit logs, suspension pending authority)",
+        "Exactly four choices are present",
+        "Question text contains no article number citation",
+        "Wording is not a near-copy of typical reference text (similarity score provided is low)",
+        "Item complexity is appropriate for medium difficulty: requires specific knowledge of the right to rectification and discrimination from related rights"
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_16",
+        "seed": "2026-02-11|gdpr_rights|0039"
+      }
+    },
+    {
+      "id": "ai_000040",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "A company provides a publicly available electronic communications service over a public network and processes user communications data. For aspects of that processing that are already governed by specific obligations under the ePrivacy rules with the same objectives, which statement about the company's obligations under the GDPR is correct?",
+      "choices": [
+        "The company is entirely exempt from the GDPR for any processing related to its communications service.",
+        "The GDPR does not impose additional obligations on the company in respect of those specific matters already covered by the ePrivacy rules with the same objectives.",
+        "The GDPR always takes precedence, so the company must apply GDPR obligations in addition to or instead of the ePrivacy rules.",
+        "National law may require the company to follow both the GDPR and the ePrivacy rules simultaneously, creating duplicate obligations that must both be fulfilled."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four answer choices are present.",
+        "Exactly one correct answer is indicated (correct_index = 1) and that answer correctly reflects the legal principle that where ePrivacy rules govern specific matters with the same objectives, the GDPR does not impose additional obligations for those specific matters (ePrivacy acts as lex specialis).",
+        "Question text does not include any article or provision numbers.",
+        "Wording is not a near-copy of legal reference texts and appears to require applied knowledge about the interaction between ePrivacy and the GDPR, consistent with medium difficulty.",
+        "Answer choices are mutually exclusive and unambiguous, so there is a single best answer."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_95",
+        "seed": "2026-02-11|controller_obligations|0040"
+      }
+    },
+    {
+      "id": "ai_000041",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "If a GDPR infringement is not covered by the administrative fines regime, what are Member States required to do?",
+      "choices": [
+        "Leave enforcement to EU institutions and impose no national penalties.",
+        "Establish national rules on other penalties and ensure they are effective, proportionate and dissuasive.",
+        "Restrict consequences to criminal sanctions only, excluding administrative or other penalties.",
+        "Allow controllers and processors to resolve breaches solely through private settlements without state penalties."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one choice is marked correct (correct_index = 1).",
+        "Question text contains no article number citation.",
+        "The marked correct answer accurately reflects the GDPR requirement that Member States must provide for other penalties and ensure they are effective, proportionate and dissuasive when the administrative fines regime does not cover an infringement.",
+        "Distractors are plausible and focused on enforcement/penalty options, supporting medium difficulty.",
+        "Similarity metrics provided (similarity_to_style_refs=0.1538, similarity_to_existing_ai=0.1111) are low, indicating the item is not a near-copy of referenced material."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_84",
+        "seed": "2026-02-11|lawful_bases|0041"
+      }
+    },
+    {
+      "id": "ai_000042",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "If there is no adequacy decision or appropriate safeguards, a controller may rely on the 'compelling legitimate interests' derogation for a transfer to a third country. Which of the following is NOT required when using that derogation?",
+      "choices": [
+        "The transfer must not be repetitive.",
+        "The transfer must concern only a limited number of data subjects.",
+        "The controller must inform the supervisory authority about the transfer.",
+        "The controller must obtain the data subject's explicit consent to the transfer."
+      ],
+      "correct_index": 3,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one correct answer is indicated (correct_index = 3) and the index is within the valid range (0–3).",
+        "Question text does not cite any article numbers or legal article references.",
+        "Not a near-copy of reference material based on the supplied similarity metrics (similarity_to_style_refs = 0.0968, similarity_to_existing_ai = 0.1852).",
+        "Content accuracy: the marked correct answer (index 3: 'The controller must obtain the data subject's explicit consent to the transfer.') is correct — explicit consent is a separate derogation and is not required when relying on the 'compelling legitimate interests' derogation, whereas the other options (non-repetitiveness, limited number of data subjects, informing the supervisory authority) reflect actual requirements/conditions associated with that derogation.",
+        "Difficulty is appropriate for a medium-level question: it requires specific GDPR knowledge beyond basics but is answerable by someone familiar with derogations for international transfers."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_49",
+        "seed": "2026-02-11|international_transfers|0042"
+      }
+    },
+    {
+      "id": "ai_000043",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "A large multinational notifies several national data protection authorities of a simultaneous data breach affecting individuals across multiple EU countries. Both the affected companies' legal teams and the European Commission ask the Board for directions on how to coordinate enforcement and investigative steps. Which of the following correctly describes how the Board should behave when performing its tasks in this situation?",
+      "choices": [
+        "The Board must follow instructions from the Commission and national authorities to ensure a unified response across Member States.",
+        "The Board should act independently and must not seek or take instructions from anyone, although it may consider formal requests made by the Commission.",
+        "The Board may delay action until the affected company proposes an investigation plan that all national authorities approve.",
+        "The Board is required to implement operational directions from the lead supervisory authority whenever a cross-border breach occurs."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly one correct answer indicated (correct_index = 1) and that choice is the only one consistent with the GDPR requirement that the Board act independently and not take instructions.",
+        "There are exactly 4 choices as required.",
+        "The question text contains no citation of article numbers or legal provisions.",
+        "The question wording is not a near-copy of standard reference texts (similarity metrics provided are low), and it requires understanding of roles and procedures rather than rote citation, so difficulty is appropriately medium."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_69",
+        "seed": "2026-02-11|data_breach|0043"
+      }
+    },
+    {
+      "id": "ai_000044",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following best describes the handling of the annual activity reports prepared by a supervisory authority under the GDPR fragment provided?",
+      "choices": [
+        "The authority may include lists of types of infringements and measures taken; the report is transmitted to the national parliament, the government and authorities designated by national law and is made available to the public, the European Commission and the European Data Protection Board.",
+        "The report is confidential and only shared with national government and judicial authorities; it must not be published or disclosed to EU bodies or the public.",
+        "Reports are required to be submitted exclusively to the European Commission and cannot be released to national parliaments or the public.",
+        "Supervisory authorities may prepare such reports, but they are internal coordination documents only and are not transmitted to national parliaments, governments, or the public."
+      ],
+      "correct_index": 0,
+      "confidence": 0.87,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one choice is marked correct (index 0) and that choice accurately reflects the GDPR requirement that supervisory authorities draw up annual activity reports containing lists of types of infringements and measures taken, and that the report is transmitted to the national parliament, government and authorities designated by national law and made available to the public, the Commission and the Board.",
+        "The other three choices are clearly incorrect (they assert confidentiality, exclusive submission to the Commission, or that reports are purely internal), so there is a single best answer.",
+        "The question text contains no article number citation.",
+        "The phrasing is a paraphrase of the regulatory requirement rather than a verbatim copy, and the difficulty level is appropriate for a medium-difficulty quiz item."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_59",
+        "seed": "2026-02-11|gdpr_rights|0044"
+      }
+    },
+    {
+      "id": "ai_000045",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "A controller receives a final enforcement decision from its national supervisory authority (the authority's head is a member of the European Data Protection Board). What is the controller generally obliged to do?",
+      "choices": [
+        "Rely only on non‑binding guidance from the Board and may ignore the authority's decision if inconvenient",
+        "Comply with and implement any corrective measures or orders specified in the decision within the timeframe set by the authority",
+        "Refer the decision to the European Commission for approval before taking any action",
+        "Immediately stop all processing and irreversibly delete all personal data regardless of the decision's content"
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Question has exactly four choices and the provided correct_index (1) selects exactly one answer, satisfying the single-correct-answer rule.",
+        "The correct answer (choice 2: comply with and implement corrective measures within the timeframe set by the authority) accurately reflects that national supervisory authority decisions addressed to a controller are binding and must be followed; the authority head being an EDPB member does not change that obligation.",
+        "No article or legal provision numbers are cited in the question text.",
+        "The distractors are clearly incorrect: relying only on non-binding EDPB guidance or referring the decision to the European Commission before acting contradicts supervisory authority binding powers, and the extreme option to immediately delete all personal data regardless of the decision is inappropriate and overbroad.",
+        "Similarity metrics supplied are low, indicating the item is not a near-copy of reference materials or existing AI outputs.",
+        "Difficulty is medium: the item tests specific procedural knowledge about enforcement obligations rather than basic definitions, but is answerable by someone familiar with GDPR enforcement mechanics."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_68",
+        "seed": "2026-02-11|controller_obligations|0045"
+      }
+    },
+    {
+      "id": "ai_000046",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "An EU-based controller intends to transfer a dataset that includes national identification numbers to a service provider outside the EU. Which statement best reflects the position that Member States may adopt regarding such transfers under the Regulation?",
+      "choices": [
+        "Transfers are automatically prohibited unless a domestic law explicitly authorises each individual transfer.",
+        "Transfers are permitted only if appropriate safeguards are applied to protect the rights and freedoms of the data subjects.",
+        "Transfers are allowed without additional safeguards because national identification numbers are treated like ordinary personal data.",
+        "The controller must always pseudonymise national identification numbers before any international transfer can take place."
+      ],
+      "correct_index": 1,
+      "confidence": 0.88,
+      "review_reasons": [
+        "There are exactly four answer choices.",
+        "Exactly one correct answer is indicated (correct_index = 1) and the index is within bounds.",
+        "The question text contains no article numbers or legal-article citations.",
+        "Similarity to reference material is low (similarity_to_style_refs = 0.05), so it is not a near-copy of source text.",
+        "The designated correct choice (\"Transfers are permitted only if appropriate safeguards are applied to protect the rights and freedoms of the data subjects.\") correctly reflects the GDPR framework that international transfers require an adequacy decision or appropriate safeguards; the other options are incorrect or overly broad.",
+        "Difficulty is medium: it requires specific knowledge about cross-border transfer rules under the Regulation rather than only basic GDPR concepts."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_87",
+        "seed": "2026-02-11|international_transfers|0046"
+      }
+    },
+    {
+      "id": "ai_000047",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "When transferring personal data to a third country that does not have an adequacy decision, which of the following is NOT listed in the GDPR fragment as an example of an appropriate safeguard that can be used without requiring specific supervisory-authority authorisation?",
+      "choices": [
+        "A legally binding and enforceable instrument between public authorities or bodies",
+        "Binding corporate rules adopted by the exporter or importer",
+        "Encryption of data in transit and at rest without any accompanying binding commitments or contractual clauses in the destination country",
+        "Standard data protection clauses adopted by the Commission"
+      ],
+      "correct_index": 2,
+      "confidence": 0.88,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one answer is marked correct (index 2) and that choice (encryption without accompanying binding commitments) is not listed in GDPR Article 46 examples of appropriate safeguards—so the designated correct answer is consistent with the fragment.",
+        "Question text contains no citation of an article number.",
+        "Question is not a near-copy of reference material (similarity metrics supplied are low).",
+        "Difficulty is appropriate for medium level: requires knowledge of Article 46 safeguards and distinction between contractual/organizational safeguards and technical measures alone.",
+        "Minor wording note: the choice 'Binding corporate rules adopted by the exporter or importer' could be clearer—BCRs are an Article 46 safeguard but in practice require supervisory-authority approval; that nuance does not invalidate the question but could be clarified to avoid potential confusion."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_46",
+        "seed": "2026-02-11|data_breach|0047"
+      }
+    },
+    {
+      "id": "ai_000048",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following correctly describes how churches or religious associations that already had comprehensive data protection rules at the time the Regulation took effect may operate under the new framework?",
+      "choices": [
+        "They may continue to apply their existing rules indefinitely without needing to align them to the new Regulation or submit to external supervision.",
+        "They may continue to apply their existing comprehensive rules only if those rules are brought into line with the Regulation, and they must be subject to supervision by an independent supervisory authority (which may be a specific authority if it meets the required conditions).",
+        "They must immediately abandon any prior comprehensive rules and exclusively apply the new Regulation with no transitional allowance.",
+        "They may keep their prior comprehensive rules in force and are automatically exempt from oversight by any independent supervisory authority."
+      ],
+      "correct_index": 1,
+      "confidence": 0.88,
+      "review_reasons": [
+        "Question contains exactly four choices.",
+        "Exactly one correct answer is indicated (correct_index = 1).",
+        "Question text does not cite any article numbers or legal article references.",
+        "Content aligns with the GDPR transitional approach for churches/religious associations: pre-existing comprehensive rules may continue only if brought into line with the Regulation and subject to supervision by an independent supervisory authority (so choice 2 is the accurate option).",
+        "The three distractors are clearly incorrect or implausible (indefinite continuation without alignment or supervision; immediate abandonment with no transition; automatic exemption from oversight), so there is no ambiguity about which single choice is correct.",
+        "Similarity metrics provided are low (similarity_to_style_refs 0.0857, similarity_to_existing_ai 0.2368), supporting that this is not a near-copy of reference material and is appropriate for a quiz item.",
+        "Overall difficulty is medium: the question tests specific transitional rules rather than basic GDPR concepts, but is answerable by someone with moderate GDPR familiarity."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_91",
+        "seed": "2026-02-11|gdpr_rights|0048"
+      }
+    },
+    {
+      "id": "ai_000049",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which of the following is a specific obligation for Member States to ensure the independence of their data protection supervisory authority?",
+      "choices": [
+        "Allow the government to give operational instructions to the supervisory authority when national priorities demand it.",
+        "Ensure the supervisory authority has its own staff who are subject to the exclusive direction of its member(s).",
+        "Permit members of the supervisory authority to take on outside paid work during their term so long as it is declared.",
+        "Require the supervisory authority’s budget to be consolidated into a single non-public central state account to streamline oversight."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly one correct answer specified (correct_index = 1 -> second choice).",
+        "Exactly 4 choices are provided.",
+        "Question text contains no article number citation.",
+        "Similarity metrics supplied (similarity_to_style_refs=0.0645, similarity_to_existing_ai=0.1923) are low, supporting that the item is not a near-copy of reference material or existing AI output.",
+        "Difficulty is medium: it requires specific knowledge of supervisory authority independence rather than basic or highly technical legal detail.",
+        "The indicated correct choice (Ensure the supervisory authority has its own staff who are subject to the exclusive direction of its member(s).) accurately reflects a GDPR requirement to secure the authority's operational independence; the other choices are clearly inconsistent with that requirement."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_52",
+        "seed": "2026-02-11|controller_obligations|0049"
+      }
+    },
+    {
+      "id": "ai_000050",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "How does the GDPR treat international data‑transfer agreements that Member States concluded before 24 May 2016 and that complied with EU law at that time?",
+      "choices": [
+        "They were automatically invalidated on 25 May 2018 and cannot be relied upon for transfers.",
+        "They remain valid and may be relied upon for transfers until they are amended, replaced, or revoked.",
+        "They remain valid only if the European Commission issues a new adequacy decision for each such agreement.",
+        "They require immediate renegotiation to include an explicit GDPR lawful basis before any further transfer can occur."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly one choice is marked correct (correct_index = 1).",
+        "There are exactly four answer choices.",
+        "Question text contains dates but does not cite any article numbers.",
+        "Correct answer (choice 2) accurately reflects the GDPR's transitional approach: international transfer agreements that complied with EU law when concluded remain capable of being relied upon until amended, replaced, or revoked.",
+        "Similarity metrics provided by the user are low (similarity_to_style_refs = 0.0769, similarity_to_existing_ai = 0.1429), so the item is unlikely to be a near‑copy of reference material or an existing AI output.",
+        "The item requires specific knowledge of transitional rules and is appropriately pitched at medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_96",
+        "seed": "2026-02-11|lawful_bases|0050"
+      }
+    },
+    {
+      "id": "ai_000051",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "When a controller rectifies, erases or restricts processing of personal data that have been disclosed to recipients located outside the EU, what obligation does the controller have regarding informing those recipients?",
+      "choices": [
+        "The controller must notify all such recipients (including those abroad) of the change unless doing so is impossible or would require disproportionate effort.",
+        "The controller must notify only recipients in countries with an adequacy decision; no notification is required for recipients in other third countries.",
+        "The controller need not notify any recipients unless the data subject has specifically requested that recipients be informed.",
+        "The controller is exempt from notifying recipients outside the EU due to cross-border transfer complexity and can ignore such notifications."
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one correct answer is specified (correct_index = 0) and the other three choices are false or misleading in relation to controller obligations.",
+        "There are exactly four choices.",
+        "The question text contains no citation of an article number.",
+        "The correct choice accurately reflects the controller's obligation to notify recipients of rectification, erasure or restriction of processing, including recipients outside the EU, subject to the exceptions for impossibility or disproportionate effort; the other choices contradict those obligations.",
+        "Similarity metrics provided are low/moderate (similarity_to_style_refs = 0.038, similarity_to_existing_ai = 0.241), supporting that this is not a near-copy of reference text.",
+        "The item requires specific knowledge of controller duties for cross-border disclosures and reasoning about exceptions, which makes its difficulty appropriate as medium."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_19",
+        "seed": "2026-02-11|international_transfers|0051"
+      }
+    },
+    {
+      "id": "ai_000052",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "Following a major cross-border data breach, the Board coordinating responses must pick its leadership from among its members. Which statement correctly describes how the Chair and deputy chairs are chosen and how long they serve?",
+      "choices": [
+        "The Board elects a Chair and two deputy chairs from amongst its members by simple majority; each serves a five-year term, renewable once.",
+        "An external supervisory authority appoints the Chair for a three-year, non-renewable term, while the deputy chairs are elected by the Board.",
+        "The Board elects a Chair by a two-thirds majority; deputy chairs are appointed by the Chair and serve until mandatory retirement age.",
+        "Members volunteer to act as interim Chair or deputy chairs with no fixed term; permanent leadership is chosen only after the breach investigation concludes."
+      ],
+      "correct_index": 0,
+      "confidence": 0.93,
+      "review_reasons": [
+        "Question has exactly four choices.",
+        "Exactly one choice is marked correct (index 0).",
+        "Question text contains no article number citation.",
+        "Correct answer (choice 0) matches the GDPR/EDPB rules: the Board elects a Chair and two deputy chairs from among its members by simple majority for five-year terms, renewable once.",
+        "Difficulty is medium: requires specific knowledge of EDPB leadership election and term rules rather than basic concepts.",
+        "Similarity metrics provided indicate it is not a near-copy of reference material."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_73",
+        "seed": "2026-02-11|data_breach|0052"
+      }
+    },
+    {
+      "id": "ai_000053",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "A former employee requests that their ex-employer delete all personnel and performance records relating to them. Under the right to erasure, which of the following circumstances would allow the employer to refuse the erasure request?",
+      "choices": [
+        "The personal data are no longer necessary for the purposes for which they were collected.",
+        "The employer needs to retain the records to establish, exercise or defend legal claims.",
+        "The employee withdraws consent and there is no other legal ground for processing.",
+        "The personal data were collected in relation to the offer of an online service to a child."
+      ],
+      "correct_index": 1,
+      "confidence": 0.93,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is correct: choice index 1 (the employer may retain records to establish, exercise or defend legal claims) is a valid exception to the right to erasure.",
+        "The other three choices describe circumstances that would support granting erasure (data no longer necessary; withdrawal of consent with no other legal ground; data related to offering an online service to a child) and thus are appropriate distractors.",
+        "The question text contains no citation of article numbers or legal provision references.",
+        "The content is not a near-copy of a specific reference (similarity metrics are low) and the scenario requires applied knowledge of exceptions to erasure, consistent with medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_17",
+        "seed": "2026-02-11|gdpr_rights|0053"
+      }
+    },
+    {
+      "id": "ai_000054",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "A controller has its central administration in Member State A, but an establishment in Member State B actually decides and implements the purposes and means of processing. For GDPR compliance, which location is regarded as the controller's main establishment?",
+      "choices": [
+        "The controller's central administration in Member State A.",
+        "The establishment in Member State B that takes and implements the decisions on purposes and means.",
+        "The establishment with the largest number of employees processing personal data.",
+        "The supervisory authority of the Member State where most data subjects reside."
+      ],
+      "correct_index": 1,
+      "confidence": 0.95,
+      "review_reasons": [
+        "Exactly four answer choices are present.",
+        "Exactly one correct answer is specified (correct_index = 1).",
+        "Question text does not cite any article number.",
+        "The indicated correct choice correctly reflects the GDPR principle that the main establishment is where decisions on the purposes and means of processing are taken and implemented.",
+        "The other options are plausible distractors (central administration, employee count, supervisory authority), which gives the item appropriate medium difficulty.",
+        "The question does not appear to be a near-copy of reference material (similarity to style references is low)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_4",
+        "seed": "2026-02-11|controller_obligations|0054"
+      }
+    },
+    {
+      "id": "ai_000055",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "When cooperating with third countries and international organisations to protect personal data, which of the following is NOT described as an appropriate step for the Commission and supervisory authorities to take?",
+      "choices": [
+        "Develop international cooperation mechanisms to facilitate effective enforcement of data protection laws.",
+        "Provide international mutual assistance in enforcement, including complaint referral, investigative help and information exchange, subject to safeguards.",
+        "Negotiate and enforce general trade or immigration agreements that do not address data protection or cross-border data transfer safeguards.",
+        "Promote the exchange and documentation of data protection legislation and practices, including on jurisdictional conflicts with third countries."
+      ],
+      "correct_index": 2,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "Exactly one choice is marked as correct (index 2) and it is the only option that is logically the NOT answer given the others describe appropriate cooperation steps.",
+        "Question text contains no article number citations.",
+        "Options are clear and mutually exclusive with respect to being appropriate vs. not appropriate; the third choice explicitly says agreements that do not address data protection, so it is unambiguously incorrect as an appropriate step.",
+        "Similarity to reference material is low, and the question requires applied understanding of international cooperation on data protection, consistent with medium difficulty.",
+        "Minor caveat addressed: although the Commission may negotiate trade or immigration agreements, the option explicitly excludes data protection safeguards, so it correctly represents an inappropriate step."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_50",
+        "seed": "2026-02-11|lawful_bases|0055"
+      }
+    },
+    {
+      "id": "ai_000056",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "Which of the following pairs of measures is explicitly cited as appropriate to ensure security of processing and to mitigate the impact of a technical or physical incident?",
+      "choices": [
+        "Pseudonymisation and encryption; ability to restore availability and access in a timely manner",
+        "Requiring processing only during set business hours; storing all encryption keys offline with no access",
+        "Appointing a data protection officer for all processing; publishing full processing logs publicly",
+        "Limiting retention of all personal data to one year; anonymising data at the point of collection"
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided and exactly one choice is marked correct (index 0).",
+        "The correct choice (pseudonymisation and encryption; ability to restore availability and access in a timely manner) matches GDPR guidance on security measures and incident mitigation (common, explicitly listed examples).",
+        "Distractors are incorrect or implausible (they either state unrealistic/incorrect requirements or mix unrelated measures), so there is a single clear correct answer.",
+        "Question text contains no article number citations.",
+        "Similarity-to-references score is low (0.095), indicating the item is not a near-copy of provided reference styles and thus likely original.",
+        "Difficulty appears medium: it requires specific familiarity with GDPR security measures but is answerable by someone with basic GDPR knowledge."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_32",
+        "seed": "2026-02-11|data_breach|0056"
+      }
+    },
+    {
+      "id": "ai_000057",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following statements about data protection certification under the GDPR is correct?",
+      "choices": [
+        "A certification relieves a controller or processor of their responsibility to comply with the GDPR.",
+        "A certification can be issued for a maximum period of three years and may be renewed if the relevant requirements continue to be met.",
+        "Certification is mandatory for all controllers and processors covered by the GDPR.",
+        "Only supervisory authorities (and not accredited certification bodies) may issue certifications or seals."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "There are exactly four choices.",
+        "Exactly one correct answer is indicated (index 1). That choice is accurate: under the GDPR certifications may be issued for a period not exceeding three years and may be renewed if requirements continue to be met.",
+        "The other three choices are incorrect: a certification does not relieve a controller/processor of GDPR responsibilities; certification is voluntary, not mandatory for all controllers/processors; accredited certification bodies (not only supervisory authorities) may issue certifications/seals.",
+        "The question text contains no article number citation.",
+        "The question appears to be medium difficulty (requires knowledge of specific GDPR certification provisions rather than a basic principle).",
+        "Similarity metrics provided (similarity_to_style_refs 0.2, similarity_to_existing_ai ~0.29) do not indicate a near-copy of reference material; automated checks are limited but give no strong sign of copying."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_42",
+        "seed": "2026-02-11|gdpr_rights|0057"
+      }
+    },
+    {
+      "id": "ai_000058",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Under the GDPR, when may a group of undertakings appoint a single data protection officer for the group?",
+      "choices": [
+        "Only if the appointed DPO is an employee of the parent company",
+        "Provided that the data protection officer is easily accessible from each establishment",
+        "Only when all group establishments are located in the same Member State",
+        "Only if every undertaking in the group processes special categories of personal data"
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Contains exactly four choices.",
+        "Exactly one correct answer indicated (index 1).",
+        "Question text does not cite any article or provision number.",
+        "Correct answer accurately reflects the GDPR rule that a group may appoint a single DPO provided the DPO is easily accessible from each establishment.",
+        "Similarity to provided references is low (0.1538), so it is not a near-copy.",
+        "Difficulty is appropriate for medium level: tests specific knowledge without being trivial."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_37",
+        "seed": "2026-02-11|controller_obligations|0058"
+      }
+    },
+    {
+      "id": "ai_000059",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "When personal data are processed on the basis of the controller’s legitimate interests, which of the following must the controller include in the information given to the data subject under its transparency obligations?",
+      "choices": [
+        "A clear statement of the legitimate interests being pursued by the controller",
+        "A binding guarantee that the data subject cannot object to the processing",
+        "A fee the data subject must pay to exercise their access rights",
+        "A declaration that retention periods are unlimited"
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one answer is marked correct (correct_index = 0) and the index is within the valid range 0–3.",
+        "There are exactly four choices.",
+        "The question text contains no citation of GDPR article numbers or similar legal-article references.",
+        "The correct choice (A) correctly describes the GDPR transparency requirement to inform data subjects of the controller's legitimate interests when processing is based on legitimate interests; the other choices are clearly incorrect.",
+        "Similarity metrics provided (0.2083 and 0.25) indicate low resemblance to reference texts or existing AI outputs, so it is not a near-copy.",
+        "The item requires specific but not extremely technical knowledge of GDPR transparency obligations and legal bases, so its difficulty is appropriately medium."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_12",
+        "seed": "2026-02-11|lawful_bases|0059"
+      }
+    },
+    {
+      "id": "ai_000060",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "A company has previously transferred personal data to recipients in a non-EU country. Later the company erases that personal data following a valid request from the data subject. Under the GDPR obligation reflected in the fragment provided, what must the company do regarding those overseas recipients?",
+      "choices": [
+        "Notify each overseas recipient to whom the data were disclosed about the erasure, unless notifying them is impossible or would involve disproportionate effort; and, if the data subject requests, inform the data subject which recipients were notified.",
+        "Only notify recipients located within the EU; for recipients outside the EU the company need only delete its own copies without informing them.",
+        "No obligation to notify any recipients; the data subject must contact third parties who may have received the data.",
+        "Report the erasure to the supervisory authority and request that the authority notify foreign recipients on the company’s behalf."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "correct_index indicates exactly one correct answer (index 0).",
+        "Question text contains no article number citation.",
+        "Similarity metrics provided are low, supporting that it is not a near-copy of reference texts.",
+        "The scenario requires moderate legal knowledge of GDPR obligations (medium difficulty).",
+        "Minor note: the question refers to a 'fragment provided' that is not included here; this may slightly reduce clarity but does not violate the stated validation rules."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_19",
+        "seed": "2026-02-11|international_transfers|0060"
+      }
+    },
+    {
+      "id": "ai_000061",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "An EU data controller discovers a personal data breach on 1 June 2018 (after the GDPR replaced the previous directive). To comply with the GDPR, which entity must the controller notify within the standard 72-hour timeframe?",
+      "choices": [
+        "The national data protection supervisory authority where the controller is established",
+        "The European Data Protection Board (the successor to the Article 29 Working Party)",
+        "The European Commission's data protection unit",
+        "The now-repealed Article 29 Working Party"
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one choice is marked correct (correct_index = 0) and the other three are incorrect, satisfying the \"exactly one correct answer\" rule.",
+        "There are exactly four choices provided.",
+        "The question text does not cite any article numbers or legal article references.",
+        "The distractors are plausible (European Data Protection Board, European Commission unit, Article 29 Working Party) which supports a medium difficulty level.",
+        "The correct answer (notify the national supervisory authority competent for the controller) correctly reflects the GDPR requirement to notify the competent national data protection authority within 72 hours.",
+        "Similarity metrics provided are low, indicating the item is not a near-copy of reference material."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_94",
+        "seed": "2026-02-11|data_breach|0061"
+      }
+    },
+    {
+      "id": "ai_000062",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following statements correctly captures the primary aims set out in the GDPR's opening provisions?",
+      "choices": [
+        "To protect the fundamental rights of natural persons regarding the processing of personal data and to ensure the free movement of personal data within the Union",
+        "To prohibit any transfer of personal data across borders in order to maximize protection of individuals' data",
+        "To remove data protection obligations on controllers within Member States to promote unrestricted data flows",
+        "To establish uniform criminal penalties for data breaches and centralize all enforcement at EU level"
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one correct answer indicated (correct_index = 0).",
+        "Exactly four choices are provided.",
+        "No article number or citation appears in the question text.",
+        "The correct choice accurately and succinctly captures the GDPR's primary aims (protect fundamental rights of natural persons regarding personal data processing and ensure free movement of personal data within the Union); the other choices are clearly incorrect.",
+        "Provided similarity metrics (similarity_to_style_refs=0.10344827586206896, similarity_to_existing_ai=0.25) are low, indicating the item is not a near-copy of reference materials or existing AI outputs.",
+        "Difficulty is appropriate for medium: it requires comprehension of GDPR objectives rather than mere recall of specific article numbers or procedural details."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_1",
+        "seed": "2026-02-11|gdpr_rights|0062"
+      }
+    },
+    {
+      "id": "ai_000063",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which of the following is NOT a task of the Chair of the Board?",
+      "choices": [
+        "Convene the Board's meetings and prepare its agenda",
+        "Notify decisions adopted by the Board to the lead supervisory authority and the supervisory authorities concerned",
+        "Determine the allocation of tasks between the Chair and the deputy chairs in the Board's rules of procedure",
+        "Ensure the timely performance of the Board's tasks, in particular with respect to the consistency mechanism"
+      ],
+      "correct_index": 2,
+      "confidence": 0.88,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "correct_index = 2 is within the valid range (0–3) and points to a single intended correct answer.",
+        "Only one option is plausibly NOT a task of the Chair: 'Determine the allocation of tasks between the Chair and the deputy chairs in the Board's rules of procedure' — allocation and the rules of procedure are established by the Board/rules process rather than unilaterally determined by the Chair.",
+        "The other three choices match known Chair responsibilities (convening meetings and preparing the agenda; notifying decisions to the lead and concerned supervisory authorities; ensuring timely performance of the Board's tasks with respect to the consistency mechanism).",
+        "The question text contains no citation of article numbers.",
+        "Provided similarity metrics to reference/style and existing AI are low (0.25 and ~0.214), indicating this is not a near-copy of the references.",
+        "Difficulty is assessed as medium — requires specific knowledge of Board/Chair responsibilities but is not overly obscure."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_74",
+        "seed": "2026-02-11|controller_obligations|0063"
+      }
+    },
+    {
+      "id": "ai_000064",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "After a security incident an EU controller needs to share affected personal data with a forensic provider located in a country that does not ensure an adequate level of protection. Which of the following can be used as an appropriate safeguard without requiring a specific prior authorisation from the supervisory authority?",
+      "choices": [
+        "Insert bespoke contractual clauses directly between the controller and the foreign recipient without obtaining prior authorisation from the supervisory authority",
+        "Use standard data protection clauses adopted by the EU Commission and incorporate them into the contract with the foreign provider",
+        "Rely on an administrative arrangement between public authorities that does not grant enforceable data subject rights",
+        "Transfer the data based solely on the recipient’s assurance that its domestic law affords sufficient protection"
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is correct (index 1: standard data protection clauses adopted by the EU Commission), which is an appropriate safeguard that does not require prior supervisory-authority authorisation under the GDPR.",
+        "The other three options are incorrect or misleading: bespoke/ad‑hoc clauses generally cannot be relied on without potential supervisory review/approval; an administrative arrangement that does not grant enforceable data subject rights is not an appropriate safeguard; mere assurances about foreign law are insufficient.",
+        "The question text contains no article numbers or legal citations.",
+        "Similarity metrics provided are low, indicating the item is not a near-copy of reference material.",
+        "The scenario and distractors reflect a realistic level of complexity and nuance appropriate for medium difficulty (requires knowledge of transfer mechanisms and their limitations)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_46",
+        "seed": "2026-02-11|data_breach|0064"
+      }
+    },
+    {
+      "id": "ai_000065",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following situations would NOT exempt a controller from having to directly inform affected individuals about a personal data breach?",
+      "choices": [
+        "The personal data involved were encrypted and the protective measures were applied to the data affected by the breach.",
+        "After the breach the controller implemented further measures that remove the likelihood of a high risk to individuals’ rights and freedoms.",
+        "Notifying each individual would involve disproportionate effort, so the controller issues a public announcement or similar equally effective measure instead.",
+        "The controller asserts that data were protected by technical measures but those measures were not actually applied to the specific personal data impacted by the breach."
+      ],
+      "correct_index": 3,
+      "confidence": 0.91,
+      "review_reasons": [
+        "Exactly four answer choices are provided.",
+        "Exactly one correct answer: choice at index 3 is correct — falsely asserting protective measures were applied does not exempt a controller from notifying affected individuals under the GDPR, whereas the other three options describe legitimate exemptions/alternatives (encryption/appropriate protection; subsequent measures removing high risk; disproportionate effort with public communication).",
+        "Question text contains no article number citations.",
+        "Wording is a paraphrase of GDPR concepts rather than a near-verbatim copy of legal text (similarity metrics provided are low), and the item requires applied knowledge of exemptions — appropriate for medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_34",
+        "seed": "2026-02-11|gdpr_rights|0065"
+      }
+    },
+    {
+      "id": "ai_000066",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "What are Member States required to do concerning penalties for GDPR infringements that are not subject to EU administrative fines?",
+      "choices": [
+        "Leave penalty decisions to be determined case-by-case by supervisory authorities without national legislation.",
+        "Lay down national rules on other penalties, ensure those penalties are effective, proportionate and dissuasive, and notify the Commission of the provisions and subsequent amendments.",
+        "Prohibit national penalties and rely exclusively on the EU administrative fines framework.",
+        "Require data controllers to impose contractual penalties on data subjects as the primary enforcement mechanism."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Question contains exactly 4 choices.",
+        "Exactly one choice is correct (choice index 1). That choice correctly summarizes Member State obligations to lay down national rules on other penalties, ensure they are effective, proportionate and dissuasive, and notify the Commission.",
+        "The other three choices are incorrect or implausible: leaving penalties solely to case-by-case supervisory decisions without national law is wrong; prohibiting national penalties contradicts the requirement to lay down rules; requiring controllers to impose contractual penalties on data subjects is incorrect.",
+        "Question text does not cite any article numbers or legal references.",
+        "Similarity to provided references is low and not a near-copy (similarity_to_style_refs=0.0526); similarity to existing AI outputs is moderate but does not indicate a near-copy (0.4667).",
+        "Question difficulty is appropriately medium: it requires knowledge of Member State obligations under the GDPR beyond basic concepts and distractors are plausible."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_84",
+        "seed": "2026-02-11|controller_obligations|0066"
+      }
+    },
+    {
+      "id": "ai_000067",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "If a processor engages another processor to carry out specific processing activities on behalf of a controller, which of the following is correct?",
+      "choices": [
+        "The initial processor can subcontract without imposing equivalent data protection obligations on the other processor and will not be liable for that other processor's failures.",
+        "The initial processor must impose the same data protection obligations on the other processor by contract and remains fully liable to the controller if that other processor fails to meet those obligations.",
+        "The controller must enter into a direct contract with the other processor for the processing to be lawful, otherwise the engagement is invalid.",
+        "If the other processor breaches its obligations, only that other processor is responsible and the initial processor is exempt from liability."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one answer is marked correct (index 1) and that choice correctly reflects the GDPR requirement that an initial processor must impose equivalent data protection obligations on any sub-processor by contract and remains liable to the controller for that sub-processor's performance.",
+        "The other three choices are false and unambiguous (they contradict GDPR requirements regarding subcontracting and liability), so there is a single correct answer.",
+        "The question text contains no article number citation.",
+        "Similarity metrics provided indicate the item is not a near-copy of reference material or a high-probability existing AI output (similarity_to_style_refs 0.0909, similarity_to_existing_ai 0.3182), supporting originality.",
+        "The item requires knowledge of specific GDPR processor–sub-processor rules but is not excessively technical, matching a medium difficulty level.",
+        "Wording is clear; only minor note: the phrase 'remains fully liable' mirrors GDPR wording and is appropriate here."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_28",
+        "seed": "2026-02-11|lawful_bases|0067"
+      }
+    },
+    {
+      "id": "ai_000068",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "When transferring personal data from the EU to a country outside the Union, which of the following, by itself, does NOT constitute an adequate legal basis under the GDPR to permit the transfer?",
+      "choices": [
+        "An EU Commission adequacy decision recognizing the destination country's level of protection as essentially equivalent",
+        "Standard contractual clauses adopted by the Commission that bind the data exporter and importer",
+        "Binding corporate rules approved by the competent supervisory authority for intra-group transfers",
+        "Encrypting the personal data during transmission without any additional transfer mechanism or legal safeguard"
+      ],
+      "correct_index": 3,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices provided.",
+        "Exactly one designated correct answer (index 3), which is within bounds.",
+        "Question text contains no article numbers or citations.",
+        "Substantive correctness: an EU adequacy decision, Commission standard contractual clauses, and approved binding corporate rules are recognized transfer mechanisms under the GDPR; encryption alone, without an additional transfer mechanism or legal safeguard, does not by itself constitute an adequate legal basis for an international transfer.",
+        "Not a near-copy of references (similarity_to_style_refs is low).",
+        "Difficulty level is medium: the item requires specific knowledge of GDPR transfer mechanisms but is not highly technical or obscure."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_1",
+        "seed": "2026-02-11|international_transfers|0068"
+      }
+    },
+    {
+      "id": "ai_000069",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "A supervisory board must choose a chair and two deputy chairs from among its members. Which of the following correctly describes how they are selected and the typical maximum length of a single term in office?",
+      "choices": [
+        "They are appointed externally by an overseeing authority for a single non-renewable term of six years.",
+        "They are elected by the board by simple majority; each serves a five-year term which may be renewed once.",
+        "They are elected by qualified majority vote; each serves a four-year term that can be renewed indefinitely.",
+        "They are selected by unanimous agreement of the board; each serves a five-year term that cannot be renewed."
+      ],
+      "correct_index": 1,
+      "confidence": 0.88,
+      "review_reasons": [
+        "There are exactly 4 answer choices.",
+        "Exactly one choice is correct: the second choice (index 1) is consistent with the usual rules for the EDPB/similar supervisory boards — chair and two deputies are elected by the board and serve five-year terms renewable once.",
+        "The other options contain elements that conflict with established practice (external appointment, six-year single non-renewable term; four-year term with indefinite renewals; requirement of unanimity), so they are not correct.",
+        "The question text does not cite any article numbers.",
+        "The wording is a concise paraphrase and does not appear to be a near-copy of legislative references.",
+        "Difficulty is medium: it requires specific factual knowledge about both selection method and term limits.",
+        "Minor suggestion (not a requirement): specifying which supervisory board (e.g., EDPB or national supervisory authority board) would remove any potential ambiguity, but this is not necessary for the question to meet the validation rules."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_73",
+        "seed": "2026-02-11|data_breach|0069"
+      }
+    },
+    {
+      "id": "ai_000070",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which of the following statements about members of a national data protection supervisory authority is correct?",
+      "choices": [
+        "They can be dismissed at any time by the government for disagreements over policy.",
+        "They must be appointed by a transparent procedure and may only be dismissed for serious misconduct or if they no longer fulfil the required conditions.",
+        "They must be elected directly by the public through a popular vote.",
+        "Their duties continue automatically beyond the expiry of their term of office until a successor is chosen."
+      ],
+      "correct_index": 1,
+      "confidence": 0.86,
+      "review_reasons": [
+        "Contains exactly 4 answer choices.",
+        "Exactly one answer is marked correct (correct_index = 1).",
+        "Question text and choices contain no article or legal provision numbers.",
+        "Factual check: choice 1 correctly reflects the independence safeguards for members (appointment via a transparent procedure and dismissal only for serious misconduct or loss of required conditions); the other choices are incorrect.",
+        "Choice 0 is false (members are not removable at will by the government for policy disagreements).",
+        "Choice 2 is false (members are not chosen by popular vote).",
+        "Choice 3 is misleading/incorrect as a general statement (automatic continuation beyond term expiry until a successor is chosen is not a universal rule and cannot be assumed here).",
+        "Not a near-copy of reference material (user-provided similarity_to_style_refs = 0.1739 indicates low similarity).",
+        "Overall difficulty is appropriate for a medium-difficulty quiz question."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_53",
+        "seed": "2026-02-11|gdpr_rights|0070"
+      }
+    },
+    {
+      "id": "ai_000071",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "To safeguard the independence of a data protection supervisory authority, which of the following is required of Member States?",
+      "choices": [
+        "The authority must be able to accept binding instructions from other public bodies in specific cases.",
+        "The authority must have separate, public annual budgets and financial control that does not affect its independence.",
+        "Members of the authority may engage in other occupations during their term as long as they are unpaid.",
+        "The authority’s staff must be appointed and directed by the national parliament rather than by the authority’s members."
+      ],
+      "correct_index": 1,
+      "confidence": 0.88,
+      "review_reasons": [
+        "Exactly one answer is marked correct (correct_index = 1).",
+        "There are exactly four choices.",
+        "The question text contains no article number citation.",
+        "The question is not a near-copy of provided references (similarity_to_style_refs is low).",
+        "Difficulty is appropriate for medium level: tests knowledge of specific GDPR independence requirements without citing articles.",
+        "Substantively, the marked correct choice (choice 2) aligns with GDPR requirements that supervisory authorities have adequate/independent financial resources; the other options contradict GDPR independence rules.",
+        "Minor caution: choice 2’s wording (“separate, public annual budgets and financial control”) is slightly more specific than the GDPR’s usual phrasing (which requires adequate and independent resources), but it still correctly emphasizes financial independence."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_52",
+        "seed": "2026-02-11|controller_obligations|0071"
+      }
+    },
+    {
+      "id": "ai_000072",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "A data controller receives a formal request from a supervisory authority to provide personal data as part of an official inquiry. The controller is required by law to cooperate with that authority. Which lawful basis most directly permits the controller to process and disclose the personal data without depending on the data subject's consent?",
+      "choices": [
+        "Processing is necessary for the performance of a contract with the data subject",
+        "Processing is based on the consent of the data subject",
+        "Processing is necessary for compliance with a legal obligation",
+        "Processing is necessary to protect the vital interests of the data subject"
+      ],
+      "correct_index": 2,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is marked correct (index 2) and that choice—'processing necessary for compliance with a legal obligation'—is the directly applicable lawful basis for a controller required by law to cooperate with a supervisory authority.",
+        "The other three choices are plausible distractors but are incorrect in this factual scenario (contract performance, consent, vital interests do not directly justify disclosure to a supervisory authority obliged by law).",
+        "Question text contains no article number citations.",
+        "Provided similarity metrics to style references (0.1228) and existing AI outputs (0.1923) are low, indicating the item is not a near-copy of reference material.",
+        "Overall difficulty is appropriate for medium level—requires applying knowledge of lawful bases rather than recall of specific statutory text."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_31",
+        "seed": "2026-02-11|lawful_bases|0072"
+      }
+    },
+    {
+      "id": "ai_000073",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "Which of the following correctly describes when the right to data portability applies and what it may entail?",
+      "choices": [
+        "It applies where the processing is based on the data subject's consent or on a contract and carried out by automated means; the data subject may have the personal data transmitted directly to another controller where technically feasible.",
+        "It always applies to any personal data held by a controller regardless of legal basis or processing method, unless the data are strictly confidential.",
+        "It applies even if processing is not automated, provided the controller can produce a human-readable copy of the data for the data subject.",
+        "It overrides other rights, so controllers must comply with portability requests even if doing so would adversely affect the rights and freedoms of others."
+      ],
+      "correct_index": 0,
+      "confidence": 0.93,
+      "review_reasons": [
+        "Exactly one correct answer present (choice 1 correctly describes the right to data portability: applies where processing is based on consent or contract and is carried out by automated means; allows transmission to another controller where technically feasible).",
+        "There are exactly four answer choices.",
+        "Question text contains no article number citation or legal-article references.",
+        "Not a near-copy of reference materials (provided similarity indicators are low: similarity_to_style_refs=0.2, similarity_to_existing_ai=0.2353).",
+        "Difficulty is medium: requires specific GDPR knowledge about legal bases and technical feasibility rather than a basic or highly specialized point."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_20",
+        "seed": "2026-02-11|international_transfers|0073"
+      }
+    },
+    {
+      "id": "ai_000074",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "Which of the following topics is the Board explicitly required to issue guidelines, recommendations and best practices about in relation to personal data breaches?",
+      "choices": [
+        "The criteria and conditions for establishing when an incident is a personal data breach and for determining what constitutes an undue delay for notification",
+        "Mandatory technical encryption standards that all controllers and processors must use to prevent breaches",
+        "The creation of criminal penalties and custodial sentences for data protection infringements",
+        "A single EU-wide tariff schedule specifying exact administrative fine amounts for each type of infringement"
+      ],
+      "correct_index": 0,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Question has exactly 4 choices (requirement met).",
+        "Exactly one correct answer is indicated (correct_index = 0).",
+        "Question text contains no article number citations.",
+        "Choice 0 correctly reflects the EDPB/Board's explicit role to issue guidelines/recommendations/best practices on criteria/conditions for personal data breaches and undue delay for notification (matches GDPR practice and EDPB guidance on breach notification).",
+        "The other three choices describe powers or outputs the Board does not have (binding mandatory technical encryption standards; creating criminal penalties; a single EU-wide tariff of fines) and are therefore incorrect, so there is exactly one correct option.",
+        "Question difficulty is appropriately medium—requires specific knowledge of the Board's guidance role rather than basic GDPR facts.",
+        "Similarity metrics provided by the author are low, and the phrasing does not appear to be a near-copy of canonical references."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_70",
+        "seed": "2026-02-11|data_breach|0074"
+      }
+    },
+    {
+      "id": "ai_000075",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Under EU law, national legislation may restrict certain data subject rights when such restrictions are necessary and proportionate to safeguard specified public interests. Which of the following is NOT listed among the legitimate grounds that can justify such a restriction?",
+      "choices": [
+        "National security",
+        "Protection of judicial independence and judicial proceedings",
+        "Promotion of commercial competitiveness of private companies",
+        "Prevention, investigation, detection or prosecution of criminal offences"
+      ],
+      "correct_index": 2,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly one correct answer: choice index 2 (\"Promotion of commercial competitiveness of private companies\") is the sole option that is not among the legitimate public-interest grounds typically listed for restricting data subject rights under EU law.",
+        "Exactly four choices are provided.",
+        "Question text does not cite any article numbers or legal citations.",
+        "Choices are plausible distractors and not ambiguous—the other three choices (national security; protection of judicial independence and judicial proceedings; prevention/investigation/detection/prosecution of criminal offences) are established legitimate grounds for restriction under EU law, making the correct answer unambiguous.",
+        "Not a near-copy of legal references: similarity metrics provided are low, and the phrasing is original rather than directly quoting legal text.",
+        "Difficulty is medium: requires specific knowledge of permissible public-interest grounds for restrictions under EU data-protection law but is answerable by someone with moderate familiarity with the subject."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_23",
+        "seed": "2026-02-11|gdpr_rights|0075"
+      }
+    },
+    {
+      "id": "ai_000076",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "When a controller processes personal data that does not require identification and cannot identify the data subject, which of the following is true about the data subject's rights (e.g., access, rectification, erasure)?",
+      "choices": [
+        "The controller must obtain or process additional information solely to identify the data subject so those rights can be exercised.",
+        "Those rights do not apply unless the data subject provides additional information that enables their identification.",
+        "The controller must notify the supervisory authority and suspend processing until identification is possible.",
+        "The controller is required to delete the data immediately and cannot process it further."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are present.",
+        "Exactly one correct answer is marked (index 1).",
+        "The question text contains no article number citation.",
+        "Difficulty is appropriate for medium level (tests knowledge of nuances when data cannot identify a person).",
+        "The designated correct answer (choice 2) correctly reflects GDPR practice: where the controller cannot identify the data subject, rights such as access/rectification/erasure do not apply unless the data subject provides additional information enabling identification; the controller is not obliged to obtain or process additional information solely to identify a person.",
+        "Minor suggestion: option 2 could be slightly reworded to note that the controller should inform the data subject of the inability to comply and will act if the subject provides information enabling identification, to reduce possible ambiguity."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_11",
+        "seed": "2026-02-11|controller_obligations|0076"
+      }
+    },
+    {
+      "id": "ai_000077",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "Which of the following best describes the GDPR’s general principle for transfers of personal data to a third country or international organisation?",
+      "choices": [
+        "A transfer is allowed as long as the controller has established a lawful basis for processing the data in the EU, regardless of destination safeguards.",
+        "A transfer may occur only if the controller and processor comply with the Chapter V conditions (e.g., adequacy, appropriate safeguards, or permitted derogations), including safeguards for any onward transfers, so the level of protection under the GDPR is not undermined.",
+        "A transfer is permitted when the recipient organisation signs a private agreement to protect the data; notifying the supervisory authority is optional.",
+        "Transfers are allowed only if the personal data are fully anonymised before transfer; otherwise transfers are prohibited."
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Contains exactly four answer choices.",
+        "Exactly one answer is marked correct (index 1) and that choice accurately summarizes the GDPR’s Chapter V framework (adequacy, appropriate safeguards, permitted derogations) and the requirement that onward transfers not undermine the level of protection.",
+        "Other choices are incorrect or misleading: choice 0 confuses lawful basis for processing with transfer rules; choice 2 oversimplifies transfer safeguards and supervisory authority obligations; choice 3 incorrectly states transfers are only allowed if data are anonymised.",
+        "Question text contains no article number citation.",
+        "Wording is a paraphrase of legal principles (not a near-copy of statutory text) and requires understanding of Chapter V conditions—appropriately medium difficulty."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_44",
+        "seed": "2026-02-11|lawful_bases|0077"
+      }
+    },
+    {
+      "id": "ai_000078",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "A supervisory authority in Member State X receives a complaint about processing by a controller whose main establishment is in Member State Y. Under what circumstance can the authority in X handle the complaint itself rather than deferring to the lead supervisory authority in Y?",
+      "choices": [
+        "When the subject matter of the complaint relates only to an establishment in Member State X or substantially affects data subjects only in Member State X.",
+        "When the lead supervisory authority in Y does not acknowledge the notification within one month.",
+        "When the controller operates in more than three Member States, including X.",
+        "When the complainant explicitly requests that the authority in X handle the case, regardless of where the processing has its main establishment."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "There are exactly four choices and the supplied correct_index (0) points to a single answer, so exactly one correct answer is specified.",
+        "The first choice correctly states the GDPR exception: a supervisory authority in another Member State may handle a complaint itself when the subject matter of the complaint relates only to processing in its territory or substantially affects data subjects in that Member State, so the correct answer is choice 0.",
+        "The question text contains no citation of article numbers or legal provision numbers.",
+        "The distractors are clearly incorrect under the GDPR framework (no rule about a one-month acknowledgement, number of Member States, or a complainant’s unilateral request overriding competence), so the item tests substantive understanding rather than trivia.",
+        "Difficulty is medium: it requires knowledge of the one-stop-shop mechanism and its exception for local handling rather than simple recall, matching the requested difficulty level.",
+        "The wording is a concise paraphrase of the legal rule rather than a near-copy of official text or a reference, so it does not appear to be an impermissible close reproduction of source material."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_56",
+        "seed": "2026-02-11|international_transfers|0078"
+      }
+    },
+    {
+      "id": "ai_000079",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "Which of the following is true about codes of conduct in relation to personal data breach notifications?",
+      "choices": [
+        "Codes of conduct may set out procedures for notifying supervisory authorities and informing data subjects about breaches, and a code approved by the competent supervisory authority is intended to provide appropriate safeguards that controllers can follow.",
+        "Once an organisation adheres to any code of conduct, it is automatically exempt from the legal obligation to notify supervisory authorities of personal data breaches.",
+        "Only supervisory authorities may draft codes of conduct dealing with breach notification; trade associations and industry bodies are not permitted to prepare such codes.",
+        "Codes of conduct are expressly prohibited from addressing breach notification or communication to data subjects, because those obligations are fixed by law and cannot be specified in codes."
+      ],
+      "correct_index": 0,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Question has exactly four choices.",
+        "correct_index points to a single correct option (index 0), so there is exactly one correct answer.",
+        "Question text contains no citations of article numbers.",
+        "Content and distractors are factually distinct and avoid verbatim reproduction of legal text, so it is not a near-copy of references.",
+        "Difficulty is appropriate for medium level: requires understanding of how approved codes of conduct can support compliance but do not override legal breach-notification obligations."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_40",
+        "seed": "2026-02-11|data_breach|0079"
+      }
+    },
+    {
+      "id": "ai_000080",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Under the GDPR, which of the following is NOT listed as a transparent method for appointing members of a national supervisory authority?",
+      "choices": [
+        "Appointment by the national parliament",
+        "Appointment by an independent body entrusted with the appointment under national law",
+        "Appointment by the judiciary (courts)",
+        "Appointment by the head of State or the government"
+      ],
+      "correct_index": 2,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one choice is marked correct (index 2), which is within the 0–3 range.",
+        "The question text contains no article or section number citation.",
+        "Substantively accurate: the GDPR text enumerates appointment by Parliament, the head of State or government, or an independent body entrusted with the appointment under national law — it does not explicitly list the judiciary/courts, so the marked correct answer is appropriate.",
+        "Not a near-copy of references (paraphrases the options); provided similarity metrics are low, supporting originality.",
+        "Difficulty is medium: requires recall of a specific list from the GDPR rather than a trivial fact or deep legal analysis.",
+        "Minor caveat: in some Member States a judicial body might function as the 'independent body entrusted with the appointment' in practice; the question is about what the GDPR explicitly lists, so this potential real-world nuance does not invalidate the item."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_53",
+        "seed": "2026-02-11|gdpr_rights|0080"
+      }
+    },
+    {
+      "id": "ai_000081",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which of the following situations would NOT entitle a data subject to obtain restriction of processing from a controller?",
+      "choices": [
+        "The data subject contests the accuracy of their personal data while the controller verifies its accuracy.",
+        "The processing is unlawful and the data subject objects to erasure, asking instead that use of the data be restricted.",
+        "The controller no longer needs the data for its original purpose, but the data subject needs it to pursue or defend legal claims.",
+        "The data subject objects to processing on grounds relating to their situation and the controller has already established that its legitimate interests override those of the data subject."
+      ],
+      "correct_index": 3,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Question has exactly four choices.",
+        "Exactly one choice is marked correct (index 3) and that is the only option that would NOT entitle a data subject to restriction: restriction is required while the controller verifies whether its legitimate interests override the data subject's rights, but if the controller has already established that its legitimate interests prevail, restriction is not owed.",
+        "The other three choices are valid grounds for restriction (contest accuracy while verification is pending; unlawful processing where the data subject requests restriction instead of erasure; controller no longer needs the data but the data subject needs it to pursue or defend legal claims).",
+        "Question text contains no article numbers or citations.",
+        "Wording is not a near-copy of the GDPR legal text and the scenario tests a specific nuance (medium difficulty)."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_18",
+        "seed": "2026-02-11|controller_obligations|0081"
+      }
+    },
+    {
+      "id": "ai_000082",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "When personal data are processed for scientific research, historical research, statistical analysis or archiving in the public interest, which of the following measures is explicitly mentioned as an appropriate safeguard to help ensure data minimisation?",
+      "choices": [
+        "Applying permanent encryption that prevents any access to the records",
+        "Pseudonymising the data provided the purposes can still be achieved",
+        "Keeping full identifiers but restricting dataset access to a small team of researchers",
+        "Publishing only aggregated results without any record-level controls"
+      ],
+      "correct_index": 1,
+      "confidence": 0.92,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one correct answer (index 1). 'Pseudonymising the data provided the purposes can still be achieved' is an explicitly mentioned appropriate safeguard for processing personal data for research-related purposes under the GDPR.",
+        "Other choices are incorrect: permanently encrypting data that prevents any access would prevent lawful processing; keeping full identifiers contradicts data minimisation; publishing only aggregated results is a protective practice but is not the specific safeguard explicitly referenced in the GDPR text in the same way as pseudonymisation.",
+        "The question text does not cite any article numbers.",
+        "Similarity to reference materials is low (provided similarity score is low), so the item is not a near-copy of sources.",
+        "Difficulty level: medium — requires specific understanding of GDPR safeguards for research rather than only general data protection knowledge."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_89",
+        "seed": "2026-02-11|lawful_bases|0082"
+      }
+    },
+    {
+      "id": "ai_000083",
+      "topic": "international_transfers",
+      "difficulty": "medium",
+      "question": "If a controller plans to transfer personal data that includes a national identification number to a recipient in a country outside the EU/EEA, which of the following best reflects the requirement under the GDPR fragment provided?",
+      "choices": [
+        "Such transfers are categorically prohibited for national identification numbers.",
+        "Transfers are allowed only if the controller implements appropriate safeguards consistent with the Regulation (for example an adequacy finding, standard contractual clauses or binding corporate rules).",
+        "Transfers may proceed without additional safeguards if the destination country’s law recognises the same type of national identifier.",
+        "Transfers are permitted solely on the basis of the data subject’s general consent, without any further safeguards."
+      ],
+      "correct_index": 1,
+      "confidence": 0.9,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one correct answer is specified (correct_index = 1) and that choice accurately reflects the GDPR requirement that transfers to third countries require appropriate safeguards (e.g., adequacy decision, standard contractual clauses, binding corporate rules).",
+        "The other three choices are incorrect or misleading (there is no categorical prohibition for national identification numbers; recognition of the identifier by the destination country’s law does not replace GDPR safeguards; general consent alone is not a sufficient basis for such transfers).",
+        "The question text contains no article number citation.",
+        "The wording is a paraphrase of GDPR transfer rules rather than a near-copy of reference text.",
+        "Difficulty is appropriately medium: the item tests knowledge of cross-border transfer safeguards rather than basic definitions."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_87",
+        "seed": "2026-02-11|international_transfers|0083"
+      }
+    },
+    {
+      "id": "ai_000084",
+      "topic": "data_breach",
+      "difficulty": "medium",
+      "question": "An EU supervisory Board is preparing formal internal rules to coordinate responses to cross-border personal data breaches. Under the GDPR’s rules on the Board’s internal organisation, what voting threshold is required to adopt the Board’s own rules of procedure?",
+      "choices": [
+        "A simple majority of its members",
+        "A two-thirds majority of its members",
+        "Unanimous agreement of all members",
+        "A majority of members present at the meeting"
+      ],
+      "correct_index": 1,
+      "confidence": 0.88,
+      "review_reasons": [
+        "Exactly four choices are provided.",
+        "Exactly one correct answer is indicated (choice at index 1: 'A two-thirds majority of its members').",
+        "The question text contains no article-number citation.",
+        "The provided similarity scores to reference/style sources are low, indicating the item is not a near-copy of reference material.",
+        "The correct answer aligns with the GDPR rule requiring a two-thirds majority of Board members to adopt the Board's rules of procedure.",
+        "Difficulty is appropriate for medium level: it tests specific knowledge of the Board's internal organisation rather than a basic principle.",
+        "Minor wording note: the question says 'An EU supervisory Board' rather than explicitly naming the European Data Protection Board (EDPB); consider using the formal name for precision, but this does not invalidate the question."
+      ],
+      "source": {
+        "gdpr_ref": "gdpr_72",
+        "seed": "2026-02-11|data_breach|0084"
       }
     }
   ]
