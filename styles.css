@@ -159,7 +159,7 @@ a{ color:var(--paper); }
 .fieldLabel{ font-weight:700; }
 .fieldControl{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 
-.sourceToggle{ display:flex; gap:8px; }
+.sourceToggle{ display:flex; gap:8px; flex-wrap:wrap; }
 
 .radioPill{
   display:inline-flex;
@@ -294,20 +294,49 @@ button:hover:not(:disabled){ filter:brightness(1.05); }
 }
 
 @media (max-width: 760px){
+  .topbar{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 14px;
+    padding:10px 12px;
+  }
+
+  .topLeft,
+  .meta{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
   .settingsGrid .fieldRow{ grid-template-columns:1fr; }
   .settingsGrid .fieldLabel{ border-right:none; border-bottom:1px solid var(--border); }
+
+  .settingsGrid .fieldControl,
+  .sourceToggle,
+  .radioPill{
+    width:100%;
+  }
+
+  .radioPill{
+    justify-content:flex-start;
+  }
+
   #startBtn{ width:100%; min-width:0; }
 
   .topBannerTag{
     position:static;
     transform:none;
     margin:0 auto 8px;
-    width:max-content;
+    width:100%;
     max-width:100%;
+    justify-content:center;
+    white-space:normal;
+    text-align:center;
   }
 
   .topBannerText{
     font-size:.8rem;
+    line-height:1.25;
   }
 }
 
