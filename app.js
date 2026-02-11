@@ -36,10 +36,15 @@ function getSelectedQuizSource() {
 }
 
 function setSelectedQuizSource(source) {
-  $("quizSourceLegacy").checked = source !== AI_SOURCE;
-  $("quizSourceAi").checked = source === AI_SOURCE;
+  const legacyInput = $("quizSourceLegacy");
+  const aiInput = $("quizSourceAi");
+  if (legacyInput) legacyInput.checked = source !== AI_SOURCE;
+  if (aiInput) aiInput.checked = source === AI_SOURCE;
   const label = source === AI_SOURCE ? "AI" : "Legacy";
-  $("quizSourceHelp").textContent = `Using ${label} question bank.`;
+  const help = $("quizSourceHelp");
+  if (help) {
+    help.textContent = `Using ${label} question bank.`;
+  }
 }
 
 function toLegacyQuestion(aiItem, index) {
@@ -312,7 +317,10 @@ function getSelectedQuestionCount() {
 
 function updateQuestionCountText() {
   const count = getSelectedQuestionCount();
-  $("questionCountText").textContent = String(count);
+  const countText = $("questionCountText");
+  if (countText) {
+    countText.textContent = String(count);
+  }
 }
 
 function pickQuestions(count) {
