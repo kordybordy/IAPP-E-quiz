@@ -201,6 +201,11 @@ async function callOpenAiJson(messages) {
   });
 
   const data = await response.json();
+  
+  if (process.env.DEBUG_OPENAI === "1") {
+    console.log("DEBUG OpenAI data.output:", JSON.stringify(data.output, null, 2).slice(0, 4000));
+    console.log("DEBUG OpenAI data.error:", JSON.stringify(data.error, null, 2));
+  }
 
   if (!response.ok) {
     // Responses API often includes error details in JSON
