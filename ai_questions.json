@@ -1,5 +1,57 @@
 {
   "version": 1,
-  "generated_at": "2026-02-10T00:00:00Z",
-  "items": []
+  "generated_at": "2026-02-11T00:15:50.532Z",
+  "items": [
+    {
+      "id": "ai_000001",
+      "topic": "gdpr_rights",
+      "difficulty": "medium",
+      "question": "Which one is correct about both the Universal Declaration of Human Rights (UDHR) and the European Convention on Human Rights (ECHR)?",
+      "choices": [
+        "They both recognise a need for a balance between the rights of individuals and the interference with these rights",
+        "They both protect the right of freedom of expression and prioritise it over the right to privacy",
+        "They both recognise privacy as an absolute individual right",
+        "UDHR is more focused on the rights of individuals while ECHR is more focused on the balance among these rights"
+      ],
+      "correct_index": 0,
+      "source": {
+        "gdpr_ref": "GDPR (conceptual)",
+        "seed": "2026-02-11|gdpr_rights|0001"
+      }
+    },
+    {
+      "id": "ai_000002",
+      "topic": "controller_obligations",
+      "difficulty": "medium",
+      "question": "Which one primarily deals with the automatic processing of personal data?",
+      "choices": [
+        "General Data Protection Regulation (GDPR)",
+        "ePrivacy Directive",
+        "OECD Guidelines",
+        "The Council of Europe Convention (Convention 108)"
+      ],
+      "correct_index": 3,
+      "source": {
+        "gdpr_ref": "GDPR (conceptual)",
+        "seed": "2026-02-11|controller_obligations|0002"
+      }
+    },
+    {
+      "id": "ai_000003",
+      "topic": "lawful_bases",
+      "difficulty": "medium",
+      "question": "What was the reason for an additional protocol to Convention 108?",
+      "choices": [
+        "To address the fact that Convention 108 was meant for data transfers among European countries",
+        "To address the necessity of transborder data transfers",
+        "To address the fact that Convention 108 did not provide any measures for the transfer of personal data to non-signatory countries",
+        "To address challenges resulting from the use of new information and communication technologies"
+      ],
+      "correct_index": 2,
+      "source": {
+        "gdpr_ref": "GDPR (conceptual)",
+        "seed": "2026-02-11|lawful_bases|0003"
+      }
+    }
+  ]
 }
