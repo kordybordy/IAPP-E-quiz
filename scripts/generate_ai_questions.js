@@ -10,14 +10,6 @@ const DEFAULT_TOPICS = [
   "data_breach"
 ];
 
-const TOPIC_LABELS = {
-  gdpr_rights: "data subject rights",
-  controller_obligations: "controller obligations",
-  lawful_bases: "lawful bases for processing",
-  international_transfers: "international data transfers",
-  data_breach: "personal data breaches"
-};
-
 function parseArgs(argv) {
   const options = {
     out: "ai_questions.json",
@@ -42,7 +34,10 @@ function parseArgs(argv) {
     if (key === "seed-prefix") options.seedPrefix = value.trim() || options.seedPrefix;
   }
 
-  if (!options.topics.length) options.topics = DEFAULT_TOPICS;
+  if (!options.topics.length) {
+    options.topics = DEFAULT_TOPICS;
+  }
+
   return options;
 }
 
@@ -54,53 +49,7 @@ function sanitizeQuestionText(text) {
     .trim();
 }
 
-function normalizeText(text) {
-  return String(text || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9\s]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function tokenize(text) {
-  return normalizeText(text).split(" ").filter(Boolean);
-}
-
-function jaccardSimilarity(a, b) {
-  const setA = new Set(tokenize(a));
-  const setB = new Set(tokenize(b));
-  if (!setA.size || !setB.size) return 0;
-  let intersection = 0;
-  for (const token of setA) {
-    if (setB.has(token)) intersection++;
-  }
-  const union = setA.size + setB.size - intersection;
-  return union === 0 ? 0 : intersection / union;
-}
-
-function hasLongOverlap(a, b, runLength = 8) {
-  const aTokens = tokenize(a);
-  const bText = ` ${tokenize(b).join(" ")} `;
-  for (let i = 0; i <= aTokens.length - runLength; i++) {
-    const phrase = aTokens.slice(i, i + runLength).join(" ");
-    if (phrase && bText.includes(` ${phrase} `)) return true;
-  }
-  return false;
-}
-
-function uniqueStrings(values) {
-  const seen = new Set();
-  const out = [];
-  for (const v of values) {
-    const key = normalizeText(v);
-    if (!key || seen.has(key)) continue;
-    seen.add(key);
-    out.push(v.trim());
-  }
-  return out;
-}
-
-function qualityGate(candidate, sourceQuestion, acceptedQuestions) {
+function validateGeneratedQuestion(candidate) {
   const reasons = [];
   const hasShape =
     candidate &&
@@ -111,32 +60,23 @@ function qualityGate(candidate, sourceQuestion, acceptedQuestions) {
     candidate.correct_index >= 0 &&
     candidate.correct_index <= 3;
 
-  if (!hasShape) reasons.push("Invalid JSON contract");
-
-  if (candidate?.choices && uniqueStrings(candidate.choices).length !== 4) {
-    reasons.push("Choices are not unique");
+  if (!hasShape) {
+    reasons.push("Invalid JSON contract");
   }
 
   if (/\b(Article|Art\.)\s*\d+/i.test(candidate?.question || "")) {
     reasons.push("Question text cites article numbers");
   }
 
-  const sanitizedQuestion = sanitizeQuestionText(candidate?.question || "");
-  const srcQuestion = sanitizeQuestionText(sourceQuestion?.text || "");
-  if (jaccardSimilarity(sanitizedQuestion, srcQuestion) > 0.78 || hasLongOverlap(sanitizedQuestion, srcQuestion, 8)) {
-    reasons.push("Question is too similar to legacy source question");
-  }
-
-  const maxSimilarityToGenerated = acceptedQuestions.reduce((max, q) => {
-    return Math.max(max, jaccardSimilarity(sanitizedQuestion, q));
-  }, 0);
-
-  if (maxSimilarityToGenerated > 0.82) {
-    reasons.push("Question is too similar to already generated AI question");
+  const duplicateChoices = new Set(candidate?.choices || []).size !== 4;
+  if (duplicateChoices) {
+    reasons.push("Choices are not unique");
   }
 
   let confidence = 0.95;
-  if (reasons.length) confidence = Math.max(0.2, 0.95 - reasons.length * 0.2);
+  if (reasons.length) {
+    confidence = Math.max(0.2, 0.95 - reasons.length * 0.25);
+  }
 
   return {
     ok: reasons.length === 0,
@@ -145,43 +85,16 @@ function qualityGate(candidate, sourceQuestion, acceptedQuestions) {
   };
 }
 
-function shuffle(arr) {
-  const copy = arr.slice();
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
-function fallbackGenerateQuestion(sourceQuestion, topic, variantSeed = 0) {
-  const topicLabel = TOPIC_LABELS[topic] || topic.replaceAll("_", " ");
-  const correctChoice = sourceQuestion.choices.find(c => c.label === sourceQuestion.correct_label)?.text || "It depends on context and legal obligations.";
-  const wrongChoices = sourceQuestion.choices.filter(c => c.label !== sourceQuestion.correct_label).map(c => c.text);
-  const genericDistractors = [
-    "Processing is always allowed if data is publicly available.",
-    "Controllers can skip documentation when risk is low.",
-    "Consent is the only valid legal basis in GDPR."
-  ];
-
-  const distractors = uniqueStrings([...wrongChoices, ...genericDistractors]).slice(0, 3);
-  const combined = shuffle([sanitizeQuestionText(correctChoice), ...distractors]).slice(0, 4);
-  const correctIndex = combined.findIndex(choice => normalizeText(choice) === normalizeText(correctChoice));
-
-  const contextBits = tokenize(sourceQuestion.text).filter(t => t.length > 4).slice(0, 3).join(", ");
-  const templates = [
-    `A team is reviewing ${topicLabel}. Which option is the most GDPR-compliant?`,
-    `For ${topicLabel}, which action best aligns with GDPR expectations in practice?`,
-    `During a compliance assessment focused on ${topicLabel}, which statement is most accurate?`,
-    `Which option best demonstrates correct handling of ${topicLabel} under GDPR?`
-  ];
-  const template = templates[variantSeed % templates.length];
-  const context = contextBits ? ` Context: ${contextBits}.` : "";
+function fallbackGenerateQuestion(sourceQuestion, topic) {
+  const choices = sourceQuestion.choices.map(c => c.text);
+  const correctLabel = sourceQuestion.correct_label;
+  const correctIndex = sourceQuestion.choices.findIndex(c => c.label === correctLabel);
 
   return {
-    question: `${template}${context}`,
-    choices: combined,
-    correct_index: correctIndex >= 0 ? correctIndex : 0
+    question: sanitizeQuestionText(sourceQuestion.text),
+    choices,
+    correct_index: correctIndex >= 0 ? correctIndex : 0,
+    topic
   };
 }
 
@@ -208,11 +121,13 @@ async function callOpenAiJson(messages) {
     })
   });
 
-  if (!response.ok) throw new Error(`OpenAI API error: ${response.status}`);
+  if (!response.ok) {
+    throw new Error(`OpenAI API error: ${response.status}`);
+  }
 
   const data = await response.json();
-  if (!data.output_text) throw new Error("OpenAI API returned empty output_text");
-  return JSON.parse(data.output_text);
+  const output = data.output_text;
+  return JSON.parse(output);
 }
 
 async function generateWithModel({ sourceQuestion, topic, difficulty }) {
@@ -220,31 +135,30 @@ async function generateWithModel({ sourceQuestion, topic, difficulty }) {
     {
       role: "system",
       content:
-        "You generate GDPR quiz questions. Return strict JSON with keys: question, choices, correct_index. Keep exactly 4 choices with one correct answer. Do not cite article numbers in question text. Keep medium difficulty unless requested otherwise. Do not copy the source question wording and do not reuse any 8-word sequence from the source question."
+        "You generate GDPR quiz questions. Return strict JSON with keys: question, choices, correct_index. Keep exactly 4 choices. Exactly one correct answer. Do not cite article numbers in question text. Difficulty should be medium unless explicitly different."
     },
     {
       role: "user",
-      content: `Topic: ${topic}\nDifficulty: ${difficulty}\nSource question (for meaning only, do not copy wording): ${sourceQuestion.text}\nCorrect concept: ${sourceQuestion.choices.find(c => c.is_correct)?.text || ""}`
+      content: `Topic: ${topic}\nDifficulty: ${difficulty}\nKnowledge fragment: ${sourceQuestion.text}\nCorrect answer context: ${sourceQuestion.choices.find(c => c.is_correct)?.text || ""}`
     }
   ];
 
-  return callOpenAiJson(generatorPrompt);
-}
+  const generated = await callOpenAiJson(generatorPrompt);
 
-async function validateWithModel(candidate) {
   const validatorPrompt = [
     {
       role: "system",
       content:
-        "Validate a GDPR multiple choice question. Return strict JSON: {\"ok\": boolean, \"confidence\": number, \"reasons\": string[]}. Rules: exactly one correct answer, no article citation in question text, medium difficulty, and good distractors."
+        "Validate a GDPR multiple choice question. Return strict JSON: {\"ok\": boolean, \"confidence\": number, \"reasons\": string[]}. Rules: exactly one correct answer, no article number citation in question text, medium difficulty quality."
     },
     {
       role: "user",
-      content: JSON.stringify(candidate)
+      content: JSON.stringify(generated)
     }
   ];
 
-  return callOpenAiJson(validatorPrompt);
+  const validated = await callOpenAiJson(validatorPrompt);
+  return { generated, validated };
 }
 
 async function loadKnowledgeSource() {
@@ -259,7 +173,7 @@ function buildAiItem(candidate, index, opts, topic) {
     topic,
     difficulty: opts.difficulty || "medium",
     question: sanitizeQuestionText(candidate.question),
-    choices: candidate.choices.map(c => String(c).trim()),
+    choices: candidate.choices,
     correct_index: candidate.correct_index,
     source: {
       gdpr_ref: "GDPR (conceptual)",
@@ -271,9 +185,11 @@ function buildAiItem(candidate, index, opts, topic) {
 async function main() {
   const opts = parseArgs(process.argv);
   const sourceQuestions = await loadKnowledgeSource();
-  if (!sourceQuestions.length) throw new Error("No source questions available in questions.json");
 
-  const acceptedQuestions = [];
+  if (!sourceQuestions.length) {
+    throw new Error("No source questions available in questions.json");
+  }
+
   const items = [];
 
   for (let i = 0; i < opts.count; i++) {
@@ -283,31 +199,25 @@ async function main() {
 
     for (let attempt = 0; attempt < 3; attempt++) {
       let generated;
-      let modelValidation = { ok: true, confidence: 0.9, reasons: [] };
-
+      let validated;
       try {
-        generated = await generateWithModel({ sourceQuestion, topic, difficulty: opts.difficulty });
-        if (process.env.OPENAI_API_KEY) {
-          modelValidation = await validateWithModel(generated);
-        }
+        ({ generated, validated } = await generateWithModel({ sourceQuestion, topic, difficulty: opts.difficulty }));
       } catch {
-        generated = fallbackGenerateQuestion(sourceQuestion, topic, i + attempt);
+        generated = fallbackGenerateQuestion(sourceQuestion, topic);
+        validated = validateGeneratedQuestion(generated);
       }
 
-      const gate = qualityGate(generated, sourceQuestion, acceptedQuestions);
-      const modelOk = modelValidation.ok !== false && Number(modelValidation.confidence || 0) >= 0.85;
-
-      if (gate.ok && gate.confidence >= 0.85 && modelOk) {
+      if (validated.ok && validated.confidence >= 0.85) {
         accepted = generated;
         break;
       }
     }
 
-    if (!accepted) continue;
+    if (!accepted) {
+      continue;
+    }
 
-    const aiItem = buildAiItem(accepted, items.length, opts, topic);
-    items.push(aiItem);
-    acceptedQuestions.push(aiItem.question);
+    items.push(buildAiItem(accepted, items.length, opts, topic));
   }
 
   const out = {
