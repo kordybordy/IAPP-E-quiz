@@ -116,7 +116,30 @@ Optional paths:
 python3 scripts/export_questions.py --input questions.corrected.json --out-csv out.csv --out-xlsx out.xlsx
 ```
 
-### Run tests
+#
+## Legacy / AI quiz source mode
+- The home screen includes a **Question source** switch: `Legacy` (`questions.json`) or `AI` (`ai_questions.json`).
+- The selected source is persisted in `localStorage` under `quiz_source`.
+- If AI mode is selected and `ai_questions.json` is missing or empty, the app shows: `Brak puli AI. Spróbuj później.`
+
+## Generate AI question pool offline
+Use the generator script:
+
+```bash
+node scripts/generate_ai_questions.js   --out ai_questions.json   --count 200   --topics gdpr_rights,controller_obligations,lawful_bases,international_transfers,data_breach   --difficulty medium   --seed-prefix 2026-02-10
+```
+
+The script reads `OPENAI_API_KEY` from env when available and writes a stable format:
+- `version`
+- `generated_at`
+- `items[]`
+
+## GitHub Actions for automated generation
+Two workflow variants are included:
+- `.github/workflows/generate-ai-questions-direct.yml` - scheduled/manual run that commits directly to the default branch.
+- `.github/workflows/generate-ai-questions-pr.yml` - scheduled/manual run that opens a PR to the default branch.
+
+## Run tests
 ```bash
 npm test
 ```
