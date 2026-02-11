@@ -8,6 +8,7 @@ const DEFAULT_QUESTION_COUNT = 90;
 const DEFAULT_TIMER_MINUTES = 225;
 const LEGACY_SOURCE = "legacy";
 const AI_SOURCE = "ai";
+const MIXED_SOURCE = "mixed";
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -23,7 +24,8 @@ function uid() {
 
 function loadQuizSource() {
   const raw = localStorage.getItem(QUIZ_SOURCE_KEY);
-  return raw === AI_SOURCE ? AI_SOURCE : LEGACY_SOURCE;
+  if (raw === AI_SOURCE || raw === MIXED_SOURCE) return raw;
+  return LEGACY_SOURCE;
 }
 
 function saveQuizSource(source) {
@@ -32,15 +34,23 @@ function saveQuizSource(source) {
 
 function getSelectedQuizSource() {
   const ai = $("quizSourceAi");
+  const mixed = $("quizSourceMixed");
+  if (mixed && mixed.checked) return MIXED_SOURCE;
   return ai && ai.checked ? AI_SOURCE : LEGACY_SOURCE;
 }
 
 function setSelectedQuizSource(source) {
   const legacyInput = $("quizSourceLegacy");
   const aiInput = $("quizSourceAi");
-  if (legacyInput) legacyInput.checked = source !== AI_SOURCE;
+  const mixedInput = $("quizSourceMixed");
+  if (legacyInput) legacyInput.checked = source === LEGACY_SOURCE;
   if (aiInput) aiInput.checked = source === AI_SOURCE;
-  const label = source === AI_SOURCE ? "AI" : "Legacy";
+  if (mixedInput) mixedInput.checked = source === MIXED_SOURCE;
+
+  let label = "Legacy";
+  if (source === AI_SOURCE) label = "AI";
+  if (source === MIXED_SOURCE) label = "Mixed (50% AI + 50% Legacy)";
+
   const help = $("quizSourceHelp");
   if (help) {
     help.textContent = `Using ${label} question bank.`;
@@ -88,6 +98,19 @@ function normalizeBank(raw, sourceType) {
 }
 
 async function loadQuestionBank(sourceType) {
+  if (sourceType === MIXED_SOURCE) {
+    const [legacyBank, aiBank] = await Promise.all([
+      loadQuestionBank(LEGACY_SOURCE),
+      loadQuestionBank(AI_SOURCE).catch(() => ({ question_count: 0, questions: [] }))
+    ]);
+
+    const questions = [...legacyBank.questions, ...aiBank.questions];
+    return {
+      question_count: questions.length,
+      questions
+    };
+  }
+
   const targetFile = sourceType === AI_SOURCE ? "ai_questions.json" : "questions.json";
   let response;
   try {
@@ -287,7 +310,7 @@ function show(sectionId) {
 function setBankInfo(sourceType = LEGACY_SOURCE) {
   const info = $("questionBankInfo");
   if (!bank) { info.textContent = "Loading question bank…"; return; }
-  const sourceLabel = sourceType === AI_SOURCE ? "AI" : "Legacy";
+  const sourceLabel = sourceType === AI_SOURCE ? "AI" : sourceType === MIXED_SOURCE ? "Mixed" : "Legacy";
   info.textContent = `${bank.question_count} questions loaded (${sourceLabel})`;
   const maxCount = Math.max(1, bank.question_count);
   const input = $("questionCount");
@@ -323,10 +346,43 @@ function updateQuestionCountText() {
   }
 }
 
-function pickQuestions(count) {
+function isAiQuestion(question) {
+  return question && question.exam === "AI";
+}
+
+function pickQuestions(count, sourceType) {
+  const requested = Math.max(1, count);
+
+  if (sourceType === MIXED_SOURCE) {
+    const aiIds = bank.questions.filter(isAiQuestion).map(q => q.id);
+    const legacyIds = bank.questions.filter(q => !isAiQuestion(q)).map(q => q.id);
+
+    shuffle(aiIds);
+    shuffle(legacyIds);
+
+    const targetAi = Math.floor(requested / 2);
+    const targetLegacy = requested - targetAi;
+
+    const pickedAi = aiIds.slice(0, Math.min(targetAi, aiIds.length));
+    const missingAi = targetAi - pickedAi.length;
+
+    const legacyNeed = targetLegacy + Math.max(0, missingAi);
+    const pickedLegacy = legacyIds.slice(0, Math.min(legacyNeed, legacyIds.length));
+
+    const picked = [...pickedLegacy, ...pickedAi];
+
+    if (picked.length < requested) {
+      const used = new Set(picked);
+      const aiOverflow = aiIds.filter(id => !used.has(id));
+      picked.push(...aiOverflow.slice(0, requested - picked.length));
+    }
+
+    return shuffle(picked).slice(0, requested);
+  }
+
   const all = bank.questions.map(q => q.id);
   shuffle(all);
-  return all.slice(0, count);
+  return all.slice(0, requested);
 }
 
 function startNewAttempt() {
@@ -335,6 +391,7 @@ function startNewAttempt() {
   }
   const count = getSelectedQuestionCount();
   const timer = getTimerSettings();
+  const sourceType = getSelectedQuizSource();
   const nickname = $("nickname").value.trim();
   const eligibleForLeaderboard = isDefaultMode(count, timer.enabled, timer.minutes);
   const now = Date.now();
@@ -342,7 +399,7 @@ function startNewAttempt() {
   attempt = {
     id: uid(),
     createdAt: new Date().toISOString(),
-    questionIds: pickQuestions(count),
+    questionIds: pickQuestions(count, sourceType),
     answers: {},         // { [qid]: 'A'|'B'|'C'|'D' }
     submitted: false,
     results: null,
