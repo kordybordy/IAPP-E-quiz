@@ -5,7 +5,7 @@ const STORAGE_KEY = "exam_simulator_static_v2";
 const LEADERBOARD_KEY = "exam_simulator_leaderboard_v1";
 const QUIZ_SOURCE_KEY = "quiz_source";
 const DEFAULT_QUESTION_COUNT = 90;
-const DEFAULT_TIMER_MINUTES = 225;
+const DEFAULT_TIMER_MINUTES = 150;
 const LEGACY_SOURCE = "legacy";
 const AI_SOURCE = "ai";
 const MIXED_SOURCE = "mixed";
@@ -224,7 +224,7 @@ function updateNicknameHelp() {
   const eligible = isDefaultMode(count, enabled, minutes);
   $("nicknameHelp").textContent = eligible
     ? "Eligible for leaderboard (default mode)."
-    : "Only used for default mode (90 questions + 225-minute timer).";
+    : "Only used for default mode (90 questions + 150-minute timer).";
 }
 
 function renderLeaderboard() {
