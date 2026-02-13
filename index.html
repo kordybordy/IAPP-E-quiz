@@ -114,11 +114,17 @@
 
     <section id="leaderboardTab" class="card" style="display:none;">
       <div class="resultsHeader">
-        <h2>Leaderboard (default mode only)</h2>
+        <h2>Leaderboard</h2>
         <div class="controls">
           <button id="leaderboardBackBtn" class="secondary">Back to home</button>
         </div>
       </div>
+      <p id="globalLeaderboardNotice" class="muted small"></p>
+
+      <h3>Global leaderboard</h3>
+      <div id="globalLeaderboardList" class="leaderboardList muted small">Loading…</div>
+
+      <h3>Local fallback leaderboard</h3>
       <div id="leaderboardList" class="leaderboardList muted small">No entries yet.</div>
     </section>
 
@@ -132,6 +138,20 @@
       </div>
 
       <p id="scoreLine" class="scoreLine"></p>
+      <div class="fieldRow">
+        <label class="fieldLabel" for="resultsName">Name</label>
+        <div class="fieldControl">
+          <input id="resultsName" type="text" maxlength="30" placeholder="Your name for the global leaderboard" />
+          <div class="controls">
+            <button id="saveResultBtn" class="secondary" type="button">Save result</button>
+          </div>
+          <span id="saveResultMessage" class="muted small"></span>
+        </div>
+      </div>
+
+      <h3>Global leaderboard</h3>
+      <div id="resultsGlobalLeaderboardList" class="leaderboardList muted small">Loading…</div>
+
       <div class="filters">
         <label class="checkbox">
           <input type="checkbox" id="showOnlyWrong" />
@@ -146,7 +166,7 @@
   <footer class="footer muted small">
     Tip: you can host this on GitHub Pages (static site). No Python required.
   </footer>
-
+  <script src="src/leaderboard/supabaseLeaderboard.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
