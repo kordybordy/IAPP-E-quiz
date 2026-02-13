@@ -227,16 +227,6 @@ function updateTimerSummary() {
   timerSummary.textContent = enabled ? `${minutes} min` : "off";
 }
 
-function updateNicknameHelp() {
-  const helpEl = $("nicknameHelp");
-  if (!helpEl) return;
-  const count = getSelectedQuestionCount();
-  const { enabled, minutes } = getTimerSettings();
-  const eligible = isDefaultMode(count, enabled, minutes);
-  helpEl.textContent = eligible
-    ? "Eligible for leaderboard (default mode)."
-    : "Only used for default mode (90 questions + 150-minute timer).";
-}
 
 function renderLeaderboard() {
   const entries = loadLeaderboard();
@@ -518,7 +508,6 @@ function startNewAttempt() {
   const count = getSelectedQuestionCount();
   const timer = getTimerSettings();
   const sourceType = getSelectedQuizSource();
-  const nickname = $("nickname").value.trim();
   const eligibleForLeaderboard = isDefaultMode(count, timer.enabled, timer.minutes);
   const now = Date.now();
 
@@ -534,7 +523,7 @@ function startNewAttempt() {
     timerEnabled: timer.enabled,
     timerMinutes: timer.minutes,
     timerEndsAt: timer.enabled ? now + timer.minutes * 60 * 1000 : null,
-    nickname: eligibleForLeaderboard ? nickname : "",
+    nickname: "",
     isDefaultMode: eligibleForLeaderboard
   };
   currentIndex = 0;
@@ -752,14 +741,14 @@ async function init() {
   $("startBtn").onclick = startNewAttempt;
   $("newAttemptBtn").onclick = () => { clearAttempt(); startNewAttempt(); };
   $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
+  $("homeTabBtn").onclick = () => { stopTimer(); show("home"); };
   $("leaderboardTabBtn").onclick = async () => { renderLeaderboard(); await refreshGlobalLeaderboards(); show("leaderboardTab"); };
   $("leaderboardBackBtn").onclick = () => { show("home"); };
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
-  $("questionCount").oninput = () => { updateQuestionCountText(); updateNicknameHelp(); };
-  $("timerEnabled").onchange = () => { updateTimerSummary(); updateNicknameHelp(); };
-  $("timerMinutes").oninput = () => { updateTimerSummary(); updateNicknameHelp(); };
-  $("nickname").oninput = () => updateNicknameHelp();
+  $("questionCount").oninput = () => { updateQuestionCountText(); };
+  $("timerEnabled").onchange = () => { updateTimerSummary(); };
+  $("timerMinutes").oninput = () => { updateTimerSummary(); };
   $("resultsName").value = getSavedLeaderboardName();
 
   $("prevBtn").onclick = () => { currentIndex--; renderExam(); };
@@ -794,7 +783,6 @@ async function init() {
         bank = await loadQuestionBank(nextSource);
         setBankInfo(nextSource);
         updateQuestionCountText();
-        updateNicknameHelp();
         $("startBtn").disabled = false;
       } catch (error) {
         $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
@@ -807,16 +795,31 @@ async function init() {
     bank = await loadQuestionBank(savedSource);
     setBankInfo(savedSource);
   } catch (error) {
-    $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
-    $("startBtn").disabled = true;
-    updateTimerSummary();
-    updateNicknameHelp();
-    renderLeaderboard();
-    refreshGlobalLeaderboards();
-    return;
+    if (savedSource !== LEGACY_SOURCE) {
+      try {
+        bank = await loadQuestionBank(LEGACY_SOURCE);
+        saveQuizSource(LEGACY_SOURCE);
+        setSelectedQuizSource(LEGACY_SOURCE);
+        setBankInfo(LEGACY_SOURCE);
+        $("questionBankInfo").textContent = `${bank.question_count} questions loaded (Legacy)`;
+      } catch (legacyError) {
+        $("questionBankInfo").textContent = legacyError.message || "Failed to load question bank.";
+        $("startBtn").disabled = true;
+        updateTimerSummary();
+        renderLeaderboard();
+        refreshGlobalLeaderboards();
+        return;
+      }
+    } else {
+      $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
+      $("startBtn").disabled = true;
+      updateTimerSummary();
+      renderLeaderboard();
+      refreshGlobalLeaderboards();
+      return;
+    }
   }
   updateTimerSummary();
-  updateNicknameHelp();
   renderLeaderboard();
   refreshGlobalLeaderboards();
 
@@ -827,10 +830,8 @@ async function init() {
     $("questionCount").value = String(attempt.questionIds.length);
     $("timerEnabled").checked = !!attempt.timerEnabled;
     $("timerMinutes").value = String(attempt.timerMinutes || DEFAULT_TIMER_MINUTES);
-    $("nickname").value = attempt.nickname || "";
     updateQuestionCountText();
     updateTimerSummary();
-    updateNicknameHelp();
     $("resumeBtn").style.display = "";
     $("resetBtn").style.display = "";
     if (attempt.submitted) {
