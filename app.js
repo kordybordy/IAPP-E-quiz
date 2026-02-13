@@ -216,7 +216,7 @@ function updateTimerSummary() {
   const { enabled } = getTimerSettings();
   const timerSummary = $("timerSummary");
   if (!timerSummary) return;
-  timerSummary.textContent = enabled ? "" : "off";
+  timerSummary.textContent = enabled ? "minutes" : "off";
 }
 
 

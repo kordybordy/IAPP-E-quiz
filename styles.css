@@ -246,12 +246,18 @@ a{ color:var(--paper); }
 .settingsGrid .fieldRow:last-child{ border-bottom:none; }
 
 .settingsGrid .fieldLabel{
+  display:flex;
+  align-items:center;
   padding:var(--space-2);
   border-right:1px solid var(--border);
   background:rgba(255,255,255,.08);
 }
 
-.settingsGrid .fieldControl{ padding:var(--space-2); }
+.settingsGrid .fieldControl{
+  display:flex;
+  align-items:center;
+  padding:var(--space-2);
+}
 
 .startRow{ justify-content:center; align-items:center; }
 
