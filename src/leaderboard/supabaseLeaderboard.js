@@ -15,13 +15,10 @@
     return Boolean(cfg.url && cfg.anonKey);
   }
 
-  function parseBodyText(text, fallbackMessage) {
-    if (!text) return { message: fallbackMessage };
-    try {
-      return JSON.parse(text);
-    } catch (error) {
-      return { message: text };
-    }
+  function parseJsonSafe(response, fallbackMessage) {
+    return response
+      .json()
+      .catch(() => ({ message: fallbackMessage }));
   }
 
   function validatePayload(payload) {
@@ -37,7 +34,7 @@
       throw new Error("Score data is invalid.");
     }
 
-    let durationSeconds = null;
+    let durationSeconds;
     if (payload?.durationSeconds != null && payload.durationSeconds !== "") {
       durationSeconds = Number(payload.durationSeconds);
       if (!Number.isInteger(durationSeconds) || durationSeconds < 0) {
@@ -77,22 +74,18 @@
           name: valid.name,
           score: valid.score,
           total: valid.total,
-          duration_seconds: valid.durationSeconds,
-          mode: valid.mode
+          mode: valid.mode,
+          duration_seconds: valid.durationSeconds
         }
       ])
     });
 
-    const bodyText = await response.text();
-    console.log("Supabase submitScore response:", response.status, bodyText);
-
     if (!response.ok) {
-      const details = parseBodyText(bodyText, "Unable to save score");
-      throw new Error(details.message || bodyText || "Unable to save score");
+      const details = await parseJsonSafe(response, "Unable to save score");
+      throw new Error(details.message || "Unable to save score");
     }
 
-    const parsed = parseBodyText(bodyText, "Saved.");
-    return Array.isArray(parsed) ? parsed : [parsed];
+    return parseJsonSafe(response, "Saved.");
   }
 
   async function fetchTopScores(options = {}) {
@@ -118,15 +111,12 @@
       }
     });
 
-    const bodyText = await response.text();
-    console.log("Supabase fetchTopScores response:", response.status, bodyText);
-
     if (!response.ok) {
-      const details = parseBodyText(bodyText, "Unable to fetch leaderboard");
-      throw new Error(details.message || bodyText || "Unable to fetch leaderboard");
+      const details = await parseJsonSafe(response, "Unable to fetch leaderboard");
+      throw new Error(details.message || "Unable to fetch leaderboard");
     }
 
-    const rows = parseBodyText(bodyText, "[]");
+    const rows = await response.json();
     return Array.isArray(rows) ? rows : [];
   }
 
