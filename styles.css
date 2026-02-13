@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap");
-
 :root{
+  --ui-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: ui-serif, Georgia, "Times New Roman", serif;
   --dwf-950:#062846;
   --dwf-900:#0a3659;
   --dwf-850:#0f466f;
@@ -26,13 +26,17 @@
 *{ box-sizing:border-box; }
 body{
   margin:0;
-  font-family:"Merriweather", serif;
+  font-family:var(--ui-font);
+  font-size:16px;
+  line-height:1.45;
   color:var(--paper);
   min-height:100vh;
   background:linear-gradient(100deg,var(--dwf-950) 0%,var(--dwf-900) 50%,var(--dwf-850) 100%);
   position:relative;
   overflow-x:hidden;
 }
+
+#home h1{ font-family:var(--heading-font); }
 
 body::before{
   content:"";
