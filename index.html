@@ -12,14 +12,15 @@
   </a>
 
   <header class="topbar">
-    <div class="topBannerTag"><span class="topBannerLogo" aria-label="DWF">dwf</span><span class="topBannerText">Data Protection Extend &amp; Accelerate</span></div>
-    <div class="topLeft">
-      <div class="brand">Exam Simulator</div>
+    <div class="topLeft" aria-hidden="true"></div>
+    <div class="topCenter">
+      <div class="topBannerTag"><span class="topBannerLogo" aria-label="DWF">dwf</span><span class="topBannerText">Data Protection Extend &amp; Accelerate</span></div>
+      <div class="topNavButtons">
+      <button id="homeTabBtn" class="secondary smallBtn" type="button">Exam Simulator</button>
       <button id="leaderboardTabBtn" class="secondary smallBtn" type="button">Leaderboard</button>
+      </div>
     </div>
-    <div class="meta">
-      <span id="questionBankInfo" class="muted">Loading question bank…</span>
-    </div>
+    <div class="meta" aria-hidden="true"></div>
   </header>
 
   <main class="container">
@@ -33,6 +34,7 @@
       <div class="fieldRow">
         <label class="fieldLabel" for="quizSourceLegacy">Question source</label>
         <div class="fieldControl">
+          <div class="sourceHeaderRow">
           <div class="sourceToggle" role="radiogroup" aria-label="Question source">
             <label class="radioPill">
               <input id="quizSourceLegacy" type="radio" name="quizSource" value="legacy" checked />
@@ -46,6 +48,8 @@
               <input id="quizSourceMixed" type="radio" name="quizSource" value="mixed" />
               Mixed (50/50)
             </label>
+          </div>
+          <span class="muted small" id="questionBankInfo">Loading question bank…</span>
           </div>
           <span class="muted small" id="quizSourceHelp"></span>
         </div>
@@ -69,14 +73,6 @@
           <input id="timerMinutes" type="number" min="1" step="1" value="150" />
           <span class="muted small">minutes</span>
           <span class="muted small" id="timerSummary"></span>
-        </div>
-      </div>
-
-      <div class="fieldRow">
-        <label class="fieldLabel" for="nickname">Nickname</label>
-        <div class="fieldControl">
-          <input id="nickname" type="text" maxlength="24" placeholder="Leaderboard nickname" />
-          <span class="muted small" id="nicknameHelp">Only used for default mode (90 questions + 150-minute timer).</span>
         </div>
       </div>
 
