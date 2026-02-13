@@ -50,6 +50,7 @@ Expected table: `public.leaderboard_scores` with RLS enabled and anon policies:
 - Results screen has a name input + **Save result** button.
 - Global leaderboard loads from Supabase.
 - If request fails, app keeps working with localStorage leaderboard and shows a warning.
+- Requests include both required headers for browser Data API access: `apikey` and `Authorization: Bearer <anon key>`.
 
 ### Quick verification
 1. Finish an exam and submit a score with **Save result**.
