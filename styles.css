@@ -215,8 +215,29 @@ a{ color:var(--paper); }
 .fieldControl{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 
 .sourceToggle{ display:flex; gap:8px; flex-wrap:wrap; }
-.sourceHeaderRow{ display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; flex-wrap:wrap; }
+
+.sourceHeaderRow{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+  flex-wrap:nowrap;
+}
 #questionBankInfo{ margin-left:auto; text-align:right; white-space:nowrap; }
+
+.timerControl{
+  flex-wrap:nowrap;
+}
+
+#timerMinutes{
+  width:96px;
+}
+
+#timerSummary{
+  white-space:nowrap;
+  min-width:58px;
+}
 
 .radioPill{
   display:inline-flex;
@@ -257,6 +278,10 @@ a{ color:var(--paper); }
   display:flex;
   align-items:center;
   padding:var(--space-2);
+}
+
+.settingsGrid .fieldRow:first-child .fieldControl{
+  align-items:flex-start;
 }
 
 .startRow{ justify-content:center; align-items:center; }
@@ -492,6 +517,10 @@ input[type="text"]:focus-visible,
   .sourceToggle,
   .radioPill{
     width:100%;
+  }
+
+  .timerControl{
+    flex-wrap:wrap;
   }
 
   .radioPill{
