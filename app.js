@@ -208,8 +208,14 @@ function isDefaultMode(questionCount, timerEnabled, timerMinutes) {
 }
 
 function getTimerSettings() {
-  const enabled = $("timerEnabled").checked;
-  const raw = parseInt($("timerMinutes").value, 10);
+  const timerEnabledEl = $("timerEnabled");
+  const timerMinutesEl = $("timerMinutes");
+  if (!timerEnabledEl || !timerMinutesEl) {
+    return { enabled: true, minutes: DEFAULT_TIMER_MINUTES };
+  }
+
+  const enabled = timerEnabledEl.checked;
+  const raw = parseInt(timerMinutesEl.value, 10);
   const minutes = Number.isFinite(raw) && raw > 0 ? raw : DEFAULT_TIMER_MINUTES;
   return { enabled, minutes };
 }
@@ -222,10 +228,12 @@ function updateTimerSummary() {
 }
 
 function updateNicknameHelp() {
+  const helpEl = $("nicknameHelp");
+  if (!helpEl) return;
   const count = getSelectedQuestionCount();
   const { enabled, minutes } = getTimerSettings();
   const eligible = isDefaultMode(count, enabled, minutes);
-  $("nicknameHelp").textContent = eligible
+  helpEl.textContent = eligible
     ? "Eligible for leaderboard (default mode)."
     : "Only used for default mode (90 questions + 150-minute timer).";
 }
