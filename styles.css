@@ -96,7 +96,34 @@ a{ color:var(--paper); }
 .topLeft{ display:flex; align-items:center; gap:10px; min-height:1px; }
 .topCenter{ display:flex; flex-direction:column; align-items:center; gap:8px; }
 .topNavButtons{ display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
-.topNavBtn{ padding: 14px 22px; font-size: 1.15rem; font-weight:800; min-height:52px; border-radius:14px; }
+
+.navTabs{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px;
+  border-radius:999px;
+  min-height:44px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.24);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.2);
+}
+
+.navTab{
+  padding:0 18px;
+  font-size:1rem;
+  font-weight:800;
+  height:44px;
+  border-radius:999px;
+  border-color:transparent;
+  background:transparent;
+}
+
+.navTab.active{
+  background:rgba(255,255,255,.92);
+  color:#13304a;
+  box-shadow:0 6px 14px rgba(0,0,0,.2);
+}
 
 .topBannerTag{
   position:static;

@@ -371,6 +371,10 @@ function show(sectionId) {
   ["home","exam","leaderboardTab","results"].forEach(id => {
     $(id).style.display = (id === sectionId) ? "" : "none";
   });
+
+  const isLeaderboardView = sectionId === "leaderboardTab";
+  $("homeTabBtn").classList.toggle("active", !isLeaderboardView);
+  $("leaderboardTabBtn").classList.toggle("active", isLeaderboardView);
 }
 
 function setBankInfo(sourceType = LEGACY_SOURCE) {
