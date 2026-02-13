@@ -220,12 +220,14 @@ a{ color:var(--paper); }
 
 .radioPill{
   display:inline-flex;
-  gap:8px;
+  gap:10px;
   align-items:center;
+  min-height:44px;
   border:1px solid var(--border);
-  border-radius:999px;
-  padding:6px 10px;
+  border-radius:12px;
+  padding:10px 14px;
   background:rgba(255,255,255,.10);
+  transition:transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease, filter 120ms ease;
 }
 
 .radioPill input{ margin:0; accent-color:var(--dwf-500); }
@@ -258,12 +260,14 @@ a{ color:var(--paper); }
 input[type="number"],
 input[type="text"]{
   width:120px;
+  min-height:44px;
   padding:10px 12px;
-  border-radius:10px;
-  border:0;
+  border-radius:12px;
+  border:1px solid transparent;
   background:var(--paper-90);
   color:#13304a;
   font-family:inherit;
+  transition:transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
 }
 
 input[type="checkbox"]{ accent-color:var(--dwf-500); }
@@ -272,12 +276,29 @@ button{
   border:1px solid var(--border);
   background:rgba(255,255,255,.10);
   color:var(--paper);
+  min-height:44px;
   padding:10px 12px;
   border-radius:12px;
   cursor:pointer;
   font-family:inherit;
+  transition:transform 120ms ease, background-color 120ms ease, filter 120ms ease, box-shadow 120ms ease;
 }
-button:disabled{ opacity:.55; cursor:not-allowed; }
+button:disabled,
+input[type="number"]:disabled,
+input[type="text"]:disabled,
+.radioPill:has(input:disabled){
+  opacity:.72;
+  cursor:not-allowed;
+  transform:none;
+  filter:none;
+  transition:none;
+}
+
+input[type="number"]:disabled,
+input[type="text"]:disabled{
+  background:var(--paper-70);
+  color:#30465e;
+}
 button.primary{
   background:linear-gradient(180deg,#c01462,var(--dwf-500));
   border-color:transparent;
@@ -286,7 +307,30 @@ button.primary{
 }
 button.secondary{ background: rgba(255,255,255,.12); }
 button.danger{ background: rgba(255,120,160,.2); border-color: rgba(255,170,195,.45); }
-button:hover:not(:disabled){ filter:brightness(1.05); }
+button:hover:not(:disabled),
+input[type="number"]:hover:not(:disabled),
+input[type="text"]:hover:not(:disabled),
+.radioPill:hover:not(:has(input:disabled)){
+  transform:translateY(-1px);
+  filter:brightness(1.05);
+}
+
+button:active:not(:disabled),
+input[type="number"]:active:not(:disabled),
+input[type="text"]:active:not(:disabled),
+.radioPill:active:not(:has(input:disabled)){
+  transform:translateY(0);
+  filter:brightness(.97);
+}
+
+button:focus-visible,
+input[type="number"]:focus-visible,
+input[type="text"]:focus-visible,
+.radioPill:has(input:focus-visible){
+  outline:2px solid var(--dwf-500);
+  outline-offset:2px;
+  box-shadow:0 0 0 3px rgba(225,22,106,.28);
+}
 
 .muted{ color: var(--paper-80); }
 .small,
