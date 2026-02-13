@@ -18,19 +18,35 @@ let timerIntervalId = null;
 
 const $ = (id) => document.getElementById(id);
 
+function safeStorageGet(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (error) {
+    return null;
+  }
+}
+
+function safeStorageSet(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (error) {
+    // ignore
+  }
+}
+
 function uid() {
   return Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
 }
 
 
 function loadQuizSource() {
-  const raw = localStorage.getItem(QUIZ_SOURCE_KEY);
+  const raw = safeStorageGet(QUIZ_SOURCE_KEY);
   if (raw === AI_SOURCE || raw === MIXED_SOURCE) return raw;
   return LEGACY_SOURCE;
 }
 
 function saveQuizSource(source) {
-  localStorage.setItem(QUIZ_SOURCE_KEY, source);
+  safeStorageSet(QUIZ_SOURCE_KEY, source);
 }
 
 function getSelectedQuizSource() {
@@ -257,11 +273,11 @@ function leaderboardMode() {
 }
 
 function getSavedLeaderboardName() {
-  return localStorage.getItem(LEADERBOARD_NAME_KEY) || "";
+  return safeStorageGet(LEADERBOARD_NAME_KEY) || "";
 }
 
 function saveLeaderboardName(name) {
-  localStorage.setItem(LEADERBOARD_NAME_KEY, name);
+  safeStorageSet(LEADERBOARD_NAME_KEY, name);
 }
 
 function renderListEntries(listEl, rows, formatter, emptyText) {
