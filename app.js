@@ -265,8 +265,20 @@ function globalLeaderboardFallbackMessage(error, action) {
 function formatGlobalLeaderboardRows(rows) {
   return rows.map((entry, idx) => {
     const pct = safePercent(entry.score, entry.total, entry.pct).toFixed(1);
-    const duration = Number.isInteger(entry.duration_seconds) ? ` in ${formatDuration(entry.duration_seconds)}` : "";
-    return `<div>${idx + 1}. ${entry.name} — ${entry.score}/${entry.total} (${pct}%)${duration}</div>`;
+    const duration = Number.isInteger(entry.duration_seconds) ? formatDuration(entry.duration_seconds) : "—";
+    return `
+      <div class="lbRow">
+        <div class="lbPrimary">
+          <span class="lbRank">#${idx + 1}</span>
+          <span class="lbName">${entry.name}</span>
+        </div>
+        <div class="lbMeta">
+          <span class="lbScore">${entry.score}/${entry.total}</span>
+          <span class="lbPercent">${pct}%</span>
+          <span class="lbDuration">${duration}</span>
+        </div>
+      </div>
+    `;
   });
 }
 
