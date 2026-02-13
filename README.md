@@ -38,7 +38,7 @@ Just open `index.html` in a browser.
 The app supports a shared global leaderboard via Supabase REST API (`fetch`, no `supabase-js`).
 
 The Supabase project URL and public anon key are hardcoded in `src/leaderboard/supabaseLeaderboard.js`:
-- `SUPABASE_URL`: `https://afcwekhfisodipdijicd.supabase.com`
+- `SUPABASE_URL`: `https://afcwekhfisodipdijicd.supabase.co`
 - `SUPABASE_ANON_KEY`: `sb_publishable_L7pMKjrigH0hgcYjq4SXmA_8TIY4Wxq`
 
 ### Required table/policies

@@ -1,6 +1,6 @@
 (function attachSupabaseLeaderboard(global) {
   const DEFAULT_LIMIT = 20;
-  const SUPABASE_URL = "https://afcwekhfisodipdijicd.supabase.com";
+  const SUPABASE_URL = "https://afcwekhfisodipdijicd.supabase.co";
   const SUPABASE_ANON_KEY = "sb_publishable_L7pMKjrigH0hgcYjq4SXmA_8TIY4Wxq";
 
   function getConfig() {
@@ -61,11 +61,15 @@
 
     const valid = validatePayload(payload);
 
+    const headers = {
+      apikey: cfg.anonKey,
+      Authorization: `Bearer ${cfg.anonKey}`
+    };
+
     const response = await fetch(`${cfg.url}/rest/v1/leaderboard_scores`, {
       method: "POST",
       headers: {
-        apikey: cfg.anonKey,
-        Authorization: `Bearer ${cfg.anonKey}`,
+        ...headers,
         "Content-Type": "application/json",
         Prefer: "return=representation"
       },
@@ -104,11 +108,13 @@
       query.set("mode", `eq.${String(options.mode).trim()}`);
     }
 
+    const headers = {
+      apikey: cfg.anonKey,
+      Authorization: `Bearer ${cfg.anonKey}`
+    };
+
     const response = await fetch(`${cfg.url}/rest/v1/leaderboard_scores?${query.toString()}`, {
-      headers: {
-        apikey: cfg.anonKey,
-        Authorization: `Bearer ${cfg.anonKey}`
-      }
+      headers
     });
 
     if (!response.ok) {
