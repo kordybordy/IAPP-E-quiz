@@ -30,7 +30,32 @@ Just open `index.html` in a browser.
 
 
 ## Privacy
-All answers are stored only in your browser (LocalStorage). Nothing is sent anywhere.
+- Answers and in-progress attempts are stored in your browser (LocalStorage).
+- If global leaderboard is configured and you click **Save result**, score data is sent to Supabase.
+
+## Global leaderboard (Supabase)
+
+The app supports a shared global leaderboard via Supabase REST API (`fetch`, no `supabase-js`).
+
+The Supabase project URL and public anon key are hardcoded in `src/leaderboard/supabaseLeaderboard.js`:
+- `SUPABASE_URL`: `https://afcwekhfisodipdijicd.supabase.com`
+- `SUPABASE_ANON_KEY`: `sb_publishable_L7pMKjrigH0hgcYjq4SXmA_8TIY4Wxq`
+
+### Required table/policies
+Expected table: `public.leaderboard_scores` with RLS enabled and anon policies:
+- `SELECT` for anon
+- `INSERT` for anon
+
+### How it works
+- Results screen has a name input + **Save result** button.
+- Global leaderboard loads from Supabase.
+- If request fails, app keeps working with localStorage leaderboard and shows a warning.
+- Requests include both required headers for browser Data API access: `apikey` and `Authorization: Bearer <anon key>`.
+
+### Quick verification
+1. Finish an exam and submit a score with **Save result**.
+2. Confirm the entry appears in the global leaderboard section.
+3. If Supabase is temporarily unavailable, confirm fallback local leaderboard still works.
 
 ## AI mode: "paragraph -> question" with quality gates
 
