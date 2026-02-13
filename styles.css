@@ -82,7 +82,7 @@ a{ color:var(--paper); }
 .topLeft{ display:flex; align-items:center; gap:10px; min-height:1px; }
 .topCenter{ display:flex; flex-direction:column; align-items:center; gap:8px; }
 .topNavButtons{ display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
-.smallBtn{ padding: 7px 10px; font-size: .85rem; }
+.topNavBtn{ padding: 14px 22px; font-size: 1.15rem; font-weight:800; min-height:52px; border-radius:14px; }
 
 .topBannerTag{
   position:static;
@@ -262,6 +262,22 @@ button:hover:not(:disabled){ filter:brightness(1.05); }
 .navRow{ margin-top:12px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
 
 .resultsHeader{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+
+.leaderboardHeader{
+  justify-content:center;
+  text-align:center;
+}
+
+.leaderboardTitle{
+  margin:0 auto;
+}
+
+.leaderboardBackRow{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:14px;
+}
 .scoreLine{ font-size:1.15rem; margin:12px 0; }
 .filters{ margin:12px 0; }
 .checkbox{ display:flex; gap:10px; align-items:center; }
