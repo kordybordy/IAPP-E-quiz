@@ -2,7 +2,6 @@
 // Loads questions.json, draws random questions, scores in-browser.
 
 const STORAGE_KEY = "exam_simulator_static_v2";
-const LEADERBOARD_KEY = "exam_simulator_leaderboard_v1";
 const LEADERBOARD_NAME_KEY = "exam_simulator_last_leaderboard_name";
 const QUIZ_SOURCE_KEY = "quiz_source";
 const DEFAULT_QUESTION_COUNT = 90;
@@ -64,14 +63,6 @@ function setSelectedQuizSource(source) {
   if (aiInput) aiInput.checked = source === AI_SOURCE;
   if (mixedInput) mixedInput.checked = source === MIXED_SOURCE;
 
-  let label = "Legacy";
-  if (source === AI_SOURCE) label = "AI";
-  if (source === MIXED_SOURCE) label = "Mixed (50% AI + 50% Legacy)";
-
-  const help = $("quizSourceHelp");
-  if (help) {
-    help.textContent = `Using ${label} question bank.`;
-  }
 }
 
 function toLegacyQuestion(aiItem, index) {
@@ -189,25 +180,6 @@ function clearAttempt() {
 }
 
 
-function loadLeaderboard() {
-  try {
-    const raw = localStorage.getItem(LEADERBOARD_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (e) {
-    return [];
-  }
-}
-
-function saveLeaderboard(entries) {
-  try {
-    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(entries));
-  } catch (e) {
-    // ignore
-  }
-}
-
 function formatDuration(totalSeconds) {
   const safe = Math.max(0, Math.floor(totalSeconds));
   const h = Math.floor(safe / 3600);
@@ -237,32 +209,12 @@ function getTimerSettings() {
 }
 
 function updateTimerSummary() {
-  const { enabled, minutes } = getTimerSettings();
+  const { enabled } = getTimerSettings();
   const timerSummary = $("timerSummary");
   if (!timerSummary) return;
-  timerSummary.textContent = enabled ? `${minutes} min` : "off";
+  timerSummary.textContent = enabled ? "" : "off";
 }
 
-
-function renderLeaderboard() {
-  const entries = loadLeaderboard();
-  const list = $("leaderboardList");
-  if (!entries.length) {
-    list.textContent = "No local entries yet.";
-    return;
-  }
-
-  const rows = entries
-    .sort((a, b) => {
-      if (b.correct !== a.correct) return b.correct - a.correct;
-      if (a.elapsedSeconds !== b.elapsedSeconds) return a.elapsedSeconds - b.elapsedSeconds;
-      return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
-    })
-    .slice(0, 10)
-    .map((e, idx) => `${idx + 1}. ${e.nickname} — ${e.correct}/${e.total} in ${formatDuration(e.elapsedSeconds)}`);
-
-  list.innerHTML = rows.map(r => `<div>${r}</div>`).join("");
-}
 
 function leaderboardMode() {
   if (!attempt) return "unknown";
@@ -301,9 +253,9 @@ function isNetworkCorsErrorMessage(message) {
 
 function globalLeaderboardFallbackMessage(error, action) {
   if (isNetworkCorsErrorMessage(error?.message)) {
-    return `Couldn’t ${action} global leaderboard (network/CORS). Local leaderboard still works.`;
+    return `Couldn’t ${action} global leaderboard (network/CORS).`;
   }
-  return `Couldn’t ${action} global leaderboard. Local leaderboard still works.`;
+  return `Couldn’t ${action} global leaderboard.`;
 }
 
 function formatGlobalLeaderboardRows(rows) {
@@ -320,9 +272,9 @@ async function refreshGlobalLeaderboards() {
   const notice = $("globalLeaderboardNotice");
 
   if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    if (notice) notice.textContent = "Global leaderboard not configured. Local leaderboard still works.";
-    renderListEntries(tabList, [], () => "", "Global leaderboard unavailable. Local leaderboard still works.");
-    renderListEntries(resultsList, [], () => "", "Global leaderboard unavailable. Local leaderboard still works.");
+    if (notice) notice.textContent = "Global leaderboard not configured.";
+    renderListEntries(tabList, [], () => "", "Global leaderboard unavailable.");
+    renderListEntries(resultsList, [], () => "", "Global leaderboard unavailable.");
     return;
   }
 
@@ -348,7 +300,7 @@ async function saveResultToGlobalLeaderboard() {
   if (!attempt || !attempt.summary) return;
 
   if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    msg.textContent = "Global leaderboard unavailable. Local leaderboard still works.";
+    msg.textContent = "Global leaderboard unavailable.";
     return;
   }
 
@@ -415,24 +367,6 @@ function startTimerIfNeeded() {
   }, 1000);
 }
 
-function maybeAddLeaderboardEntry() {
-  if (!attempt || !attempt.summary) return;
-  if (!attempt.isDefaultMode) return;
-  if (!attempt.nickname) return;
-
-  const entries = loadLeaderboard();
-  entries.push({
-    nickname: attempt.nickname,
-    correct: attempt.summary.correct,
-    total: attempt.summary.total,
-    elapsedSeconds: attempt.summary.elapsedSeconds || 0,
-    createdAt: new Date().toISOString()
-  });
-  saveLeaderboard(entries);
-  renderLeaderboard();
-  refreshGlobalLeaderboards();
-}
-
 function show(sectionId) {
   ["home","exam","leaderboardTab","results"].forEach(id => {
     $(id).style.display = (id === sectionId) ? "" : "none";
@@ -442,8 +376,7 @@ function show(sectionId) {
 function setBankInfo(sourceType = LEGACY_SOURCE) {
   const info = $("questionBankInfo");
   if (!bank) { info.textContent = "Loading question bank…"; return; }
-  const sourceLabel = sourceType === AI_SOURCE ? "AI" : sourceType === MIXED_SOURCE ? "Mixed" : "Legacy";
-  info.textContent = `${bank.question_count} questions loaded (${sourceLabel})`;
+  info.textContent = "";
   const maxCount = Math.max(1, bank.question_count);
   const input = $("questionCount");
   input.max = String(maxCount);
@@ -677,7 +610,6 @@ function scoreAttempt() {
   attempt.summary = { correct, wrong, unanswered, total: attempt.questionIds.length, elapsedSeconds };
   stopTimer();
   saveAttempt();
-  maybeAddLeaderboardEntry();
 }
 
 function renderResults() {
@@ -758,7 +690,7 @@ async function init() {
   $("newAttemptBtn").onclick = () => { clearAttempt(); startNewAttempt(); };
   $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
   $("homeTabBtn").onclick = () => { stopTimer(); show("home"); };
-  $("leaderboardTabBtn").onclick = async () => { renderLeaderboard(); await refreshGlobalLeaderboards(); show("leaderboardTab"); };
+  $("leaderboardTabBtn").onclick = async () => { await refreshGlobalLeaderboards(); show("leaderboardTab"); };
   $("leaderboardBackBtn").onclick = () => { show("home"); };
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
@@ -817,12 +749,11 @@ async function init() {
         saveQuizSource(LEGACY_SOURCE);
         setSelectedQuizSource(LEGACY_SOURCE);
         setBankInfo(LEGACY_SOURCE);
-        $("questionBankInfo").textContent = `${bank.question_count} questions loaded (Legacy)`;
+        $("questionBankInfo").textContent = "";
       } catch (legacyError) {
         $("questionBankInfo").textContent = legacyError.message || "Failed to load question bank.";
         $("startBtn").disabled = true;
         updateTimerSummary();
-        renderLeaderboard();
         refreshGlobalLeaderboards();
         return;
       }
@@ -830,13 +761,11 @@ async function init() {
       $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
       $("startBtn").disabled = true;
       updateTimerSummary();
-      renderLeaderboard();
       refreshGlobalLeaderboards();
       return;
     }
   }
   updateTimerSummary();
-  renderLeaderboard();
   refreshGlobalLeaderboards();
 
   // Attempt state

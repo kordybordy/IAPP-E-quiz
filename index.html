@@ -12,8 +12,8 @@
     <div class="topCenter">
       <div class="topBannerTag"><span class="topBannerLogo" aria-label="DWF">dwf</span><span class="topBannerText">Data Protection Extend &amp; Accelerate</span></div>
       <div class="topNavButtons">
-      <button id="homeTabBtn" class="secondary smallBtn" type="button">Exam Simulator</button>
-      <button id="leaderboardTabBtn" class="secondary smallBtn" type="button">Leaderboard</button>
+      <button id="homeTabBtn" class="secondary topNavBtn" type="button">Exam Simulator</button>
+      <button id="leaderboardTabBtn" class="secondary topNavBtn" type="button">Leaderboard</button>
       </div>
     </div>
     <div class="meta" aria-hidden="true"></div>
@@ -67,7 +67,6 @@
             Enable timer
           </label>
           <input id="timerMinutes" type="number" min="1" step="1" value="150" />
-          <span class="muted small">minutes</span>
           <span class="muted small" id="timerSummary"></span>
         </div>
       </div>
@@ -106,19 +105,14 @@
     </section>
 
     <section id="leaderboardTab" class="card" style="display:none;">
-      <div class="resultsHeader">
-        <h2>Leaderboard</h2>
-        <div class="controls">
-          <button id="leaderboardBackBtn" class="secondary">Back to home</button>
-        </div>
+      <div class="resultsHeader leaderboardHeader">
+        <h2 class="leaderboardTitle">Leaderboard</h2>
       </div>
       <p id="globalLeaderboardNotice" class="muted small"></p>
-
-      <h3>Global leaderboard</h3>
       <div id="globalLeaderboardList" class="leaderboardList muted small">Loading…</div>
-
-      <h3>Local fallback leaderboard</h3>
-      <div id="leaderboardList" class="leaderboardList muted small">No entries yet.</div>
+      <div class="controls leaderboardBackRow">
+        <button id="leaderboardBackBtn" class="secondary">Back to home</button>
+      </div>
     </section>
 
     <section id="results" class="card" style="display:none;">
