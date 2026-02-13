@@ -15,6 +15,10 @@ let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'.
 let currentIndex = 0;
 let timerIntervalId = null;
 
+const SECTION_IDS = ["home", "exam", "leaderboardTab", "results"];
+const VIEW_TRANSITION_MS = 145;
+let isViewTransitioning = false;
+
 const $ = (id) => document.getElementById(id);
 
 function safeStorageGet(key) {
@@ -368,13 +372,51 @@ function startTimerIfNeeded() {
 }
 
 function show(sectionId) {
-  ["home","exam","leaderboardTab","results"].forEach(id => {
-    $(id).style.display = (id === sectionId) ? "" : "none";
+  if (!SECTION_IDS.includes(sectionId) || isViewTransitioning) return;
+
+  const nextSection = $(sectionId);
+  const currentSectionId = SECTION_IDS.find(id => {
+    const section = $(id);
+    return section && window.getComputedStyle(section).display !== "none";
   });
+  const currentSection = currentSectionId ? $(currentSectionId) : null;
 
   const isLeaderboardView = sectionId === "leaderboardTab";
   $("homeTabBtn").classList.toggle("active", !isLeaderboardView);
   $("leaderboardTabBtn").classList.toggle("active", isLeaderboardView);
+
+  if (!nextSection || currentSection === nextSection) return;
+
+  isViewTransitioning = true;
+
+  if (currentSection) {
+    currentSection.classList.remove("view-enter");
+    currentSection.classList.add("view-exit");
+  }
+
+  window.setTimeout(() => {
+    SECTION_IDS.forEach(id => {
+      const section = $(id);
+      if (!section) return;
+      section.style.display = (id === sectionId) ? "" : "none";
+      section.classList.remove("view-exit");
+    });
+
+    nextSection.classList.remove("view-exit");
+    nextSection.classList.add("view-enter");
+
+    let transitionDone = false;
+    const finishTransition = () => {
+      if (transitionDone) return;
+      transitionDone = true;
+      nextSection.classList.remove("view-enter");
+      nextSection.removeEventListener("animationend", finishTransition);
+      isViewTransitioning = false;
+    };
+
+    nextSection.addEventListener("animationend", finishTransition);
+    window.setTimeout(finishTransition, 220);
+  }, VIEW_TRANSITION_MS);
 }
 
 function setBankInfo(sourceType = LEGACY_SOURCE) {
