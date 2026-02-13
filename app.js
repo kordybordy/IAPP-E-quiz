@@ -289,6 +289,17 @@ function safePercent(score, total, pct) {
   return (Number(score) / Number(total)) * 100;
 }
 
+function isNetworkCorsErrorMessage(message) {
+  return typeof message === "string" && message.includes("network/CORS");
+}
+
+function globalLeaderboardFallbackMessage(error, action) {
+  if (isNetworkCorsErrorMessage(error?.message)) {
+    return `Couldn’t ${action} global leaderboard (network/CORS). Local leaderboard still works.`;
+  }
+  return `Couldn’t ${action} global leaderboard. Local leaderboard still works.`;
+}
+
 function formatGlobalLeaderboardRows(rows) {
   return rows.map((entry, idx) => {
     const pct = safePercent(entry.score, entry.total, entry.pct).toFixed(1);
@@ -303,9 +314,9 @@ async function refreshGlobalLeaderboards() {
   const notice = $("globalLeaderboardNotice");
 
   if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    if (notice) notice.textContent = "Global leaderboard not configured. Add SUPABASE_URL and SUPABASE_ANON_KEY in config.js.";
-    renderListEntries(tabList, [], () => "", "Global leaderboard not configured.");
-    renderListEntries(resultsList, [], () => "", "Global leaderboard not configured.");
+    if (notice) notice.textContent = "Global leaderboard not configured. Local leaderboard still works.";
+    renderListEntries(tabList, [], () => "", "Global leaderboard unavailable. Local leaderboard still works.");
+    renderListEntries(resultsList, [], () => "", "Global leaderboard unavailable. Local leaderboard still works.");
     return;
   }
 
@@ -319,10 +330,10 @@ async function refreshGlobalLeaderboards() {
     renderListEntries(tabList, formatted, r => r, "No global entries yet.");
     renderListEntries(resultsList, formatted, r => r, "No global entries yet.");
   } catch (error) {
-    const text = "Couldn’t load global leaderboard. Showing local fallback only.";
+    const text = globalLeaderboardFallbackMessage(error, "load");
     if (notice) notice.textContent = text;
-    renderListEntries(tabList, [], () => "", "Couldn’t load global leaderboard.");
-    renderListEntries(resultsList, [], () => "", "Couldn’t load global leaderboard.");
+    renderListEntries(tabList, [], () => "", text);
+    renderListEntries(resultsList, [], () => "", text);
   }
 }
 
@@ -331,7 +342,7 @@ async function saveResultToGlobalLeaderboard() {
   if (!attempt || !attempt.summary) return;
 
   if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    msg.textContent = "Global leaderboard not configured.";
+    msg.textContent = "Global leaderboard unavailable. Local leaderboard still works.";
     return;
   }
 
@@ -357,7 +368,7 @@ async function saveResultToGlobalLeaderboard() {
     msg.textContent = "Saved to global leaderboard.";
     refreshGlobalLeaderboards();
   } catch (error) {
-    msg.textContent = "Couldn’t save score. Try again.";
+    msg.textContent = globalLeaderboardFallbackMessage(error, "save to");
   }
 }
 
