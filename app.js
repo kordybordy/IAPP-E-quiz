@@ -752,6 +752,8 @@ function handleFeedbackSkip() {
 
   saveAttempt();
   renderExam();
+
+  if (maybeAutoFinalizeFeedbackMode()) return;
 }
 
 function renderJumpBar() {
@@ -882,6 +884,8 @@ function renderExam() {
         saveAttempt();
         renderExam();
 
+        if (maybeAutoFinalizeFeedbackMode()) return;
+
         const indexAtSelection = currentIndex;
         window.setTimeout(() => {
           if (!attempt || attempt.mode !== FEEDBACK_MODE) return;
@@ -941,10 +945,79 @@ function scoreAttempt() {
   saveAttempt();
 }
 
+function finalizeFeedbackMode() {
+  const results = {};
+  let correct = 0;
+  let wrong = 0;
+  let unanswered = 0;
+
+  attempt.questionIds.forEach((qid) => {
+    const q = getQuestionById(qid);
+    const correctLabel = q?.correct_label ?? null;
+    const your = attempt.answers[qid] || null;
+    let status = "unanswered";
+
+    if (!your) {
+      unanswered += 1;
+    } else if (your === correctLabel) {
+      status = "correct";
+      correct += 1;
+    } else {
+      status = "wrong";
+      wrong += 1;
+    }
+
+    results[qid] = { status, correct: correctLabel, your };
+  });
+
+  const now = Date.now();
+  const elapsedSeconds = Math.max(0, Math.floor((now - (attempt.startedAt || now)) / 1000));
+  const badges = Array.isArray(attempt.badges) ? attempt.badges : [];
+
+  attempt.submitted = true;
+  attempt.results = results;
+  attempt.summary = {
+    correct,
+    wrong,
+    unanswered,
+    total: attempt.questionIds.length,
+    elapsedSeconds,
+    points: Number.isFinite(Number(attempt.points)) ? Number(attempt.points) : 0,
+    badges,
+    badgesCount: badges.length
+  };
+
+  stopTimer();
+  saveAttempt();
+}
+
+function finishAttemptForCurrentMode() {
+  if (!attempt) return;
+  if (attempt.mode === FEEDBACK_MODE) {
+    finalizeFeedbackMode();
+    return;
+  }
+  scoreAttempt();
+}
+
+function maybeAutoFinalizeFeedbackMode() {
+  if (!attempt || attempt.mode !== FEEDBACK_MODE || attempt.submitted) return false;
+  if (currentIndex !== attempt.questionIds.length - 1) return false;
+
+  finishAttemptForCurrentMode();
+  renderExam();
+  renderResults();
+  show("results");
+  return true;
+}
+
 function renderResults() {
   const s = attempt.summary;
+  const isFeedbackMode = attempt.mode === FEEDBACK_MODE;
   const elapsedText = s.elapsedSeconds != null ? `, time: ${formatDuration(s.elapsedSeconds)}` : "";
-  $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered}${elapsedText})`;
+  const pointsText = isFeedbackMode ? `, points: ${s.points ?? 0}` : "";
+  const badgesText = isFeedbackMode ? `, badges: ${s.badgesCount ?? (Array.isArray(s.badges) ? s.badges.length : 0)}` : "";
+  $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered}${elapsedText}${pointsText}${badgesText})`;
   const resultNameInput = $("resultsName");
   if (resultNameInput && !resultNameInput.value) {
     resultNameInput.value = getSavedLeaderboardName();
@@ -1036,8 +1109,7 @@ async function init() {
   $("skipBtn").onclick = handleFeedbackSkip;
 
   $("submitBtn").onclick = () => {
-    // In feedback mode this acts as Finish.
-    scoreAttempt();
+    finishAttemptForCurrentMode();
     renderExam(); // reflect colors in exam view
     renderResults();
     show("results");
