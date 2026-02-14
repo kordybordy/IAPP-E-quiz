@@ -12,9 +12,9 @@
     <div class="topCenter">
       <div class="topBannerTag"><span class="topBannerLogo" aria-label="DWF">dwf</span><span class="topBannerText">Data Protection Extend &amp; Accelerate</span></div>
       <div class="topNavButtons">
-        <div class="navTabs">
-          <button id="homeTabBtn" class="secondary navTab" type="button">Exam Simulator</button>
-          <button id="leaderboardTabBtn" class="secondary navTab" type="button">Leaderboard</button>
+        <div class="segmented segmented--nav">
+          <button id="homeTabBtn" class="secondary segmented__item" type="button">Exam Simulator</button>
+          <button id="leaderboardTabBtn" class="secondary segmented__item" type="button">Leaderboard</button>
         </div>
       </div>
     </div>
@@ -29,18 +29,18 @@
         <label class="fieldLabel" for="quizSourceLegacy">Question source</label>
         <div class="fieldControl">
           <div class="sourceHeaderRow">
-          <div class="sourceSegment" role="radiogroup" aria-label="Question source">
-            <label class="radioPill">
+          <div class="segmented segmented--field" role="radiogroup" aria-label="Question source">
+            <label class="segmented__item">
               <input id="quizSourceLegacy" type="radio" name="quizSource" value="legacy" checked />
-              Legacy
+              <span>Legacy</span>
             </label>
-            <label class="radioPill">
+            <label class="segmented__item">
               <input id="quizSourceAi" type="radio" name="quizSource" value="ai" />
-              AI
+              <span>AI</span>
             </label>
-            <label class="radioPill">
+            <label class="segmented__item">
               <input id="quizSourceMixed" type="radio" name="quizSource" value="mixed" />
-              Mixed (50/50)
+              <span>Mixed (50/50)</span>
             </label>
           </div>
           <span class="muted small" id="questionBankInfo">Loading question bank…</span>
