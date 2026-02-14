@@ -11,6 +11,7 @@ const AI_SOURCE = "ai";
 const MIXED_SOURCE = "mixed";
 const EXAM_MODE = "exam";
 const FEEDBACK_MODE = "feedback";
+const FEEDBACK_NEXT_DELAY_MS = 900;
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -210,7 +211,10 @@ function normalizeAttemptState(rawAttempt) {
       : {},
     scoredQids: Array.isArray(existingFeedback.scoredQids)
       ? existingFeedback.scoredQids
-      : []
+      : [],
+    evaluationByQid: existingFeedback.evaluationByQid && typeof existingFeedback.evaluationByQid === "object"
+      ? existingFeedback.evaluationByQid
+      : {}
   };
 
   return normalized;
@@ -587,7 +591,8 @@ function startNewAttempt() {
     feedback: {
       questionStartedAtByQid: {},
       hintUsedByQid: {},
-      scoredQids: []
+      scoredQids: [],
+      evaluationByQid: {}
     }
   };
   currentIndex = 0;
@@ -639,6 +644,29 @@ function renderExam() {
   const qid = attempt.questionIds[currentIndex];
   const q = getQuestionById(qid);
   const your = attempt.answers[qid] || null;
+  const isFeedbackMode = attempt.mode === FEEDBACK_MODE;
+
+  if (isFeedbackMode) {
+    if (!attempt.feedback || typeof attempt.feedback !== "object") {
+      attempt.feedback = {};
+    }
+    if (!attempt.feedback.questionStartedAtByQid || typeof attempt.feedback.questionStartedAtByQid !== "object") {
+      attempt.feedback.questionStartedAtByQid = {};
+    }
+    if (!attempt.feedback.evaluationByQid || typeof attempt.feedback.evaluationByQid !== "object") {
+      attempt.feedback.evaluationByQid = {};
+    }
+    if (!Array.isArray(attempt.feedback.scoredQids)) {
+      attempt.feedback.scoredQids = [];
+    }
+    const alreadyScored = attempt.feedback.scoredQids.includes(qid);
+    if (!alreadyScored && !Number.isFinite(Number(attempt.feedback.questionStartedAtByQid[qid]))) {
+      attempt.feedback.questionStartedAtByQid[qid] = Date.now();
+      saveAttempt();
+    }
+  }
+
+  const feedbackResult = isFeedbackMode ? attempt.feedback?.evaluationByQid?.[qid] : null;
 
   const card = $("questionCard");
   card.innerHTML = "";
@@ -663,11 +691,12 @@ function renderExam() {
   q.choices.forEach(ch => {
     const row = document.createElement("label");
     row.className = "choice";
-    const disabled = attempt.submitted ? "disabled" : "";
+    const disableForFeedback = isFeedbackMode && attempt.feedback?.scoredQids?.includes(qid);
+    const disabled = (attempt.submitted || disableForFeedback) ? "disabled" : "";
     const checked = (your === ch.label) ? "checked" : "";
 
     // Post-submit coloring
-    if (attempt.submitted) {
+    if (attempt.submitted || feedbackResult) {
       if (ch.is_correct) row.classList.add("correct");
       if (your && your === ch.label && !ch.is_correct) row.classList.add("yoursWrong");
     }
@@ -680,9 +709,71 @@ function renderExam() {
     row.querySelector(".ctext").textContent = ch.text;
 
     row.querySelector("input").addEventListener("change", (e) => {
-      attempt.answers[qid] = e.target.value;
+      const selected = e.target.value;
+      attempt.answers[qid] = selected;
+
+      const startedAt = Number(attempt.feedback?.questionStartedAtByQid?.[qid]);
+      const timeTaken = Number.isFinite(startedAt)
+        ? Math.max(0, Math.floor((Date.now() - startedAt) / 1000))
+        : null;
+
+      if (attempt.mode === FEEDBACK_MODE) {
+        if (!attempt.feedback || typeof attempt.feedback !== "object") {
+          attempt.feedback = {};
+        }
+        if (!Array.isArray(attempt.feedback.scoredQids)) {
+          attempt.feedback.scoredQids = [];
+        }
+        if (!attempt.feedback.evaluationByQid || typeof attempt.feedback.evaluationByQid !== "object") {
+          attempt.feedback.evaluationByQid = {};
+        }
+
+        const alreadyScored = attempt.feedback.scoredQids.includes(qid);
+        const isCorrect = selected === q.correct_label;
+
+        if (!alreadyScored) {
+          if (typeof window.awardPoints === "function") {
+            window.awardPoints(attempt, {
+              isCorrect,
+              timeTaken,
+              usedHint: !!attempt.feedback?.hintUsedByQid?.[qid],
+              skipped: false,
+              questionId: qid
+            });
+          }
+
+          if (!attempt.feedback.scoredQids.includes(qid)) {
+            attempt.feedback.scoredQids.push(qid);
+          }
+
+          if (typeof window.checkAndAwardBadges === "function") {
+            window.checkAndAwardBadges(attempt);
+          }
+        }
+
+        attempt.feedback.evaluationByQid[qid] = {
+          status: isCorrect ? "correct" : "wrong",
+          your: selected,
+          correct: q.correct_label,
+          timeTaken
+        };
+
+        saveAttempt();
+        renderExam();
+
+        const indexAtSelection = currentIndex;
+        window.setTimeout(() => {
+          if (!attempt || attempt.mode !== FEEDBACK_MODE) return;
+          if (currentIndex !== indexAtSelection) return;
+          if (currentIndex >= attempt.questionIds.length - 1) return;
+          currentIndex += 1;
+          saveAttempt();
+          renderExam();
+        }, FEEDBACK_NEXT_DELAY_MS);
+        return;
+      }
+
       saveAttempt();
-      // update header/jumpbar quickly
       renderExam();
     });
 
@@ -690,6 +781,16 @@ function renderExam() {
   });
 
   card.appendChild(choices);
+
+  if (isFeedbackMode && feedbackResult) {
+    const note = document.createElement("div");
+    note.className = "muted small";
+    note.style.marginTop = "8px";
+    note.textContent = feedbackResult.status === "correct"
+      ? "Correct"
+      : `Incorrect, correct is ${feedbackResult.correct ?? "—"}`;
+    card.appendChild(note);
+  }
 
   $("prevBtn").disabled = (currentIndex === 0);
   $("nextBtn").disabled = (currentIndex === attempt.questionIds.length - 1);
