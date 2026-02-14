@@ -9,6 +9,8 @@ const DEFAULT_TIMER_MINUTES = 150;
 const LEGACY_SOURCE = "legacy";
 const AI_SOURCE = "ai";
 const MIXED_SOURCE = "mixed";
+const EXAM_MODE = "exam";
+const FEEDBACK_MODE = "feedback";
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -67,6 +69,11 @@ function setSelectedQuizSource(source) {
   if (aiInput) aiInput.checked = source === AI_SOURCE;
   if (mixedInput) mixedInput.checked = source === MIXED_SOURCE;
 
+}
+
+function getSelectedQuizMode() {
+  const feedbackModeInput = $("quizModeFeedback");
+  return feedbackModeInput && feedbackModeInput.checked ? FEEDBACK_MODE : EXAM_MODE;
 }
 
 function toLegacyQuestion(aiItem, index) {
@@ -167,6 +174,46 @@ function loadSavedAttempt() {
   } catch (e) {
     return null;
   }
+}
+
+function normalizeAttemptState(rawAttempt) {
+  if (!rawAttempt || typeof rawAttempt !== "object") return null;
+
+  const normalized = { ...rawAttempt };
+
+  if (normalized.mode !== EXAM_MODE && normalized.mode !== FEEDBACK_MODE) {
+    normalized.mode = EXAM_MODE;
+  }
+
+  if (!Number.isFinite(Number(normalized.points))) {
+    normalized.points = 0;
+  }
+
+  if (!Number.isFinite(Number(normalized.streak))) {
+    normalized.streak = 0;
+  }
+
+  if (!Array.isArray(normalized.badges)) {
+    normalized.badges = [];
+  }
+
+  const existingFeedback = normalized.feedback && typeof normalized.feedback === "object"
+    ? normalized.feedback
+    : {};
+
+  normalized.feedback = {
+    questionStartedAtByQid: existingFeedback.questionStartedAtByQid && typeof existingFeedback.questionStartedAtByQid === "object"
+      ? existingFeedback.questionStartedAtByQid
+      : {},
+    hintUsedByQid: existingFeedback.hintUsedByQid && typeof existingFeedback.hintUsedByQid === "object"
+      ? existingFeedback.hintUsedByQid
+      : {},
+    scoredQids: Array.isArray(existingFeedback.scoredQids)
+      ? existingFeedback.scoredQids
+      : []
+  };
+
+  return normalized;
 }
 
 function saveAttempt() {
@@ -515,6 +562,7 @@ function startNewAttempt() {
   const count = getSelectedQuestionCount();
   const timer = getTimerSettings();
   const sourceType = getSelectedQuizSource();
+  const mode = getSelectedQuizMode();
   const eligibleForLeaderboard = isDefaultMode(count, timer.enabled, timer.minutes);
   const now = Date.now();
 
@@ -531,7 +579,16 @@ function startNewAttempt() {
     timerMinutes: timer.minutes,
     timerEndsAt: timer.enabled ? now + timer.minutes * 60 * 1000 : null,
     nickname: "",
-    isDefaultMode: eligibleForLeaderboard
+    isDefaultMode: eligibleForLeaderboard,
+    mode,
+    points: 0,
+    streak: 0,
+    badges: [],
+    feedback: {
+      questionStartedAtByQid: {},
+      hintUsedByQid: {},
+      scoredQids: []
+    }
   };
   currentIndex = 0;
   saveAttempt();
@@ -829,7 +886,8 @@ async function init() {
   // Attempt state
   const saved = loadSavedAttempt();
   if (saved && saved.questionIds && saved.answers) {
-    attempt = saved;
+    attempt = normalizeAttemptState(saved);
+    saveAttempt();
     $("questionCount").value = String(attempt.questionIds.length);
     $("timerEnabled").checked = !!attempt.timerEnabled;
     $("timerMinutes").value = String(attempt.timerMinutes || DEFAULT_TIMER_MINUTES);
