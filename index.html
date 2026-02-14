@@ -49,6 +49,22 @@
       </div>
 
       <div class="fieldRow">
+        <label class="fieldLabel" for="quizModeExam">Mode</label>
+        <div class="fieldControl">
+          <div class="segmented segmented--field segmented--compact" role="radiogroup" aria-label="Quiz mode">
+            <label class="segmented__item">
+              <input id="quizModeExam" type="radio" name="quizMode" value="exam" checked />
+              <span>Exam</span>
+            </label>
+            <label class="segmented__item">
+              <input id="quizModeFeedback" type="radio" name="quizMode" value="feedback" />
+              <span>Feedback</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="fieldRow">
         <label class="fieldLabel" for="questionCount">Number of questions</label>
         <div class="fieldControl">
           <input id="questionCount" type="number" min="1" step="1" value="90" />
