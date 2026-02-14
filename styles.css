@@ -214,7 +214,14 @@ a{ color:var(--paper); }
 .fieldLabel{ font-weight:700; }
 .fieldControl{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 
-.sourceToggle{ display:flex; gap:8px; flex-wrap:wrap; }
+.sourceSegment{
+  display:flex;
+  width:100%;
+  gap:0;
+  padding:4px;
+  border-radius:14px;
+  background:rgba(255,255,255,.10);
+}
 
 .sourceHeaderRow{
   display:flex;
@@ -239,19 +246,33 @@ a{ color:var(--paper); }
   min-width:58px;
 }
 
-.radioPill{
+.sourceSegment .radioPill{
   display:inline-flex;
+  flex:1;
   gap:10px;
   align-items:center;
+  justify-content:center;
+  text-align:center;
   min-height:44px;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:10px 14px;
-  background:rgba(255,255,255,.10);
-  transition:transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  border:0;
+  border-radius:10px;
+  padding:10px 12px;
+  background:transparent;
+  transition:background .15s ease, transform .12s ease;
 }
 
-.radioPill input{ margin:0; accent-color:var(--dwf-500); }
+.sourceSegment .radioPill input{ display:none; }
+
+.sourceSegment .radioPill:has(input:checked){
+  background:rgba(255,255,255,.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.25),
+    0 1px 3px rgba(0,0,0,.25);
+}
+
+.sourceSegment .radioPill:hover{
+  background:rgba(255,255,255,.15);
+}
 
 .settingsGrid{ margin-top:var(--space-2); border:1px solid var(--border); border-radius:var(--radius-2); overflow:hidden; }
 
@@ -278,6 +299,7 @@ a{ color:var(--paper); }
   display:flex;
   align-items:center;
   padding:var(--space-2);
+  width:100%;
 }
 
 .settingsGrid .fieldRow:first-child .fieldControl{
@@ -514,8 +536,8 @@ input[type="text"]:focus-visible,
   .settingsGrid .fieldLabel{ border-right:none; border-bottom:1px solid var(--border); }
 
   .settingsGrid .fieldControl,
-  .sourceToggle,
-  .radioPill{
+  .sourceSegment,
+  .sourceSegment .radioPill{
     width:100%;
   }
 
@@ -523,8 +545,8 @@ input[type="text"]:focus-visible,
     flex-wrap:wrap;
   }
 
-  .radioPill{
-    justify-content:flex-start;
+  .sourceSegment .radioPill{
+    justify-content:center;
   }
 
   #startBtn{ width:100%; min-width:0; }
