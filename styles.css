@@ -279,9 +279,8 @@ button.segmented__item{
 
 .settingsGrid .fieldRow{
   margin-top:0;
-  display:grid;
-  grid-template-columns:minmax(180px,240px) 1fr;
-  align-items:center;
+  display:flex !important;
+  align-items:stretch !important;
   gap:0;
   border-bottom:1px solid var(--border);
 }
@@ -289,20 +288,34 @@ button.segmented__item{
 .settingsGrid .fieldRow:last-child{ border-bottom:none; }
 
 .settingsGrid .fieldLabel{
-  display:flex;
-  align-items:center;
-  padding:14px 16px;
+  width:240px;
+  flex:0 0 240px;
+}
+
+.settingsGrid .fieldLabel,
+.settingsGrid .fieldControl{
+  display:flex !important;
+  align-items:center !important;
+  padding:14px 16px !important;
+  min-height:56px;
+  box-sizing:border-box;
+}
+
+.settingsGrid .fieldLabel{
   border-right:1px solid var(--border);
   background:rgba(255,255,255,.08);
 }
 
 .settingsGrid .fieldControl{
-  display:flex;
-  align-items:center !important;
-  align-self:center !important;
-  padding:14px 16px;
   width:100%;
 }
+
+.settingsGrid .fieldLabel *{
+  margin:0;
+  line-height:1.2;
+}
+
+.segmented{ margin:0 !important; }
 
 
 .startRow{ justify-content:center; align-items:center; }
@@ -531,8 +544,10 @@ input[type="text"]:focus-visible,
     justify-content:center;
   }
 
-  .settingsGrid .fieldRow{ grid-template-columns:1fr; }
+  .settingsGrid .fieldRow{ flex-direction:column; }
   .settingsGrid .fieldLabel{ border-right:none; border-bottom:1px solid var(--border); }
+  .settingsGrid .fieldLabel,
+  .settingsGrid .fieldControl{ width:100%; flex:1 1 auto; }
 
   .settingsGrid .fieldControl,
   .segmented,
