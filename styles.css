@@ -101,7 +101,7 @@ a{ color:var(--paper); }
   display:flex;
   width:100%;
   max-width:460px;
-  margin:0 auto;
+  margin:0;
   padding:6px;
   gap:6px;
   border-radius:999px;
@@ -291,15 +291,16 @@ button.segmented__item{
 .settingsGrid .fieldLabel{
   display:flex;
   align-items:center;
-  padding:var(--space-2);
+  padding:14px 16px;
   border-right:1px solid var(--border);
   background:rgba(255,255,255,.08);
 }
 
 .settingsGrid .fieldControl{
   display:flex;
-  align-items:center;
-  padding:var(--space-2);
+  align-items:center !important;
+  align-self:center !important;
+  padding:14px 16px;
   width:100%;
 }
 
