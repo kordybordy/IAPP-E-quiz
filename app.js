@@ -12,6 +12,9 @@ const MIXED_SOURCE = "mixed";
 const EXAM_MODE = "exam";
 const FEEDBACK_MODE = "feedback";
 const FEEDBACK_NEXT_DELAY_MS = 900;
+const LEADERBOARD_FILTER_ALL = "all";
+const LEADERBOARD_FILTER_EXAM = "exam";
+const LEADERBOARD_FILTER_FEEDBACK = "feedback";
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
@@ -215,6 +218,10 @@ function normalizeAttemptState(rawAttempt) {
 
   normalized.feedback = createDefaultFeedbackState(normalized.feedback);
 
+  if (normalized.sourceType !== LEGACY_SOURCE && normalized.sourceType !== AI_SOURCE && normalized.sourceType !== MIXED_SOURCE) {
+    normalized.sourceType = LEGACY_SOURCE;
+  }
+
   return normalized;
 }
 
@@ -271,10 +278,78 @@ function updateTimerSummary() {
 
 function leaderboardMode() {
   if (!attempt) return "unknown";
-  const source = getSelectedQuizSource();
+  const gameplayLabel = attempt.mode === FEEDBACK_MODE ? FEEDBACK_MODE : EXAM_MODE;
+  const source = attempt.sourceType || getSelectedQuizSource();
   const sourceLabel = source === AI_SOURCE ? "ai" : source === MIXED_SOURCE ? "mixed" : "legacy";
   const timerLabel = attempt.timerEnabled ? `${attempt.timerMinutes || DEFAULT_TIMER_MINUTES}m` : "off";
-  return `${attempt.questionIds.length}q_${timerLabel}_${sourceLabel}`;
+  return `gameplay:${gameplayLabel}|questions:${attempt.questionIds.length}|timer:${timerLabel}|source:${sourceLabel}`;
+}
+
+function parseLeaderboardMode(mode) {
+  const raw = String(mode || "").trim();
+  const base = {
+    raw,
+    gameplay: "unknown",
+    source: "unknown",
+    questions: null,
+    timer: "unknown",
+    label: raw || "Unknown"
+  };
+
+  if (!raw) return base;
+
+  if (raw.startsWith("gameplay:")) {
+    const parts = raw.split("|");
+    const data = {};
+    parts.forEach((part) => {
+      const [key, ...rest] = part.split(":");
+      if (!key || !rest.length) return;
+      data[key.trim()] = rest.join(":").trim();
+    });
+
+    const gameplay = data.gameplay === FEEDBACK_MODE ? FEEDBACK_MODE : data.gameplay === EXAM_MODE ? EXAM_MODE : "unknown";
+    const questions = Number.parseInt(data.questions, 10);
+
+    return {
+      raw,
+      gameplay,
+      source: data.source || "unknown",
+      questions: Number.isFinite(questions) ? questions : null,
+      timer: data.timer || "unknown",
+      label: [
+        gameplay !== "unknown" ? gameplay : null,
+        Number.isFinite(questions) ? `${questions}q` : null,
+        data.timer ? `timer ${data.timer}` : null,
+        data.source ? data.source : null
+      ].filter(Boolean).join(" • ") || raw
+    };
+  }
+
+  const legacyParts = raw.split("_");
+  if (legacyParts.length >= 3) {
+    const questionText = legacyParts[0];
+    const questions = Number.parseInt(questionText.replace(/q$/i, ""), 10);
+    return {
+      raw,
+      gameplay: EXAM_MODE,
+      source: legacyParts[2] || "unknown",
+      questions: Number.isFinite(questions) ? questions : null,
+      timer: legacyParts[1] || "unknown",
+      label: [
+        EXAM_MODE,
+        Number.isFinite(questions) ? `${questions}q` : null,
+        legacyParts[1] ? `timer ${legacyParts[1]}` : null,
+        legacyParts[2] || null
+      ].filter(Boolean).join(" • ")
+    };
+  }
+
+  return { ...base, label: raw };
+}
+
+function getLeaderboardFilterValue() {
+  const selected = document.querySelector("input[name=leaderboardFilter]:checked");
+  return selected ? selected.value : LEADERBOARD_FILTER_ALL;
 }
 
 function getSavedLeaderboardName() {
@@ -313,8 +388,13 @@ function globalLeaderboardFallbackMessage(error, action) {
 
 function formatGlobalLeaderboardRows(rows) {
   return rows.map((entry, idx) => {
+    const parsedMode = parseLeaderboardMode(entry.mode);
     const pct = safePercent(entry.score, entry.total, entry.pct).toFixed(1);
     const duration = Number.isInteger(entry.duration_seconds) ? formatDuration(entry.duration_seconds) : "—";
+    const points = Number.isFinite(Number(entry.points)) ? Number(entry.points) : null;
+    const scoreLabel = parsedMode.gameplay === FEEDBACK_MODE && points != null
+      ? `${points} pts`
+      : `${entry.score}/${entry.total}`;
     return `
       <div class="lbRow">
         <div class="lbPrimary">
@@ -322,13 +402,25 @@ function formatGlobalLeaderboardRows(rows) {
           <span class="lbName">${entry.name}</span>
         </div>
         <div class="lbMeta">
-          <span class="lbScore">${entry.score}/${entry.total}</span>
+          <span class="lbScore">${scoreLabel}</span>
           <span class="lbPercent">${pct}%</span>
           <span class="lbDuration">${duration}</span>
+          <span class="lbMode">${parsedMode.label}</span>
         </div>
       </div>
     `;
   });
+}
+
+function filterLeaderboardRows(rows, filterValue) {
+  if (!Array.isArray(rows)) return [];
+  if (filterValue === LEADERBOARD_FILTER_EXAM) {
+    return rows.filter((entry) => parseLeaderboardMode(entry.mode).gameplay === EXAM_MODE);
+  }
+  if (filterValue === LEADERBOARD_FILTER_FEEDBACK) {
+    return rows.filter((entry) => parseLeaderboardMode(entry.mode).gameplay === FEEDBACK_MODE);
+  }
+  return rows;
 }
 
 async function refreshGlobalLeaderboards() {
@@ -349,7 +441,9 @@ async function refreshGlobalLeaderboards() {
 
   try {
     const rows = await window.SupabaseLeaderboard.fetchTopScores({ limit: 20 });
-    const formatted = formatGlobalLeaderboardRows(rows);
+    const activeFilter = getLeaderboardFilterValue();
+    const visibleRows = filterLeaderboardRows(rows, activeFilter);
+    const formatted = formatGlobalLeaderboardRows(visibleRows);
     renderListEntries(tabList, formatted, r => r, "No global entries yet.");
     renderListEntries(resultsList, formatted, r => r, "No global entries yet.");
   } catch (error) {
@@ -381,6 +475,7 @@ async function saveResultToGlobalLeaderboard() {
     score: attempt.summary.correct,
     total: attempt.summary.total,
     mode: leaderboardMode(),
+    points: Number.isFinite(Number(attempt.points)) ? Number(attempt.points) : null,
     durationSeconds: attempt.summary.elapsedSeconds
   };
 
@@ -583,6 +678,7 @@ function startNewAttempt() {
     nickname: "",
     isDefaultMode: eligibleForLeaderboard,
     mode,
+    sourceType,
     points: 0,
     streak: 0,
     badges: [],
@@ -1094,6 +1190,12 @@ async function init() {
   $("homeTabBtn").onclick = () => { stopTimer(); show("home"); };
   $("leaderboardTabBtn").onclick = async () => { await refreshGlobalLeaderboards(); show("leaderboardTab"); };
   $("leaderboardBackBtn").onclick = () => { show("home"); };
+  const leaderboardFilters = document.querySelectorAll("input[name=leaderboardFilter]");
+  leaderboardFilters.forEach((input) => {
+    input.onchange = () => {
+      refreshGlobalLeaderboards();
+    };
+  });
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
   $("questionCount").oninput = () => { updateQuestionCountText(); };
