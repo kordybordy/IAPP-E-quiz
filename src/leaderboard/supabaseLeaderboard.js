@@ -87,6 +87,14 @@
       }
     }
 
+    let points;
+    if (payload?.points != null && payload.points !== "") {
+      points = Number(payload.points);
+      if (!Number.isInteger(points) || points < 0) {
+        throw new Error("Points must be a non-negative integer.");
+      }
+    }
+
     const mode = payload?.mode != null ? String(payload.mode).trim() : null;
 
     return {
@@ -94,6 +102,7 @@
       score,
       total,
       mode: mode || null,
+      points,
       durationSeconds
     };
   }
@@ -123,6 +132,7 @@
             score: valid.score,
             total: valid.total,
             mode: valid.mode,
+            points: valid.points,
             duration_seconds: valid.durationSeconds
           }
         ])
@@ -147,8 +157,8 @@
 
     const limit = Number.isInteger(options.limit) && options.limit > 0 ? options.limit : DEFAULT_LIMIT;
     const query = new URLSearchParams();
-    query.set("select", "id,name,score,total,pct,duration_seconds,mode,created_at");
-    query.set("order", "pct.desc,score.desc,created_at.desc");
+    query.set("select", "id,name,score,total,pct,points,duration_seconds,mode,created_at");
+    query.set("order", "points.desc.nullslast,pct.desc,score.desc,created_at.desc");
     query.set("limit", String(limit));
 
     if (options.mode) {

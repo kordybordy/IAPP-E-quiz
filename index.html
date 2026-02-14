@@ -126,6 +126,20 @@
         <h2 class="leaderboardTitle">Leaderboard</h2>
       </div>
       <p id="globalLeaderboardNotice" class="muted small"></p>
+      <div class="leaderboardFilters segmented segmented--compact" role="group" aria-label="Leaderboard mode filter">
+        <label class="segmented__item">
+          <input type="radio" name="leaderboardFilter" value="all" checked />
+          <span>All modes</span>
+        </label>
+        <label class="segmented__item">
+          <input type="radio" name="leaderboardFilter" value="exam" />
+          <span>Exam</span>
+        </label>
+        <label class="segmented__item">
+          <input type="radio" name="leaderboardFilter" value="feedback" />
+          <span>Feedback</span>
+        </label>
+      </div>
       <div id="globalLeaderboardList" class="leaderboardList muted small">Loading…</div>
       <div class="controls leaderboardBackRow">
         <button id="leaderboardBackBtn" class="secondary">Back to home</button>
