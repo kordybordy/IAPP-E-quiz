@@ -6,6 +6,7 @@
   --dwf-850:#0f466f;
   --dwf-800:#155784;
   --dwf-500:#e1166a;
+  --dwf-purple:#671369;
 
   --ink:#07253f;
   --paper:#ffffff;
@@ -389,7 +390,7 @@ input[type="checkbox"]{ accent-color:var(--dwf-500); }
 
 button{
   border:1px solid var(--border);
-  background:rgba(255,255,255,.10);
+  background:var(--dwf-purple);
   color:var(--paper);
   min-height:44px;
   padding:10px 12px;
@@ -415,13 +416,13 @@ input[type="text"]:disabled{
   color:#30465e;
 }
 button.primary{
-  background:linear-gradient(180deg,#c01462,var(--dwf-500));
+  background:var(--dwf-purple);
   border-color:transparent;
   color:#fff;
   box-shadow:0 10px 26px rgba(0,0,0,.25);
 }
-button.secondary{ background: rgba(255,255,255,.12); }
-button.danger{ background: rgba(255,120,160,.2); border-color: rgba(255,170,195,.45); }
+button.secondary{ background:var(--dwf-purple); border-color:transparent; }
+button.danger{ background:var(--dwf-purple); border-color:transparent; }
 button:hover:not(:disabled),
 input[type="number"]:hover:not(:disabled),
 input[type="text"]:hover:not(:disabled),
