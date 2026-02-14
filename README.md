@@ -147,6 +147,77 @@ python3 scripts/export_questions.py --input questions.corrected.json --out-csv o
 - The selected source is persisted in `localStorage` under `quiz_source`.
 - If AI mode is selected and `ai_questions.json` is missing or empty, the app shows: `Brak puli AI. Spróbuj później.`
 
+## Quiz modes, scoring, badges, and leaderboard semantics
+
+### How to choose mode on the home screen
+- Use the **Mode** segmented control on the home screen:
+  - `Exam` - classic exam flow.
+  - `Feedback` - instant per-question feedback flow.
+- This selector is independent from **Question source** (`Legacy` / `AI` / `Mixed`).
+
+### Scoring model in feedback mode
+Points are awarded only in `Feedback` mode.
+
+Per evaluated question:
+- **Base**: `+100` for correct, `+0` for wrong.
+- **Streak**: `+15 * (streak - 1)` for streaks above 1 (e.g. 2nd correct in a row = `+15`, 3rd = `+30`, etc.).
+- **Speed**: `+20` if correct and answered in `<= 20s`.
+- **Hint penalty**: `-25` if hint was used.
+- **Skip penalty**: `-50` if skipped.
+- Final awarded points for a question are clamped to a minimum of `0`.
+
+Additional behavior:
+- In feedback mode, each question can be scored only once (`scoredQids`) to prevent duplicate point farming.
+- Streak resets on wrong answer or skip.
+
+### Badge criteria
+Badges are checked after each feedback-mode evaluation:
+- `first_correct` (**First Correct**): at least 1 correct answer.
+- `hot_streak` (**Hot Streak**): current streak is at least 3.
+- `speedster` (**Speedster**): at least 5 fast correct answers (<= 20s).
+- `points_500` (**500 Club**): total points at least 500.
+
+### Finish behavior and results differences by mode
+- **Exam mode**
+  - `Submit` ends the attempt and computes score from final answers.
+  - Results show: correct/wrong/unanswered + elapsed time.
+  - No points/badges are shown.
+- **Feedback mode**
+  - `Submit` button label changes to `Finish`.
+  - Each answer is evaluated immediately; hints and skip are enabled.
+  - On the last question, attempt can auto-finalize after evaluation.
+  - Results include everything from exam mode **plus** `points` and `badges` count.
+
+### Leaderboard interpretation by mode
+- Saved leaderboard payload includes `score`, `total`, `duration_seconds`, and `mode`.
+- Current `mode` value is a run profile string:
+  - `<questionCount>q_<timerLabel>_<sourceLabel>`
+  - Example: `90q_150m_legacy`, `50q_off_ai`.
+- `timerLabel` is either `<minutes>m` or `off`.
+- `sourceLabel` is one of `legacy`, `ai`, `mixed`.
+
+> Note: this `mode` currently describes quiz configuration (question count/timer/source), not explicit `exam` vs `feedback`.
+
+### Supabase schema / migration notes
+Minimum expected columns in `public.leaderboard_scores` for current app behavior:
+- `id` (pk)
+- `name` (text)
+- `score` (int)
+- `total` (int)
+- `pct` (numeric or generated/computed)
+- `duration_seconds` (int, nullable)
+- `mode` (text, nullable)
+- `created_at` (timestamp)
+
+Optional extension if you want to persist gamification points separately:
+- Add nullable `points` column (not required by current frontend submit/fetch payload).
+
+Example migration:
+```sql
+alter table public.leaderboard_scores
+  add column if not exists points integer;
+```
+
 ## Generate AI question pool offline
 Use the generator script:
 
