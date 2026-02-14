@@ -267,12 +267,20 @@ button.segmented__item{
 .sourceHeaderRow{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-start;
   gap:12px;
   width:100%;
   flex-wrap:nowrap;
+  min-width:0;
 }
-#questionBankInfo{ margin-left:auto; text-align:right; white-space:nowrap; }
+#questionBankInfo{
+  margin-left:auto;
+  text-align:right;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:220px;
+}
 
 .timerControl{
   flex-wrap:nowrap;
@@ -295,6 +303,7 @@ button.segmented__item{
   display:flex !important;
   align-items:stretch !important;
   gap:0;
+  flex-wrap:nowrap;
   border-bottom:1px solid var(--border);
 }
 
@@ -323,7 +332,9 @@ button.segmented__item{
   display:flex;
   align-items:center;
   justify-content:flex-start;
-  width:100%;
+  width:auto;
+  flex:1 1 0;
+  min-width:0;
 }
 
 .settingsGrid .fieldControl .segmented{
