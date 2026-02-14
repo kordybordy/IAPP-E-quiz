@@ -603,6 +603,157 @@ function answeredCount() {
   return Object.keys(attempt.answers).length;
 }
 
+function ensureFeedbackAttemptState() {
+  if (!attempt.feedback || typeof attempt.feedback !== "object") {
+    attempt.feedback = {};
+  }
+  if (!attempt.feedback.questionStartedAtByQid || typeof attempt.feedback.questionStartedAtByQid !== "object") {
+    attempt.feedback.questionStartedAtByQid = {};
+  }
+  if (!attempt.feedback.evaluationByQid || typeof attempt.feedback.evaluationByQid !== "object") {
+    attempt.feedback.evaluationByQid = {};
+  }
+  if (!attempt.feedback.hintUsedByQid || typeof attempt.feedback.hintUsedByQid !== "object") {
+    attempt.feedback.hintUsedByQid = {};
+  }
+  if (!Array.isArray(attempt.feedback.scoredQids)) {
+    attempt.feedback.scoredQids = [];
+  }
+}
+
+function updateFeedbackControls(isFeedbackMode, qid, q) {
+  const submitBtn = $("submitBtn");
+  const hintBtn = $("hintBtn");
+  const skipBtn = $("skipBtn");
+  const pointsInfo = $("pointsInfo");
+  const feedbackMessage = $("feedbackMessage");
+
+  submitBtn.textContent = isFeedbackMode ? "Finish" : "Submit";
+
+  if (!isFeedbackMode) {
+    if (hintBtn) hintBtn.style.display = "none";
+    if (skipBtn) skipBtn.style.display = "none";
+    if (pointsInfo) {
+      pointsInfo.style.display = "none";
+      pointsInfo.textContent = "";
+    }
+    if (feedbackMessage) {
+      feedbackMessage.style.display = "none";
+      feedbackMessage.textContent = "";
+    }
+    return;
+  }
+
+  ensureFeedbackAttemptState();
+
+  if (pointsInfo) {
+    pointsInfo.style.display = "block";
+    pointsInfo.textContent = `Points: ${attempt.points || 0} • Streak: ${attempt.streak || 0}`;
+  }
+
+  const evaluated = !!attempt.feedback.evaluationByQid[qid];
+  const hintUsed = !!attempt.feedback.hintUsedByQid[qid];
+
+  if (hintBtn) {
+    hintBtn.style.display = "inline-flex";
+    hintBtn.disabled = attempt.submitted || evaluated || hintUsed;
+  }
+
+  if (skipBtn) {
+    skipBtn.style.display = "inline-flex";
+    skipBtn.disabled = attempt.submitted || evaluated;
+  }
+
+  if (feedbackMessage) {
+    let message = "";
+    if (evaluated) {
+      const result = attempt.feedback.evaluationByQid[qid];
+      message = result.status === "correct"
+        ? "Correct"
+        : result.status === "skipped"
+          ? `Skipped. Correct answer: ${result.correct ?? "—"}`
+          : `Incorrect, correct is ${result.correct ?? "—"}`;
+    } else if (hintUsed) {
+      message = `Hint used: Correct answer is ${q.correct_label ?? "—"}. (-25 points)`;
+    }
+
+    feedbackMessage.textContent = message;
+    feedbackMessage.style.display = message ? "block" : "none";
+  }
+}
+
+function handleFeedbackHint() {
+  if (!attempt || attempt.mode !== FEEDBACK_MODE) return;
+  const qid = attempt.questionIds[currentIndex];
+  const q = getQuestionById(qid);
+  if (!q) return;
+
+  ensureFeedbackAttemptState();
+  const alreadyScored = attempt.feedback.scoredQids.includes(qid);
+  const hintUsed = !!attempt.feedback.hintUsedByQid[qid];
+  if (alreadyScored || hintUsed) return;
+
+  attempt.feedback.hintUsedByQid[qid] = true;
+
+  if (typeof window.awardPoints === "function") {
+    window.awardPoints(attempt, {
+      isCorrect: false,
+      timeTaken: null,
+      usedHint: true,
+      skipped: false
+    });
+  }
+
+  if (typeof window.checkAndAwardBadges === "function") {
+    window.checkAndAwardBadges(attempt);
+  }
+
+  saveAttempt();
+  renderExam();
+}
+
+function handleFeedbackSkip() {
+  if (!attempt || attempt.mode !== FEEDBACK_MODE) return;
+  const qid = attempt.questionIds[currentIndex];
+  const q = getQuestionById(qid);
+  if (!q) return;
+
+  ensureFeedbackAttemptState();
+  const alreadyScored = attempt.feedback.scoredQids.includes(qid);
+  if (alreadyScored) return;
+
+  delete attempt.answers[qid];
+
+  const startedAt = Number(attempt.feedback.questionStartedAtByQid[qid]);
+  const timeTaken = Number.isFinite(startedAt)
+    ? Math.max(0, Math.floor((Date.now() - startedAt) / 1000))
+    : null;
+
+  if (typeof window.awardPoints === "function") {
+    window.awardPoints(attempt, {
+      isCorrect: false,
+      timeTaken,
+      usedHint: !!attempt.feedback.hintUsedByQid[qid],
+      skipped: true,
+      questionId: qid
+    });
+  }
+
+  if (typeof window.checkAndAwardBadges === "function") {
+    window.checkAndAwardBadges(attempt);
+  }
+
+  attempt.feedback.evaluationByQid[qid] = {
+    status: "skipped",
+    your: null,
+    correct: q.correct_label,
+    timeTaken
+  };
+
+  saveAttempt();
+  renderExam();
+}
+
 function renderJumpBar() {
   const bar = $("jumpBar");
   bar.innerHTML = "";
@@ -640,18 +791,7 @@ function renderExam() {
   const isFeedbackMode = attempt.mode === FEEDBACK_MODE;
 
   if (isFeedbackMode) {
-    if (!attempt.feedback || typeof attempt.feedback !== "object") {
-      attempt.feedback = {};
-    }
-    if (!attempt.feedback.questionStartedAtByQid || typeof attempt.feedback.questionStartedAtByQid !== "object") {
-      attempt.feedback.questionStartedAtByQid = {};
-    }
-    if (!attempt.feedback.evaluationByQid || typeof attempt.feedback.evaluationByQid !== "object") {
-      attempt.feedback.evaluationByQid = {};
-    }
-    if (!Array.isArray(attempt.feedback.scoredQids)) {
-      attempt.feedback.scoredQids = [];
-    }
+    ensureFeedbackAttemptState();
     const alreadyScored = attempt.feedback.scoredQids.includes(qid);
     if (!alreadyScored && !Number.isFinite(Number(attempt.feedback.questionStartedAtByQid[qid]))) {
       attempt.feedback.questionStartedAtByQid[qid] = Date.now();
@@ -711,15 +851,7 @@ function renderExam() {
         : null;
 
       if (attempt.mode === FEEDBACK_MODE) {
-        if (!attempt.feedback || typeof attempt.feedback !== "object") {
-          attempt.feedback = {};
-        }
-        if (!Array.isArray(attempt.feedback.scoredQids)) {
-          attempt.feedback.scoredQids = [];
-        }
-        if (!attempt.feedback.evaluationByQid || typeof attempt.feedback.evaluationByQid !== "object") {
-          attempt.feedback.evaluationByQid = {};
-        }
+        ensureFeedbackAttemptState();
 
         const alreadyScored = attempt.feedback.scoredQids.includes(qid);
         const isCorrect = selected === q.correct_label;
@@ -733,10 +865,6 @@ function renderExam() {
               skipped: false,
               questionId: qid
             });
-          }
-
-          if (!attempt.feedback.scoredQids.includes(qid)) {
-            attempt.feedback.scoredQids.push(qid);
           }
 
           if (typeof window.checkAndAwardBadges === "function") {
@@ -775,15 +903,7 @@ function renderExam() {
 
   card.appendChild(choices);
 
-  if (isFeedbackMode && feedbackResult) {
-    const note = document.createElement("div");
-    note.className = "muted small";
-    note.style.marginTop = "8px";
-    note.textContent = feedbackResult.status === "correct"
-      ? "Correct"
-      : `Incorrect, correct is ${feedbackResult.correct ?? "—"}`;
-    card.appendChild(note);
-  }
+  updateFeedbackControls(isFeedbackMode, qid, q);
 
   $("prevBtn").disabled = (currentIndex === 0);
   $("nextBtn").disabled = (currentIndex === attempt.questionIds.length - 1);
@@ -912,9 +1032,11 @@ async function init() {
   $("nextBtn").onclick = () => { currentIndex++; renderExam(); };
 
   $("saveExitBtn").onclick = () => { saveAttempt(); stopTimer(); show("home"); };
+  $("hintBtn").onclick = handleFeedbackHint;
+  $("skipBtn").onclick = handleFeedbackSkip;
 
   $("submitBtn").onclick = () => {
-    // Simple guard: allow submit anytime
+    // In feedback mode this acts as Finish.
     scoreAttempt();
     renderExam(); // reflect colors in exam view
     renderResults();

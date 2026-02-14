@@ -99,8 +99,11 @@
           <div class="muted small">Attempt</div>
           <div id="attemptInfo" class="mono"></div>
           <div id="timerInfo" class="muted small mono"></div>
+          <div id="pointsInfo" class="muted small mono" style="display:none;"></div>
         </div>
         <div class="examActions">
+          <button id="hintBtn" class="secondary" style="display:none;">Hint</button>
+          <button id="skipBtn" class="secondary" style="display:none;">Skip</button>
           <button id="saveExitBtn" class="secondary">Save & exit</button>
           <button id="submitBtn" class="primary">Submit</button>
         </div>
@@ -109,6 +112,7 @@
       <div id="jumpBar" class="jumpBar"></div>
 
       <article id="questionCard" class="questionCard"></article>
+      <div id="feedbackMessage" class="muted small" style="display:none;"></div>
 
       <div class="navRow">
         <button id="prevBtn" class="secondary">Previous</button>
