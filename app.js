@@ -171,10 +171,29 @@ function loadSavedAttempt() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw);
-    return parsed;
+    return normalizeAttemptState(parsed);
   } catch (e) {
     return null;
   }
+}
+
+function createDefaultFeedbackState(existingFeedback = null) {
+  const source = existingFeedback && typeof existingFeedback === "object" ? existingFeedback : {};
+
+  return {
+    questionStartedAtByQid: source.questionStartedAtByQid && typeof source.questionStartedAtByQid === "object"
+      ? source.questionStartedAtByQid
+      : {},
+    hintUsedByQid: source.hintUsedByQid && typeof source.hintUsedByQid === "object"
+      ? source.hintUsedByQid
+      : {},
+    scoredQids: Array.isArray(source.scoredQids)
+      ? source.scoredQids
+      : [],
+    evaluationByQid: source.evaluationByQid && typeof source.evaluationByQid === "object"
+      ? source.evaluationByQid
+      : {}
+  };
 }
 
 function normalizeAttemptState(rawAttempt) {
@@ -186,36 +205,15 @@ function normalizeAttemptState(rawAttempt) {
     normalized.mode = EXAM_MODE;
   }
 
-  if (!Number.isFinite(Number(normalized.points))) {
-    normalized.points = 0;
-  }
+  normalized.points = Number.isFinite(Number(normalized.points)) ? Number(normalized.points) : 0;
 
-  if (!Number.isFinite(Number(normalized.streak))) {
-    normalized.streak = 0;
-  }
+  normalized.streak = Number.isFinite(Number(normalized.streak)) ? Number(normalized.streak) : 0;
 
   if (!Array.isArray(normalized.badges)) {
     normalized.badges = [];
   }
 
-  const existingFeedback = normalized.feedback && typeof normalized.feedback === "object"
-    ? normalized.feedback
-    : {};
-
-  normalized.feedback = {
-    questionStartedAtByQid: existingFeedback.questionStartedAtByQid && typeof existingFeedback.questionStartedAtByQid === "object"
-      ? existingFeedback.questionStartedAtByQid
-      : {},
-    hintUsedByQid: existingFeedback.hintUsedByQid && typeof existingFeedback.hintUsedByQid === "object"
-      ? existingFeedback.hintUsedByQid
-      : {},
-    scoredQids: Array.isArray(existingFeedback.scoredQids)
-      ? existingFeedback.scoredQids
-      : [],
-    evaluationByQid: existingFeedback.evaluationByQid && typeof existingFeedback.evaluationByQid === "object"
-      ? existingFeedback.evaluationByQid
-      : {}
-  };
+  normalized.feedback = createDefaultFeedbackState(normalized.feedback);
 
   return normalized;
 }
@@ -588,12 +586,7 @@ function startNewAttempt() {
     points: 0,
     streak: 0,
     badges: [],
-    feedback: {
-      questionStartedAtByQid: {},
-      hintUsedByQid: {},
-      scoredQids: [],
-      evaluationByQid: {}
-    }
+    feedback: createDefaultFeedbackState()
   };
   currentIndex = 0;
   saveAttempt();
@@ -987,7 +980,7 @@ async function init() {
   // Attempt state
   const saved = loadSavedAttempt();
   if (saved && saved.questionIds && saved.answers) {
-    attempt = normalizeAttemptState(saved);
+    attempt = saved;
     saveAttempt();
     $("questionCount").value = String(attempt.questionIds.length);
     $("timerEnabled").checked = !!attempt.timerEnabled;
