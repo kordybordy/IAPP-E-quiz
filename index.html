@@ -8,15 +8,10 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="topLeft" aria-hidden="true"></div>
-    <div class="topCenter">
-      <div class="topNavButtons">
-        <div class="segmented segmented--nav">
-          <button id="homeTabBtn" class="secondary segmented__item" type="button">Exam Simulator</button>
-          <button id="leaderboardTabBtn" class="secondary segmented__item" type="button">Leaderboard</button>
-        </div>
-      </div>
+    <div class="topLeft">
+      <div class="brand">Exam Simulator</div>
     </div>
+    <div class="topCenter"></div>
     <div class="meta" aria-hidden="true"></div>
   </header>
 
@@ -24,66 +19,65 @@
     <section id="home" class="card">
       <h1>Practice exam</h1>
       <section class="settingsGrid">
-      <div class="fieldRow">
-        <label class="fieldLabel" for="quizSourceLegacy">Question source</label>
-        <div class="fieldControl">
-          <div class="sourceHeaderRow">
-          <div class="segmented segmented--field segmented--compact" id="questionSourceSegment" role="radiogroup" aria-label="Question source">
-            <label class="segmented__item">
-              <input id="quizSourceLegacy" type="radio" name="quizSource" value="legacy" checked />
-              <span>Legacy</span>
-            </label>
-            <label class="segmented__item">
-              <input id="quizSourceAi" type="radio" name="quizSource" value="ai" />
-              <span>AI</span>
-            </label>
-            <label class="segmented__item">
-              <input id="quizSourceMixed" type="radio" name="quizSource" value="mixed" />
-              <span>Mixed (50/50)</span>
-            </label>
-          </div>
-          <span class="muted small" id="questionBankInfo">Loading question bank…</span>
-          </div>
-          <span class="muted small" id="quizSourceHelp"></span>
-        </div>
-      </div>
-
-      <div class="fieldRow">
-        <label class="fieldLabel" for="quizModeExam">Mode</label>
-        <div class="fieldControl">
-          <div class="segmented segmented--field segmented--compact" role="radiogroup" aria-label="Quiz mode">
-            <label class="segmented__item">
-              <input id="quizModeExam" type="radio" name="quizMode" value="exam" checked />
-              <span>Exam</span>
-            </label>
-            <label class="segmented__item">
-              <input id="quizModeFeedback" type="radio" name="quizMode" value="feedback" />
-              <span>Feedback</span>
-            </label>
+        <div class="fieldRow">
+          <label class="fieldLabel" for="quizSourceLegacy">Question source</label>
+          <div class="fieldControl">
+            <div class="sourceHeaderRow">
+              <div class="segmented segmented--field segmented--compact" id="questionSourceSegment" role="radiogroup" aria-label="Question source">
+                <label class="segmented__item">
+                  <input id="quizSourceLegacy" type="radio" name="quizSource" value="legacy" checked />
+                  <span>Legacy</span>
+                </label>
+                <label class="segmented__item">
+                  <input id="quizSourceAi" type="radio" name="quizSource" value="ai" />
+                  <span>AI</span>
+                </label>
+                <label class="segmented__item">
+                  <input id="quizSourceMixed" type="radio" name="quizSource" value="mixed" />
+                  <span>Mixed (50/50)</span>
+                </label>
+              </div>
+              <span class="muted small" id="questionBankInfo">Loading question bank...</span>
+            </div>
+            <span class="muted small" id="quizSourceHelp"></span>
           </div>
         </div>
-      </div>
 
-      <div class="fieldRow">
-        <label class="fieldLabel" for="questionCount">Number of questions</label>
-        <div class="fieldControl">
-          <input id="questionCount" type="number" min="1" step="1" value="90" />
-          <span class="muted small" id="questionCountHelp"></span>
+        <div class="fieldRow">
+          <label class="fieldLabel" for="quizModeExam">Mode</label>
+          <div class="fieldControl">
+            <div class="segmented segmented--field segmented--compact" role="radiogroup" aria-label="Quiz mode">
+              <label class="segmented__item">
+                <input id="quizModeExam" type="radio" name="quizMode" value="exam" checked />
+                <span>Exam</span>
+              </label>
+              <label class="segmented__item">
+                <input id="quizModeFeedback" type="radio" name="quizMode" value="feedback" />
+                <span>Feedback</span>
+              </label>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="fieldRow">
-        <label class="fieldLabel" for="timerEnabled">Timer</label>
-        <div class="fieldControl timerControl">
-          <label class="checkbox">
-            <input id="timerEnabled" type="checkbox" checked />
-            Enable timer
-          </label>
-          <input id="timerMinutes" type="number" min="1" step="1" value="150" />
-          <span class="muted small" id="timerSummary"></span>
+        <div class="fieldRow">
+          <label class="fieldLabel" for="questionCount">Number of questions</label>
+          <div class="fieldControl">
+            <input id="questionCount" type="number" min="1" step="1" value="90" />
+            <span class="muted small" id="questionCountHelp"></span>
+          </div>
         </div>
-      </div>
 
+        <div class="fieldRow">
+          <label class="fieldLabel" for="timerEnabled">Timer</label>
+          <div class="fieldControl timerControl">
+            <label class="checkbox">
+              <input id="timerEnabled" type="checkbox" checked />
+              Enable timer
+            </label>
+            <input id="timerMinutes" type="number" min="1" step="1" value="150" />
+            <span class="muted small" id="timerSummary"></span>
+          </div>
+        </div>
       </section>
 
       <div class="controls startRow">
@@ -104,7 +98,7 @@
         <div class="examActions">
           <button id="hintBtn" class="secondary" style="display:none;">Hint</button>
           <button id="skipBtn" class="secondary" style="display:none;">Skip</button>
-          <button id="saveExitBtn" class="secondary">Save & exit</button>
+          <button id="saveExitBtn" class="secondary">Save &amp; exit</button>
           <button id="submitBtn" class="primary">Submit</button>
         </div>
       </div>
@@ -121,31 +115,6 @@
       </div>
     </section>
 
-    <section id="leaderboardTab" class="card" style="display:none;">
-      <div class="resultsHeader leaderboardHeader">
-        <h2 class="leaderboardTitle">Leaderboard</h2>
-      </div>
-      <p id="globalLeaderboardNotice" class="muted small"></p>
-      <div class="leaderboardFilters segmented segmented--compact" role="group" aria-label="Leaderboard mode filter">
-        <label class="segmented__item">
-          <input type="radio" name="leaderboardFilter" value="all" checked />
-          <span>All modes</span>
-        </label>
-        <label class="segmented__item">
-          <input type="radio" name="leaderboardFilter" value="exam" />
-          <span>Exam</span>
-        </label>
-        <label class="segmented__item">
-          <input type="radio" name="leaderboardFilter" value="feedback" />
-          <span>Feedback</span>
-        </label>
-      </div>
-      <div id="globalLeaderboardList" class="leaderboardList muted small">Loading…</div>
-      <div class="controls leaderboardBackRow">
-        <button id="leaderboardBackBtn" class="secondary">Back to home</button>
-      </div>
-    </section>
-
     <section id="results" class="card" style="display:none;">
       <div class="resultsHeader">
         <h2>Results</h2>
@@ -156,19 +125,6 @@
       </div>
 
       <p id="scoreLine" class="scoreLine"></p>
-      <div class="fieldRow">
-        <label class="fieldLabel" for="resultsName">Name</label>
-        <div class="fieldControl">
-          <input id="resultsName" type="text" maxlength="30" placeholder="Your name for the global leaderboard" />
-          <div class="controls">
-            <button id="saveResultBtn" class="secondary" type="button">Save result</button>
-          </div>
-          <span id="saveResultMessage" class="muted small"></span>
-        </div>
-      </div>
-
-      <h3>Global leaderboard</h3>
-      <div id="resultsGlobalLeaderboardList" class="leaderboardList muted small">Loading…</div>
 
       <div class="filters">
         <label class="checkbox">
@@ -182,7 +138,6 @@
   </main>
 
   <footer class="footer muted small"></footer>
-  <script src="src/leaderboard/supabaseLeaderboard.js"></script>
   <script src="src/gamification/points.js"></script>
   <script src="src/gamification/badges.js"></script>
   <script src="app.js"></script>

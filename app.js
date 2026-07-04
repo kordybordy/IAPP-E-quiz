@@ -2,7 +2,6 @@
 // Loads questions.json, draws random questions, scores in-browser.
 
 const STORAGE_KEY = "exam_simulator_static_v2";
-const LEADERBOARD_NAME_KEY = "exam_simulator_last_leaderboard_name";
 const QUIZ_SOURCE_KEY = "quiz_source";
 const DEFAULT_QUESTION_COUNT = 90;
 const DEFAULT_TIMER_MINUTES = 150;
@@ -12,16 +11,13 @@ const MIXED_SOURCE = "mixed";
 const EXAM_MODE = "exam";
 const FEEDBACK_MODE = "feedback";
 const FEEDBACK_NEXT_DELAY_MS = 900;
-const LEADERBOARD_FILTER_ALL = "all";
-const LEADERBOARD_FILTER_EXAM = "exam";
-const LEADERBOARD_FILTER_FEEDBACK = "feedback";
 
 let bank = null;     // {questions:[...]}
 let attempt = null;  // {id, createdAt, questionIds:[...], answers:{qid:'A'|'B'...}, submitted:boolean, results?}
 let currentIndex = 0;
 let timerIntervalId = null;
 
-const SECTION_IDS = ["home", "exam", "leaderboardTab", "results"];
+const SECTION_IDS = ["home", "exam", "results"];
 const VIEW_TRANSITION_MS = 145;
 let isViewTransitioning = false;
 
@@ -38,6 +34,14 @@ function safeStorageGet(key) {
 function safeStorageSet(key, value) {
   try {
     localStorage.setItem(key, value);
+  } catch (error) {
+    // ignore
+  }
+}
+
+function safeStorageRemove(key) {
+  try {
+    localStorage.removeItem(key);
   } catch (error) {
     // ignore
   }
@@ -234,9 +238,54 @@ function saveAttempt() {
 }
 
 function clearAttempt() {
-  localStorage.removeItem(STORAGE_KEY);
+  safeStorageRemove(STORAGE_KEY);
   stopTimer();
   attempt = null;
+}
+
+function sameQuestionId(left, right) {
+  return String(left) === String(right);
+}
+
+function getQuestionById(qid) {
+  if (!bank || !Array.isArray(bank.questions)) return null;
+  return bank.questions.find(q => sameQuestionId(q.id, qid)) || null;
+}
+
+function getMissingQuestionIds(savedAttempt) {
+  if (!savedAttempt || !Array.isArray(savedAttempt.questionIds)) return [];
+  return savedAttempt.questionIds.filter(qid => !getQuestionById(qid));
+}
+
+function canRestoreAttempt(savedAttempt) {
+  return !!(
+    savedAttempt &&
+    Array.isArray(savedAttempt.questionIds) &&
+    savedAttempt.questionIds.length > 0 &&
+    savedAttempt.answers &&
+    typeof savedAttempt.answers === "object" &&
+    getMissingQuestionIds(savedAttempt).length === 0
+  );
+}
+
+function resetOutdatedAttempt(message = "Saved attempt was outdated and has been cleared.") {
+  clearAttempt();
+  currentIndex = 0;
+  const resumeBtn = $("resumeBtn");
+  const resetBtn = $("resetBtn");
+  const info = $("questionBankInfo");
+  if (resumeBtn) resumeBtn.style.display = "none";
+  if (resetBtn) resetBtn.style.display = "none";
+  if (info) info.textContent = message;
+  show("home");
+}
+
+function clampCurrentIndex() {
+  if (!attempt || !Array.isArray(attempt.questionIds) || attempt.questionIds.length === 0) {
+    currentIndex = 0;
+    return;
+  }
+  currentIndex = Math.min(Math.max(currentIndex, 0), attempt.questionIds.length - 1);
 }
 
 
@@ -249,10 +298,6 @@ function formatDuration(totalSeconds) {
   const mm = String(m).padStart(2, "0");
   const ss = String(s).padStart(2, "0");
   return `${hh}:${mm}:${ss}`;
-}
-
-function isDefaultMode(questionCount, timerEnabled, timerMinutes) {
-  return questionCount === DEFAULT_QUESTION_COUNT && timerEnabled && timerMinutes === DEFAULT_TIMER_MINUTES;
 }
 
 function getTimerSettings() {
@@ -275,220 +320,6 @@ function updateTimerSummary() {
   timerSummary.textContent = enabled ? "minutes" : "off";
 }
 
-
-function leaderboardMode() {
-  if (!attempt) return "unknown";
-  const gameplayLabel = attempt.mode === FEEDBACK_MODE ? FEEDBACK_MODE : EXAM_MODE;
-  const source = attempt.sourceType || getSelectedQuizSource();
-  const sourceLabel = source === AI_SOURCE ? "ai" : source === MIXED_SOURCE ? "mixed" : "legacy";
-  const timerLabel = attempt.timerEnabled ? `${attempt.timerMinutes || DEFAULT_TIMER_MINUTES}m` : "off";
-  return `gameplay:${gameplayLabel}|questions:${attempt.questionIds.length}|timer:${timerLabel}|source:${sourceLabel}`;
-}
-
-function parseLeaderboardMode(mode) {
-  const raw = String(mode || "").trim();
-  const base = {
-    raw,
-    gameplay: "unknown",
-    source: "unknown",
-    questions: null,
-    timer: "unknown",
-    label: raw || "Unknown"
-  };
-
-  if (!raw) return base;
-
-  if (raw.startsWith("gameplay:")) {
-    const parts = raw.split("|");
-    const data = {};
-    parts.forEach((part) => {
-      const [key, ...rest] = part.split(":");
-      if (!key || !rest.length) return;
-      data[key.trim()] = rest.join(":").trim();
-    });
-
-    const gameplay = data.gameplay === FEEDBACK_MODE ? FEEDBACK_MODE : data.gameplay === EXAM_MODE ? EXAM_MODE : "unknown";
-    const questions = Number.parseInt(data.questions, 10);
-
-    return {
-      raw,
-      gameplay,
-      source: data.source || "unknown",
-      questions: Number.isFinite(questions) ? questions : null,
-      timer: data.timer || "unknown",
-      label: [
-        gameplay !== "unknown" ? gameplay : null,
-        Number.isFinite(questions) ? `${questions}q` : null,
-        data.timer ? `timer ${data.timer}` : null,
-        data.source ? data.source : null
-      ].filter(Boolean).join(" • ") || raw
-    };
-  }
-
-  const legacyParts = raw.split("_");
-  if (legacyParts.length >= 3) {
-    const questionText = legacyParts[0];
-    const questions = Number.parseInt(questionText.replace(/q$/i, ""), 10);
-    return {
-      raw,
-      gameplay: EXAM_MODE,
-      source: legacyParts[2] || "unknown",
-      questions: Number.isFinite(questions) ? questions : null,
-      timer: legacyParts[1] || "unknown",
-      label: [
-        EXAM_MODE,
-        Number.isFinite(questions) ? `${questions}q` : null,
-        legacyParts[1] ? `timer ${legacyParts[1]}` : null,
-        legacyParts[2] || null
-      ].filter(Boolean).join(" • ")
-    };
-  }
-
-  return { ...base, label: raw };
-}
-
-function getLeaderboardFilterValue() {
-  const selected = document.querySelector("input[name=leaderboardFilter]:checked");
-  return selected ? selected.value : LEADERBOARD_FILTER_ALL;
-}
-
-function getSavedLeaderboardName() {
-  return safeStorageGet(LEADERBOARD_NAME_KEY) || "";
-}
-
-function saveLeaderboardName(name) {
-  safeStorageSet(LEADERBOARD_NAME_KEY, name);
-}
-
-function renderListEntries(listEl, rows, formatter, emptyText) {
-  if (!listEl) return;
-  if (!rows.length) {
-    listEl.textContent = emptyText;
-    return;
-  }
-  listEl.innerHTML = rows.map(formatter).join("");
-}
-
-function safePercent(score, total, pct) {
-  if (Number.isFinite(Number(pct))) return Number(pct);
-  if (!Number.isFinite(Number(score)) || !Number.isFinite(Number(total)) || Number(total) <= 0) return 0;
-  return (Number(score) / Number(total)) * 100;
-}
-
-function isNetworkCorsErrorMessage(message) {
-  return typeof message === "string" && message.includes("network/CORS");
-}
-
-function globalLeaderboardFallbackMessage(error, action) {
-  if (isNetworkCorsErrorMessage(error?.message)) {
-    return `Couldn’t ${action} global leaderboard (network/CORS).`;
-  }
-  return `Couldn’t ${action} global leaderboard.`;
-}
-
-function formatGlobalLeaderboardRows(rows) {
-  return rows.map((entry, idx) => {
-    const parsedMode = parseLeaderboardMode(entry.mode);
-    const pct = safePercent(entry.score, entry.total, entry.pct).toFixed(1);
-    const duration = Number.isInteger(entry.duration_seconds) ? formatDuration(entry.duration_seconds) : "—";
-    const points = Number.isFinite(Number(entry.points)) ? Number(entry.points) : null;
-    const scoreLabel = parsedMode.gameplay === FEEDBACK_MODE && points != null
-      ? `${points} pts`
-      : `${entry.score}/${entry.total}`;
-    return `
-      <div class="lbRow">
-        <div class="lbPrimary">
-          <span class="lbRank">#${idx + 1}</span>
-          <span class="lbName">${entry.name}</span>
-        </div>
-        <div class="lbMeta">
-          <span class="lbScore">${scoreLabel}</span>
-          <span class="lbPercent">${pct}%</span>
-          <span class="lbDuration">${duration}</span>
-          <span class="lbMode">${parsedMode.label}</span>
-        </div>
-      </div>
-    `;
-  });
-}
-
-function filterLeaderboardRows(rows, filterValue) {
-  if (!Array.isArray(rows)) return [];
-  if (filterValue === LEADERBOARD_FILTER_EXAM) {
-    return rows.filter((entry) => parseLeaderboardMode(entry.mode).gameplay === EXAM_MODE);
-  }
-  if (filterValue === LEADERBOARD_FILTER_FEEDBACK) {
-    return rows.filter((entry) => parseLeaderboardMode(entry.mode).gameplay === FEEDBACK_MODE);
-  }
-  return rows;
-}
-
-async function refreshGlobalLeaderboards() {
-  const tabList = $("globalLeaderboardList");
-  const resultsList = $("resultsGlobalLeaderboardList");
-  const notice = $("globalLeaderboardNotice");
-
-  if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    if (notice) notice.textContent = "Global leaderboard not configured.";
-    renderListEntries(tabList, [], () => "", "Global leaderboard unavailable.");
-    renderListEntries(resultsList, [], () => "", "Global leaderboard unavailable.");
-    return;
-  }
-
-  if (notice) notice.textContent = "";
-  if (tabList) tabList.textContent = "Loading…";
-  if (resultsList) resultsList.textContent = "Loading…";
-
-  try {
-    const rows = await window.SupabaseLeaderboard.fetchTopScores({ limit: 20 });
-    const activeFilter = getLeaderboardFilterValue();
-    const visibleRows = filterLeaderboardRows(rows, activeFilter);
-    const formatted = formatGlobalLeaderboardRows(visibleRows);
-    renderListEntries(tabList, formatted, r => r, "No global entries yet.");
-    renderListEntries(resultsList, formatted, r => r, "No global entries yet.");
-  } catch (error) {
-    const text = globalLeaderboardFallbackMessage(error, "load");
-    if (notice) notice.textContent = text;
-    renderListEntries(tabList, [], () => "", text);
-    renderListEntries(resultsList, [], () => "", text);
-  }
-}
-
-async function saveResultToGlobalLeaderboard() {
-  const msg = $("saveResultMessage");
-  if (!attempt || !attempt.summary) return;
-
-  if (!window.SupabaseLeaderboard || !window.SupabaseLeaderboard.isConfigured()) {
-    msg.textContent = "Global leaderboard unavailable.";
-    return;
-  }
-
-  const input = $("resultsName");
-  const name = input.value.trim();
-  if (name.length < 1 || name.length > 30) {
-    msg.textContent = "Name must be between 1 and 30 characters.";
-    return;
-  }
-
-  const payload = {
-    name,
-    score: attempt.summary.correct,
-    total: attempt.summary.total,
-    mode: leaderboardMode(),
-    points: Number.isFinite(Number(attempt.points)) ? Number(attempt.points) : null,
-    durationSeconds: attempt.summary.elapsedSeconds
-  };
-
-  msg.textContent = "Saving…";
-  try {
-    await window.SupabaseLeaderboard.submitScore(payload);
-    saveLeaderboardName(name);
-    msg.textContent = "Saved to global leaderboard.";
-    refreshGlobalLeaderboards();
-  } catch (error) {
-    msg.textContent = globalLeaderboardFallbackMessage(error, "save to");
-  }
-}
 
 function stopTimer() {
   if (timerIntervalId) {
@@ -536,10 +367,6 @@ function show(sectionId) {
     return section && window.getComputedStyle(section).display !== "none";
   });
   const currentSection = currentSectionId ? $(currentSectionId) : null;
-
-  const isLeaderboardView = sectionId === "leaderboardTab";
-  $("homeTabBtn").classList.toggle("active", !isLeaderboardView);
-  $("leaderboardTabBtn").classList.toggle("active", isLeaderboardView);
 
   if (!nextSection || currentSection === nextSection) return;
 
@@ -660,7 +487,6 @@ function startNewAttempt() {
   const timer = getTimerSettings();
   const sourceType = getSelectedQuizSource();
   const mode = getSelectedQuizMode();
-  const eligibleForLeaderboard = isDefaultMode(count, timer.enabled, timer.minutes);
   const now = Date.now();
 
   attempt = {
@@ -675,8 +501,6 @@ function startNewAttempt() {
     timerEnabled: timer.enabled,
     timerMinutes: timer.minutes,
     timerEndsAt: timer.enabled ? now + timer.minutes * 60 * 1000 : null,
-    nickname: "",
-    isDefaultMode: eligibleForLeaderboard,
     mode,
     sourceType,
     points: 0,
@@ -689,10 +513,6 @@ function startNewAttempt() {
   renderExam();
   startTimerIfNeeded();
   show("exam");
-}
-
-function getQuestionById(qid) {
-  return bank.questions.find(q => q.id === qid);
 }
 
 function answeredCount() {
@@ -862,8 +682,8 @@ function renderJumpBar() {
     const ans = attempt.answers[qid];
     if (attempt.submitted && attempt.results) {
       const r = attempt.results[qid];
-      if (r.status === "correct") btn.classList.add("answered");
-      else if (r.status === "wrong") btn.classList.add("wrong");
+      if (r?.status === "correct") btn.classList.add("answered");
+      else if (r?.status === "wrong") btn.classList.add("wrong");
       else btn.classList.add("unanswered");
     } else {
       if (ans) btn.classList.add("answered");
@@ -876,6 +696,7 @@ function renderJumpBar() {
 }
 
 function renderExam() {
+  clampCurrentIndex();
   const total = attempt.questionIds.length;
   $("attemptInfo").textContent = `${attempt.id.slice(0,8)} • ${answeredCount()}/${total} answered`;
   updateTimerInfo();
@@ -885,6 +706,10 @@ function renderExam() {
 
   const qid = attempt.questionIds[currentIndex];
   const q = getQuestionById(qid);
+  if (!q) {
+    resetOutdatedAttempt("Saved attempt was outdated and has been cleared.");
+    return;
+  }
   const your = attempt.answers[qid] || null;
   const isFeedbackMode = attempt.mode === FEEDBACK_MODE;
 
@@ -1017,6 +842,7 @@ function scoreAttempt() {
 
   attempt.questionIds.forEach(qid => {
     const q = getQuestionById(qid);
+    if (!q) return;
     const correctLabel = q.correct_label;
     const your = attempt.answers[qid] || null;
     let status = "unanswered";
@@ -1114,13 +940,7 @@ function renderResults() {
   const pointsText = isFeedbackMode ? `, points: ${s.points ?? 0}` : "";
   const badgesText = isFeedbackMode ? `, badges: ${s.badgesCount ?? (Array.isArray(s.badges) ? s.badges.length : 0)}` : "";
   $("scoreLine").textContent = `Score: ${s.correct} / ${s.total}  (wrong: ${s.wrong}, unanswered: ${s.unanswered}${elapsedText}${pointsText}${badgesText})`;
-  const resultNameInput = $("resultsName");
-  if (resultNameInput && !resultNameInput.value) {
-    resultNameInput.value = getSavedLeaderboardName();
-  }
-  $("saveResultMessage").textContent = "";
   $("newAttemptBtn").textContent = `New ${s.total}-question attempt`;
-  refreshGlobalLeaderboards();
 
   const list = $("reviewList");
   list.innerHTML = "";
@@ -1130,6 +950,7 @@ function renderResults() {
   attempt.questionIds.forEach((qid, idx) => {
     const q = getQuestionById(qid);
     const r = attempt.results[qid];
+    if (!q || !r) return;
 
     if (onlyWrong && r.status === "correct") return;
 
@@ -1187,21 +1008,11 @@ async function init() {
   $("startBtn").onclick = startNewAttempt;
   $("newAttemptBtn").onclick = () => { clearAttempt(); startNewAttempt(); };
   $("backHomeBtn").onclick = () => { stopTimer(); show("home"); };
-  $("homeTabBtn").onclick = () => { stopTimer(); show("home"); };
-  $("leaderboardTabBtn").onclick = async () => { await refreshGlobalLeaderboards(); show("leaderboardTab"); };
-  $("leaderboardBackBtn").onclick = () => { show("home"); };
-  const leaderboardFilters = document.querySelectorAll("input[name=leaderboardFilter]");
-  leaderboardFilters.forEach((input) => {
-    input.onchange = () => {
-      refreshGlobalLeaderboards();
-    };
-  });
   $("resumeBtn").onclick = () => { show("exam"); renderExam(); startTimerIfNeeded(); };
   $("resetBtn").onclick = () => { clearAttempt(); window.location.reload(); };
   $("questionCount").oninput = () => { updateQuestionCountText(); };
   $("timerEnabled").onchange = () => { updateTimerSummary(); };
   $("timerMinutes").oninput = () => { updateTimerSummary(); };
-  $("resultsName").value = getSavedLeaderboardName();
 
   $("prevBtn").onclick = () => { currentIndex--; renderExam(); };
   $("nextBtn").onclick = () => { currentIndex++; renderExam(); };
@@ -1218,8 +1029,6 @@ async function init() {
   };
 
   $("showOnlyWrong").onchange = () => renderResults();
-  $("saveResultBtn").onclick = saveResultToGlobalLeaderboard;
-  $("resultsName").oninput = () => { $("saveResultMessage").textContent = ""; };
 
   // Source selection + question bank
   const savedSource = loadQuizSource();
@@ -1259,23 +1068,20 @@ async function init() {
         $("questionBankInfo").textContent = legacyError.message || "Failed to load question bank.";
         $("startBtn").disabled = true;
         updateTimerSummary();
-        refreshGlobalLeaderboards();
         return;
       }
     } else {
       $("questionBankInfo").textContent = error.message || "Failed to load question bank.";
       $("startBtn").disabled = true;
       updateTimerSummary();
-      refreshGlobalLeaderboards();
       return;
     }
   }
   updateTimerSummary();
-  refreshGlobalLeaderboards();
 
   // Attempt state
   const saved = loadSavedAttempt();
-  if (saved && saved.questionIds && saved.answers) {
+  if (canRestoreAttempt(saved)) {
     attempt = saved;
     saveAttempt();
     $("questionCount").value = String(attempt.questionIds.length);
@@ -1289,6 +1095,8 @@ async function init() {
       renderResults();
       show("results");
     }
+  } else if (saved) {
+    resetOutdatedAttempt("Saved attempt was outdated and has been cleared.");
   }
 
   $("startBtn").disabled = false;

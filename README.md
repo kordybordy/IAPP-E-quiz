@@ -31,31 +31,6 @@ Just open `index.html` in a browser.
 
 ## Privacy
 - Answers and in-progress attempts are stored in your browser (LocalStorage).
-- If global leaderboard is configured and you click **Save result**, score data is sent to Supabase.
-
-## Global leaderboard (Supabase)
-
-The app supports a shared global leaderboard via Supabase REST API (`fetch`, no `supabase-js`).
-
-The Supabase project URL and public anon key are hardcoded in `src/leaderboard/supabaseLeaderboard.js`:
-- `SUPABASE_URL`: `https://afcwekhfisodipdijicd.supabase.co`
-- `SUPABASE_ANON_KEY`: `sb_publishable_L7pMKjrigH0hgcYjq4SXmA_8TIY4Wxq`
-
-### Required table/policies
-Expected table: `public.leaderboard_scores` with RLS enabled and anon policies:
-- `SELECT` for anon
-- `INSERT` for anon
-
-### How it works
-- Results screen has a name input + **Save result** button.
-- Global leaderboard loads from Supabase.
-- If request fails, app keeps working with localStorage leaderboard and shows a warning.
-- Requests include both required headers for browser Data API access: `apikey` and `Authorization: Bearer <anon key>`.
-
-### Quick verification
-1. Finish an exam and submit a score with **Save result**.
-2. Confirm the entry appears in the global leaderboard section.
-3. If Supabase is temporarily unavailable, confirm fallback local leaderboard still works.
 
 ## AI mode: "paragraph -> question" with quality gates
 
@@ -147,7 +122,7 @@ python3 scripts/export_questions.py --input questions.corrected.json --out-csv o
 - The selected source is persisted in `localStorage` under `quiz_source`.
 - If AI mode is selected and `ai_questions.json` is missing or empty, the app shows: `Brak puli AI. Spróbuj później.`
 
-## Quiz modes, scoring, badges, and leaderboard semantics
+## Quiz modes, scoring, and badges
 
 ### How to choose mode on the home screen
 - Use the **Mode** segmented control on the home screen:
@@ -187,36 +162,6 @@ Badges are checked after each feedback-mode evaluation:
   - Each answer is evaluated immediately; hints and skip are enabled.
   - On the last question, attempt can auto-finalize after evaluation.
   - Results include everything from exam mode **plus** `points` and `badges` count.
-
-### Leaderboard interpretation by mode
-- Saved leaderboard payload includes `score`, `total`, `duration_seconds`, and `mode`.
-- Current `mode` value is a run profile string:
-  - `<questionCount>q_<timerLabel>_<sourceLabel>`
-  - Example: `90q_150m_legacy`, `50q_off_ai`.
-- `timerLabel` is either `<minutes>m` or `off`.
-- `sourceLabel` is one of `legacy`, `ai`, `mixed`.
-
-> Note: this `mode` currently describes quiz configuration (question count/timer/source), not explicit `exam` vs `feedback`.
-
-### Supabase schema / migration notes
-Minimum expected columns in `public.leaderboard_scores` for current app behavior:
-- `id` (pk)
-- `name` (text)
-- `score` (int)
-- `total` (int)
-- `pct` (numeric or generated/computed)
-- `duration_seconds` (int, nullable)
-- `mode` (text, nullable)
-- `created_at` (timestamp)
-
-Optional extension if you want to persist gamification points separately:
-- Add nullable `points` column (not required by current frontend submit/fetch payload).
-
-Example migration:
-```sql
-alter table public.leaderboard_scores
-  add column if not exists points integer;
-```
 
 ## Generate AI question pool offline
 Use the generator script:

@@ -480,32 +480,6 @@ input[type="text"]:focus-visible,
 
 .resultsHeader{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
 
-.leaderboardHeader{
-  justify-content:center;
-  text-align:center;
-}
-
-.leaderboardTitle{
-  margin:0 auto;
-}
-
-.leaderboardBackRow{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top:14px;
-}
-
-.leaderboardFilters{
-  display:flex;
-  justify-content:center;
-  margin: 6px 0 12px;
-}
-
-.lbMode{
-  font-weight:500;
-  opacity:.9;
-}
 .scoreLine{ font-size:1.15rem; margin:12px 0; }
 .filters{ margin:12px 0; }
 .checkbox{ display:flex; gap:10px; align-items:center; }
@@ -517,52 +491,6 @@ input[type="text"]:focus-visible,
 .badge.warn{ border-color: rgba(255,212,138,.7); background: rgba(255,212,138,.2); }
 
 .footer{ text-align:center; padding:var(--space-3) var(--space-2); color:var(--paper-70); }
-
-.leaderboardList > .lbRow{
-  padding:12px 16px;
-  border:none;
-  border-radius:12px;
-  margin-bottom:10px;
-  background:rgba(255,255,255,.06);
-  transition:transform .18s ease, background-color .18s ease;
-}
-
-.leaderboardList > .lbRow:hover{
-  background:rgba(255,255,255,.12);
-  transform:translateY(-1px);
-}
-
-.lbPrimary{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:6px;
-}
-
-.lbMeta{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  color:var(--paper-75);
-  font-size:.92rem;
-}
-
-.lbRank{
-  font-weight:800;
-  font-size:1.02rem;
-}
-
-.lbName{
-  font-weight:700;
-  letter-spacing:.01em;
-}
-
-.lbScore,
-.lbPercent,
-.lbDuration{
-  font-weight:500;
-}
-
 
 @media (max-width: 900px){
   .topBannerTag{
@@ -603,9 +531,12 @@ input[type="text"]:focus-visible,
     padding:10px 12px;
   }
 
-  .topLeft,
   .meta{
     display:none;
+  }
+
+  .topLeft{
+    justify-content:center;
   }
 
   .topCenter{
