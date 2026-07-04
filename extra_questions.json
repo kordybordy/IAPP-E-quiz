@@ -1,0 +1,200 @@
+{
+  "question_count": 5,
+  "questions": [
+    {
+      "id": 242,
+      "exam": "EU AI Act",
+      "number": 1,
+      "scenario_id": null,
+      "scenario_text": null,
+      "text": "The AI Act categorises AI systems into risk classifications based on their potential to harm the rights and freedoms of individuals. Which of the following poses an unacceptable level of risk under the Act?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A tech start-up develops an AI system that allows companies to score employees' trustworthiness based on social behaviour, attendance, and communication.",
+          "is_correct": true
+        },
+        {
+          "label": "B",
+          "text": "A high-street bank uses an AI system to assess the creditworthiness of a customer for the approval or refusal of a loan.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A social media platform allows users to create AI-generated content on their profiles for entertainment purposes.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A music streaming service uses an AI algorithm to recommend songs based on listening history.",
+          "is_correct": false
+        }
+      ],
+      "correct_label": "A",
+      "source": {
+        "origin": "user_supplied_2026_07_04",
+        "confidence": 0.98,
+        "needs_human_review": false,
+        "notes": [
+          "Social scoring is prohibited under Chapter II, Article 5 of the EU AI Act."
+        ]
+      }
+    },
+    {
+      "id": 243,
+      "exam": "EU AI Act",
+      "number": 2,
+      "scenario_id": null,
+      "scenario_text": null,
+      "text": "The AI Act categorises AI systems into risk classifications based on their potential to harm the rights and freedoms of individuals. Which of the following poses an unacceptable level of risk under the Act?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A hospital uses an AI system to support emergency healthcare triage.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A bank uses an AI system to detect financial fraud before approving transactions.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A police department deploys facial recognition technology to scan the biometric characteristics of passers-by in all of the city's squares in real time.",
+          "is_correct": true
+        },
+        {
+          "label": "D",
+          "text": "A website uses a chatbot and informs users that they are interacting with an AI system.",
+          "is_correct": false
+        }
+      ],
+      "correct_label": "C",
+      "source": {
+        "origin": "user_supplied_2026_07_04",
+        "confidence": 0.98,
+        "needs_human_review": false,
+        "notes": [
+          "Real-time remote biometric identification systems in publicly accessible spaces are prohibited except in specific, narrowly defined cases."
+        ]
+      }
+    },
+    {
+      "id": 244,
+      "exam": "EU AI Act",
+      "number": 3,
+      "scenario_id": null,
+      "scenario_text": null,
+      "text": "The AI Act categorises AI systems into risk classifications based on their potential to harm the rights and freedoms of individuals. Which of the following would be considered high-risk under the Act?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A music streaming service recommends songs for playlists based on search and listening history.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A high-street bank uses an AI system to assess the creditworthiness of a customer for the approval or refusal of a loan.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "A company scores employees' trustworthiness based on social behaviour, attendance, and communication.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A social media platform lets users create AI-generated profile content for entertainment purposes.",
+          "is_correct": false
+        }
+      ],
+      "correct_label": "B",
+      "source": {
+        "origin": "user_supplied_2026_07_04",
+        "confidence": 0.98,
+        "needs_human_review": false,
+        "notes": [
+          "AI systems used to evaluate creditworthiness of natural persons or establish credit scores are high-risk under Annex III of the EU AI Act, except systems used to detect financial fraud."
+        ]
+      }
+    },
+    {
+      "id": 245,
+      "exam": "EU AI Act",
+      "number": 4,
+      "scenario_id": null,
+      "scenario_text": null,
+      "text": "The AI Act categorises AI systems into risk classifications based on their potential to harm the rights and freedoms of individuals. Which of the following would be considered limited risk under the Act?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A bank uses AI to decide whether a customer should be approved or refused a loan.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "A music streaming service recommends songs for playlists based on previous listening history.",
+          "is_correct": false
+        },
+        {
+          "label": "C",
+          "text": "A police department scans passers-by's biometric characteristics in public squares in real time.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "A social media platform introduces a feature that allows users to create AI-generated content on their profiles for entertainment purposes.",
+          "is_correct": true
+        }
+      ],
+      "correct_label": "D",
+      "source": {
+        "origin": "user_supplied_2026_07_04",
+        "confidence": 0.96,
+        "needs_human_review": false,
+        "notes": [
+          "AI-generated or manipulated content is subject to transparency obligations, including informing users or marking content as AI-generated."
+        ]
+      }
+    },
+    {
+      "id": 246,
+      "exam": "EU Data Act",
+      "number": 1,
+      "scenario_id": null,
+      "scenario_text": null,
+      "text": "Under the EU Data Act, which of the following statements correctly reflects how the Act applies when personal data is involved?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "The Data Act overrides the GDPR whenever personal and non-personal data are stored in the same dataset.",
+          "is_correct": false
+        },
+        {
+          "label": "B",
+          "text": "The GDPR takes precedence where personal data is concerned, and the Data Act applies insofar as it does not conflict with GDPR protections.",
+          "is_correct": true
+        },
+        {
+          "label": "C",
+          "text": "The Data Act creates a standalone legal basis for any third party to receive personal data generated by connected products.",
+          "is_correct": false
+        },
+        {
+          "label": "D",
+          "text": "The Data Act removes the need to identify the controller when connected product data includes personal data.",
+          "is_correct": false
+        }
+      ],
+      "correct_label": "B",
+      "source": {
+        "origin": "user_supplied_2026_07_04",
+        "confidence": 0.98,
+        "needs_human_review": false,
+        "notes": [
+          "The Data Act does not override GDPR obligations when personal data is present, including where personal and non-personal data are inextricably linked."
+        ]
+      }
+    }
+  ]
+}

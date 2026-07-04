@@ -124,6 +124,41 @@ function normalizeBank(raw, sourceType) {
   return { question_count: 0, questions: [] };
 }
 
+function mergeQuestionBanks(primaryBank, extraBank) {
+  const primaryQuestions = Array.isArray(primaryBank?.questions) ? primaryBank.questions : [];
+  const extraQuestions = Array.isArray(extraBank?.questions) ? extraBank.questions : [];
+
+  if (!extraQuestions.length) {
+    return {
+      question_count: primaryQuestions.length,
+      questions: primaryQuestions
+    };
+  }
+
+  const byId = new Map(primaryQuestions.map((question) => [String(question.id), question]));
+  extraQuestions.forEach((question) => {
+    if (!question || question.id == null) return;
+    byId.set(String(question.id), question);
+  });
+
+  const questions = Array.from(byId.values());
+  return {
+    ...primaryBank,
+    question_count: questions.length,
+    questions
+  };
+}
+
+async function loadExtraQuestions() {
+  try {
+    const response = await fetch("extra_questions.json", { cache: "no-store" });
+    if (!response.ok) return null;
+    return normalizeBank(await response.json(), LEGACY_SOURCE);
+  } catch (error) {
+    return null;
+  }
+}
+
 async function loadQuestionBank(sourceType) {
   if (sourceType === MIXED_SOURCE) {
     const [legacyBank, aiBank] = await Promise.all([
@@ -161,6 +196,11 @@ async function loadQuestionBank(sourceType) {
 
   if (sourceType === AI_SOURCE && normalized.question_count === 0) {
     throw new Error("Brak puli AI. Spróbuj później.");
+  }
+
+  if (sourceType === LEGACY_SOURCE) {
+    const extraBank = await loadExtraQuestions();
+    if (extraBank) return mergeQuestionBanks(normalized, extraBank);
   }
 
   return normalized;

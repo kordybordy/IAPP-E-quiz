@@ -119,6 +119,7 @@ python3 scripts/export_questions.py --input questions.corrected.json --out-csv o
 #
 ## Legacy / AI quiz source mode
 - The home screen includes a **Question source** switch: `Legacy` (`questions.json`) or `AI` (`ai_questions.json`).
+- `Legacy` also loads optional add-on questions from `extra_questions.json`; matching IDs replace existing questions instead of duplicating them.
 - The selected source is persisted in `localStorage` under `quiz_source`.
 - If AI mode is selected and `ai_questions.json` is missing or empty, the app shows: `Brak puli AI. Spróbuj później.`
 
