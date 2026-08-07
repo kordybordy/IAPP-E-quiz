@@ -3287,23 +3287,27 @@
       "number": 25,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "A property management company has acquired contact details including email addresses of a set of data subjects for telemarketing activities from an online furniture retailer, which in turn has acquired this data from a construction company. The construction company had obtained the consent of potential customers for telemarketing activities. Which one Is correct?",
+      "text": "A property management company has acquired contact details including email addresses of a set of data subjects for telemarketing activities from an online furniture retailer, which in turn has acquired this data from a construction company. The construction company had obtained the consent of potential customers for telemarketing activities. Which one is correct?",
       "choices": [
         {
           "label": "A",
-          "text": "Telemarketing carried out by the property management company is lawful as data subjects have already consented to telemarketing activities."
+          "text": "Telemarketing carried out by the property management company is lawful as data subjects have already consented to telemarketing activities.",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Telemarketing carried out by the construction company is lawful as data subjects have already consented to telemarketing activities."
+          "text": "Telemarketing carried out by the construction company is lawful as data subjects have already consented to telemarketing activities.",
+          "is_correct": true
         },
         {
           "label": "C",
-          "text": "The property management company should rely on another lawful ground, such as legitimate interests, that better fits its purpose."
+          "text": "The property management company should rely on another lawful ground, such as legitimate interests, that better fits its purpose.",
+          "is_correct": false
         },
         {
           "label": "D",
-          "text": "The property management company can only use this data for telemarketing purposes if a DPIA is conducted."
+          "text": "The property management company can only use this data for telemarketing purposes if a DPIA is conducted.",
+          "is_correct": false
         }
       ],
       "correct_label": "B",
@@ -3311,7 +3315,9 @@
         "origin": "normalized",
         "confidence": 1,
         "needs_human_review": false,
-        "notes": []
+        "notes": [
+          "Added explicit option correctness flags; correct_label remains B after GDPR consent review."
+        ]
       }
     },
     {
@@ -8478,12 +8484,12 @@
         {
           "label": "A",
           "text": "Statement A is correct and Statement B is incorrect",
-          "is_correct": true
+          "is_correct": false
         },
         {
           "label": "B",
           "text": "Statement A is incorrect and Statement B is correct",
-          "is_correct": false
+          "is_correct": true
         },
         {
           "label": "C",
@@ -8496,14 +8502,14 @@
           "is_correct": false
         }
       ],
-      "correct_label": "A",
+      "correct_label": "B",
       "scenario_text": null,
       "source": {
         "origin": "ai_repair",
         "confidence": 0.9,
         "needs_human_review": false,
         "notes": [
-          "Minor formatting and spacing corrections only; no changes to substantive content."
+          "Corrected answer key after GDPR breach notification review: Statement A is incorrect and Statement B is correct."
         ]
       }
     },
