@@ -1298,12 +1298,12 @@
         {
           "label": "B",
           "text": "Freely given, informed, specific, and unambiguous",
-          "is_correct": false
+          "is_correct": true
         },
         {
           "label": "C",
           "text": "Automatic, informed, explicit, and unambiguous",
-          "is_correct": true
+          "is_correct": false
         },
         {
           "label": "D",
@@ -1311,12 +1311,14 @@
           "is_correct": false
         }
       ],
-      "correct_label": "C",
+      "correct_label": "B",
       "source": {
         "origin": "normalized",
         "confidence": 1,
         "needs_human_review": false,
-        "notes": []
+        "notes": [
+          "Corrected answer key after GDPR Article 4(11) review: consent is freely given, specific, informed and unambiguous."
+        ]
       }
     },
     {
@@ -1866,24 +1868,22 @@
         },
         {
           "label": "C",
-          "text": "Consent or performance of a contract and data processing is carried out by either manual or automated means.",
+          "text": "The search engine should assess Mr. Miller's request and, where the information is inadequate, irrelevant or no longer relevant in light of the time elapsed and no overriding public interest justifies continued name-based access, de-list the result from searches for his name.",
           "is_correct": true
         },
         {
           "label": "D",
-          "text": "Consent or performance of a task carried out in the public interest and data processing is carried out by manual or automated means.",
+          "text": "The search engine must delete the newspaper article itself from the newspaper's website whenever Mr. Miller requests erasure.",
           "is_correct": false
         }
       ],
       "correct_label": "C",
       "source": {
         "origin": "ai_repair",
-        "confidence": 0.5,
-        "needs_human_review": true,
+        "confidence": 0.9,
+        "needs_human_review": false,
         "notes": [
-          "Cleaned OCR artifacts, merged split words, fixed spacing and punctuation.",
-          "Option B contained multiple fragmented clauses; reconstructed into a single coherent sentence preserving original elements about legal obligation and required consent from the newspaper.",
-          "Did not alter substantive meaning of options; preserved original correct_label as provided."
+          "Replaced unrelated options C and D after search-engine delisting review; correct answer remains C."
         ]
       }
     },
@@ -3688,7 +3688,7 @@
       "number": 45,
       "scenario_id": null,
       "scenario_text": null,
-      "text": "Company X provides cloud-based services consisting of a cloud c IouttN environment with processing and storage, and a set of machine l earniti (ML) tools. These services enable clients to build a nd run their own, : models with data they have chosen, but using the tools and infrastructurE, that Company X provides in the cloud. Which one is correct?",
+      "text": "Company X provides cloud-based services consisting of a cloud computing environment with processing and storage, and a set of machine learning (ML) tools. These services enable clients to build and run their own AI models with data they have chosen, but using the tools and infrastructure that Company X provides in the cloud. Which one is correct?",
       "choices": [
         {
           "label": "A",
@@ -3716,7 +3716,9 @@
         "origin": "normalized",
         "confidence": 1,
         "needs_human_review": false,
-        "notes": []
+        "notes": [
+          "Cleaned OCR artifacts in question wording; answer key unchanged."
+        ]
       }
     },
     {
@@ -8521,7 +8523,7 @@
     },
     {
       "id": 232,
-      "text": "The virtual voice assistant of an electric car requires a user to issue the same voice command two times because the assistant did not understand the command. The two voice commands and their associated transcriptions are passed to human reviewers to review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant's training dataset to improve its performance and accuracy. Which one is correct?",
+      "text": "The virtual voice assistant of an electric car requires a user to issue the same voice command twice because the assistant did not understand the command. The two voice commands and their associated transcriptions are passed to human reviewers, who review and correct the transcriptions. The voice commands and reviewed transcriptions are added to the virtual voice assistant's training dataset to improve its performance and accuracy. Which one is correct?",
       "choices": [
         {
           "label": "A",
@@ -8536,22 +8538,22 @@
         {
           "label": "C",
           "text": "The processing activities carried out by the human reviewers are necessary for the performance of a contract as if the human review does not take place, the virtual voice assistant may fail to function properly.",
-          "is_correct": true
+          "is_correct": false
         },
         {
           "label": "D",
           "text": "The processing activities carried out by the human reviewers are not necessary for the performance of a contract as the virtual voice assistant is already functional.",
-          "is_correct": false
+          "is_correct": true
         }
       ],
-      "correct_label": "C",
+      "correct_label": "D",
       "scenario_text": null,
       "source": {
         "origin": "ai_repair",
         "confidence": 0.9,
         "needs_human_review": false,
         "notes": [
-          "Fixed minor punctuation and wording for clarity (e.g., 'two times' -> 'two times/twice' kept meaning; added possessive in 'assistant\\'s training dataset'). No substantive changes to meaning."
+          "Corrected answer key after EDPB virtual voice assistant guidance review: human review for service improvement is not necessary for performance of a contract where the assistant is already functional."
         ]
       }
     },
