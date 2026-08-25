@@ -8423,28 +8423,34 @@
       "choices": [
         {
           "label": "A",
-          "text": "The age of the data"
+          "text": "The age of the data",
+          "is_correct": false
         },
         {
           "label": "B",
-          "text": "Appropriate safeguards adopted"
+          "text": "Appropriate safeguards adopted",
+          "is_correct": false
         },
         {
           "label": "C",
-          "text": "The type of the data"
+          "text": "The type of the data",
+          "is_correct": true
         },
         {
           "label": "D",
-          "text": "The number of data subjects"
+          "text": "The number of data subjects",
+          "is_correct": false
         }
       ],
-      "correct_label": "B",
+      "correct_label": "C",
       "scenario_text": null,
       "source": {
         "origin": "normalized",
         "confidence": 1,
         "needs_human_review": false,
-        "notes": []
+        "notes": [
+          "Corrected answer key after GDPR Article 14(5)(b) review: Recital 62 lists age of data, number of data subjects and appropriate safeguards as relevant factors."
+        ]
       }
     },
     {
